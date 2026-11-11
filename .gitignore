@@ -1,0 +1,35 @@
+# Local environments and caches
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+.cache/
+
+# Local configuration and credentials
+.env
+.env.*
+!.env.example
+*service_account*.json
+*.pem
+*.key
+
+# Raw images, checkpoints, and transient run outputs
+/data/raw/
+/data/private/
+/outputs/
+/checkpoints/
+/models/
+/runs/
+*.safetensors
+*.gguf
+*.pt
+*.pth
+
+# Editor and operating-system state
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
