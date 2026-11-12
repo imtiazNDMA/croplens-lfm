@@ -2,7 +2,9 @@
 
 > Living project plan, experiment roadmap, and publication brief.
 > Created: 2026-11-11. Last updated: 2026-11-11.
-> Status: isolated WSL environment created; training-dependency installation incomplete after bounded download attempts. No CropLens training or evaluation has been run.
+> Status: actual crop-only LoRA fine-tuning completed. Matched 100-image validation improved from 53% accuracy / 0.524 macro F1 to 86% / 0.861. Adapter saved locally; disease training and field evaluation remain pending. Separate structured photo-check results exist in `docs/baselines.md`.
+
+**Latest completed crop experiment:** [crop-pilot-002](docs/crop-pilot.md), 500 balanced training images, 200 steps, 86.736 seconds training. [Measured report](reports/crop-pilot-002.json). The user redirected work from excessive preparation to actual fine-tuning; prioritize training and matched evaluations, using the existing cleaned pool for the next crop–condition run.
 
 ## 1. Project summary
 
@@ -481,7 +483,11 @@ At the WSL check, only **9,560 MiB VRAM was free**. This is a point-in-time obse
 
 The user confirmed GPU availability, and a fresh check found 46,493 MiB free. Local Ubuntu WSL2 is now the selected first environment. A dedicated Python 3.12.3 virtual environment at `$HOME/croplens-venv` contains pip 26.3 and uv 0.13.7.
 
-The candidate Unsloth/PyTorch installation resolved successfully but did not complete within two bounded download attempts. Many dependency wheels are cached; the environment still has only pip and uv. The [WSL setup report](docs/setup-wsl.md) records the exact candidate command and next checks. No model download or training has occurred. No GPU time, provider rate, or paid cloud instance has been booked. Actual training fit and throughput remain unverified.
+After the first two bounded download attempts, a further manually started cached installation completed successfully. `pip check`, Unsloth import, CUDA tensor execution, and BF16 support checks passed. The exact observed versions are saved in [requirements-wsl-cu128.txt](requirements-wsl-cu128.txt), an environment snapshot rather than a hash-verified or cross-platform lockfile.
+
+The pinned model at revision `919fde3d022e3f90a4716006f993938ee8c2eb97` then passed the [synthetic-color smoke test](reports/smoke-002.json): 20 direct AdamW updates of 4,571,136 language-side LoRA parameters, loss 3.749977 → 0.000315, assistant-only labels, pixel-dependent logits, and identical greedy generation after adapter/processor reload. The training loop took 23.451 seconds; the full download/load/train/reload run took 487.244 seconds. PyTorch peak allocated/reserved memory was 3.224/3.299 GiB for this tiny test only.
+
+The first model download was interrupted before training. The successful attempt used transient authentication and disabled Xet; we did not isolate which change improved the download. No token is stored in project files or reports. The [WSL setup report](docs/setup-wsl.md) records the tested path and limits. No paid cloud instance was booked. Agricultural throughput, crop accuracy, field generalization, and SFTTrainer integration remain unverified.
 
 ### Cost accounting
 
@@ -607,12 +613,16 @@ Use `docs/article/substack-draft.md` in the standalone repository as the working
 - [x] Bootstrap documentation in a separate local checkout and make this plan canonical.
 - [x] Inspect Windows and WSL GPU visibility and the available Python interpreter.
 - [x] Confirm a free local GPU window and create an isolated WSL environment with pip/uv.
-- [ ] Complete the cached dependency downloads and verify basic Unsloth/PyTorch CUDA execution.
+- [x] Complete the cached dependency downloads and verify basic Unsloth/PyTorch CUDA execution.
 - [x] Prepare and review the documentation-only bootstrap for initial publication; Git history records commit/push state.
 - [ ] Confirm hardware, spend ceiling, crop scope, and deployment target.
-- [ ] Audit datasets and freeze taxonomy/splits.
-- [ ] Reproduce the Unsloth compatibility smoke run and lock dependencies.
-- [ ] Establish baseline metrics and numeric acceptance targets.
+- [x] Locate the existing crop corpus, taxonomy, manifest, and separate photo-check evaluation assets.
+- [x] Complete the read-only dataset audit ([report](docs/dataset-audit.md)): counts confirmed, near-duplicates cross the splits beyond the 12-bit threshold, and image size predicts the crop for 81.7% of test photos.
+- [x] Decide the split proposal and build the cleaned training pool: `prepare.py` keeps val/test as they are and removes 544 of 8,013 train images (240 within 32 bits of a val/test image, 304 augmentation-named); the pool of 7,469 has 0 pairs within 32 bits of val or test (`data/pool-001/`).
+- [x] Freeze the taxonomy (`configs/taxonomy.yaml`, version 1, 39 classes, 18-class screening start set) and the photo-check output contract (`contract.py`, version 1, same fields as the portal's; invalid answers are failures).
+- [x] Reproduce the bounded synthetic-image LoRA smoke run and capture exact environment versions.
+- [x] Agricultural trainer integration: `train.py` (TRL SFTTrainer, language-side LoRA, assistant-only labels) ran 4 steps on real pool photos, saved an adapter and report. Reproduction of the install on a clean environment is still open.
+- [x] Establish baseline metrics on the `tune` part ([docs/baselines.md](docs/baselines.md)): untuned LFM crop identification 5.0% with 67.8% false stops and 23.3% invalid answers; Qwen 51.2%; ConvNeXt 98.4% (shortcut-prone). Acceptance targets: the portal's #93 bars (crop identification at least 97%, false stops at most 2%, non-plants stopped at least 95%, other plants stopped at least 85%), plus the size-normalised score reported beside every result.
 - [ ] Implement and test bounded experiment supervision.
 - [ ] Run initial daytime search sessions.
 - [ ] Confirm the winner across three seeds and evaluate locked tests.
@@ -628,16 +638,19 @@ Use `docs/article/substack-draft.md` in the standalone repository as the working
 | GPU, VRAM, OS/provider | RTX 6000 Ada, 49,140 MiB total; Ubuntu WSL2 selected; user confirmed availability and 46,493 MiB free was observed |
 | Total GPU and agent/API budget | Unconfirmed |
 | Initial crop coverage | Five-crop photo check proposed, subject to data audit |
-| Screening class subset | Unconfirmed; start with well-supported classes |
 | Independent field data and annotation access | Unconfirmed |
 | Public code license | Unconfirmed; separate from model/dataset terms |
 | Public data/adapter release permissions | Must be established per source/artifact |
 | Final deployment hardware | Unconfirmed |
+| Split handling | Decided 2026-11-11: keep existing val/test untouched, drop leaking and augmentation-named images from the training pool, report three scores (full, no-shared-size subset, size-normalised) |
+| Screening class subset | Decided 2026-11-11: the 18-class start set from the dataset audit; the other 19 reported as unsupported |
+| Source rights for the crop corpus and for negatives | Not established; no licence or provenance recorded, at least one image watermarked by a Philippine institute |
 | Numeric quality/rejection/latency targets | Set after baselines, before tuning |
 | Urdu output | Deferred pending separate evaluation |
 | Substack publication date | After measured results and reproducibility review |
 | Initial publication of repository files | Reviewed documentation only; consult repository history for publication state |
-| Dependency installation | Blocked by incomplete large downloads within the bounded attempts; cache retained for resumption |
+| Dependency installation | Complete; pip check and CUDA passed; exact environment snapshot captured |
+| Training verification | Synthetic direct-AdamW smoke test passed; agricultural SFTTrainer pipeline still to implement and verify |
 
 ## 20. Decision and update log
 
@@ -653,6 +666,17 @@ Use `docs/article/substack-draft.md` in the standalone repository as the working
 | 2026-11-11 | Propose local Ubuntu WSL2 on the discovered RTX 6000 Ada | GPU access works in WSL; availability and training compatibility still need confirmation |
 | 2026-11-11 | Select local WSL2 after the user confirmed GPU availability | Rechecked 46,493 MiB free; no cloud booking needed for setup |
 | 2026-11-11 | Stop incomplete dependency downloads after bounded attempts and preserve the cache | Avoid unattended indefinite setup; document the actual blocker instead of claiming a smoke-test success |
+| 2026-11-11 | Complete cached installation and verify the exact model's synthetic-image LoRA path | Real backward updates, assistant-only labels, pixel-dependent logits, and save/reload checks passed |
+| 2026-11-11 | Keep the smoke result separate from agricultural claims | Two artificial colors establish pipeline mechanics, not crop/disease accuracy or field readiness |
+| 2026-11-11 | Fix the audit's path check and add progress output instead of raising its timeout | Per-image path resolution over the Windows mount took 426 of 594 s; resolving each directory once gives 160 s and an identical report |
+| 2026-11-11 | Treat crop-identification scores on this corpus as shortcut-prone until size-controlled | Exact image size alone predicts the crop for 81.7% of test photos |
+| 2026-11-11 | Accept the audit's split proposal and the 18-class screening start set | Removes known leakage without regenerating the holdouts, which were already used for selection |
+| 2026-11-11 | Build the pool with `prepare.py` at 32 bits | 7,469 of 8,013 train images kept; re-check found 0 pairs within 32 bits of val or test; 304 augmentation-named images removed here against 307 in the audit because 3 were already removed as near copies |
+| 2026-11-11 | Freeze taxonomy v1 and photo-check contract v1 | Copied the portal's taxonomy unchanged plus the start set, so the pool, the baselines and the trainer share one definition; the contract's strict parser makes invalid output a counted failure |
+| 2026-11-11 | Score baselines on the `tune` part only | `final` is a sample of the locked test split and is scored once, for the chosen model |
+| 2026-11-11 | Train on `Check this photo.` alone and cap photos at 512 px | Shorter prompts are faster at inference; 6000x4000 photos would dominate step time and memory |
+| 2026-11-11 | Reference run: 150 steps of 16 examples (2,400 examples), rank 16, lr 2e-4, 20 min cap | Fixed work chosen from a 4-step profile; refine after the first result |
+| 2026-11-11 | Judge fine-tuned models on the size-normalised score as well as the as-is one | ref-001 fell from 88.6% to 83.0% on normalised copies (78.2% on the 179 size-ambiguous photos) while ConvNeXt held at 98.0%, so part of the LFM's first score was shortcut |
 
 ## 21. Sources
 

@@ -1,0 +1,123 @@
+{
+  "lenient": {
+    "confusions": {
+      "Maize -> Sugarcane": 4,
+      "Rice -> Maize": 4,
+      "Rice -> Sugarcane": 3,
+      "Sugarcane -> Maize": 9,
+      "Wheat -> Maize": 7,
+      "Wheat -> Rice": 7,
+      "Wheat -> Sugarcane": 3
+    },
+    "crop_identification": 0.512,
+    "false_stops": 0.068,
+    "invalid_share": 0.03,
+    "non_plant_stopped": 1.0,
+    "per_crop": {
+      "Cotton": {
+        "invalid": 11,
+        "right": 60,
+        "stopped": 21,
+        "unclear": 8
+      },
+      "Maize": {
+        "invalid": 4,
+        "right": 48,
+        "stopped": 7,
+        "unclear": 37,
+        "wrong_crop": 4
+      },
+      "Rice": {
+        "invalid": 2,
+        "right": 42,
+        "unclear": 49,
+        "wrong_crop": 7
+      },
+      "Sugarcane": {
+        "invalid": 2,
+        "right": 76,
+        "unclear": 13,
+        "wrong_crop": 9
+      },
+      "Wheat": {
+        "invalid": 2,
+        "right": 30,
+        "stopped": 6,
+        "unclear": 45,
+        "wrong_crop": 17
+      }
+    },
+    "photos": {
+      "crop": 500,
+      "not-plant": 50,
+      "other-plant": 100,
+      "poor": 50
+    },
+    "quality_raised_on_clean": 0.094,
+    "quality_raised_on_poor": 0.94,
+    "unclear_share": 0.304,
+    "unsupported_plant_stopped": 0.88
+  },
+  "model": "qwen/qwen3.8-27b",
+  "part": "tune",
+  "run_file": "qwen-qwen3.8-27b-tune.json",
+  "strict": {
+    "confusions": {
+      "Maize -> Sugarcane": 4,
+      "Rice -> Maize": 4,
+      "Rice -> Sugarcane": 3,
+      "Sugarcane -> Maize": 9,
+      "Wheat -> Maize": 7,
+      "Wheat -> Rice": 7,
+      "Wheat -> Sugarcane": 3
+    },
+    "crop_identification": 0.512,
+    "false_stops": 0.068,
+    "invalid_share": 0.03,
+    "non_plant_stopped": 1.0,
+    "per_crop": {
+      "Cotton": {
+        "invalid": 11,
+        "right": 60,
+        "stopped": 21,
+        "unclear": 8
+      },
+      "Maize": {
+        "invalid": 4,
+        "right": 48,
+        "stopped": 7,
+        "unclear": 37,
+        "wrong_crop": 4
+      },
+      "Rice": {
+        "invalid": 2,
+        "right": 42,
+        "unclear": 49,
+        "wrong_crop": 7
+      },
+      "Sugarcane": {
+        "invalid": 2,
+        "right": 76,
+        "unclear": 13,
+        "wrong_crop": 9
+      },
+      "Wheat": {
+        "invalid": 2,
+        "right": 30,
+        "stopped": 6,
+        "unclear": 45,
+        "wrong_crop": 17
+      }
+    },
+    "photos": {
+      "crop": 500,
+      "not-plant": 50,
+      "other-plant": 100,
+      "poor": 50
+    },
+    "quality_raised_on_clean": 0.094,
+    "quality_raised_on_poor": 0.94,
+    "unclear_share": 0.304,
+    "unsupported_plant_stopped": 0.88
+  }
+}

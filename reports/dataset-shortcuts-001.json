@@ -1,0 +1,129 @@
+{
+  "augmentation_named_kept_by_class": {
+    "cotton_aphid": 131,
+    "cotton_bacterial_blight": 93,
+    "cotton_healthy": 78,
+    "maize_armyworm": 128
+  },
+  "augmentation_named_kept_by_split": {
+    "test": 69,
+    "train": 307,
+    "val": 54
+  },
+  "augmentation_prefixes": {
+    "contrast": 29,
+    "crop": 130,
+    "flip": 64,
+    "rotation": 77,
+    "translation": 79,
+    "zoom": 51
+  },
+  "check_version": 1,
+  "closest_train_distance_percentiles": {
+    "test": {
+      "0": 13.0,
+      "1": 15.0,
+      "25": 66.0,
+      "5": 29.0,
+      "50": 80.0
+    },
+    "val": {
+      "0": 13.0,
+      "1": 14.0,
+      "25": 66.0,
+      "5": 24.950000000000003,
+      "50": 79.0
+    }
+  },
+  "cross_split_near_pairs_by_threshold": {
+    "train_vs_test": {
+      "12": 0,
+      "16": 28,
+      "24": 87,
+      "32": 130,
+      "48": 291,
+      "64": 2637
+    },
+    "train_vs_val": {
+      "12": 0,
+      "16": 40,
+      "24": 105,
+      "32": 153,
+      "48": 390,
+      "64": 3073
+    },
+    "val_vs_test": {
+      "12": 0,
+      "16": 6,
+      "24": 22,
+      "32": 40,
+      "48": 83,
+      "64": 560
+    }
+  },
+  "dhash_note": "Distances use the manifest's stored 256-bit dHash, which audit 001/002 recomputed and found unchanged.",
+  "distinct_sizes": 2599,
+  "elapsed_seconds": 12.072,
+  "kept_images": 11453,
+  "size_by_crop": {
+    "1040x493": {
+      "Sugarcane": 214
+    },
+    "224x224": {
+      "Sugarcane": 98,
+      "Wheat": 2
+    },
+    "256x256": {
+      "Cotton": 19,
+      "Maize": 2865
+    },
+    "259x194": {
+      "Cotton": 14,
+      "Maize": 10,
+      "Wheat": 29
+    },
+    "300x300": {
+      "Maize": 1,
+      "Rice": 1609
+    },
+    "493x1040": {
+      "Sugarcane": 920
+    },
+    "500x500": {
+      "Cotton": 92,
+      "Maize": 39,
+      "Wheat": 3
+    },
+    "585x1040": {
+      "Sugarcane": 161
+    },
+    "6000x4000": {
+      "Wheat": 119
+    },
+    "694x694": {
+      "Cotton": 53
+    },
+    "758x1600": {
+      "Sugarcane": 57
+    },
+    "780x1040": {
+      "Sugarcane": 180
+    }
+  },
+  "size_only_crop_accuracy": {
+    "test": {
+      "accuracy": 0.8168604651162791,
+      "accuracy_where_size_seen": 0.9575671852899575,
+      "majority_crop_baseline": 0.3168604651162791,
+      "photos": 1720,
+      "size_seen_in_training": 0.8220930232558139
+    },
+    "val": {
+      "accuracy": 0.8168604651162791,
+      "accuracy_where_size_seen": 0.9611032531824611,
+      "majority_crop_baseline": 0.3168604651162791,
+      "photos": 1720,
+      "size_seen_in_training": 0.8220930232558139
+    }
+  }
+}

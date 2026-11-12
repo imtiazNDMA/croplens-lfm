@@ -1,0 +1,97 @@
+{
+  "lenient": {
+    "confusions": {
+      "Wheat -> Rice": 1
+    },
+    "crop_identification": 0.05,
+    "false_stops": 0.678,
+    "invalid_share": 0.23285714285714285,
+    "non_plant_stopped": 1.0,
+    "per_crop": {
+      "Cotton": {
+        "invalid": 26,
+        "right": 8,
+        "stopped": 66
+      },
+      "Maize": {
+        "invalid": 27,
+        "stopped": 73
+      },
+      "Rice": {
+        "invalid": 5,
+        "right": 8,
+        "stopped": 87
+      },
+      "Sugarcane": {
+        "invalid": 40,
+        "stopped": 60
+      },
+      "Wheat": {
+        "invalid": 37,
+        "right": 9,
+        "stopped": 53,
+        "wrong_crop": 1
+      }
+    },
+    "photos": {
+      "crop": 500,
+      "not-plant": 50,
+      "other-plant": 100,
+      "poor": 50
+    },
+    "quality_raised_on_clean": 0.076,
+    "quality_raised_on_poor": 0.26,
+    "unclear_share": 0.0,
+    "unsupported_plant_stopped": 0.98
+  },
+  "model": "LiquidAI/LFM2.5-VL-1.6B (untuned)",
+  "part": "tune",
+  "peak_vram_gib": 3.288,
+  "run_file": "lfm-untuned-tune.json",
+  "seconds_per_photo_mean": 0.9619885714285715,
+  "strict": {
+    "confusions": {
+      "Wheat -> Rice": 1
+    },
+    "crop_identification": 0.05,
+    "false_stops": 0.678,
+    "invalid_share": 0.23285714285714285,
+    "non_plant_stopped": 1.0,
+    "per_crop": {
+      "Cotton": {
+        "invalid": 26,
+        "right": 8,
+        "stopped": 66
+      },
+      "Maize": {
+        "invalid": 27,
+        "stopped": 73
+      },
+      "Rice": {
+        "invalid": 5,
+        "right": 8,
+        "stopped": 87
+      },
+      "Sugarcane": {
+        "invalid": 40,
+        "stopped": 60
+      },
+      "Wheat": {
+        "invalid": 37,
+        "right": 9,
+        "stopped": 53,
+        "wrong_crop": 1
+      }
+    },
+    "photos": {
+      "crop": 500,
+      "not-plant": 50,
+      "other-plant": 100,
+      "poor": 50
+    },
+    "quality_raised_on_clean": 0.076,
+    "quality_raised_on_poor": 0.26,
+    "unclear_share": 0.0,
+    "unsupported_plant_stopped": 0.98
+  }
+}

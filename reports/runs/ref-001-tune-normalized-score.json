@@ -1,0 +1,115 @@
+{
+  "lenient": {
+    "confusions": {
+      "Cotton -> Maize": 7,
+      "Cotton -> Wheat": 4,
+      "Maize -> Cotton": 3,
+      "Maize -> Rice": 10,
+      "Maize -> Sugarcane": 2,
+      "Maize -> Wheat": 1,
+      "Rice -> Maize": 8,
+      "Rice -> Wheat": 11,
+      "Sugarcane -> Maize": 1,
+      "Sugarcane -> Rice": 8,
+      "Wheat -> Cotton": 5,
+      "Wheat -> Maize": 9,
+      "Wheat -> Rice": 13,
+      "Wheat -> Sugarcane": 3
+    },
+    "crop_identification": 0.83,
+    "false_stops": 0.0,
+    "invalid_share": 0.0,
+    "non_plant_stopped": 0.0,
+    "per_crop": {
+      "Cotton": {
+        "right": 89,
+        "wrong_crop": 11
+      },
+      "Maize": {
+        "right": 84,
+        "wrong_crop": 16
+      },
+      "Rice": {
+        "right": 81,
+        "wrong_crop": 19
+      },
+      "Sugarcane": {
+        "right": 91,
+        "wrong_crop": 9
+      },
+      "Wheat": {
+        "right": 70,
+        "wrong_crop": 30
+      }
+    },
+    "photos": {
+      "crop": 500,
+      "not-plant": 50,
+      "other-plant": 100,
+      "poor": 50
+    },
+    "quality_raised_on_clean": 0.01,
+    "quality_raised_on_poor": 0.96,
+    "unclear_share": 0.0,
+    "unsupported_plant_stopped": 0.0
+  },
+  "model": "LiquidAI/LFM2.5-VL-1.6B + adapter",
+  "part": "tune",
+  "peak_vram_gib": 3.05,
+  "run_file": "ref-001-tune-normalized.json",
+  "seconds_per_photo_mean": 0.9744142857142858,
+  "strict": {
+    "confusions": {
+      "Cotton -> Maize": 7,
+      "Cotton -> Wheat": 4,
+      "Maize -> Cotton": 3,
+      "Maize -> Rice": 10,
+      "Maize -> Sugarcane": 2,
+      "Maize -> Wheat": 1,
+      "Rice -> Maize": 8,
+      "Rice -> Wheat": 11,
+      "Sugarcane -> Maize": 1,
+      "Sugarcane -> Rice": 8,
+      "Wheat -> Cotton": 5,
+      "Wheat -> Maize": 9,
+      "Wheat -> Rice": 13,
+      "Wheat -> Sugarcane": 3
+    },
+    "crop_identification": 0.83,
+    "false_stops": 0.0,
+    "invalid_share": 0.0,
+    "non_plant_stopped": 0.0,
+    "per_crop": {
+      "Cotton": {
+        "right": 89,
+        "wrong_crop": 11
+      },
+      "Maize": {
+        "right": 84,
+        "wrong_crop": 16
+      },
+      "Rice": {
+        "right": 81,
+        "wrong_crop": 19
+      },
+      "Sugarcane": {
+        "right": 91,
+        "wrong_crop": 9
+      },
+      "Wheat": {
+        "right": 70,
+        "wrong_crop": 30
+      }
+    },
+    "photos": {
+      "crop": 500,
+      "not-plant": 50,
+      "other-plant": 100,
+      "poor": 50
+    },
+    "quality_raised_on_clean": 0.01,
+    "quality_raised_on_poor": 0.96,
+    "unclear_share": 0.0,
+    "unsupported_plant_stopped": 0.0
+  }
+}
