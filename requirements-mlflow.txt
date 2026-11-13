@@ -1,0 +1,4 @@
+# Install after the base WSL snapshot; MLflow resolves compatible pandas/protobuf dependencies.
+mlflow==3.8.1
+# MLflow 3.8.1 imports a pool class removed in SQLAlchemy 2.1.
+sqlalchemy==2.0.46

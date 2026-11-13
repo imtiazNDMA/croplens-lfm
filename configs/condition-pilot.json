@@ -1,0 +1,15 @@
+{
+  "classes": [
+    "cotton_aphid", "cotton_bacterial_blight", "cotton_healthy", "cotton_wilt",
+    "maize_armyworm", "maize_common_rust", "maize_gray_leaf_spot", "maize_healthy",
+    "sugarcane_healthy", "sugarcane_mosaic", "sugarcane_red_rot", "sugarcane_yellow_rust",
+    "wheat_healthy", "wheat_powdery_mildew"
+  ],
+  "seed": 3407,
+  "train_per_class": 50,
+  "val_per_class": 20,
+  "steps": 400,
+  "batch": 4,
+  "learning_rate": 0.0002,
+  "rank": 8
+}

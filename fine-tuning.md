@@ -1,10 +1,12 @@
 # CropLens: Vision-Language Model Fine-Tuning Plan
 
 > Living project plan, experiment roadmap, and publication brief.
-> Created: 2026-11-11. Last updated: 2026-11-11.
-> Status: actual crop-only LoRA fine-tuning completed. Matched 100-image validation improved from 53% accuracy / 0.524 macro F1 to 86% / 0.861. Adapter saved locally; disease training and field evaluation remain pending. Separate structured photo-check results exist in `docs/baselines.md`.
+> Created: 2026-11-11. Last updated: 2026-11-13.
+> Status: three-candidate, MLflow-tracked autoresearch session completed on 14 condition classes. Selected rank-8 / LR 4e-4 adapter reaches 90.0% exact crop–condition validation accuracy and 0.8998 joint macro F1, versus the fine-tuned reference's 87.86% / 0.8785. MLflow UI is live at http://localhost:5000. Final-test and field evaluation remain pending.
 
-**Latest completed crop experiment:** [crop-pilot-002](docs/crop-pilot.md), 500 balanced training images, 200 steps, 86.736 seconds training. [Measured report](reports/crop-pilot-002.json). The user redirected work from excessive preparation to actual fine-tuning; prioritize training and matched evaluations, using the existing cleaned pool for the next crop–condition run.
+**Latest completed experiment:** [condition-pilot-001](docs/condition-pilot.md), 700 balanced cleaned-pool training images, 280 validation images, 400 steps, 114.248 seconds training. [Measured report](reports/condition-pilot-001.json). Cotton, maize, sugarcane, and wheat have healthy/condition examples; rice is deferred pending healthy data. Prior [crop-pilot-002](docs/crop-pilot.md) is a separate five-crop, 100-validation-image experiment. Prioritize training and matched evaluation rather than additional exhaustive preparation.
+
+**Latest search:** [condition-search-001](docs/autoresearch-mlflow.md), three one-knob trials, identical fixed-work/data/evaluation, local MLflow, 30-minute maximum. [Measured summary](reports/condition-search-001.json). Selected adapter: `outputs/condition-search-001/lr-high/training/adapter`. Rank 16 has slightly higher raw F1 (0.9006) but did not clear the predeclared 0.005 promotion margin over lr-high. No training process remains; only the requested UI is running.
 
 ## 1. Project summary
 
@@ -622,9 +624,10 @@ Use `docs/article/substack-draft.md` in the standalone repository as the working
 - [x] Freeze the taxonomy (`configs/taxonomy.yaml`, version 1, 39 classes, 18-class screening start set) and the photo-check output contract (`contract.py`, version 1, same fields as the portal's; invalid answers are failures).
 - [x] Reproduce the bounded synthetic-image LoRA smoke run and capture exact environment versions.
 - [x] Agricultural trainer integration: `train.py` (TRL SFTTrainer, language-side LoRA, assistant-only labels) ran 4 steps on real pool photos, saved an adapter and report. Reproduction of the install on a clean environment is still open.
+- [x] Complete matched crop-and-condition pilot: cleaned pool, 14 classes, 700 train / 280 validation, strict JSON scoring, saved adapter and independent single-image reload check; 54 tests pass.
 - [x] Establish baseline metrics on the `tune` part ([docs/baselines.md](docs/baselines.md)): untuned LFM crop identification 5.0% with 67.8% false stops and 23.3% invalid answers; Qwen 51.2%; ConvNeXt 98.4% (shortcut-prone). Acceptance targets: the portal's #93 bars (crop identification at least 97%, false stops at most 2%, non-plants stopped at least 95%, other plants stopped at least 85%), plus the size-normalised score reported beside every result.
-- [ ] Implement and test bounded experiment supervision.
-- [ ] Run initial daytime search sessions.
+- [x] Implement/test condition-focused bounded supervision, protected fingerprints, metric recomputation, completed-worker resume, and local MLflow tracking.
+- [x] Run the initial three-candidate daytime condition search; all candidates completed, original 30-minute deadline preserved across the UI interruption.
 - [ ] Confirm the winner across three seeds and evaluate locked tests.
 - [ ] Complete error analysis, model/dataset cards, and demo.
 - [ ] Finish the complete article and verify reproduction instructions.
@@ -643,14 +646,14 @@ Use `docs/article/substack-draft.md` in the standalone repository as the working
 | Public data/adapter release permissions | Must be established per source/artifact |
 | Final deployment hardware | Unconfirmed |
 | Split handling | Decided 2026-11-11: keep existing val/test untouched, drop leaking and augmentation-named images from the training pool, report three scores (full, no-shared-size subset, size-normalised) |
-| Screening class subset | Decided 2026-11-11: the 18-class start set from the dataset audit; the other 19 reported as unsupported |
+| Screening class subset | Broader 18-class candidate set remains frozen in taxonomy v1; the active 2026-11-13 pilot uses its 14 non-rice classes with healthy examples, configured separately in `configs/condition-pilot.json` |
 | Source rights for the crop corpus and for negatives | Not established; no licence or provenance recorded, at least one image watermarked by a Philippine institute |
 | Numeric quality/rejection/latency targets | Set after baselines, before tuning |
 | Urdu output | Deferred pending separate evaluation |
 | Substack publication date | After measured results and reproducibility review |
 | Initial publication of repository files | Reviewed documentation only; consult repository history for publication state |
 | Dependency installation | Complete; pip check and CUDA passed; exact environment snapshot captured |
-| Training verification | Synthetic direct-AdamW smoke test passed; agricultural SFTTrainer pipeline still to implement and verify |
+| Training verification | Synthetic smoke, agricultural photo-check trainer, crop-only pilot, and 14-class crop–condition direct-AdamW pilot have run; field and clean-environment reproduction remain open |
 
 ## 20. Decision and update log
 
@@ -677,6 +680,8 @@ Use `docs/article/substack-draft.md` in the standalone repository as the working
 | 2026-11-11 | Train on `Check this photo.` alone and cap photos at 512 px | Shorter prompts are faster at inference; 6000x4000 photos would dominate step time and memory |
 | 2026-11-11 | Reference run: 150 steps of 16 examples (2,400 examples), rank 16, lr 2e-4, 20 min cap | Fixed work chosen from a 4-step profile; refine after the first result |
 | 2026-11-11 | Judge fine-tuned models on the size-normalised score as well as the as-is one | ref-001 fell from 88.6% to 83.0% on normalised copies (78.2% on the 179 size-ambiguous photos) while ConvNeXt held at 98.0%, so part of the LFM's first score was shortcut |
+| 2026-11-13 | Train 14 non-rice crop–condition classes from the cleaned pool, with a matched baseline | Every supported crop has healthy examples; rice lacks a healthy class. 400 LoRA steps improved joint validation accuracy from 27.5% to 87.86%; no test or field scoring |
+| 2026-11-13 | Adapt Karpathy's agent workflow to three bounded LoRA proposals and log to local MLflow | Selected LR 4e-4 / rank 8 reached 90% joint accuracy and 0.8998 macro F1. Rank 16's tiny extra F1 did not justify promotion under the fixed margin. No overnight or locked-test runs |
 
 ## 21. Sources
 

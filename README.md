@@ -4,7 +4,7 @@
 
 CropLens investigates whether [Liquid AI's LFM2.5-VL-1.6B](https://huggingface.co/LiquidAI/LFM2.5-VL-1.6B), adapted with [Unsloth](https://unsloth.ai/docs/models/tutorials/lfm2.5.md) and LoRA, can identify supported crops, reject unsuitable photos, and screen a limited set of crop conditions efficiently.
 
-> **Actual crop fine-tune completed:** the crop-only LoRA pilot improved matched 100-image validation accuracy from **53% to 86%** and macro F1 from **0.524 to 0.861**. The adapter is saved locally. These are in-corpus development results, not field or disease accuracy. See the [crop pilot](docs/crop-pilot.md).
+> **Tracked autoresearch session completed:** the selected crop–condition adapter reaches **90.0% exact accuracy / 0.8998 joint macro F1** on the same 280-image validation set, up from the fine-tuned reference's **87.86% / 0.8785** (untuned base: 27.5% / 0.2311). Three trials are recorded in local MLflow at **http://localhost:5000**. These are development results, not field accuracy. See [autoresearch + MLflow](docs/autoresearch-mlflow.md).
 
 ## The question
 
@@ -50,6 +50,8 @@ Every reported number will link to a run, data revision, evaluator, and hardware
 ## Start here
 
 - [Living project plan](fine-tuning.md): scope, phases, decision log, and current checklist.
+- [Autoresearch + MLflow](docs/autoresearch-mlflow.md): measured search results, selected adapter, experiment tracking, and UI instructions.
+- [Crop-and-condition fine-tune](docs/condition-pilot.md): latest matched evaluation, per-class results, saved adapter, and inference command.
 - [Crop-only fine-tune and inference](docs/crop-pilot.md): measured before/after results, saved adapter, and limitations.
 - [Feasibility research](docs/research/lfm-vision-feasibility.md): primary sources, support evidence, and uncertainties.
 - [Local WSL setup](docs/setup-wsl.md): verified setup, bounded smoke-test commands, and remaining agricultural training checks.
@@ -58,7 +60,7 @@ Every reported number will link to a run, data revision, evaluator, and hardware
 - [Substack article outline](docs/article/substack-outline.md): the complete teaching narrative we intend to write.
 - [Evidence journal](docs/article/evidence-journal.md): actual setup observations and the record used to support that narrative.
 
-Run the crop-only pilot with `finetune_crops.py` and single-image inference with `predict_crop.py`. Separate structured photo-check work is documented in `docs/baselines.md`. The next training extension is supported crop–condition identification using the existing cleaned pool; another exhaustive audit is not a prerequisite to that development run.
+Run the crop-and-condition trainer with `finetune_conditions.py`, the agent-guided supervisor with `condition_search.py` following `program.md`, and saved-adapter inference with `predict_condition.py`. MLflow dependencies are in `requirements-mlflow.txt`. The 14 classes cover cotton, maize, sugarcane, and wheat with healthy examples; rice remains deferred. Next is confirmation across seeds and final evaluation after selection, not an overnight search.
 
 ## Learning in public
 

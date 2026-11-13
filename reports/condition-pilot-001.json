@@ -1,0 +1,4446 @@
+{
+  "status": "complete",
+  "model": "LiquidAI/LFM2.5-VL-1.6B",
+  "revision": "919fde3d022e3f90a4716006f993938ee8c2eb97",
+  "config": {
+    "classes": [
+      "cotton_aphid",
+      "cotton_bacterial_blight",
+      "cotton_healthy",
+      "cotton_wilt",
+      "maize_armyworm",
+      "maize_common_rust",
+      "maize_gray_leaf_spot",
+      "maize_healthy",
+      "sugarcane_healthy",
+      "sugarcane_mosaic",
+      "sugarcane_red_rot",
+      "sugarcane_yellow_rust",
+      "wheat_healthy",
+      "wheat_powdery_mildew"
+    ],
+    "seed": 3407,
+    "train_per_class": 50,
+    "val_per_class": 20,
+    "steps": 400,
+    "batch": 4,
+    "learning_rate": 0.0002,
+    "rank": 8
+  },
+  "question": "Identify the crop and visible condition. Return only JSON with exactly the keys \"crop\" and \"condition\". Use one supported pair from: Cotton: aphid, bacterial_blight, healthy, wilt; Maize: armyworm, common_rust, gray_leaf_spot, healthy; Sugarcane: healthy, mosaic, red_rot, yellow_rust; Wheat: healthy, powdery_mildew. Example: {\"crop\":\"Maize\",\"condition\":\"healthy\"}.",
+  "task": "closed-set crop-condition development validation; no test/field evaluation",
+  "versions": {
+    "torch": "2.9.1+cu128",
+    "unsloth": "2026.11.3",
+    "transformers": "5.17.0",
+    "peft": "0.21.2"
+  },
+  "input_hashes": {
+    "manifest": "f3e404e075ea9289545afb080b84a54e25f5016f0407560c5ffe869a750ec6ed",
+    "cleaned_pool": "d4e15ecad7641f63193c4a49ff1b375382586dea177ced8926a21765314169c4"
+  },
+  "counts": {
+    "train": {
+      "cotton_aphid": 50,
+      "cotton_bacterial_blight": 50,
+      "cotton_healthy": 50,
+      "cotton_wilt": 50,
+      "maize_armyworm": 50,
+      "maize_common_rust": 50,
+      "maize_gray_leaf_spot": 50,
+      "maize_healthy": 50,
+      "sugarcane_healthy": 50,
+      "sugarcane_mosaic": 50,
+      "sugarcane_red_rot": 50,
+      "sugarcane_yellow_rust": 50,
+      "wheat_healthy": 50,
+      "wheat_powdery_mildew": 50
+    },
+    "val": {
+      "cotton_aphid": 20,
+      "cotton_bacterial_blight": 20,
+      "cotton_healthy": 20,
+      "cotton_wilt": 20,
+      "maize_armyworm": 20,
+      "maize_common_rust": 20,
+      "maize_gray_leaf_spot": 20,
+      "maize_healthy": 20,
+      "sugarcane_healthy": 20,
+      "sugarcane_mosaic": 20,
+      "sugarcane_red_rot": 20,
+      "sugarcane_yellow_rust": 20,
+      "wheat_healthy": 20,
+      "wheat_powdery_mildew": 20
+    }
+  },
+  "selected_images_verified": 980,
+  "elapsed_seconds": 347.323,
+  "gpu": "NVIDIA RTX 6000 Ada Generation",
+  "untuned": {
+    "crop_accuracy": 0.575,
+    "joint_accuracy": 0.275,
+    "joint_macro_f1": 0.23106974569870942,
+    "condition_macro_f1": 0.25401836775608905,
+    "per_class_recall": {
+      "cotton_aphid": 0.05,
+      "cotton_bacterial_blight": 0.15,
+      "cotton_healthy": 0.85,
+      "cotton_wilt": 0.15,
+      "maize_armyworm": 0.0,
+      "maize_common_rust": 0.7,
+      "maize_gray_leaf_spot": 0.15,
+      "maize_healthy": 0.6,
+      "sugarcane_healthy": 0.6,
+      "sugarcane_mosaic": 0.0,
+      "sugarcane_red_rot": 0.1,
+      "sugarcane_yellow_rust": 0.0,
+      "wheat_healthy": 0.0,
+      "wheat_powdery_mildew": 0.5
+    },
+    "invalid_answers": 1,
+    "confusion_labels": [
+      "cotton_aphid",
+      "cotton_bacterial_blight",
+      "cotton_healthy",
+      "cotton_wilt",
+      "maize_armyworm",
+      "maize_common_rust",
+      "maize_gray_leaf_spot",
+      "maize_healthy",
+      "sugarcane_healthy",
+      "sugarcane_mosaic",
+      "sugarcane_red_rot",
+      "sugarcane_yellow_rust",
+      "wheat_healthy",
+      "wheat_powdery_mildew",
+      "INVALID"
+    ],
+    "confusion_matrix": [
+      [
+        1,
+        0,
+        8,
+        0,
+        0,
+        0,
+        0,
+        0,
+        8,
+        2,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        3,
+        6,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        1,
+        0,
+        8,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        17,
+        0,
+        0,
+        0,
+        0,
+        1,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        10,
+        3,
+        0,
+        2,
+        0,
+        1,
+        2,
+        0,
+        0,
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        15,
+        0,
+        0,
+        1,
+        0,
+        1,
+        2,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        14,
+        0,
+        0,
+        3,
+        0,
+        0,
+        3,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        12,
+        3,
+        0,
+        1,
+        1,
+        0,
+        3,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        12,
+        8,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        8,
+        12,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        9,
+        11,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        14,
+        3,
+        2,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        2,
+        17,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        13,
+        6,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        5,
+        0,
+        2,
+        0,
+        0,
+        0,
+        2,
+        1,
+        10,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "seconds": 78.269,
+    "answers": [
+      {
+        "sha256": "2c950c866a701bb6ed9d10741899efb9347b928acde73310ff6e2370ef9ee5e3",
+        "truth": "cotton_aphid",
+        "prediction": "sugarcane_healthy",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "d1017f6093758c02133db3300258bbdf3367c69a1636608fcfc9974816b2ef05",
+        "truth": "cotton_aphid",
+        "prediction": "sugarcane_healthy",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "5a21ba92ca0d03247e57de566c23f157cdd7c9ad918a6d640bbacbbb62f6fbc0",
+        "truth": "cotton_aphid",
+        "prediction": "sugarcane_mosaic",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"mosaic\"}"
+      },
+      {
+        "sha256": "c8f12b5732d8d67b310595329b736c038ffbd6589432c9c1e281c9621ae6b050",
+        "truth": "cotton_aphid",
+        "prediction": "sugarcane_healthy",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "747a4db343aea7f13a7ec328b69027656dc1bfce654e02505c6659f045f2b390",
+        "truth": "cotton_aphid",
+        "prediction": "sugarcane_healthy",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "49817ad08597d9a6bf3b1e935b189777a1c5dbc686557d33c61e1091ef97d751",
+        "truth": "cotton_aphid",
+        "prediction": "cotton_healthy",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "b50f258d4f3dc82bf7979f8716d0eca89ac53ffe0bb77dc0b1afab7e302d30d8",
+        "truth": "cotton_aphid",
+        "prediction": "sugarcane_healthy",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "0d6238ad66950a0df9cbefc59f0ac7ced8af1ac8b43e23f872c1ed690860984c",
+        "truth": "cotton_aphid",
+        "prediction": "sugarcane_healthy",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "49f3899ef4737e22b57c813022395fbdebc79f13296328961658ceae8e38de90",
+        "truth": "cotton_aphid",
+        "prediction": "INVALID",
+        "raw": "{\"crop\":\"Cucumber\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "a4393cf6fad19707072b47b600cae2030332bd1ac33dcd99614f2650b4da4234",
+        "truth": "cotton_aphid",
+        "prediction": "cotton_aphid",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"aphid\"}"
+      },
+      {
+        "sha256": "15b4cb2b1a80e14b105c9cf3b33c054470c6120eeb09f29e105494952fbc6bc0",
+        "truth": "cotton_aphid",
+        "prediction": "cotton_healthy",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "9949599e1c78fd47cab10fedf03783c8d03bb4497ad613e5ee1599acf7505b1a",
+        "truth": "cotton_aphid",
+        "prediction": "sugarcane_healthy",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "63da6ba3bf0d3fa7a7de76a1eee06e3d3281d6e4e767b07d2886676efd7c4bd6",
+        "truth": "cotton_aphid",
+        "prediction": "sugarcane_mosaic",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"mosaic\"}"
+      },
+      {
+        "sha256": "b9b20302d5ec692a06cefeb61f724b30a627e4e950f198f36b500b32b48cf32e",
+        "truth": "cotton_aphid",
+        "prediction": "cotton_healthy",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "6f458b0f72c91e6769b5eab49c81ab469fb70ea2c5570983798778d2564cfa83",
+        "truth": "cotton_aphid",
+        "prediction": "cotton_healthy",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "5f660bb653be316f8adc70ffe8d76bbd87da89e900328935703ce2bed538379f",
+        "truth": "cotton_aphid",
+        "prediction": "cotton_healthy",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "67f58d71517aea3a524627b0ea7a6ac125b8c1c00a828aa96be0a7fd60d9de4b",
+        "truth": "cotton_aphid",
+        "prediction": "cotton_healthy",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "1edf468801d48bb71793994876d01b1c3ab22ab57bcae669c4488ca87416d6a1",
+        "truth": "cotton_aphid",
+        "prediction": "sugarcane_healthy",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "9a5c7bff8ca1d68722f428c60acab8d588e7417951bb836cf99f6354678fd0f0",
+        "truth": "cotton_aphid",
+        "prediction": "cotton_healthy",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "0d620ddf122b58238f84392982ec3970174a2e423874d8cdcdf9d8c11649b06b",
+        "truth": "cotton_aphid",
+        "prediction": "cotton_healthy",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "0c773713bd2ca6bd60864b039d93805aa1939dcb8fbf69715a0adc636b83b979",
+        "truth": "cotton_bacterial_blight",
+        "prediction": "sugarcane_healthy",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "14c3b620a8b89c209cdce61d38f96b6b6298122805f46cacc26ef624e241ec92",
+        "truth": "cotton_bacterial_blight",
+        "prediction": "sugarcane_yellow_rust",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"yellow_rust\"}"
+      },
+      {
+        "sha256": "a37037e9f1bbce8dfc2e7b76f546ab454923ccbc663a09ae8b14429ce63b2610",
+        "truth": "cotton_bacterial_blight",
+        "prediction": "cotton_healthy",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "cd9c85794d1c80b9817304db083cf05e7051f750e655b2d85bb5a7f08c31b972",
+        "truth": "cotton_bacterial_blight",
+        "prediction": "sugarcane_yellow_rust",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"yellow_rust\"}"
+      },
+      {
+        "sha256": "5724ac1109690677e54bee4ef5d924f93fb6c5d8a5baaa6e0bbfcddb708820a5",
+        "truth": "cotton_bacterial_blight",
+        "prediction": "cotton_healthy",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "05dd084f17b80ba888b8c62338e060dd3f94c290e6aad8d1e02a9d3d6d8f27e3",
+        "truth": "cotton_bacterial_blight",
+        "prediction": "cotton_healthy",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "00a26f38ae2dc3945f50edbac2bd0fb55ad32d9d9c35917104387e9589645476",
+        "truth": "cotton_bacterial_blight",
+        "prediction": "cotton_bacterial_blight",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"bacterial_blight\"}"
+      },
+      {
+        "sha256": "7c70a55203ce0a7babc30d7c144fc5da129cc239272d4ed2b413862a46917808",
+        "truth": "cotton_bacterial_blight",
+        "prediction": "sugarcane_yellow_rust",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"yellow_rust\"}"
+      },
+      {
+        "sha256": "8ea8f132290388258ce48d6f3e13cbf89dd499d9690ef2b4ef1715c2051c5448",
+        "truth": "cotton_bacterial_blight",
+        "prediction": "sugarcane_yellow_rust",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"yellow_rust\"}"
+      },
+      {
+        "sha256": "15132cb31cc642fae41fef0035e61d8a7a91ccb9965d9fb90106f5a797ed4a09",
+        "truth": "cotton_bacterial_blight",
+        "prediction": "sugarcane_yellow_rust",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"yellow_rust\"}"
+      },
+      {
+        "sha256": "c52c0044ab43b5d348756787de00c721da0d95144a03410bd2ab2a0f1fdb5ec3",
+        "truth": "cotton_bacterial_blight",
+        "prediction": "cotton_healthy",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "09b1a70a1d81e7562744c379389f50845c21a7dadc1ef52297ba0d1427875a6e",
+        "truth": "cotton_bacterial_blight",
+        "prediction": "cotton_bacterial_blight",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"bacterial_blight\"}"
+      },
+      {
+        "sha256": "3ee4f66661318e80e96c60aee042b4995549cccd7c3caee667682a099a2b9715",
+        "truth": "cotton_bacterial_blight",
+        "prediction": "sugarcane_yellow_rust",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"yellow_rust\"}"
+      },
+      {
+        "sha256": "127db29271c89aba1a03685851c16c93cfaa8ce258704db0c303745d3de2d95e",
+        "truth": "cotton_bacterial_blight",
+        "prediction": "cotton_bacterial_blight",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"bacterial_blight\"}"
+      },
+      {
+        "sha256": "f11bd48065e005712a53ed09dbd9d0d4bad55244f0856a970ae37eaa9719bc84",
+        "truth": "cotton_bacterial_blight",
+        "prediction": "cotton_healthy",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "c9f77c08b4ad84c101ba55eaaf521e06ce1f16e67438f9933100158d39495b34",
+        "truth": "cotton_bacterial_blight",
+        "prediction": "sugarcane_yellow_rust",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"yellow_rust\"}"
+      },
+      {
+        "sha256": "0b300a26b80b75ad685909a067b54315e3d948eef2232cb7117bf5b217f1e3d8",
+        "truth": "cotton_bacterial_blight",
+        "prediction": "sugarcane_healthy",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "a72d1b981befe5fde5e5f003f08ef207a532f91c1af70f21c0835e04b1fd2b6d",
+        "truth": "cotton_bacterial_blight",
+        "prediction": "sugarcane_yellow_rust",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"yellow_rust\"}"
+      },
+      {
+        "sha256": "7c7c4ab6cb60bbaa9e4cc00d5967cfb91fed812ffaaede9636c9b3d001a6cb89",
+        "truth": "cotton_bacterial_blight",
+        "prediction": "sugarcane_mosaic",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"mosaic\"}"
+      },
+      {
+        "sha256": "9405c96fc21d79a5ede718a894fe90763af15eac0ed0b5a8650a562fbcab2ef1",
+        "truth": "cotton_bacterial_blight",
+        "prediction": "cotton_healthy",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "a7caf465a2a1078d62867b3386464870a6c3b2839412154305df63a2341f322b",
+        "truth": "cotton_healthy",
+        "prediction": "maize_healthy",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "12a8febd167052123ce9985fffeaa17e6e4c6c61bfa193a03e9bda1def82212a",
+        "truth": "cotton_healthy",
+        "prediction": "cotton_healthy",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "258e7cfb3b2ac378e7b05d91c2600b4743d12aecbec902f35830f50fbb1cc0e4",
+        "truth": "cotton_healthy",
+        "prediction": "cotton_healthy",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "edafa81f2f806f3b47b5d3bf4684ca0799dbd3e1717c8c7787a25542d097fe33",
+        "truth": "cotton_healthy",
+        "prediction": "cotton_healthy",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "3d07b395eb7e10d829620d5d79d345f3caff51bd95dcb57551f0114a74cde4f7",
+        "truth": "cotton_healthy",
+        "prediction": "cotton_healthy",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "a39220a39ac235498848fb3d0f25f716a650f6b1c8fa2cd1b3e24ef8258f1d14",
+        "truth": "cotton_healthy",
+        "prediction": "sugarcane_healthy",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "034e6adb2a946f42f06b0aceebb0496abb08afa653c2afea18288fd4ea176799",
+        "truth": "cotton_healthy",
+        "prediction": "cotton_healthy",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "d905589c53e60b160ab4654adc6f332c2ebfa30bd6416a9da9acf5e31309789f",
+        "truth": "cotton_healthy",
+        "prediction": "cotton_healthy",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "3150b400a4dbfe1befe6614216fcd317673b4f091e80a6d40ed2d949dbd62a5c",
+        "truth": "cotton_healthy",
+        "prediction": "cotton_healthy",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "400dee52a841b2559ec36573a32d613606c0dfbd1e852b174843a9d50351eca2",
+        "truth": "cotton_healthy",
+        "prediction": "cotton_healthy",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "3e37a65dedc8c01642829ca540d4238be055499841b5dbb3176c2afe892a6908",
+        "truth": "cotton_healthy",
+        "prediction": "cotton_healthy",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "3b57505baad0832bb2285fab1a4e61c69f285dc6d9d9970e1d74fb966072bdcc",
+        "truth": "cotton_healthy",
+        "prediction": "cotton_healthy",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "a199c6f87a3b5163199054364e257468e15391619440009696a4981097a808d8",
+        "truth": "cotton_healthy",
+        "prediction": "cotton_healthy",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "59705a41a27409ba2c83bea198761b07cc37cce247877744b797ade2ab0af999",
+        "truth": "cotton_healthy",
+        "prediction": "cotton_healthy",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "4919ebe6a97f184cf8030d61fb28ee06676659a5eef443a2dfa78a4e3c7b8106",
+        "truth": "cotton_healthy",
+        "prediction": "cotton_healthy",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "6331a7ffb3207ffaa4d24168113bd018a8815279e30af7c860d3ee06c47f67bb",
+        "truth": "cotton_healthy",
+        "prediction": "cotton_healthy",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "dc7d3bce47ccb1a0441ed23439cac246e3c05abb9ba93f245b861d706282e49b",
+        "truth": "cotton_healthy",
+        "prediction": "cotton_healthy",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "5fde61c9e9304cb075aaed1644109e104a273cda82c360a65392c11935c38e93",
+        "truth": "cotton_healthy",
+        "prediction": "sugarcane_healthy",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "6fd0bb264267307993758f25a28342d0d6c6f0c8b0f898212173937d391d921b",
+        "truth": "cotton_healthy",
+        "prediction": "cotton_healthy",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "c2c1f94927589995bb880fe99fbaa07b70d6aa97669f9d4d61cd585abb169ef0",
+        "truth": "cotton_healthy",
+        "prediction": "cotton_healthy",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "019e5c88d8d1ade4e00c1e13374be7cad0fe1dd831dffc874a9b6d9cb5b02e53",
+        "truth": "cotton_wilt",
+        "prediction": "sugarcane_healthy",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "f17b6936da7670f50d1ffc47095958bde9b2ca82ec21c1c3a4f6b00bf0da070a",
+        "truth": "cotton_wilt",
+        "prediction": "cotton_healthy",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "2212cf9edaa029e6bc9bd4be457d114a404d0ad5e0eced4f217f5135452f2711",
+        "truth": "cotton_wilt",
+        "prediction": "cotton_healthy",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "9b701232f705c5438c5be86879da9b0fe2f02c9c07726bb089434e9d6b19e146",
+        "truth": "cotton_wilt",
+        "prediction": "maize_healthy",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "840d16687088480a386e4d6e24c855ce9cc50f5090cd1ba02305690efc7afbec",
+        "truth": "cotton_wilt",
+        "prediction": "cotton_wilt",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"wilt\"}"
+      },
+      {
+        "sha256": "506d5cb4dd00a5f698929a6c86708069a35ec093023ec9219def03015699a529",
+        "truth": "cotton_wilt",
+        "prediction": "cotton_healthy",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "f16cf6a1b7ec60db0a464bd25f5b5f80e86256b5cc490c27e581a1fb3bde523a",
+        "truth": "cotton_wilt",
+        "prediction": "sugarcane_yellow_rust",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"yellow_rust\"}"
+      },
+      {
+        "sha256": "82831ef91a86050f1945fe7386b73c96ead70d9899ade154e0a87be3c03cbcf7",
+        "truth": "cotton_wilt",
+        "prediction": "cotton_wilt",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"wilt\"}"
+      },
+      {
+        "sha256": "9cb9e358b239ee1e86b3ddd5dd28d3f8093bf8e83010ff6226ea94d6fc8b84e2",
+        "truth": "cotton_wilt",
+        "prediction": "cotton_healthy",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "2ef457cd0feec2eb478317d38d49a7c32ebe8ce971aa80c1ae160c07d9c2970f",
+        "truth": "cotton_wilt",
+        "prediction": "sugarcane_healthy",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "25273ed207f7f0e5712077d6c7f059a61feda451f1d2a4cbadaddc8471376b66",
+        "truth": "cotton_wilt",
+        "prediction": "cotton_healthy",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "a7281a515e28eec03edfcde2fe70d29fa9a157b8145d09f96a519fca30060da0",
+        "truth": "cotton_wilt",
+        "prediction": "cotton_healthy",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "97fc6be85c4e51c4224b294d85d3d02fb2778d2a37bf6d5d6bda28fc29cb0f73",
+        "truth": "cotton_wilt",
+        "prediction": "cotton_wilt",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"wilt\"}"
+      },
+      {
+        "sha256": "e390bee52fe808d678b74395b833aa7a8f58e0033ac2f74bf481982a87e41984",
+        "truth": "cotton_wilt",
+        "prediction": "cotton_healthy",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "b8ee3c96a66e11539ed15f382eaf5e36f0ede7e2e3a325a830235ba07513e6fa",
+        "truth": "cotton_wilt",
+        "prediction": "maize_common_rust",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"common_rust\"}"
+      },
+      {
+        "sha256": "684d2229a49ca00f234d374200a240b579d2f9ad866051d204efca5828630259",
+        "truth": "cotton_wilt",
+        "prediction": "cotton_healthy",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "9487c852995ec270d05a0f8a7343bd74841bfcd3b7fe70d4c869298fa7135bb1",
+        "truth": "cotton_wilt",
+        "prediction": "sugarcane_yellow_rust",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"yellow_rust\"}"
+      },
+      {
+        "sha256": "605a93ef05d9fc7c1883f8f575219994765bacc18fd6db306577c266ede59057",
+        "truth": "cotton_wilt",
+        "prediction": "cotton_healthy",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "0b6703503e95dba14044a82e6cb80d20eac1c608ebd6cd2639dffd652366d3ef",
+        "truth": "cotton_wilt",
+        "prediction": "maize_common_rust",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"common_rust\"}"
+      },
+      {
+        "sha256": "098084231a1a5a7eeaafe062c75ea1c7f008ef4c399e7bba93303016aa6270c8",
+        "truth": "cotton_wilt",
+        "prediction": "cotton_healthy",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "ffbd4c39bf28cc004484de3adec5f8f1eaaf044972ceaca4c36d9b02f3f91fde",
+        "truth": "maize_armyworm",
+        "prediction": "cotton_healthy",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "9681f7ef2aeaff062201015d67fdd6494d36fb65e79d1301fde28e7aa0098f6b",
+        "truth": "maize_armyworm",
+        "prediction": "maize_healthy",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "c65f96c36ef8ab6969a0d3d0f796aff8561e86a8bc62949e7e3c1e268afff5b7",
+        "truth": "maize_armyworm",
+        "prediction": "sugarcane_mosaic",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"mosaic\"}"
+      },
+      {
+        "sha256": "0ca01478d2e93de0d00ebbe1b7f417eef5fd9f2c00d080fcfc85b28c4da7b3f0",
+        "truth": "maize_armyworm",
+        "prediction": "cotton_healthy",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "89f84a549974eb7f37eb35a40a79d932f00cae784e0fe8f50a5161d58d2746af",
+        "truth": "maize_armyworm",
+        "prediction": "cotton_healthy",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "5a4a5ad7daf17f39b56d4b507825fd555c7db27a7d67de2c41c580e5e249faa8",
+        "truth": "maize_armyworm",
+        "prediction": "cotton_healthy",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "0ae450c41e8ad6c2a8aee7f9f9d959ed69cdfdc1bc589f90f282b8792ff7a812",
+        "truth": "maize_armyworm",
+        "prediction": "cotton_healthy",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "b852f01d0833458707de13f50967a8198c38fd697ad678f18ba2a260c2855d43",
+        "truth": "maize_armyworm",
+        "prediction": "cotton_healthy",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "5a8b772990f16f482d8bb534b22547144795521f7f8d6d527a99e205f4c75d9e",
+        "truth": "maize_armyworm",
+        "prediction": "cotton_healthy",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "b59a199f349a09efcb52329683ab4b6db6e231a6bb3a4df920901ecc2e5d18c5",
+        "truth": "maize_armyworm",
+        "prediction": "maize_common_rust",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"common_rust\"}"
+      },
+      {
+        "sha256": "a6ed446334f620146145cf490f637f7075e49e875584a1febb299305e835dd04",
+        "truth": "maize_armyworm",
+        "prediction": "cotton_healthy",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "4fd69e8bb70a5a8242ecbf33cfe0a5ed30aedb074c6299a3dbd496aa83ce48fd",
+        "truth": "maize_armyworm",
+        "prediction": "cotton_healthy",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "5a2f3100ce3a6426a0d3c039f6dfe155d04e9e6a3dd28240f47b25aa1232edd5",
+        "truth": "maize_armyworm",
+        "prediction": "cotton_healthy",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "a6796d56d92de6e4b852c73a934f1cfd13d4825b7a88adaa3bfc7bbaafa5cbc9",
+        "truth": "maize_armyworm",
+        "prediction": "cotton_healthy",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "854aa174aec4de595edf0beb4050512a2c7504679af36755beaa54a3da0b1c1c",
+        "truth": "maize_armyworm",
+        "prediction": "cotton_healthy",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "10f2632a66093a909d4458370a91cdf93d21e62b20594c7a3240e9cf66b00aee",
+        "truth": "maize_armyworm",
+        "prediction": "cotton_healthy",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "37dbdad3b189226fd4be7a28225f20a7ca1439ecdd29edf5a675dc465bc8d946",
+        "truth": "maize_armyworm",
+        "prediction": "cotton_healthy",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "10aa57203311976f487b968776d0b607b44204837c2c8baf8e458124a3f72e59",
+        "truth": "maize_armyworm",
+        "prediction": "cotton_healthy",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "6d1192d4c21691de09afedad3a956e4a848723fbd7d9e131482f6dae39d4d0bf",
+        "truth": "maize_armyworm",
+        "prediction": "sugarcane_healthy",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "05b74319be5794b067d202e997873df99bd3048fabbd9c16c872f86278bb9464",
+        "truth": "maize_armyworm",
+        "prediction": "sugarcane_healthy",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "167b02a326c12e23d3c87cf23dbe2ce17a22f0c263114a8d537d7510ee9003e0",
+        "truth": "maize_common_rust",
+        "prediction": "sugarcane_healthy",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "fdd6ab2b654f81718c8dcebe89b78f082481ed6e6775683dbc2732e84609f70d",
+        "truth": "maize_common_rust",
+        "prediction": "maize_common_rust",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"common_rust\"}"
+      },
+      {
+        "sha256": "499718bbd49e831a3ebbd162b5df8d7ac7adf9ed2ba87c776bb400aa76853a07",
+        "truth": "maize_common_rust",
+        "prediction": "maize_common_rust",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"common_rust\"}"
+      },
+      {
+        "sha256": "b6b5be653c2286322d70cd53ed5efd178f91732bbe0ac1c1e58657f7acdb13ff",
+        "truth": "maize_common_rust",
+        "prediction": "sugarcane_yellow_rust",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"yellow_rust\"}"
+      },
+      {
+        "sha256": "22171965406b1cd6284bd922f39c35c294ee78f8e92b2977bf907328bc13c735",
+        "truth": "maize_common_rust",
+        "prediction": "maize_common_rust",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"common_rust\"}"
+      },
+      {
+        "sha256": "b432485075d69aea63a1032384db0ea883f091759a02bef957cc3e1090f405dc",
+        "truth": "maize_common_rust",
+        "prediction": "maize_common_rust",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"common_rust\"}"
+      },
+      {
+        "sha256": "1c22ed5d43ad681c0a09e582536136592f3bfdeeb8f5d8a0ea31ff9f5d5d6b44",
+        "truth": "maize_common_rust",
+        "prediction": "sugarcane_yellow_rust",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"yellow_rust\"}"
+      },
+      {
+        "sha256": "9f28fc72844a65845a7a024608146f3f12559a334fda82c53f3828841e5abcee",
+        "truth": "maize_common_rust",
+        "prediction": "sugarcane_yellow_rust",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"yellow_rust\"}"
+      },
+      {
+        "sha256": "d45d6474c249eb501429785ec62adeff5b78d1bfd65388ab851a2e05ed3c457a",
+        "truth": "maize_common_rust",
+        "prediction": "maize_common_rust",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"common_rust\"}"
+      },
+      {
+        "sha256": "0726cc0b2404d3fd9d3094b22a1afaaab2908277cb8e1483e28ef6f7aa60df29",
+        "truth": "maize_common_rust",
+        "prediction": "maize_common_rust",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"common_rust\"}"
+      },
+      {
+        "sha256": "2b256b6b68823f04d6a62ff2b41237ba1c4734ea742f7d045693078b85747d5c",
+        "truth": "maize_common_rust",
+        "prediction": "maize_common_rust",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"common_rust\"}"
+      },
+      {
+        "sha256": "6dbdd896c49961fb3dd3dc34ed6a94e2c1805fd71ad0f719c6979155b5b07225",
+        "truth": "maize_common_rust",
+        "prediction": "maize_common_rust",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"common_rust\"}"
+      },
+      {
+        "sha256": "85dd8ae5efeab89319262d50e8b3c0fd65cc51d6def70ae82304c6593b6b92ca",
+        "truth": "maize_common_rust",
+        "prediction": "sugarcane_healthy",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "36782dd667cd7468297778807e9d6a7c45469fce759f9fb75e9b37227c3c944a",
+        "truth": "maize_common_rust",
+        "prediction": "maize_common_rust",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"common_rust\"}"
+      },
+      {
+        "sha256": "e0e10fc7dd99facce9340fc198915b1f960d356953d25c2ae4e09607a328d071",
+        "truth": "maize_common_rust",
+        "prediction": "maize_common_rust",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"common_rust\"}"
+      },
+      {
+        "sha256": "f10f0c664480e418dc4cc74902f5bac4be61d611c512c70fd5abe2c8a0f4619c",
+        "truth": "maize_common_rust",
+        "prediction": "maize_common_rust",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"common_rust\"}"
+      },
+      {
+        "sha256": "e8e327d91811c2148857c54b2736cd8c8480dd916eaebf244b9d821855e0b419",
+        "truth": "maize_common_rust",
+        "prediction": "maize_common_rust",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"common_rust\"}"
+      },
+      {
+        "sha256": "52ef1eb0431578b4d2d011dc951d1f8c5c128422737683c76763ae9a40f47061",
+        "truth": "maize_common_rust",
+        "prediction": "sugarcane_healthy",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "32cc25d3ade0300800697b9a2f7e95df9d91422ec627ab0d85c71239fb59f41c",
+        "truth": "maize_common_rust",
+        "prediction": "maize_common_rust",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"common_rust\"}"
+      },
+      {
+        "sha256": "6f5a324559a80c14210110ab8fe7d84909887a27916a351591d176ff0ef70080",
+        "truth": "maize_common_rust",
+        "prediction": "maize_common_rust",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"common_rust\"}"
+      },
+      {
+        "sha256": "a2d6312dc9b0f780dc2b4765ac0fe91d92c33747d236c6b75e281801c503c396",
+        "truth": "maize_gray_leaf_spot",
+        "prediction": "maize_gray_leaf_spot",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"gray_leaf_spot\"}"
+      },
+      {
+        "sha256": "da62659943d74a9b98cbaf46b0e44afda81a63414df1de40b2b29d99ff5eedb4",
+        "truth": "maize_gray_leaf_spot",
+        "prediction": "maize_common_rust",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"common_rust\"}"
+      },
+      {
+        "sha256": "10a5575ee01652c20c5051da9b6cf52a605bedbd4f28fc90523570991147d344",
+        "truth": "maize_gray_leaf_spot",
+        "prediction": "maize_common_rust",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"common_rust\"}"
+      },
+      {
+        "sha256": "ccfbe19f1549ec3a0bf3e382258cf6b1d90174f4592748c228cba30703a48f11",
+        "truth": "maize_gray_leaf_spot",
+        "prediction": "maize_gray_leaf_spot",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"gray_leaf_spot\"}"
+      },
+      {
+        "sha256": "caba9388cad8f9f0146102a2cdcd8a20ae8f5de889fdbe26eea57c0a114efca3",
+        "truth": "maize_gray_leaf_spot",
+        "prediction": "sugarcane_yellow_rust",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"yellow_rust\"}"
+      },
+      {
+        "sha256": "88c19f668f4e0e79c9e245dcae75c6d0f2043257e7a3b83d25e0e83113e6a9a4",
+        "truth": "maize_gray_leaf_spot",
+        "prediction": "sugarcane_yellow_rust",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"yellow_rust\"}"
+      },
+      {
+        "sha256": "bba95a0ca780cad406f504fac23e3ce6f74b74ee43afe854ba209e361fc2556c",
+        "truth": "maize_gray_leaf_spot",
+        "prediction": "sugarcane_healthy",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "c369af11c55c29047c4e6124d83d59febf9fb9e8e78ee4b81252070564652da2",
+        "truth": "maize_gray_leaf_spot",
+        "prediction": "maize_common_rust",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"common_rust\"}"
+      },
+      {
+        "sha256": "631d5fe6a84da23d88ab38a221d81e8f1cf7ee29e8663078ebc2b9acf70b07ff",
+        "truth": "maize_gray_leaf_spot",
+        "prediction": "maize_gray_leaf_spot",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"gray_leaf_spot\"}"
+      },
+      {
+        "sha256": "613d16e7450957e707883ed07adba7385df92d1b98341233d8b0fc875e99690c",
+        "truth": "maize_gray_leaf_spot",
+        "prediction": "maize_common_rust",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"common_rust\"}"
+      },
+      {
+        "sha256": "39dac24957e9d9df18f1f133e08985cae19115fe22b9bf4f80bd3ab5aacbea9d",
+        "truth": "maize_gray_leaf_spot",
+        "prediction": "maize_common_rust",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"common_rust\"}"
+      },
+      {
+        "sha256": "100d35a54c20348743046f84a914d14e22bc38be511eb7a60ba5cfe206876044",
+        "truth": "maize_gray_leaf_spot",
+        "prediction": "maize_common_rust",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"common_rust\"}"
+      },
+      {
+        "sha256": "728d107a0e3ccc4e103db9c7f53805bf6d8b4a893d0709c1cbd0ce0e4b255869",
+        "truth": "maize_gray_leaf_spot",
+        "prediction": "maize_common_rust",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"common_rust\"}"
+      },
+      {
+        "sha256": "fb01c7bee9e9a4000bd37421588699236bc67591eec1b9a82921ab10f1580bf1",
+        "truth": "maize_gray_leaf_spot",
+        "prediction": "maize_common_rust",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"common_rust\"}"
+      },
+      {
+        "sha256": "44e61e135f55bd9fbd1e7050dc4928731825fc014263cef684e9cbe239361879",
+        "truth": "maize_gray_leaf_spot",
+        "prediction": "maize_common_rust",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"common_rust\"}"
+      },
+      {
+        "sha256": "acbd37d0ab50a678ce537bd8313b7b810ed83f50ce1543d83a342769a74b64bc",
+        "truth": "maize_gray_leaf_spot",
+        "prediction": "sugarcane_yellow_rust",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"yellow_rust\"}"
+      },
+      {
+        "sha256": "e149bc2dd717fd47677f43b63ab35865cebbd6b91bbb19a680bc342155f391a6",
+        "truth": "maize_gray_leaf_spot",
+        "prediction": "sugarcane_mosaic",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"mosaic\"}"
+      },
+      {
+        "sha256": "9685463cb4424c3e48196ac21e8f4ed3032aa8b79ed97e4dbd180eb9684140a0",
+        "truth": "maize_gray_leaf_spot",
+        "prediction": "maize_common_rust",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"common_rust\"}"
+      },
+      {
+        "sha256": "636d67bda0d67254431d4c8a065845cc7602a4f0f92dfe7f6a6a8cad65839380",
+        "truth": "maize_gray_leaf_spot",
+        "prediction": "maize_common_rust",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"common_rust\"}"
+      },
+      {
+        "sha256": "d97b115df0f44dcd634a1edf6f6bc5eaa9ad78eecb495909924670c8d25df9e2",
+        "truth": "maize_gray_leaf_spot",
+        "prediction": "maize_common_rust",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"common_rust\"}"
+      },
+      {
+        "sha256": "7fb666becacf84c55e0b491aa7765876747d8283e20e7f9788edb4ac7a0298b4",
+        "truth": "maize_healthy",
+        "prediction": "maize_healthy",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "8d07b1e8d0c31d96ec54e8c01ab39da38a7926b62de40cf6ab54cb6318b8eb1b",
+        "truth": "maize_healthy",
+        "prediction": "maize_healthy",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "089e8a2743760d104668aa014909eb5efa11ce5a5c0837cb040192216e3062b1",
+        "truth": "maize_healthy",
+        "prediction": "maize_healthy",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "339e4325561e5b26ecd7f2285d7b46cea283785b137f11c9792f00df2601537d",
+        "truth": "maize_healthy",
+        "prediction": "sugarcane_healthy",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "7b628360869aa77dd1b4faeb0b65302e174ef5ce205a39a4c546234e3e9af354",
+        "truth": "maize_healthy",
+        "prediction": "sugarcane_healthy",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "527b4b39ec6c9bb66f8bce2c864ef0adf612e716ee41ed0457db6f980909e4ec",
+        "truth": "maize_healthy",
+        "prediction": "sugarcane_healthy",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "c1ce419099a2483419f1b858cab212fe0bc1b037075a0c434f52e0c354b4566a",
+        "truth": "maize_healthy",
+        "prediction": "sugarcane_healthy",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "e0395d61fb9a21c2cb08153717011ff8c43f7973110c4ef6c3e4d4c546165a81",
+        "truth": "maize_healthy",
+        "prediction": "sugarcane_healthy",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "50c0fb987779c78fd47f1d6068825ea46816300d9bd6dd43ad346cf88774e07e",
+        "truth": "maize_healthy",
+        "prediction": "maize_healthy",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "9d980f54f2c84d87a4d853e5284e254a45c169c555909c9305c761bcd8192be4",
+        "truth": "maize_healthy",
+        "prediction": "sugarcane_healthy",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "ae6c09fc5187f525475578d517fe2616656434f02ccaec063b27612e2e333a8e",
+        "truth": "maize_healthy",
+        "prediction": "maize_healthy",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "35d5adc337bc6353ff3ccee7140df6c161964cb8075cd5ae720474c58da9286e",
+        "truth": "maize_healthy",
+        "prediction": "maize_healthy",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "9fd7cd0d6552c33446836eaf41431c28d6fc13cc7649e98b03ae70220c350f25",
+        "truth": "maize_healthy",
+        "prediction": "maize_healthy",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "f4ac7331da7eb660d4b672e1e7d05d08e06db75a156f13e6a8f7fc0b56b1ef18",
+        "truth": "maize_healthy",
+        "prediction": "maize_healthy",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "56c2532c1e259e4b355906ed989cd01a28777175ee1308f3218df55d5b6273ac",
+        "truth": "maize_healthy",
+        "prediction": "maize_healthy",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "750ff69c15e97484ec2ad69110b422e2bb1b895b044d35329829566915e13276",
+        "truth": "maize_healthy",
+        "prediction": "maize_healthy",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "b45ed218f6282dabfa133930102a5cf007d04954c8298814b11e2e1644410111",
+        "truth": "maize_healthy",
+        "prediction": "sugarcane_healthy",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "465368519d45b5e6717d1e6d81a2c927f72e30b8ec25b51bfd753cd8b4a50e8c",
+        "truth": "maize_healthy",
+        "prediction": "maize_healthy",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "409e73751f6505090f69bfdce8ee8c59d78093fc41cc2dccf3a2c8702ee9a180",
+        "truth": "maize_healthy",
+        "prediction": "sugarcane_healthy",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "3921baa1418e79134eccc4c1722ca07ce3b875814504fb64924580bb0b878e1d",
+        "truth": "maize_healthy",
+        "prediction": "maize_healthy",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "9687b3e7bfaa01058e93a17050097605178b2e43ea728836b986794bc905f871",
+        "truth": "sugarcane_healthy",
+        "prediction": "maize_healthy",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "bd703655e9e784f9929416488dc9874e88fca0fb789e06041b20729788bffd96",
+        "truth": "sugarcane_healthy",
+        "prediction": "sugarcane_healthy",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "c24b424856c02472747e4b99287d6335190fee964e643254c0e21f2e3bd96cb6",
+        "truth": "sugarcane_healthy",
+        "prediction": "sugarcane_healthy",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "97322660225b1d8ca6816837b73fab4e26e83a91feb25e572baa7448c19efe24",
+        "truth": "sugarcane_healthy",
+        "prediction": "maize_healthy",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "b768af87b7ec170e832acea78ce15a3245706db48a01d309dee88400ad466930",
+        "truth": "sugarcane_healthy",
+        "prediction": "maize_healthy",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "7956f2fb834b9f37c6bd551b19614c86a50f2e039faa7dfb1b3a9c4f2f60f7cd",
+        "truth": "sugarcane_healthy",
+        "prediction": "maize_healthy",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "98882ee4e5cd83d0fd15544496eb50093224793900774a0b8d1723eaeadd5144",
+        "truth": "sugarcane_healthy",
+        "prediction": "sugarcane_healthy",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "f6a06202c79d5b88974057c9a0d9435d260309d6e4ac7ea54a0dd1cc5e2120dd",
+        "truth": "sugarcane_healthy",
+        "prediction": "sugarcane_healthy",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "8e268e4e781dd747203976a1feb34ca674f8f1ee7f575508ab764cda56ac472b",
+        "truth": "sugarcane_healthy",
+        "prediction": "sugarcane_healthy",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "f646af93b6712a329f80d591b4d29ca94cc9a55a80623cc43c036acec69e74bb",
+        "truth": "sugarcane_healthy",
+        "prediction": "maize_healthy",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "d762d7cd189790d2703f3dccc3cf716896246e493a696fe78a60250e5126b262",
+        "truth": "sugarcane_healthy",
+        "prediction": "sugarcane_healthy",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "e14d295a959e855082abcf4353942c74039b493fdc4cab3f92941db05e511d77",
+        "truth": "sugarcane_healthy",
+        "prediction": "sugarcane_healthy",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "8fa593b1f2f6dd8be42efcf58d5b4808cecdf55c811db3457dcd72daf64b3837",
+        "truth": "sugarcane_healthy",
+        "prediction": "sugarcane_healthy",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "08bcb2c64ee777365962a7cfde95f7efff50792a5e3d9a03550ea6d9b51e7fd8",
+        "truth": "sugarcane_healthy",
+        "prediction": "sugarcane_healthy",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "d62d314ca39626738b2e3b5940e79283f3c80f53f7f89b600dfb9ba5d1c692a7",
+        "truth": "sugarcane_healthy",
+        "prediction": "sugarcane_healthy",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "188ba07e5f68912d956439a5ea344ae277988d27d2728066eeabf3f8e23bf25a",
+        "truth": "sugarcane_healthy",
+        "prediction": "maize_healthy",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "16edcaab99403301291fddc713937db83b48fe536fe9089c89d5bf1592462557",
+        "truth": "sugarcane_healthy",
+        "prediction": "sugarcane_healthy",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "4cbd8859924a72f64a5ec3d7b7e5e5f3d246253c62ddaf74bbd074bde1592c4c",
+        "truth": "sugarcane_healthy",
+        "prediction": "maize_healthy",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "f08abdb725d2205e6d63bab3eb2a9dc8f371305627e0710d7d6b6c7f3e4191be",
+        "truth": "sugarcane_healthy",
+        "prediction": "maize_healthy",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "3bb3a6b95baf5845f2762f52a4277cb22038e47d48dbe6475a8240222b129f36",
+        "truth": "sugarcane_healthy",
+        "prediction": "sugarcane_healthy",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "5e6219a53c3b03f3fc22c7fe64753ec1618ad0437f3dcbeeb883f4e3bc70e26d",
+        "truth": "sugarcane_mosaic",
+        "prediction": "maize_healthy",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "0493bf745bf5cabab6309a78423b0c9bd7d4afa2aca2fbd35229c0e099d18ded",
+        "truth": "sugarcane_mosaic",
+        "prediction": "maize_healthy",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "55deeebd4c9c9bc2337997cadfe6291e4f516a061f13ccff7844e6d3b03b077a",
+        "truth": "sugarcane_mosaic",
+        "prediction": "maize_healthy",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "65327ff419c3d438b90aa361900c64ccc6a43a6119565e1ef0d82b6f7c5e56dc",
+        "truth": "sugarcane_mosaic",
+        "prediction": "sugarcane_healthy",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "deec8b688d3f627febd99758abf929825b662377b71c45d2426be9b2a7391c4e",
+        "truth": "sugarcane_mosaic",
+        "prediction": "sugarcane_healthy",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "18c42537653c9fec7d1883a3b54fc3c07c0d6be328003b8fce29fa54325fc029",
+        "truth": "sugarcane_mosaic",
+        "prediction": "maize_healthy",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "e0e204ddd26ac42de15afacf1302d6ef0aad59248fb95b5bd17c6ce547a63d69",
+        "truth": "sugarcane_mosaic",
+        "prediction": "sugarcane_healthy",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "3bd16d6ae1608f66e8e2b66148da525bdf8953dc3d6ec4ff68eeb82dd4d9cd17",
+        "truth": "sugarcane_mosaic",
+        "prediction": "sugarcane_healthy",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "40d3b3e436cfd052b1ec03ca131a05399e1c276516e329685e99b671e37cd223",
+        "truth": "sugarcane_mosaic",
+        "prediction": "sugarcane_healthy",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "478a9fe089fb2037e15f1891f8817f05ee680c10eb091834268e2eb1957fe6d6",
+        "truth": "sugarcane_mosaic",
+        "prediction": "maize_healthy",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "6351bc308633968bc758ddca888a96a691684780ee6dc1e9573caaaaa74b4c06",
+        "truth": "sugarcane_mosaic",
+        "prediction": "maize_healthy",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "dc36c3f52a7cf3f1c74dbdef81a2b00c761aeb52f09d960cf8c1ec8de25361c5",
+        "truth": "sugarcane_mosaic",
+        "prediction": "sugarcane_healthy",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "9e97895a2f51c5e3c512d9fb8d4abd29b0a263f11c7de8f6aaf1d803e827f735",
+        "truth": "sugarcane_mosaic",
+        "prediction": "sugarcane_healthy",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "f96ef4bfdc51d34918ac0bce4d7e5d6359704c1789c3bba3a2c5d39f2f30c3e0",
+        "truth": "sugarcane_mosaic",
+        "prediction": "sugarcane_healthy",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "e48166fa7f707cc66a6ffcdea4b5b25094f34ac2d2a2679d5c1a604057275ab7",
+        "truth": "sugarcane_mosaic",
+        "prediction": "sugarcane_healthy",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "c20fb602d9ed34f8a876e7844c2613e2bf860afdd214eb9f83373f8280c37691",
+        "truth": "sugarcane_mosaic",
+        "prediction": "maize_healthy",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "1d2a46d38d54e98fd139b4bd2781043d251c527b52c59f7a6528e09468194fe9",
+        "truth": "sugarcane_mosaic",
+        "prediction": "sugarcane_healthy",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "f55fd02d2a09a171ac5a0b225235661079845ba5fcb4ec2fe58e711d9a9af427",
+        "truth": "sugarcane_mosaic",
+        "prediction": "maize_healthy",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "48448dc85a9216110d52faf95c550f6335d4ddff4221c99ba9735356a8a3ef76",
+        "truth": "sugarcane_mosaic",
+        "prediction": "maize_healthy",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "2ba17d54acc9a13644fa7573ce00d54f189aa512e44c02fe3ce19fe210b9ace3",
+        "truth": "sugarcane_mosaic",
+        "prediction": "sugarcane_healthy",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "4fd18ac30add137d7242604f8c23b356f5dc2b389d5d8e521d40562f6f20632f",
+        "truth": "sugarcane_red_rot",
+        "prediction": "sugarcane_healthy",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "5f3831f0bf7e7cbd6b7780cddcdcd866acc6df3d27ccfaf7db69fa90f506083f",
+        "truth": "sugarcane_red_rot",
+        "prediction": "sugarcane_healthy",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "a4fbabb4e350b5c5d2a0cdca1b9e15c5a65d03a458d0ddf5b537e5340c0d6213",
+        "truth": "sugarcane_red_rot",
+        "prediction": "sugarcane_healthy",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "340527bf1aaf30ceaa092b613e864f88c308ce7c95ef054675cf02128967e9c5",
+        "truth": "sugarcane_red_rot",
+        "prediction": "sugarcane_healthy",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "13221319b8f6225032caa8c336b745aecba671ab6b0e4704ca3bd3ee8fbac2d3",
+        "truth": "sugarcane_red_rot",
+        "prediction": "sugarcane_mosaic",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"mosaic\"}"
+      },
+      {
+        "sha256": "28df6b76aeb35a06dd9075f388b5d8832b23fbc0a1f72e0d9663f1d94c0087c7",
+        "truth": "sugarcane_red_rot",
+        "prediction": "maize_common_rust",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"common_rust\"}"
+      },
+      {
+        "sha256": "fe67f8881206177c87bf9212d24f2c7af508464dbc3923793f0d73bda0c3c99a",
+        "truth": "sugarcane_red_rot",
+        "prediction": "sugarcane_healthy",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "b897ba83a70a04a669d61954aaa3c85b11810c5ed198b7c52b95d37b0ba4a9e0",
+        "truth": "sugarcane_red_rot",
+        "prediction": "sugarcane_healthy",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "bf5c685cc2b747e8518672a4226953a2011463ca7edd241366607dacd38b43f3",
+        "truth": "sugarcane_red_rot",
+        "prediction": "sugarcane_red_rot",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"red_rot\"}"
+      },
+      {
+        "sha256": "30d9e7ceac5911edbc035e2297008e7d2b8be0e9514ae4be96273eae07091bc9",
+        "truth": "sugarcane_red_rot",
+        "prediction": "sugarcane_healthy",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "590b02c9c5aa3c2d79d3f070060760c5fbfb89bcd35ff0601db4eede84f81b58",
+        "truth": "sugarcane_red_rot",
+        "prediction": "sugarcane_healthy",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "c2836b4e85161d69e30cb5ce60644f13df519468a3cf52dbba3b677a82b47eb9",
+        "truth": "sugarcane_red_rot",
+        "prediction": "sugarcane_healthy",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "1fde56c34531a2f30967f6499fef3fefa1f2df8b643f6f798a700474e2174c1e",
+        "truth": "sugarcane_red_rot",
+        "prediction": "sugarcane_healthy",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "143a53d9d4322b2d4cebb4db282828ab1054a565aebc00a262cefadaaf427fd5",
+        "truth": "sugarcane_red_rot",
+        "prediction": "sugarcane_mosaic",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"mosaic\"}"
+      },
+      {
+        "sha256": "a31cf4d00bbd1c2616bc48ef9664631251ff5613f99b71fadaa48478a25d21f9",
+        "truth": "sugarcane_red_rot",
+        "prediction": "sugarcane_mosaic",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"mosaic\"}"
+      },
+      {
+        "sha256": "29dcc0ebfed2f7cd13b66d8795bdb3ff73bc01457fd86a24fef8c8381fa6df67",
+        "truth": "sugarcane_red_rot",
+        "prediction": "sugarcane_red_rot",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"red_rot\"}"
+      },
+      {
+        "sha256": "c78f01acfb3ba1d89d99ab740e561b70ce8b802a136a5eb277ab0ab6abd2f7fc",
+        "truth": "sugarcane_red_rot",
+        "prediction": "sugarcane_healthy",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "1c2f7c6db92c3dfa389196f6845ccfc768e413a23e5e8d43087132343c00078e",
+        "truth": "sugarcane_red_rot",
+        "prediction": "sugarcane_healthy",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "3df2313ea969ac82322a24895bd6bb923fbb30e6d5db588de00a94911b3ae65b",
+        "truth": "sugarcane_red_rot",
+        "prediction": "sugarcane_healthy",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "247c343aac3b1cb74db6c88c60bfa62958ffacd732f3be2ce792d8a783b651c0",
+        "truth": "sugarcane_red_rot",
+        "prediction": "sugarcane_healthy",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "75bc41eecad0d22d665fe109f8848fd07d44b7bd8fdea3e87d9668c4f98a2080",
+        "truth": "sugarcane_yellow_rust",
+        "prediction": "sugarcane_healthy",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "1cb4727a650f8f839524fa14fed1322e845c929db05754cf7f6a3e1a99ef271a",
+        "truth": "sugarcane_yellow_rust",
+        "prediction": "sugarcane_healthy",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "29e1e8b02cae5851fd8f966a51d2fccceb498a36d7fcbf4473bb4d9b2668600b",
+        "truth": "sugarcane_yellow_rust",
+        "prediction": "sugarcane_healthy",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "c5b0d370c50c12d4b558d8695bf4bb44a639c5b9d2d5b0aa4649672e2a5402fd",
+        "truth": "sugarcane_yellow_rust",
+        "prediction": "sugarcane_healthy",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "78c0fa796892bd2e39b5bb7de0b03a3e35d94d68569f17e1e9e43f70e6a1d2d8",
+        "truth": "sugarcane_yellow_rust",
+        "prediction": "sugarcane_healthy",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "9e91586504ea54884483894a040782f4c48dc2367c65d1c892cda501f3e005ed",
+        "truth": "sugarcane_yellow_rust",
+        "prediction": "sugarcane_healthy",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "6d0aec5b349edb9ff585a4d9cee7840e66751565617d35e28fd82ad3f36d5cef",
+        "truth": "sugarcane_yellow_rust",
+        "prediction": "maize_healthy",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "26f8fc14c1f6f5a28804aeab405db3fe36df617a3547c6452e92a994e13e5a1c",
+        "truth": "sugarcane_yellow_rust",
+        "prediction": "sugarcane_healthy",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "f038514dedf6d546c477cd39ff602b0c03db8d3ff2ef8d2b17257efda36ad7d5",
+        "truth": "sugarcane_yellow_rust",
+        "prediction": "sugarcane_healthy",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "91fa94b3779a1ccba5d1e31d8cc6a8b2d23a71e751a0eb20747e2837f94cc896",
+        "truth": "sugarcane_yellow_rust",
+        "prediction": "sugarcane_healthy",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "3404781f77570b53b48dcf95e51fec47a73da5392336bb18cbb8eea1db5615ce",
+        "truth": "sugarcane_yellow_rust",
+        "prediction": "sugarcane_healthy",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "8efbc009d06575c7cffb76868dec45a6299a80eaf1e8afaa47911cf80c54ada2",
+        "truth": "sugarcane_yellow_rust",
+        "prediction": "sugarcane_healthy",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "f664538b690c42ff8ab3d97ab0950650665d9d36ccf2fe06c80a42265e340a22",
+        "truth": "sugarcane_yellow_rust",
+        "prediction": "sugarcane_healthy",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "1b13e6fb69467cccbb51706af78141f5ff25ea578b8f0b681a401bca0bd7e44b",
+        "truth": "sugarcane_yellow_rust",
+        "prediction": "sugarcane_healthy",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "19ba339e98373b6b64191d70997569a2a47528be567f6f7e5ef3d448cf1a082b",
+        "truth": "sugarcane_yellow_rust",
+        "prediction": "maize_common_rust",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"common_rust\"}"
+      },
+      {
+        "sha256": "6054af8d1d44cf88231e1aeaecdb7f7cbbb9cff848d7c157f976de256ece82fd",
+        "truth": "sugarcane_yellow_rust",
+        "prediction": "sugarcane_healthy",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "008a780c5dab1b0e575813f772d70ef103dfe96ff6ad825cae00b6b59ea27591",
+        "truth": "sugarcane_yellow_rust",
+        "prediction": "sugarcane_healthy",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "1f8590566eb7fbb170ca513f97e19db714f7c03678acdf1c471088a5e8412a9b",
+        "truth": "sugarcane_yellow_rust",
+        "prediction": "maize_healthy",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "500af7dd4039a8cdd027870d5d8719d3364716752efefb4b77efd30cab21d2f5",
+        "truth": "sugarcane_yellow_rust",
+        "prediction": "sugarcane_healthy",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "6f7904cd78ca4b1e3c4b8b8ece925f4bb77581d6304da79fbb88801c5bd3f2f7",
+        "truth": "sugarcane_yellow_rust",
+        "prediction": "sugarcane_healthy",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "2a1747bbb38ccf84bd05005eb88b43944566997610299073e4a0c9355a75c294",
+        "truth": "wheat_healthy",
+        "prediction": "sugarcane_healthy",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "6fe112a6948ae6585830a5cc6e3da7fac08a2480fa97c2123df3e01126222beb",
+        "truth": "wheat_healthy",
+        "prediction": "maize_healthy",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "6f141eae27599fbcc53f8e522487ea537df59949f4b60df82c0fd01d5d133a38",
+        "truth": "wheat_healthy",
+        "prediction": "maize_healthy",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "340fcb13ced052b3ade5a2c2b411caa34783a4d020384ff86bc664ae03601819",
+        "truth": "wheat_healthy",
+        "prediction": "maize_common_rust",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"common_rust\"}"
+      },
+      {
+        "sha256": "fe25b79ad0c7dd35cd6d568c2edb765594efc30048c7bfa087a745712c03b1dd",
+        "truth": "wheat_healthy",
+        "prediction": "maize_healthy",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "11a66c5f8cfe43a1ffe7406236a7d7c652c9a1421a038f15ca277fd7f21b6b96",
+        "truth": "wheat_healthy",
+        "prediction": "maize_healthy",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "766be0be59841c49f2901b7491a829ad8f1cac30d322661ec89d5d4f54edae2b",
+        "truth": "wheat_healthy",
+        "prediction": "maize_healthy",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "e17c95e70eac2ebeb761043ada022a335840186031a234ceb851138e7b143140",
+        "truth": "wheat_healthy",
+        "prediction": "sugarcane_healthy",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "6e83e83b5c3fb87ace523a38b589bc6c6ef333724f503ecf1c6d52881a00ca20",
+        "truth": "wheat_healthy",
+        "prediction": "maize_healthy",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "a6a0670ca3a19bc9e3d42ac4fa8f8e774cc5f40d60155de75c89b011acf84925",
+        "truth": "wheat_healthy",
+        "prediction": "maize_healthy",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "e316c1a11027d7b716c2b170f1e948422fb4894096f05c282cc6b89bb8f38d75",
+        "truth": "wheat_healthy",
+        "prediction": "sugarcane_healthy",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "68a750687506a3f39778a9c50fdd42677441135f2e199a59255a1ac1409e74e7",
+        "truth": "wheat_healthy",
+        "prediction": "maize_healthy",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "75dd2d2726eff70ba2ad96c250e0499867030aa285c500cc91f53326156ae095",
+        "truth": "wheat_healthy",
+        "prediction": "maize_healthy",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "b48e3d7d122099382b67e039056eef1c696adc1cf7c46cd2698cd1a0441d911a",
+        "truth": "wheat_healthy",
+        "prediction": "sugarcane_healthy",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "4ebd85a71bcd2c6eebfbfa3be1e9ea8a2420cb10a0d24d18053d9aca9673a52f",
+        "truth": "wheat_healthy",
+        "prediction": "maize_healthy",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "9ac414c044438fdc8c8ffa22db597fc4b60ac6c5db6c7d34695934e7da962ca1",
+        "truth": "wheat_healthy",
+        "prediction": "maize_healthy",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "fe11418328b194009ff96b9ce2e23b072dcbcabac2d1115a7468cec8b88e2b16",
+        "truth": "wheat_healthy",
+        "prediction": "maize_healthy",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "95b67747f6e54c473f2d407c8cd68ee88251b35d9815e19561e62e335a3ab9ce",
+        "truth": "wheat_healthy",
+        "prediction": "maize_healthy",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "9f01ff3873c7ae12de452e92c0f2e80b240881a458a67903afc11704c8ec4c11",
+        "truth": "wheat_healthy",
+        "prediction": "sugarcane_healthy",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "9d3e2e9b3db280f65b396f36421586eb410628c26d98a45c8d3dc865ac9f3d06",
+        "truth": "wheat_healthy",
+        "prediction": "sugarcane_healthy",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "db0c5c9f34b5056db5968a1b341ae2e533ca81601830a4a97e6ada0e1e2d8133",
+        "truth": "wheat_powdery_mildew",
+        "prediction": "wheat_powdery_mildew",
+        "raw": "{\"crop\":\"Wheat\",\"condition\":\"powdery_mildew\"}"
+      },
+      {
+        "sha256": "0cfeaa3093285401c2c65442dd3baccbe1d4b5bfce073d02f87c834e1b7c1b08",
+        "truth": "wheat_powdery_mildew",
+        "prediction": "wheat_powdery_mildew",
+        "raw": "{\"crop\":\"Wheat\",\"condition\":\"powdery_mildew\"}"
+      },
+      {
+        "sha256": "b07b2d9b551e9709e2297d9d4c5f19fd7ab3efbe39c1d2d93e9e110328ec1cd8",
+        "truth": "wheat_powdery_mildew",
+        "prediction": "maize_common_rust",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"common_rust\"}"
+      },
+      {
+        "sha256": "bf859aa453e86484d93413695e2c205b472dd33232c2e57f3cdfea24c205ad10",
+        "truth": "wheat_powdery_mildew",
+        "prediction": "wheat_powdery_mildew",
+        "raw": "{\"crop\":\"Wheat\",\"condition\":\"powdery_mildew\"}"
+      },
+      {
+        "sha256": "77cfced5bfa80b4c37393d939d5848969f506e7dedeb50a429c0ec85d5eccef9",
+        "truth": "wheat_powdery_mildew",
+        "prediction": "maize_common_rust",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"common_rust\"}"
+      },
+      {
+        "sha256": "4b6fce9a77f3f25b90a2fc2604ddfb24f876514e60dfd5adebbaffb6f6b1157c",
+        "truth": "wheat_powdery_mildew",
+        "prediction": "maize_healthy",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "ec6d9ea6f86e14d0dd59fa47c505e16219068906f8991ece763386cb648ace2f",
+        "truth": "wheat_powdery_mildew",
+        "prediction": "wheat_powdery_mildew",
+        "raw": "{\"crop\":\"Wheat\",\"condition\":\"powdery_mildew\"}"
+      },
+      {
+        "sha256": "3cb1059a806dad0f8fd2557d47de754406bbe7990b806423b9a58414a602b34f",
+        "truth": "wheat_powdery_mildew",
+        "prediction": "wheat_powdery_mildew",
+        "raw": "{\"crop\":\"Wheat\",\"condition\":\"powdery_mildew\"}"
+      },
+      {
+        "sha256": "0c60bd0ddfbe1ec67b6e4de06c09706ac9af241f861152052613d168aee2b5bb",
+        "truth": "wheat_powdery_mildew",
+        "prediction": "wheat_healthy",
+        "raw": "{\"crop\":\"Wheat\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "057a74af403a74c576167a12dcdd5b4fb6159ba2ed7957faadbfa2deb470e552",
+        "truth": "wheat_powdery_mildew",
+        "prediction": "wheat_powdery_mildew",
+        "raw": "{\"crop\":\"Wheat\",\"condition\":\"powdery_mildew\"}"
+      },
+      {
+        "sha256": "9c9cf588153a50dacd28d003281e014c331b7e9835471caf770cfdf2a0e7556d",
+        "truth": "wheat_powdery_mildew",
+        "prediction": "wheat_powdery_mildew",
+        "raw": "{\"crop\":\"Wheat\",\"condition\":\"powdery_mildew\"}"
+      },
+      {
+        "sha256": "a9a59f1dfa38eaca9779c7057dd551f532d9726e7ef58c49c023f8dcafd9a05e",
+        "truth": "wheat_powdery_mildew",
+        "prediction": "sugarcane_yellow_rust",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"yellow_rust\"}"
+      },
+      {
+        "sha256": "2a0bd3375f1543e4cc004c73b5d388222f560b10b29d09a5b8d0e67da91810c6",
+        "truth": "wheat_powdery_mildew",
+        "prediction": "maize_healthy",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "3b9259f9fcea9951595ad0f2adaf11e4e4ac931f75c8b2e0e7eff31245d33a28",
+        "truth": "wheat_powdery_mildew",
+        "prediction": "maize_common_rust",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"common_rust\"}"
+      },
+      {
+        "sha256": "9b421f8735d08e1b56d59f9c7d3d88cdbfb804d58abd1b562b45bb9a6de20961",
+        "truth": "wheat_powdery_mildew",
+        "prediction": "wheat_powdery_mildew",
+        "raw": "{\"crop\":\"Wheat\",\"condition\":\"powdery_mildew\"}"
+      },
+      {
+        "sha256": "5c81c3506de9558adf8ef32827d35e8b40f97ef0381e024a541e87ea9db14b8a",
+        "truth": "wheat_powdery_mildew",
+        "prediction": "maize_common_rust",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"common_rust\"}"
+      },
+      {
+        "sha256": "827260f169d519d8bd8a36d16c8d8fee49a64dcc209bea5bb341dc85e3c61dc1",
+        "truth": "wheat_powdery_mildew",
+        "prediction": "wheat_powdery_mildew",
+        "raw": "{\"crop\":\"Wheat\",\"condition\":\"powdery_mildew\"}"
+      },
+      {
+        "sha256": "fdc3c9ce38ad70192a0d820c4815df25ca92c552c2383e9c89fd20ca6a7ad0f3",
+        "truth": "wheat_powdery_mildew",
+        "prediction": "sugarcane_yellow_rust",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"yellow_rust\"}"
+      },
+      {
+        "sha256": "6265ad0179b1ad3703b5ba1cff23eac993deefb7020cd9ea8ad87408641b4afb",
+        "truth": "wheat_powdery_mildew",
+        "prediction": "wheat_powdery_mildew",
+        "raw": "{\"crop\":\"Wheat\",\"condition\":\"powdery_mildew\"}"
+      },
+      {
+        "sha256": "572500b9f6caa8693a97011debf6c6999939bda1508c13ab02af2cf32b8265f3",
+        "truth": "wheat_powdery_mildew",
+        "prediction": "maize_common_rust",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"common_rust\"}"
+      }
+    ]
+  },
+  "trainable_parameters": 4571136,
+  "completed_steps": 400,
+  "losses": [
+    0.2918035686016083,
+    0.14438527822494507,
+    0.18847066164016724,
+    0.08749104291200638,
+    0.2524891197681427,
+    0.06211097911000252,
+    0.26142555475234985,
+    0.21831609308719635,
+    0.1706673800945282,
+    0.06820975244045258,
+    0.11031971871852875,
+    0.11107265204191208,
+    0.17240431904792786,
+    0.09487409144639969,
+    0.12932449579238892,
+    0.10155405849218369,
+    0.058487892150878906,
+    0.08937729895114899,
+    0.1454540491104126,
+    0.029783092439174652,
+    0.06983757019042969,
+    0.06821461766958237,
+    0.1388973444700241,
+    0.20507101714611053,
+    0.1365443766117096,
+    0.1452554613351822,
+    0.135862335562706,
+    0.044494956731796265,
+    0.07024476677179337,
+    0.058559756726026535,
+    0.10955619812011719,
+    0.07631146907806396,
+    0.11957273632287979,
+    0.03958044946193695,
+    0.05403878167271614,
+    0.0399637445807457,
+    0.10573577880859375,
+    0.060977403074502945,
+    0.13532716035842896,
+    0.04886288568377495,
+    0.02956528775393963,
+    0.08839604258537292,
+    0.05059197172522545,
+    0.17105227708816528,
+    0.06128859892487526,
+    0.12927842140197754,
+    0.11874724924564362,
+    0.05325539782643318,
+    0.05255855247378349,
+    0.11230015009641647,
+    0.04566103219985962,
+    0.15313220024108887,
+    0.030525216832756996,
+    0.07081760466098785,
+    0.05527939647436142,
+    0.06319629400968552,
+    0.04754146933555603,
+    0.013491987250745296,
+    0.025577185675501823,
+    0.05966382473707199,
+    0.03219417855143547,
+    0.015865663066506386,
+    0.18971015512943268,
+    0.010195190086960793,
+    0.020892484113574028,
+    0.027632201090455055,
+    0.041798315942287445,
+    0.08346468210220337,
+    0.039867524057626724,
+    0.028085028752684593,
+    0.012883484363555908,
+    0.07428563386201859,
+    0.002751395106315613,
+    0.14343799650669098,
+    0.028955692425370216,
+    0.14294706284999847,
+    0.018222998827695847,
+    0.010807637125253677,
+    0.03452707827091217,
+    0.08677343279123306,
+    0.12104815244674683,
+    0.023853877559304237,
+    0.04827471449971199,
+    0.027263127267360687,
+    0.027704395353794098,
+    0.01719675213098526,
+    0.12864001095294952,
+    0.11394141614437103,
+    0.12678562104701996,
+    0.008030344732105732,
+    0.10248301923274994,
+    0.009444134309887886,
+    0.05341460555791855,
+    0.0099697420373559,
+    0.009477565065026283,
+    0.029096536338329315,
+    0.05006597191095352,
+    0.03132600709795952,
+    0.040006011724472046,
+    0.022921372205018997,
+    0.0057358937337994576,
+    0.03629268333315849,
+    0.02594943717122078,
+    0.09278520941734314,
+    0.18882477283477783,
+    0.028141416609287262,
+    0.03150755912065506,
+    0.027580078691244125,
+    0.03131385147571564,
+    0.03570800647139549,
+    0.06347963213920593,
+    0.032372888177633286,
+    0.01906895823776722,
+    0.053824279457330704,
+    0.011464211158454418,
+    0.020976971834897995,
+    0.07103367894887924,
+    0.04875211417675018,
+    0.06879622489213943,
+    0.05066801235079765,
+    0.08894947916269302,
+    0.03584674373269081,
+    0.0226777084171772,
+    0.09374753385782242,
+    0.013076640665531158,
+    0.04809983819723129,
+    0.04418010637164116,
+    0.023833561688661575,
+    0.009980247355997562,
+    0.10188997536897659,
+    0.027270978316664696,
+    0.10087166726589203,
+    0.018241900950670242,
+    0.039506714791059494,
+    0.053046081215143204,
+    0.025575153529644012,
+    0.03115175850689411,
+    0.012246871367096901,
+    0.042198047041893005,
+    0.011810551397502422,
+    0.047251854091882706,
+    0.01166329625993967,
+    0.03243713825941086,
+    0.029482882469892502,
+    0.06445110589265823,
+    0.19738401472568512,
+    0.04909614101052284,
+    0.11673642694950104,
+    0.015500734560191631,
+    0.004340857733041048,
+    0.045759692788124084,
+    0.0068316771648824215,
+    0.05673455446958542,
+    0.05813484638929367,
+    0.07268806546926498,
+    0.011700400151312351,
+    0.04394470527768135,
+    0.058929286897182465,
+    0.031191537156701088,
+    0.0032161809504032135,
+    0.03053944930434227,
+    0.016351623460650444,
+    0.04317512735724449,
+    0.08121098577976227,
+    0.03374349698424339,
+    0.06565346568822861,
+    0.010181212797760963,
+    0.011154630221426487,
+    0.001380388392135501,
+    0.0024543744511902332,
+    0.02412513829767704,
+    0.04699791967868805,
+    0.037021439522504807,
+    0.01000775583088398,
+    0.036231908947229385,
+    0.024463482201099396,
+    0.04457128420472145,
+    0.06792665272951126,
+    0.009019776247441769,
+    0.011188779957592487,
+    0.0023492607288062572,
+    0.01432005874812603,
+    0.00633274856954813,
+    0.060246195644140244,
+    0.026179252192378044,
+    0.04672492668032646,
+    0.07304805517196655,
+    0.08521296083927155,
+    0.010110823437571526,
+    0.02485620602965355,
+    0.015258031897246838,
+    0.0018882759613916278,
+    0.007623827550560236,
+    0.0030688615515828133,
+    0.02741287089884281,
+    0.007848474197089672,
+    0.022627901285886765,
+    0.053067781031131744,
+    0.006001621950417757,
+    0.004573375917971134,
+    0.00047974003246054053,
+    0.0007433337159454823,
+    0.013093378394842148,
+    0.010275052860379219,
+    0.0336105041205883,
+    0.00858361180871725,
+    0.0026939609088003635,
+    0.022579960525035858,
+    0.0005631838575936854,
+    0.0014862746465951204,
+    0.10824497044086456,
+    0.07646232843399048,
+    0.0013427402591332793,
+    0.006318168714642525,
+    0.08021815866231918,
+    0.10962218791246414,
+    0.0375407449901104,
+    0.0035933416802436113,
+    0.06671158224344254,
+    0.008925283327698708,
+    0.002403971739113331,
+    0.0009970288956537843,
+    0.019799984991550446,
+    0.0031566245015710592,
+    0.021985353901982307,
+    0.044659070670604706,
+    0.12004607170820236,
+    0.05144947022199631,
+    0.005885298829525709,
+    0.00364427687600255,
+    0.033708106726408005,
+    0.020136119797825813,
+    0.031024625524878502,
+    0.0052231983281672,
+    0.10025123506784439,
+    0.030282940715551376,
+    0.014489411376416683,
+    0.0027881874702870846,
+    0.017958592623472214,
+    0.13942554593086243,
+    0.004241610877215862,
+    0.04686252027750015,
+    0.0013896762393414974,
+    0.010435963049530983,
+    0.02624651975929737,
+    0.11173404008150101,
+    0.013434345833957195,
+    0.04966588690876961,
+    0.0398322269320488,
+    0.030181443318724632,
+    0.003760918276384473,
+    0.003785551292821765,
+    0.0447140634059906,
+    0.20482933521270752,
+    0.0344865508377552,
+    0.0003193891607224941,
+    0.014431306160986423,
+    0.10535144805908203,
+    0.0014739258913323283,
+    0.009543880820274353,
+    0.01746481843292713,
+    0.008276150561869144,
+    0.007306523621082306,
+    0.03968418017029762,
+    0.05260944366455078,
+    0.015150360763072968,
+    0.018139027059078217,
+    0.009266898036003113,
+    0.12242988497018814,
+    0.011638772673904896,
+    0.05523361265659332,
+    0.012163975276052952,
+    0.03264927491545677,
+    0.022886814549565315,
+    0.004394893534481525,
+    0.043938539922237396,
+    0.010633151046931744,
+    0.005791653413325548,
+    0.002126087201759219,
+    0.09666290134191513,
+    0.010940543375909328,
+    0.03944858908653259,
+    0.06759133189916611,
+    0.013491826131939888,
+    0.049719780683517456,
+    0.059493571519851685,
+    0.0013937102630734444,
+    0.029560185968875885,
+    0.052485935389995575,
+    0.031080184504389763,
+    0.04520442336797714,
+    0.015068940818309784,
+    0.016727788373827934,
+    0.0009105182834900916,
+    0.0005309264524839818,
+    0.012492740526795387,
+    0.0037689495366066694,
+    0.0025838722940534353,
+    0.014162136241793633,
+    0.01641940325498581,
+    0.0378866046667099,
+    0.036707039922475815,
+    0.007781138643622398,
+    0.009728042408823967,
+    0.060782115906476974,
+    0.02587256021797657,
+    0.03686564415693283,
+    0.020727090537548065,
+    0.0031340813729912043,
+    0.008799053728580475,
+    0.05727149173617363,
+    0.008767480030655861,
+    0.03139129653573036,
+    0.08099594712257385,
+    0.006150728091597557,
+    0.05849776789546013,
+    0.012383836321532726,
+    0.03236253187060356,
+    0.03160148113965988,
+    0.00972458254545927,
+    0.012817864306271076,
+    0.0100081292912364,
+    0.03412698209285736,
+    0.023351548239588737,
+    0.02236645668745041,
+    0.02519914135336876,
+    0.00565189216285944,
+    0.0013849432580173016,
+    0.012032346799969673,
+    0.00032329041277989745,
+    0.038201410323381424,
+    0.006863822229206562,
+    0.033374931663274765,
+    0.0022393225226551294,
+    0.0005594507092610002,
+    0.005413415841758251,
+    0.02836151234805584,
+    0.021468233317136765,
+    0.00028264825232326984,
+    0.011492031626403332,
+    0.0025605042465031147,
+    0.0032991052139550447,
+    0.002047052839770913,
+    0.0009267766727134585,
+    0.0032390179112553596,
+    0.006388247944414616,
+    0.0008193898829631507,
+    0.018217869102954865,
+    0.013672114349901676,
+    0.0003823971201200038,
+    0.006902126129716635,
+    0.0016804271144792438,
+    0.005807732697576284,
+    0.00010378799925092608,
+    0.00012804288417100906,
+    0.0002785437391139567,
+    0.0001731592055875808,
+    0.019923929125070572,
+    0.0002292259450769052,
+    0.0023758825846016407,
+    0.0024020096752792597,
+    0.047601714730262756,
+    0.0007449803524650633,
+    0.001222468912601471,
+    0.015413353219628334,
+    0.002232094295322895,
+    0.008583936840295792,
+    0.10010449588298798,
+    0.00029133795760571957,
+    0.0028703061398118734,
+    0.0024938229471445084,
+    0.0060173445381224155,
+    0.0040838997811079025,
+    0.00028817952261306345,
+    0.02719065360724926,
+    0.0024770009331405163,
+    0.10952534526586533,
+    0.0075834994204342365,
+    0.000666669278871268,
+    0.0005015101050958037,
+    0.0005696722073480487,
+    0.005098876543343067,
+    0.012941380962729454,
+    0.00014019150694366544,
+    0.00019022211199626327,
+    0.003750403178855777,
+    0.0025631024036556482,
+    0.0013756239786744118,
+    0.028356999158859253,
+    0.06287280470132828,
+    0.0253419429063797,
+    0.023187467828392982,
+    0.0009106252691708505,
+    0.0322386734187603,
+    0.0039356667548418045,
+    0.0029242222663015127,
+    0.03372141346335411,
+    0.06175253540277481,
+    0.008603128604590893,
+    0.004868548363447189
+  ],
+  "training_seconds": 114.248,
+  "adapter_saved": true,
+  "finetuned": {
+    "crop_accuracy": 0.9928571428571429,
+    "joint_accuracy": 0.8785714285714286,
+    "joint_macro_f1": 0.8784693925107729,
+    "condition_macro_f1": 0.8695065436966818,
+    "per_class_recall": {
+      "cotton_aphid": 0.7,
+      "cotton_bacterial_blight": 0.8,
+      "cotton_healthy": 1.0,
+      "cotton_wilt": 0.95,
+      "maize_armyworm": 0.95,
+      "maize_common_rust": 1.0,
+      "maize_gray_leaf_spot": 0.95,
+      "maize_healthy": 0.95,
+      "sugarcane_healthy": 1.0,
+      "sugarcane_mosaic": 0.6,
+      "sugarcane_red_rot": 0.85,
+      "sugarcane_yellow_rust": 0.6,
+      "wheat_healthy": 1.0,
+      "wheat_powdery_mildew": 0.95
+    },
+    "invalid_answers": 0,
+    "confusion_labels": [
+      "cotton_aphid",
+      "cotton_bacterial_blight",
+      "cotton_healthy",
+      "cotton_wilt",
+      "maize_armyworm",
+      "maize_common_rust",
+      "maize_gray_leaf_spot",
+      "maize_healthy",
+      "sugarcane_healthy",
+      "sugarcane_mosaic",
+      "sugarcane_red_rot",
+      "sugarcane_yellow_rust",
+      "wheat_healthy",
+      "wheat_powdery_mildew",
+      "INVALID"
+    ],
+    "confusion_matrix": [
+      [
+        14,
+        4,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        16,
+        0,
+        4,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        20,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0,
+        19,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0,
+        0,
+        19,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        20,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        19,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        19,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        20,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        7,
+        12,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        17,
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        7,
+        0,
+        1,
+        12,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        20,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        19,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "seconds": 112.364,
+    "answers": [
+      {
+        "sha256": "2c950c866a701bb6ed9d10741899efb9347b928acde73310ff6e2370ef9ee5e3",
+        "truth": "cotton_aphid",
+        "prediction": "cotton_healthy",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "d1017f6093758c02133db3300258bbdf3367c69a1636608fcfc9974816b2ef05",
+        "truth": "cotton_aphid",
+        "prediction": "cotton_aphid",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"aphid\"}"
+      },
+      {
+        "sha256": "5a21ba92ca0d03247e57de566c23f157cdd7c9ad918a6d640bbacbbb62f6fbc0",
+        "truth": "cotton_aphid",
+        "prediction": "cotton_aphid",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"aphid\"}"
+      },
+      {
+        "sha256": "c8f12b5732d8d67b310595329b736c038ffbd6589432c9c1e281c9621ae6b050",
+        "truth": "cotton_aphid",
+        "prediction": "cotton_wilt",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"wilt\"}"
+      },
+      {
+        "sha256": "747a4db343aea7f13a7ec328b69027656dc1bfce654e02505c6659f045f2b390",
+        "truth": "cotton_aphid",
+        "prediction": "cotton_aphid",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"aphid\"}"
+      },
+      {
+        "sha256": "49817ad08597d9a6bf3b1e935b189777a1c5dbc686557d33c61e1091ef97d751",
+        "truth": "cotton_aphid",
+        "prediction": "cotton_aphid",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"aphid\"}"
+      },
+      {
+        "sha256": "b50f258d4f3dc82bf7979f8716d0eca89ac53ffe0bb77dc0b1afab7e302d30d8",
+        "truth": "cotton_aphid",
+        "prediction": "cotton_aphid",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"aphid\"}"
+      },
+      {
+        "sha256": "0d6238ad66950a0df9cbefc59f0ac7ced8af1ac8b43e23f872c1ed690860984c",
+        "truth": "cotton_aphid",
+        "prediction": "cotton_aphid",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"aphid\"}"
+      },
+      {
+        "sha256": "49f3899ef4737e22b57c813022395fbdebc79f13296328961658ceae8e38de90",
+        "truth": "cotton_aphid",
+        "prediction": "cotton_bacterial_blight",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"bacterial_blight\"}"
+      },
+      {
+        "sha256": "a4393cf6fad19707072b47b600cae2030332bd1ac33dcd99614f2650b4da4234",
+        "truth": "cotton_aphid",
+        "prediction": "cotton_aphid",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"aphid\"}"
+      },
+      {
+        "sha256": "15b4cb2b1a80e14b105c9cf3b33c054470c6120eeb09f29e105494952fbc6bc0",
+        "truth": "cotton_aphid",
+        "prediction": "cotton_aphid",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"aphid\"}"
+      },
+      {
+        "sha256": "9949599e1c78fd47cab10fedf03783c8d03bb4497ad613e5ee1599acf7505b1a",
+        "truth": "cotton_aphid",
+        "prediction": "cotton_aphid",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"aphid\"}"
+      },
+      {
+        "sha256": "63da6ba3bf0d3fa7a7de76a1eee06e3d3281d6e4e767b07d2886676efd7c4bd6",
+        "truth": "cotton_aphid",
+        "prediction": "cotton_aphid",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"aphid\"}"
+      },
+      {
+        "sha256": "b9b20302d5ec692a06cefeb61f724b30a627e4e950f198f36b500b32b48cf32e",
+        "truth": "cotton_aphid",
+        "prediction": "cotton_bacterial_blight",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"bacterial_blight\"}"
+      },
+      {
+        "sha256": "6f458b0f72c91e6769b5eab49c81ab469fb70ea2c5570983798778d2564cfa83",
+        "truth": "cotton_aphid",
+        "prediction": "cotton_bacterial_blight",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"bacterial_blight\"}"
+      },
+      {
+        "sha256": "5f660bb653be316f8adc70ffe8d76bbd87da89e900328935703ce2bed538379f",
+        "truth": "cotton_aphid",
+        "prediction": "cotton_aphid",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"aphid\"}"
+      },
+      {
+        "sha256": "67f58d71517aea3a524627b0ea7a6ac125b8c1c00a828aa96be0a7fd60d9de4b",
+        "truth": "cotton_aphid",
+        "prediction": "cotton_aphid",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"aphid\"}"
+      },
+      {
+        "sha256": "1edf468801d48bb71793994876d01b1c3ab22ab57bcae669c4488ca87416d6a1",
+        "truth": "cotton_aphid",
+        "prediction": "cotton_aphid",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"aphid\"}"
+      },
+      {
+        "sha256": "9a5c7bff8ca1d68722f428c60acab8d588e7417951bb836cf99f6354678fd0f0",
+        "truth": "cotton_aphid",
+        "prediction": "cotton_aphid",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"aphid\"}"
+      },
+      {
+        "sha256": "0d620ddf122b58238f84392982ec3970174a2e423874d8cdcdf9d8c11649b06b",
+        "truth": "cotton_aphid",
+        "prediction": "cotton_bacterial_blight",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"bacterial_blight\"}"
+      },
+      {
+        "sha256": "0c773713bd2ca6bd60864b039d93805aa1939dcb8fbf69715a0adc636b83b979",
+        "truth": "cotton_bacterial_blight",
+        "prediction": "cotton_bacterial_blight",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"bacterial_blight\"}"
+      },
+      {
+        "sha256": "14c3b620a8b89c209cdce61d38f96b6b6298122805f46cacc26ef624e241ec92",
+        "truth": "cotton_bacterial_blight",
+        "prediction": "cotton_bacterial_blight",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"bacterial_blight\"}"
+      },
+      {
+        "sha256": "a37037e9f1bbce8dfc2e7b76f546ab454923ccbc663a09ae8b14429ce63b2610",
+        "truth": "cotton_bacterial_blight",
+        "prediction": "cotton_bacterial_blight",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"bacterial_blight\"}"
+      },
+      {
+        "sha256": "cd9c85794d1c80b9817304db083cf05e7051f750e655b2d85bb5a7f08c31b972",
+        "truth": "cotton_bacterial_blight",
+        "prediction": "cotton_wilt",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"wilt\"}"
+      },
+      {
+        "sha256": "5724ac1109690677e54bee4ef5d924f93fb6c5d8a5baaa6e0bbfcddb708820a5",
+        "truth": "cotton_bacterial_blight",
+        "prediction": "cotton_bacterial_blight",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"bacterial_blight\"}"
+      },
+      {
+        "sha256": "05dd084f17b80ba888b8c62338e060dd3f94c290e6aad8d1e02a9d3d6d8f27e3",
+        "truth": "cotton_bacterial_blight",
+        "prediction": "cotton_bacterial_blight",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"bacterial_blight\"}"
+      },
+      {
+        "sha256": "00a26f38ae2dc3945f50edbac2bd0fb55ad32d9d9c35917104387e9589645476",
+        "truth": "cotton_bacterial_blight",
+        "prediction": "cotton_bacterial_blight",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"bacterial_blight\"}"
+      },
+      {
+        "sha256": "7c70a55203ce0a7babc30d7c144fc5da129cc239272d4ed2b413862a46917808",
+        "truth": "cotton_bacterial_blight",
+        "prediction": "cotton_bacterial_blight",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"bacterial_blight\"}"
+      },
+      {
+        "sha256": "8ea8f132290388258ce48d6f3e13cbf89dd499d9690ef2b4ef1715c2051c5448",
+        "truth": "cotton_bacterial_blight",
+        "prediction": "cotton_bacterial_blight",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"bacterial_blight\"}"
+      },
+      {
+        "sha256": "15132cb31cc642fae41fef0035e61d8a7a91ccb9965d9fb90106f5a797ed4a09",
+        "truth": "cotton_bacterial_blight",
+        "prediction": "cotton_bacterial_blight",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"bacterial_blight\"}"
+      },
+      {
+        "sha256": "c52c0044ab43b5d348756787de00c721da0d95144a03410bd2ab2a0f1fdb5ec3",
+        "truth": "cotton_bacterial_blight",
+        "prediction": "cotton_bacterial_blight",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"bacterial_blight\"}"
+      },
+      {
+        "sha256": "09b1a70a1d81e7562744c379389f50845c21a7dadc1ef52297ba0d1427875a6e",
+        "truth": "cotton_bacterial_blight",
+        "prediction": "cotton_bacterial_blight",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"bacterial_blight\"}"
+      },
+      {
+        "sha256": "3ee4f66661318e80e96c60aee042b4995549cccd7c3caee667682a099a2b9715",
+        "truth": "cotton_bacterial_blight",
+        "prediction": "cotton_bacterial_blight",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"bacterial_blight\"}"
+      },
+      {
+        "sha256": "127db29271c89aba1a03685851c16c93cfaa8ce258704db0c303745d3de2d95e",
+        "truth": "cotton_bacterial_blight",
+        "prediction": "cotton_bacterial_blight",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"bacterial_blight\"}"
+      },
+      {
+        "sha256": "f11bd48065e005712a53ed09dbd9d0d4bad55244f0856a970ae37eaa9719bc84",
+        "truth": "cotton_bacterial_blight",
+        "prediction": "cotton_bacterial_blight",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"bacterial_blight\"}"
+      },
+      {
+        "sha256": "c9f77c08b4ad84c101ba55eaaf521e06ce1f16e67438f9933100158d39495b34",
+        "truth": "cotton_bacterial_blight",
+        "prediction": "cotton_wilt",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"wilt\"}"
+      },
+      {
+        "sha256": "0b300a26b80b75ad685909a067b54315e3d948eef2232cb7117bf5b217f1e3d8",
+        "truth": "cotton_bacterial_blight",
+        "prediction": "cotton_wilt",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"wilt\"}"
+      },
+      {
+        "sha256": "a72d1b981befe5fde5e5f003f08ef207a532f91c1af70f21c0835e04b1fd2b6d",
+        "truth": "cotton_bacterial_blight",
+        "prediction": "cotton_wilt",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"wilt\"}"
+      },
+      {
+        "sha256": "7c7c4ab6cb60bbaa9e4cc00d5967cfb91fed812ffaaede9636c9b3d001a6cb89",
+        "truth": "cotton_bacterial_blight",
+        "prediction": "cotton_bacterial_blight",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"bacterial_blight\"}"
+      },
+      {
+        "sha256": "9405c96fc21d79a5ede718a894fe90763af15eac0ed0b5a8650a562fbcab2ef1",
+        "truth": "cotton_bacterial_blight",
+        "prediction": "cotton_bacterial_blight",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"bacterial_blight\"}"
+      },
+      {
+        "sha256": "a7caf465a2a1078d62867b3386464870a6c3b2839412154305df63a2341f322b",
+        "truth": "cotton_healthy",
+        "prediction": "cotton_healthy",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "12a8febd167052123ce9985fffeaa17e6e4c6c61bfa193a03e9bda1def82212a",
+        "truth": "cotton_healthy",
+        "prediction": "cotton_healthy",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "258e7cfb3b2ac378e7b05d91c2600b4743d12aecbec902f35830f50fbb1cc0e4",
+        "truth": "cotton_healthy",
+        "prediction": "cotton_healthy",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "edafa81f2f806f3b47b5d3bf4684ca0799dbd3e1717c8c7787a25542d097fe33",
+        "truth": "cotton_healthy",
+        "prediction": "cotton_healthy",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "3d07b395eb7e10d829620d5d79d345f3caff51bd95dcb57551f0114a74cde4f7",
+        "truth": "cotton_healthy",
+        "prediction": "cotton_healthy",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "a39220a39ac235498848fb3d0f25f716a650f6b1c8fa2cd1b3e24ef8258f1d14",
+        "truth": "cotton_healthy",
+        "prediction": "cotton_healthy",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "034e6adb2a946f42f06b0aceebb0496abb08afa653c2afea18288fd4ea176799",
+        "truth": "cotton_healthy",
+        "prediction": "cotton_healthy",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "d905589c53e60b160ab4654adc6f332c2ebfa30bd6416a9da9acf5e31309789f",
+        "truth": "cotton_healthy",
+        "prediction": "cotton_healthy",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "3150b400a4dbfe1befe6614216fcd317673b4f091e80a6d40ed2d949dbd62a5c",
+        "truth": "cotton_healthy",
+        "prediction": "cotton_healthy",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "400dee52a841b2559ec36573a32d613606c0dfbd1e852b174843a9d50351eca2",
+        "truth": "cotton_healthy",
+        "prediction": "cotton_healthy",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "3e37a65dedc8c01642829ca540d4238be055499841b5dbb3176c2afe892a6908",
+        "truth": "cotton_healthy",
+        "prediction": "cotton_healthy",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "3b57505baad0832bb2285fab1a4e61c69f285dc6d9d9970e1d74fb966072bdcc",
+        "truth": "cotton_healthy",
+        "prediction": "cotton_healthy",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "a199c6f87a3b5163199054364e257468e15391619440009696a4981097a808d8",
+        "truth": "cotton_healthy",
+        "prediction": "cotton_healthy",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "59705a41a27409ba2c83bea198761b07cc37cce247877744b797ade2ab0af999",
+        "truth": "cotton_healthy",
+        "prediction": "cotton_healthy",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "4919ebe6a97f184cf8030d61fb28ee06676659a5eef443a2dfa78a4e3c7b8106",
+        "truth": "cotton_healthy",
+        "prediction": "cotton_healthy",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "6331a7ffb3207ffaa4d24168113bd018a8815279e30af7c860d3ee06c47f67bb",
+        "truth": "cotton_healthy",
+        "prediction": "cotton_healthy",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "dc7d3bce47ccb1a0441ed23439cac246e3c05abb9ba93f245b861d706282e49b",
+        "truth": "cotton_healthy",
+        "prediction": "cotton_healthy",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "5fde61c9e9304cb075aaed1644109e104a273cda82c360a65392c11935c38e93",
+        "truth": "cotton_healthy",
+        "prediction": "cotton_healthy",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "6fd0bb264267307993758f25a28342d0d6c6f0c8b0f898212173937d391d921b",
+        "truth": "cotton_healthy",
+        "prediction": "cotton_healthy",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "c2c1f94927589995bb880fe99fbaa07b70d6aa97669f9d4d61cd585abb169ef0",
+        "truth": "cotton_healthy",
+        "prediction": "cotton_healthy",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "019e5c88d8d1ade4e00c1e13374be7cad0fe1dd831dffc874a9b6d9cb5b02e53",
+        "truth": "cotton_wilt",
+        "prediction": "cotton_wilt",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"wilt\"}"
+      },
+      {
+        "sha256": "f17b6936da7670f50d1ffc47095958bde9b2ca82ec21c1c3a4f6b00bf0da070a",
+        "truth": "cotton_wilt",
+        "prediction": "cotton_wilt",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"wilt\"}"
+      },
+      {
+        "sha256": "2212cf9edaa029e6bc9bd4be457d114a404d0ad5e0eced4f217f5135452f2711",
+        "truth": "cotton_wilt",
+        "prediction": "cotton_wilt",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"wilt\"}"
+      },
+      {
+        "sha256": "9b701232f705c5438c5be86879da9b0fe2f02c9c07726bb089434e9d6b19e146",
+        "truth": "cotton_wilt",
+        "prediction": "cotton_wilt",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"wilt\"}"
+      },
+      {
+        "sha256": "840d16687088480a386e4d6e24c855ce9cc50f5090cd1ba02305690efc7afbec",
+        "truth": "cotton_wilt",
+        "prediction": "cotton_wilt",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"wilt\"}"
+      },
+      {
+        "sha256": "506d5cb4dd00a5f698929a6c86708069a35ec093023ec9219def03015699a529",
+        "truth": "cotton_wilt",
+        "prediction": "cotton_wilt",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"wilt\"}"
+      },
+      {
+        "sha256": "f16cf6a1b7ec60db0a464bd25f5b5f80e86256b5cc490c27e581a1fb3bde523a",
+        "truth": "cotton_wilt",
+        "prediction": "cotton_wilt",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"wilt\"}"
+      },
+      {
+        "sha256": "82831ef91a86050f1945fe7386b73c96ead70d9899ade154e0a87be3c03cbcf7",
+        "truth": "cotton_wilt",
+        "prediction": "cotton_wilt",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"wilt\"}"
+      },
+      {
+        "sha256": "9cb9e358b239ee1e86b3ddd5dd28d3f8093bf8e83010ff6226ea94d6fc8b84e2",
+        "truth": "cotton_wilt",
+        "prediction": "cotton_wilt",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"wilt\"}"
+      },
+      {
+        "sha256": "2ef457cd0feec2eb478317d38d49a7c32ebe8ce971aa80c1ae160c07d9c2970f",
+        "truth": "cotton_wilt",
+        "prediction": "cotton_wilt",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"wilt\"}"
+      },
+      {
+        "sha256": "25273ed207f7f0e5712077d6c7f059a61feda451f1d2a4cbadaddc8471376b66",
+        "truth": "cotton_wilt",
+        "prediction": "cotton_bacterial_blight",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"bacterial_blight\"}"
+      },
+      {
+        "sha256": "a7281a515e28eec03edfcde2fe70d29fa9a157b8145d09f96a519fca30060da0",
+        "truth": "cotton_wilt",
+        "prediction": "cotton_wilt",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"wilt\"}"
+      },
+      {
+        "sha256": "97fc6be85c4e51c4224b294d85d3d02fb2778d2a37bf6d5d6bda28fc29cb0f73",
+        "truth": "cotton_wilt",
+        "prediction": "cotton_wilt",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"wilt\"}"
+      },
+      {
+        "sha256": "e390bee52fe808d678b74395b833aa7a8f58e0033ac2f74bf481982a87e41984",
+        "truth": "cotton_wilt",
+        "prediction": "cotton_wilt",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"wilt\"}"
+      },
+      {
+        "sha256": "b8ee3c96a66e11539ed15f382eaf5e36f0ede7e2e3a325a830235ba07513e6fa",
+        "truth": "cotton_wilt",
+        "prediction": "cotton_wilt",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"wilt\"}"
+      },
+      {
+        "sha256": "684d2229a49ca00f234d374200a240b579d2f9ad866051d204efca5828630259",
+        "truth": "cotton_wilt",
+        "prediction": "cotton_wilt",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"wilt\"}"
+      },
+      {
+        "sha256": "9487c852995ec270d05a0f8a7343bd74841bfcd3b7fe70d4c869298fa7135bb1",
+        "truth": "cotton_wilt",
+        "prediction": "cotton_wilt",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"wilt\"}"
+      },
+      {
+        "sha256": "605a93ef05d9fc7c1883f8f575219994765bacc18fd6db306577c266ede59057",
+        "truth": "cotton_wilt",
+        "prediction": "cotton_wilt",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"wilt\"}"
+      },
+      {
+        "sha256": "0b6703503e95dba14044a82e6cb80d20eac1c608ebd6cd2639dffd652366d3ef",
+        "truth": "cotton_wilt",
+        "prediction": "cotton_wilt",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"wilt\"}"
+      },
+      {
+        "sha256": "098084231a1a5a7eeaafe062c75ea1c7f008ef4c399e7bba93303016aa6270c8",
+        "truth": "cotton_wilt",
+        "prediction": "cotton_wilt",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"wilt\"}"
+      },
+      {
+        "sha256": "ffbd4c39bf28cc004484de3adec5f8f1eaaf044972ceaca4c36d9b02f3f91fde",
+        "truth": "maize_armyworm",
+        "prediction": "maize_armyworm",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"armyworm\"}"
+      },
+      {
+        "sha256": "9681f7ef2aeaff062201015d67fdd6494d36fb65e79d1301fde28e7aa0098f6b",
+        "truth": "maize_armyworm",
+        "prediction": "maize_armyworm",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"armyworm\"}"
+      },
+      {
+        "sha256": "c65f96c36ef8ab6969a0d3d0f796aff8561e86a8bc62949e7e3c1e268afff5b7",
+        "truth": "maize_armyworm",
+        "prediction": "cotton_bacterial_blight",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"bacterial_blight\"}"
+      },
+      {
+        "sha256": "0ca01478d2e93de0d00ebbe1b7f417eef5fd9f2c00d080fcfc85b28c4da7b3f0",
+        "truth": "maize_armyworm",
+        "prediction": "maize_armyworm",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"armyworm\"}"
+      },
+      {
+        "sha256": "89f84a549974eb7f37eb35a40a79d932f00cae784e0fe8f50a5161d58d2746af",
+        "truth": "maize_armyworm",
+        "prediction": "maize_armyworm",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"armyworm\"}"
+      },
+      {
+        "sha256": "5a4a5ad7daf17f39b56d4b507825fd555c7db27a7d67de2c41c580e5e249faa8",
+        "truth": "maize_armyworm",
+        "prediction": "maize_armyworm",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"armyworm\"}"
+      },
+      {
+        "sha256": "0ae450c41e8ad6c2a8aee7f9f9d959ed69cdfdc1bc589f90f282b8792ff7a812",
+        "truth": "maize_armyworm",
+        "prediction": "maize_armyworm",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"armyworm\"}"
+      },
+      {
+        "sha256": "b852f01d0833458707de13f50967a8198c38fd697ad678f18ba2a260c2855d43",
+        "truth": "maize_armyworm",
+        "prediction": "maize_armyworm",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"armyworm\"}"
+      },
+      {
+        "sha256": "5a8b772990f16f482d8bb534b22547144795521f7f8d6d527a99e205f4c75d9e",
+        "truth": "maize_armyworm",
+        "prediction": "maize_armyworm",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"armyworm\"}"
+      },
+      {
+        "sha256": "b59a199f349a09efcb52329683ab4b6db6e231a6bb3a4df920901ecc2e5d18c5",
+        "truth": "maize_armyworm",
+        "prediction": "maize_armyworm",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"armyworm\"}"
+      },
+      {
+        "sha256": "a6ed446334f620146145cf490f637f7075e49e875584a1febb299305e835dd04",
+        "truth": "maize_armyworm",
+        "prediction": "maize_armyworm",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"armyworm\"}"
+      },
+      {
+        "sha256": "4fd69e8bb70a5a8242ecbf33cfe0a5ed30aedb074c6299a3dbd496aa83ce48fd",
+        "truth": "maize_armyworm",
+        "prediction": "maize_armyworm",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"armyworm\"}"
+      },
+      {
+        "sha256": "5a2f3100ce3a6426a0d3c039f6dfe155d04e9e6a3dd28240f47b25aa1232edd5",
+        "truth": "maize_armyworm",
+        "prediction": "maize_armyworm",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"armyworm\"}"
+      },
+      {
+        "sha256": "a6796d56d92de6e4b852c73a934f1cfd13d4825b7a88adaa3bfc7bbaafa5cbc9",
+        "truth": "maize_armyworm",
+        "prediction": "maize_armyworm",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"armyworm\"}"
+      },
+      {
+        "sha256": "854aa174aec4de595edf0beb4050512a2c7504679af36755beaa54a3da0b1c1c",
+        "truth": "maize_armyworm",
+        "prediction": "maize_armyworm",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"armyworm\"}"
+      },
+      {
+        "sha256": "10f2632a66093a909d4458370a91cdf93d21e62b20594c7a3240e9cf66b00aee",
+        "truth": "maize_armyworm",
+        "prediction": "maize_armyworm",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"armyworm\"}"
+      },
+      {
+        "sha256": "37dbdad3b189226fd4be7a28225f20a7ca1439ecdd29edf5a675dc465bc8d946",
+        "truth": "maize_armyworm",
+        "prediction": "maize_armyworm",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"armyworm\"}"
+      },
+      {
+        "sha256": "10aa57203311976f487b968776d0b607b44204837c2c8baf8e458124a3f72e59",
+        "truth": "maize_armyworm",
+        "prediction": "maize_armyworm",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"armyworm\"}"
+      },
+      {
+        "sha256": "6d1192d4c21691de09afedad3a956e4a848723fbd7d9e131482f6dae39d4d0bf",
+        "truth": "maize_armyworm",
+        "prediction": "maize_armyworm",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"armyworm\"}"
+      },
+      {
+        "sha256": "05b74319be5794b067d202e997873df99bd3048fabbd9c16c872f86278bb9464",
+        "truth": "maize_armyworm",
+        "prediction": "maize_armyworm",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"armyworm\"}"
+      },
+      {
+        "sha256": "167b02a326c12e23d3c87cf23dbe2ce17a22f0c263114a8d537d7510ee9003e0",
+        "truth": "maize_common_rust",
+        "prediction": "maize_common_rust",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"common_rust\"}"
+      },
+      {
+        "sha256": "fdd6ab2b654f81718c8dcebe89b78f082481ed6e6775683dbc2732e84609f70d",
+        "truth": "maize_common_rust",
+        "prediction": "maize_common_rust",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"common_rust\"}"
+      },
+      {
+        "sha256": "499718bbd49e831a3ebbd162b5df8d7ac7adf9ed2ba87c776bb400aa76853a07",
+        "truth": "maize_common_rust",
+        "prediction": "maize_common_rust",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"common_rust\"}"
+      },
+      {
+        "sha256": "b6b5be653c2286322d70cd53ed5efd178f91732bbe0ac1c1e58657f7acdb13ff",
+        "truth": "maize_common_rust",
+        "prediction": "maize_common_rust",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"common_rust\"}"
+      },
+      {
+        "sha256": "22171965406b1cd6284bd922f39c35c294ee78f8e92b2977bf907328bc13c735",
+        "truth": "maize_common_rust",
+        "prediction": "maize_common_rust",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"common_rust\"}"
+      },
+      {
+        "sha256": "b432485075d69aea63a1032384db0ea883f091759a02bef957cc3e1090f405dc",
+        "truth": "maize_common_rust",
+        "prediction": "maize_common_rust",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"common_rust\"}"
+      },
+      {
+        "sha256": "1c22ed5d43ad681c0a09e582536136592f3bfdeeb8f5d8a0ea31ff9f5d5d6b44",
+        "truth": "maize_common_rust",
+        "prediction": "maize_common_rust",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"common_rust\"}"
+      },
+      {
+        "sha256": "9f28fc72844a65845a7a024608146f3f12559a334fda82c53f3828841e5abcee",
+        "truth": "maize_common_rust",
+        "prediction": "maize_common_rust",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"common_rust\"}"
+      },
+      {
+        "sha256": "d45d6474c249eb501429785ec62adeff5b78d1bfd65388ab851a2e05ed3c457a",
+        "truth": "maize_common_rust",
+        "prediction": "maize_common_rust",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"common_rust\"}"
+      },
+      {
+        "sha256": "0726cc0b2404d3fd9d3094b22a1afaaab2908277cb8e1483e28ef6f7aa60df29",
+        "truth": "maize_common_rust",
+        "prediction": "maize_common_rust",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"common_rust\"}"
+      },
+      {
+        "sha256": "2b256b6b68823f04d6a62ff2b41237ba1c4734ea742f7d045693078b85747d5c",
+        "truth": "maize_common_rust",
+        "prediction": "maize_common_rust",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"common_rust\"}"
+      },
+      {
+        "sha256": "6dbdd896c49961fb3dd3dc34ed6a94e2c1805fd71ad0f719c6979155b5b07225",
+        "truth": "maize_common_rust",
+        "prediction": "maize_common_rust",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"common_rust\"}"
+      },
+      {
+        "sha256": "85dd8ae5efeab89319262d50e8b3c0fd65cc51d6def70ae82304c6593b6b92ca",
+        "truth": "maize_common_rust",
+        "prediction": "maize_common_rust",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"common_rust\"}"
+      },
+      {
+        "sha256": "36782dd667cd7468297778807e9d6a7c45469fce759f9fb75e9b37227c3c944a",
+        "truth": "maize_common_rust",
+        "prediction": "maize_common_rust",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"common_rust\"}"
+      },
+      {
+        "sha256": "e0e10fc7dd99facce9340fc198915b1f960d356953d25c2ae4e09607a328d071",
+        "truth": "maize_common_rust",
+        "prediction": "maize_common_rust",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"common_rust\"}"
+      },
+      {
+        "sha256": "f10f0c664480e418dc4cc74902f5bac4be61d611c512c70fd5abe2c8a0f4619c",
+        "truth": "maize_common_rust",
+        "prediction": "maize_common_rust",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"common_rust\"}"
+      },
+      {
+        "sha256": "e8e327d91811c2148857c54b2736cd8c8480dd916eaebf244b9d821855e0b419",
+        "truth": "maize_common_rust",
+        "prediction": "maize_common_rust",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"common_rust\"}"
+      },
+      {
+        "sha256": "52ef1eb0431578b4d2d011dc951d1f8c5c128422737683c76763ae9a40f47061",
+        "truth": "maize_common_rust",
+        "prediction": "maize_common_rust",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"common_rust\"}"
+      },
+      {
+        "sha256": "32cc25d3ade0300800697b9a2f7e95df9d91422ec627ab0d85c71239fb59f41c",
+        "truth": "maize_common_rust",
+        "prediction": "maize_common_rust",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"common_rust\"}"
+      },
+      {
+        "sha256": "6f5a324559a80c14210110ab8fe7d84909887a27916a351591d176ff0ef70080",
+        "truth": "maize_common_rust",
+        "prediction": "maize_common_rust",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"common_rust\"}"
+      },
+      {
+        "sha256": "a2d6312dc9b0f780dc2b4765ac0fe91d92c33747d236c6b75e281801c503c396",
+        "truth": "maize_gray_leaf_spot",
+        "prediction": "maize_gray_leaf_spot",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"gray_leaf_spot\"}"
+      },
+      {
+        "sha256": "da62659943d74a9b98cbaf46b0e44afda81a63414df1de40b2b29d99ff5eedb4",
+        "truth": "maize_gray_leaf_spot",
+        "prediction": "maize_gray_leaf_spot",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"gray_leaf_spot\"}"
+      },
+      {
+        "sha256": "10a5575ee01652c20c5051da9b6cf52a605bedbd4f28fc90523570991147d344",
+        "truth": "maize_gray_leaf_spot",
+        "prediction": "maize_gray_leaf_spot",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"gray_leaf_spot\"}"
+      },
+      {
+        "sha256": "ccfbe19f1549ec3a0bf3e382258cf6b1d90174f4592748c228cba30703a48f11",
+        "truth": "maize_gray_leaf_spot",
+        "prediction": "maize_gray_leaf_spot",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"gray_leaf_spot\"}"
+      },
+      {
+        "sha256": "caba9388cad8f9f0146102a2cdcd8a20ae8f5de889fdbe26eea57c0a114efca3",
+        "truth": "maize_gray_leaf_spot",
+        "prediction": "maize_gray_leaf_spot",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"gray_leaf_spot\"}"
+      },
+      {
+        "sha256": "88c19f668f4e0e79c9e245dcae75c6d0f2043257e7a3b83d25e0e83113e6a9a4",
+        "truth": "maize_gray_leaf_spot",
+        "prediction": "maize_gray_leaf_spot",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"gray_leaf_spot\"}"
+      },
+      {
+        "sha256": "bba95a0ca780cad406f504fac23e3ce6f74b74ee43afe854ba209e361fc2556c",
+        "truth": "maize_gray_leaf_spot",
+        "prediction": "maize_gray_leaf_spot",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"gray_leaf_spot\"}"
+      },
+      {
+        "sha256": "c369af11c55c29047c4e6124d83d59febf9fb9e8e78ee4b81252070564652da2",
+        "truth": "maize_gray_leaf_spot",
+        "prediction": "maize_gray_leaf_spot",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"gray_leaf_spot\"}"
+      },
+      {
+        "sha256": "631d5fe6a84da23d88ab38a221d81e8f1cf7ee29e8663078ebc2b9acf70b07ff",
+        "truth": "maize_gray_leaf_spot",
+        "prediction": "maize_gray_leaf_spot",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"gray_leaf_spot\"}"
+      },
+      {
+        "sha256": "613d16e7450957e707883ed07adba7385df92d1b98341233d8b0fc875e99690c",
+        "truth": "maize_gray_leaf_spot",
+        "prediction": "maize_gray_leaf_spot",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"gray_leaf_spot\"}"
+      },
+      {
+        "sha256": "39dac24957e9d9df18f1f133e08985cae19115fe22b9bf4f80bd3ab5aacbea9d",
+        "truth": "maize_gray_leaf_spot",
+        "prediction": "maize_gray_leaf_spot",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"gray_leaf_spot\"}"
+      },
+      {
+        "sha256": "100d35a54c20348743046f84a914d14e22bc38be511eb7a60ba5cfe206876044",
+        "truth": "maize_gray_leaf_spot",
+        "prediction": "maize_gray_leaf_spot",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"gray_leaf_spot\"}"
+      },
+      {
+        "sha256": "728d107a0e3ccc4e103db9c7f53805bf6d8b4a893d0709c1cbd0ce0e4b255869",
+        "truth": "maize_gray_leaf_spot",
+        "prediction": "maize_gray_leaf_spot",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"gray_leaf_spot\"}"
+      },
+      {
+        "sha256": "fb01c7bee9e9a4000bd37421588699236bc67591eec1b9a82921ab10f1580bf1",
+        "truth": "maize_gray_leaf_spot",
+        "prediction": "maize_gray_leaf_spot",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"gray_leaf_spot\"}"
+      },
+      {
+        "sha256": "44e61e135f55bd9fbd1e7050dc4928731825fc014263cef684e9cbe239361879",
+        "truth": "maize_gray_leaf_spot",
+        "prediction": "maize_gray_leaf_spot",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"gray_leaf_spot\"}"
+      },
+      {
+        "sha256": "acbd37d0ab50a678ce537bd8313b7b810ed83f50ce1543d83a342769a74b64bc",
+        "truth": "maize_gray_leaf_spot",
+        "prediction": "maize_gray_leaf_spot",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"gray_leaf_spot\"}"
+      },
+      {
+        "sha256": "e149bc2dd717fd47677f43b63ab35865cebbd6b91bbb19a680bc342155f391a6",
+        "truth": "maize_gray_leaf_spot",
+        "prediction": "maize_common_rust",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"common_rust\"}"
+      },
+      {
+        "sha256": "9685463cb4424c3e48196ac21e8f4ed3032aa8b79ed97e4dbd180eb9684140a0",
+        "truth": "maize_gray_leaf_spot",
+        "prediction": "maize_gray_leaf_spot",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"gray_leaf_spot\"}"
+      },
+      {
+        "sha256": "636d67bda0d67254431d4c8a065845cc7602a4f0f92dfe7f6a6a8cad65839380",
+        "truth": "maize_gray_leaf_spot",
+        "prediction": "maize_gray_leaf_spot",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"gray_leaf_spot\"}"
+      },
+      {
+        "sha256": "d97b115df0f44dcd634a1edf6f6bc5eaa9ad78eecb495909924670c8d25df9e2",
+        "truth": "maize_gray_leaf_spot",
+        "prediction": "maize_gray_leaf_spot",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"gray_leaf_spot\"}"
+      },
+      {
+        "sha256": "7fb666becacf84c55e0b491aa7765876747d8283e20e7f9788edb4ac7a0298b4",
+        "truth": "maize_healthy",
+        "prediction": "maize_healthy",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "8d07b1e8d0c31d96ec54e8c01ab39da38a7926b62de40cf6ab54cb6318b8eb1b",
+        "truth": "maize_healthy",
+        "prediction": "maize_healthy",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "089e8a2743760d104668aa014909eb5efa11ce5a5c0837cb040192216e3062b1",
+        "truth": "maize_healthy",
+        "prediction": "maize_healthy",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "339e4325561e5b26ecd7f2285d7b46cea283785b137f11c9792f00df2601537d",
+        "truth": "maize_healthy",
+        "prediction": "maize_healthy",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "7b628360869aa77dd1b4faeb0b65302e174ef5ce205a39a4c546234e3e9af354",
+        "truth": "maize_healthy",
+        "prediction": "maize_healthy",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "527b4b39ec6c9bb66f8bce2c864ef0adf612e716ee41ed0457db6f980909e4ec",
+        "truth": "maize_healthy",
+        "prediction": "maize_healthy",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "c1ce419099a2483419f1b858cab212fe0bc1b037075a0c434f52e0c354b4566a",
+        "truth": "maize_healthy",
+        "prediction": "maize_healthy",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "e0395d61fb9a21c2cb08153717011ff8c43f7973110c4ef6c3e4d4c546165a81",
+        "truth": "maize_healthy",
+        "prediction": "maize_healthy",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "50c0fb987779c78fd47f1d6068825ea46816300d9bd6dd43ad346cf88774e07e",
+        "truth": "maize_healthy",
+        "prediction": "maize_healthy",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "9d980f54f2c84d87a4d853e5284e254a45c169c555909c9305c761bcd8192be4",
+        "truth": "maize_healthy",
+        "prediction": "maize_healthy",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "ae6c09fc5187f525475578d517fe2616656434f02ccaec063b27612e2e333a8e",
+        "truth": "maize_healthy",
+        "prediction": "maize_healthy",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "35d5adc337bc6353ff3ccee7140df6c161964cb8075cd5ae720474c58da9286e",
+        "truth": "maize_healthy",
+        "prediction": "maize_healthy",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "9fd7cd0d6552c33446836eaf41431c28d6fc13cc7649e98b03ae70220c350f25",
+        "truth": "maize_healthy",
+        "prediction": "maize_healthy",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "f4ac7331da7eb660d4b672e1e7d05d08e06db75a156f13e6a8f7fc0b56b1ef18",
+        "truth": "maize_healthy",
+        "prediction": "maize_healthy",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "56c2532c1e259e4b355906ed989cd01a28777175ee1308f3218df55d5b6273ac",
+        "truth": "maize_healthy",
+        "prediction": "maize_healthy",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "750ff69c15e97484ec2ad69110b422e2bb1b895b044d35329829566915e13276",
+        "truth": "maize_healthy",
+        "prediction": "maize_healthy",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "b45ed218f6282dabfa133930102a5cf007d04954c8298814b11e2e1644410111",
+        "truth": "maize_healthy",
+        "prediction": "maize_healthy",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "465368519d45b5e6717d1e6d81a2c927f72e30b8ec25b51bfd753cd8b4a50e8c",
+        "truth": "maize_healthy",
+        "prediction": "maize_healthy",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "409e73751f6505090f69bfdce8ee8c59d78093fc41cc2dccf3a2c8702ee9a180",
+        "truth": "maize_healthy",
+        "prediction": "cotton_healthy",
+        "raw": "{\"crop\":\"Cotton\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "3921baa1418e79134eccc4c1722ca07ce3b875814504fb64924580bb0b878e1d",
+        "truth": "maize_healthy",
+        "prediction": "maize_healthy",
+        "raw": "{\"crop\":\"Maize\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "9687b3e7bfaa01058e93a17050097605178b2e43ea728836b986794bc905f871",
+        "truth": "sugarcane_healthy",
+        "prediction": "sugarcane_healthy",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "bd703655e9e784f9929416488dc9874e88fca0fb789e06041b20729788bffd96",
+        "truth": "sugarcane_healthy",
+        "prediction": "sugarcane_healthy",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "c24b424856c02472747e4b99287d6335190fee964e643254c0e21f2e3bd96cb6",
+        "truth": "sugarcane_healthy",
+        "prediction": "sugarcane_healthy",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "97322660225b1d8ca6816837b73fab4e26e83a91feb25e572baa7448c19efe24",
+        "truth": "sugarcane_healthy",
+        "prediction": "sugarcane_healthy",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "b768af87b7ec170e832acea78ce15a3245706db48a01d309dee88400ad466930",
+        "truth": "sugarcane_healthy",
+        "prediction": "sugarcane_healthy",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "7956f2fb834b9f37c6bd551b19614c86a50f2e039faa7dfb1b3a9c4f2f60f7cd",
+        "truth": "sugarcane_healthy",
+        "prediction": "sugarcane_healthy",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "98882ee4e5cd83d0fd15544496eb50093224793900774a0b8d1723eaeadd5144",
+        "truth": "sugarcane_healthy",
+        "prediction": "sugarcane_healthy",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "f6a06202c79d5b88974057c9a0d9435d260309d6e4ac7ea54a0dd1cc5e2120dd",
+        "truth": "sugarcane_healthy",
+        "prediction": "sugarcane_healthy",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "8e268e4e781dd747203976a1feb34ca674f8f1ee7f575508ab764cda56ac472b",
+        "truth": "sugarcane_healthy",
+        "prediction": "sugarcane_healthy",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "f646af93b6712a329f80d591b4d29ca94cc9a55a80623cc43c036acec69e74bb",
+        "truth": "sugarcane_healthy",
+        "prediction": "sugarcane_healthy",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "d762d7cd189790d2703f3dccc3cf716896246e493a696fe78a60250e5126b262",
+        "truth": "sugarcane_healthy",
+        "prediction": "sugarcane_healthy",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "e14d295a959e855082abcf4353942c74039b493fdc4cab3f92941db05e511d77",
+        "truth": "sugarcane_healthy",
+        "prediction": "sugarcane_healthy",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "8fa593b1f2f6dd8be42efcf58d5b4808cecdf55c811db3457dcd72daf64b3837",
+        "truth": "sugarcane_healthy",
+        "prediction": "sugarcane_healthy",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "08bcb2c64ee777365962a7cfde95f7efff50792a5e3d9a03550ea6d9b51e7fd8",
+        "truth": "sugarcane_healthy",
+        "prediction": "sugarcane_healthy",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "d62d314ca39626738b2e3b5940e79283f3c80f53f7f89b600dfb9ba5d1c692a7",
+        "truth": "sugarcane_healthy",
+        "prediction": "sugarcane_healthy",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "188ba07e5f68912d956439a5ea344ae277988d27d2728066eeabf3f8e23bf25a",
+        "truth": "sugarcane_healthy",
+        "prediction": "sugarcane_healthy",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "16edcaab99403301291fddc713937db83b48fe536fe9089c89d5bf1592462557",
+        "truth": "sugarcane_healthy",
+        "prediction": "sugarcane_healthy",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "4cbd8859924a72f64a5ec3d7b7e5e5f3d246253c62ddaf74bbd074bde1592c4c",
+        "truth": "sugarcane_healthy",
+        "prediction": "sugarcane_healthy",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "f08abdb725d2205e6d63bab3eb2a9dc8f371305627e0710d7d6b6c7f3e4191be",
+        "truth": "sugarcane_healthy",
+        "prediction": "sugarcane_healthy",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "3bb3a6b95baf5845f2762f52a4277cb22038e47d48dbe6475a8240222b129f36",
+        "truth": "sugarcane_healthy",
+        "prediction": "sugarcane_healthy",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "5e6219a53c3b03f3fc22c7fe64753ec1618ad0437f3dcbeeb883f4e3bc70e26d",
+        "truth": "sugarcane_mosaic",
+        "prediction": "sugarcane_healthy",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "0493bf745bf5cabab6309a78423b0c9bd7d4afa2aca2fbd35229c0e099d18ded",
+        "truth": "sugarcane_mosaic",
+        "prediction": "sugarcane_mosaic",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"mosaic\"}"
+      },
+      {
+        "sha256": "55deeebd4c9c9bc2337997cadfe6291e4f516a061f13ccff7844e6d3b03b077a",
+        "truth": "sugarcane_mosaic",
+        "prediction": "sugarcane_mosaic",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"mosaic\"}"
+      },
+      {
+        "sha256": "65327ff419c3d438b90aa361900c64ccc6a43a6119565e1ef0d82b6f7c5e56dc",
+        "truth": "sugarcane_mosaic",
+        "prediction": "sugarcane_mosaic",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"mosaic\"}"
+      },
+      {
+        "sha256": "deec8b688d3f627febd99758abf929825b662377b71c45d2426be9b2a7391c4e",
+        "truth": "sugarcane_mosaic",
+        "prediction": "sugarcane_yellow_rust",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"yellow_rust\"}"
+      },
+      {
+        "sha256": "18c42537653c9fec7d1883a3b54fc3c07c0d6be328003b8fce29fa54325fc029",
+        "truth": "sugarcane_mosaic",
+        "prediction": "sugarcane_mosaic",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"mosaic\"}"
+      },
+      {
+        "sha256": "e0e204ddd26ac42de15afacf1302d6ef0aad59248fb95b5bd17c6ce547a63d69",
+        "truth": "sugarcane_mosaic",
+        "prediction": "sugarcane_mosaic",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"mosaic\"}"
+      },
+      {
+        "sha256": "3bd16d6ae1608f66e8e2b66148da525bdf8953dc3d6ec4ff68eeb82dd4d9cd17",
+        "truth": "sugarcane_mosaic",
+        "prediction": "sugarcane_mosaic",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"mosaic\"}"
+      },
+      {
+        "sha256": "40d3b3e436cfd052b1ec03ca131a05399e1c276516e329685e99b671e37cd223",
+        "truth": "sugarcane_mosaic",
+        "prediction": "sugarcane_mosaic",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"mosaic\"}"
+      },
+      {
+        "sha256": "478a9fe089fb2037e15f1891f8817f05ee680c10eb091834268e2eb1957fe6d6",
+        "truth": "sugarcane_mosaic",
+        "prediction": "sugarcane_healthy",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "6351bc308633968bc758ddca888a96a691684780ee6dc1e9573caaaaa74b4c06",
+        "truth": "sugarcane_mosaic",
+        "prediction": "sugarcane_healthy",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "dc36c3f52a7cf3f1c74dbdef81a2b00c761aeb52f09d960cf8c1ec8de25361c5",
+        "truth": "sugarcane_mosaic",
+        "prediction": "sugarcane_mosaic",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"mosaic\"}"
+      },
+      {
+        "sha256": "9e97895a2f51c5e3c512d9fb8d4abd29b0a263f11c7de8f6aaf1d803e827f735",
+        "truth": "sugarcane_mosaic",
+        "prediction": "sugarcane_healthy",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "f96ef4bfdc51d34918ac0bce4d7e5d6359704c1789c3bba3a2c5d39f2f30c3e0",
+        "truth": "sugarcane_mosaic",
+        "prediction": "sugarcane_healthy",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "e48166fa7f707cc66a6ffcdea4b5b25094f34ac2d2a2679d5c1a604057275ab7",
+        "truth": "sugarcane_mosaic",
+        "prediction": "sugarcane_healthy",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "c20fb602d9ed34f8a876e7844c2613e2bf860afdd214eb9f83373f8280c37691",
+        "truth": "sugarcane_mosaic",
+        "prediction": "sugarcane_mosaic",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"mosaic\"}"
+      },
+      {
+        "sha256": "1d2a46d38d54e98fd139b4bd2781043d251c527b52c59f7a6528e09468194fe9",
+        "truth": "sugarcane_mosaic",
+        "prediction": "sugarcane_mosaic",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"mosaic\"}"
+      },
+      {
+        "sha256": "f55fd02d2a09a171ac5a0b225235661079845ba5fcb4ec2fe58e711d9a9af427",
+        "truth": "sugarcane_mosaic",
+        "prediction": "sugarcane_mosaic",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"mosaic\"}"
+      },
+      {
+        "sha256": "48448dc85a9216110d52faf95c550f6335d4ddff4221c99ba9735356a8a3ef76",
+        "truth": "sugarcane_mosaic",
+        "prediction": "sugarcane_healthy",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "2ba17d54acc9a13644fa7573ce00d54f189aa512e44c02fe3ce19fe210b9ace3",
+        "truth": "sugarcane_mosaic",
+        "prediction": "sugarcane_mosaic",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"mosaic\"}"
+      },
+      {
+        "sha256": "4fd18ac30add137d7242604f8c23b356f5dc2b389d5d8e521d40562f6f20632f",
+        "truth": "sugarcane_red_rot",
+        "prediction": "sugarcane_red_rot",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"red_rot\"}"
+      },
+      {
+        "sha256": "5f3831f0bf7e7cbd6b7780cddcdcd866acc6df3d27ccfaf7db69fa90f506083f",
+        "truth": "sugarcane_red_rot",
+        "prediction": "sugarcane_red_rot",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"red_rot\"}"
+      },
+      {
+        "sha256": "a4fbabb4e350b5c5d2a0cdca1b9e15c5a65d03a458d0ddf5b537e5340c0d6213",
+        "truth": "sugarcane_red_rot",
+        "prediction": "sugarcane_red_rot",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"red_rot\"}"
+      },
+      {
+        "sha256": "340527bf1aaf30ceaa092b613e864f88c308ce7c95ef054675cf02128967e9c5",
+        "truth": "sugarcane_red_rot",
+        "prediction": "sugarcane_red_rot",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"red_rot\"}"
+      },
+      {
+        "sha256": "13221319b8f6225032caa8c336b745aecba671ab6b0e4704ca3bd3ee8fbac2d3",
+        "truth": "sugarcane_red_rot",
+        "prediction": "sugarcane_red_rot",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"red_rot\"}"
+      },
+      {
+        "sha256": "28df6b76aeb35a06dd9075f388b5d8832b23fbc0a1f72e0d9663f1d94c0087c7",
+        "truth": "sugarcane_red_rot",
+        "prediction": "sugarcane_red_rot",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"red_rot\"}"
+      },
+      {
+        "sha256": "fe67f8881206177c87bf9212d24f2c7af508464dbc3923793f0d73bda0c3c99a",
+        "truth": "sugarcane_red_rot",
+        "prediction": "sugarcane_red_rot",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"red_rot\"}"
+      },
+      {
+        "sha256": "b897ba83a70a04a669d61954aaa3c85b11810c5ed198b7c52b95d37b0ba4a9e0",
+        "truth": "sugarcane_red_rot",
+        "prediction": "sugarcane_red_rot",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"red_rot\"}"
+      },
+      {
+        "sha256": "bf5c685cc2b747e8518672a4226953a2011463ca7edd241366607dacd38b43f3",
+        "truth": "sugarcane_red_rot",
+        "prediction": "sugarcane_red_rot",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"red_rot\"}"
+      },
+      {
+        "sha256": "30d9e7ceac5911edbc035e2297008e7d2b8be0e9514ae4be96273eae07091bc9",
+        "truth": "sugarcane_red_rot",
+        "prediction": "sugarcane_red_rot",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"red_rot\"}"
+      },
+      {
+        "sha256": "590b02c9c5aa3c2d79d3f070060760c5fbfb89bcd35ff0601db4eede84f81b58",
+        "truth": "sugarcane_red_rot",
+        "prediction": "sugarcane_red_rot",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"red_rot\"}"
+      },
+      {
+        "sha256": "c2836b4e85161d69e30cb5ce60644f13df519468a3cf52dbba3b677a82b47eb9",
+        "truth": "sugarcane_red_rot",
+        "prediction": "sugarcane_mosaic",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"mosaic\"}"
+      },
+      {
+        "sha256": "1fde56c34531a2f30967f6499fef3fefa1f2df8b643f6f798a700474e2174c1e",
+        "truth": "sugarcane_red_rot",
+        "prediction": "sugarcane_red_rot",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"red_rot\"}"
+      },
+      {
+        "sha256": "143a53d9d4322b2d4cebb4db282828ab1054a565aebc00a262cefadaaf427fd5",
+        "truth": "sugarcane_red_rot",
+        "prediction": "sugarcane_yellow_rust",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"yellow_rust\"}"
+      },
+      {
+        "sha256": "a31cf4d00bbd1c2616bc48ef9664631251ff5613f99b71fadaa48478a25d21f9",
+        "truth": "sugarcane_red_rot",
+        "prediction": "sugarcane_red_rot",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"red_rot\"}"
+      },
+      {
+        "sha256": "29dcc0ebfed2f7cd13b66d8795bdb3ff73bc01457fd86a24fef8c8381fa6df67",
+        "truth": "sugarcane_red_rot",
+        "prediction": "sugarcane_red_rot",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"red_rot\"}"
+      },
+      {
+        "sha256": "c78f01acfb3ba1d89d99ab740e561b70ce8b802a136a5eb277ab0ab6abd2f7fc",
+        "truth": "sugarcane_red_rot",
+        "prediction": "sugarcane_red_rot",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"red_rot\"}"
+      },
+      {
+        "sha256": "1c2f7c6db92c3dfa389196f6845ccfc768e413a23e5e8d43087132343c00078e",
+        "truth": "sugarcane_red_rot",
+        "prediction": "sugarcane_yellow_rust",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"yellow_rust\"}"
+      },
+      {
+        "sha256": "3df2313ea969ac82322a24895bd6bb923fbb30e6d5db588de00a94911b3ae65b",
+        "truth": "sugarcane_red_rot",
+        "prediction": "sugarcane_red_rot",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"red_rot\"}"
+      },
+      {
+        "sha256": "247c343aac3b1cb74db6c88c60bfa62958ffacd732f3be2ce792d8a783b651c0",
+        "truth": "sugarcane_red_rot",
+        "prediction": "sugarcane_red_rot",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"red_rot\"}"
+      },
+      {
+        "sha256": "75bc41eecad0d22d665fe109f8848fd07d44b7bd8fdea3e87d9668c4f98a2080",
+        "truth": "sugarcane_yellow_rust",
+        "prediction": "sugarcane_healthy",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "1cb4727a650f8f839524fa14fed1322e845c929db05754cf7f6a3e1a99ef271a",
+        "truth": "sugarcane_yellow_rust",
+        "prediction": "sugarcane_yellow_rust",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"yellow_rust\"}"
+      },
+      {
+        "sha256": "29e1e8b02cae5851fd8f966a51d2fccceb498a36d7fcbf4473bb4d9b2668600b",
+        "truth": "sugarcane_yellow_rust",
+        "prediction": "sugarcane_healthy",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "c5b0d370c50c12d4b558d8695bf4bb44a639c5b9d2d5b0aa4649672e2a5402fd",
+        "truth": "sugarcane_yellow_rust",
+        "prediction": "sugarcane_yellow_rust",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"yellow_rust\"}"
+      },
+      {
+        "sha256": "78c0fa796892bd2e39b5bb7de0b03a3e35d94d68569f17e1e9e43f70e6a1d2d8",
+        "truth": "sugarcane_yellow_rust",
+        "prediction": "sugarcane_yellow_rust",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"yellow_rust\"}"
+      },
+      {
+        "sha256": "9e91586504ea54884483894a040782f4c48dc2367c65d1c892cda501f3e005ed",
+        "truth": "sugarcane_yellow_rust",
+        "prediction": "sugarcane_yellow_rust",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"yellow_rust\"}"
+      },
+      {
+        "sha256": "6d0aec5b349edb9ff585a4d9cee7840e66751565617d35e28fd82ad3f36d5cef",
+        "truth": "sugarcane_yellow_rust",
+        "prediction": "sugarcane_healthy",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "26f8fc14c1f6f5a28804aeab405db3fe36df617a3547c6452e92a994e13e5a1c",
+        "truth": "sugarcane_yellow_rust",
+        "prediction": "sugarcane_yellow_rust",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"yellow_rust\"}"
+      },
+      {
+        "sha256": "f038514dedf6d546c477cd39ff602b0c03db8d3ff2ef8d2b17257efda36ad7d5",
+        "truth": "sugarcane_yellow_rust",
+        "prediction": "sugarcane_yellow_rust",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"yellow_rust\"}"
+      },
+      {
+        "sha256": "91fa94b3779a1ccba5d1e31d8cc6a8b2d23a71e751a0eb20747e2837f94cc896",
+        "truth": "sugarcane_yellow_rust",
+        "prediction": "sugarcane_healthy",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "3404781f77570b53b48dcf95e51fec47a73da5392336bb18cbb8eea1db5615ce",
+        "truth": "sugarcane_yellow_rust",
+        "prediction": "sugarcane_healthy",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "8efbc009d06575c7cffb76868dec45a6299a80eaf1e8afaa47911cf80c54ada2",
+        "truth": "sugarcane_yellow_rust",
+        "prediction": "sugarcane_yellow_rust",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"yellow_rust\"}"
+      },
+      {
+        "sha256": "f664538b690c42ff8ab3d97ab0950650665d9d36ccf2fe06c80a42265e340a22",
+        "truth": "sugarcane_yellow_rust",
+        "prediction": "sugarcane_healthy",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "1b13e6fb69467cccbb51706af78141f5ff25ea578b8f0b681a401bca0bd7e44b",
+        "truth": "sugarcane_yellow_rust",
+        "prediction": "sugarcane_yellow_rust",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"yellow_rust\"}"
+      },
+      {
+        "sha256": "19ba339e98373b6b64191d70997569a2a47528be567f6f7e5ef3d448cf1a082b",
+        "truth": "sugarcane_yellow_rust",
+        "prediction": "sugarcane_red_rot",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"red_rot\"}"
+      },
+      {
+        "sha256": "6054af8d1d44cf88231e1aeaecdb7f7cbbb9cff848d7c157f976de256ece82fd",
+        "truth": "sugarcane_yellow_rust",
+        "prediction": "sugarcane_yellow_rust",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"yellow_rust\"}"
+      },
+      {
+        "sha256": "008a780c5dab1b0e575813f772d70ef103dfe96ff6ad825cae00b6b59ea27591",
+        "truth": "sugarcane_yellow_rust",
+        "prediction": "sugarcane_yellow_rust",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"yellow_rust\"}"
+      },
+      {
+        "sha256": "1f8590566eb7fbb170ca513f97e19db714f7c03678acdf1c471088a5e8412a9b",
+        "truth": "sugarcane_yellow_rust",
+        "prediction": "sugarcane_healthy",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "500af7dd4039a8cdd027870d5d8719d3364716752efefb4b77efd30cab21d2f5",
+        "truth": "sugarcane_yellow_rust",
+        "prediction": "sugarcane_yellow_rust",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"yellow_rust\"}"
+      },
+      {
+        "sha256": "6f7904cd78ca4b1e3c4b8b8ece925f4bb77581d6304da79fbb88801c5bd3f2f7",
+        "truth": "sugarcane_yellow_rust",
+        "prediction": "sugarcane_yellow_rust",
+        "raw": "{\"crop\":\"Sugarcane\",\"condition\":\"yellow_rust\"}"
+      },
+      {
+        "sha256": "2a1747bbb38ccf84bd05005eb88b43944566997610299073e4a0c9355a75c294",
+        "truth": "wheat_healthy",
+        "prediction": "wheat_healthy",
+        "raw": "{\"crop\":\"Wheat\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "6fe112a6948ae6585830a5cc6e3da7fac08a2480fa97c2123df3e01126222beb",
+        "truth": "wheat_healthy",
+        "prediction": "wheat_healthy",
+        "raw": "{\"crop\":\"Wheat\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "6f141eae27599fbcc53f8e522487ea537df59949f4b60df82c0fd01d5d133a38",
+        "truth": "wheat_healthy",
+        "prediction": "wheat_healthy",
+        "raw": "{\"crop\":\"Wheat\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "340fcb13ced052b3ade5a2c2b411caa34783a4d020384ff86bc664ae03601819",
+        "truth": "wheat_healthy",
+        "prediction": "wheat_healthy",
+        "raw": "{\"crop\":\"Wheat\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "fe25b79ad0c7dd35cd6d568c2edb765594efc30048c7bfa087a745712c03b1dd",
+        "truth": "wheat_healthy",
+        "prediction": "wheat_healthy",
+        "raw": "{\"crop\":\"Wheat\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "11a66c5f8cfe43a1ffe7406236a7d7c652c9a1421a038f15ca277fd7f21b6b96",
+        "truth": "wheat_healthy",
+        "prediction": "wheat_healthy",
+        "raw": "{\"crop\":\"Wheat\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "766be0be59841c49f2901b7491a829ad8f1cac30d322661ec89d5d4f54edae2b",
+        "truth": "wheat_healthy",
+        "prediction": "wheat_healthy",
+        "raw": "{\"crop\":\"Wheat\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "e17c95e70eac2ebeb761043ada022a335840186031a234ceb851138e7b143140",
+        "truth": "wheat_healthy",
+        "prediction": "wheat_healthy",
+        "raw": "{\"crop\":\"Wheat\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "6e83e83b5c3fb87ace523a38b589bc6c6ef333724f503ecf1c6d52881a00ca20",
+        "truth": "wheat_healthy",
+        "prediction": "wheat_healthy",
+        "raw": "{\"crop\":\"Wheat\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "a6a0670ca3a19bc9e3d42ac4fa8f8e774cc5f40d60155de75c89b011acf84925",
+        "truth": "wheat_healthy",
+        "prediction": "wheat_healthy",
+        "raw": "{\"crop\":\"Wheat\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "e316c1a11027d7b716c2b170f1e948422fb4894096f05c282cc6b89bb8f38d75",
+        "truth": "wheat_healthy",
+        "prediction": "wheat_healthy",
+        "raw": "{\"crop\":\"Wheat\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "68a750687506a3f39778a9c50fdd42677441135f2e199a59255a1ac1409e74e7",
+        "truth": "wheat_healthy",
+        "prediction": "wheat_healthy",
+        "raw": "{\"crop\":\"Wheat\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "75dd2d2726eff70ba2ad96c250e0499867030aa285c500cc91f53326156ae095",
+        "truth": "wheat_healthy",
+        "prediction": "wheat_healthy",
+        "raw": "{\"crop\":\"Wheat\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "b48e3d7d122099382b67e039056eef1c696adc1cf7c46cd2698cd1a0441d911a",
+        "truth": "wheat_healthy",
+        "prediction": "wheat_healthy",
+        "raw": "{\"crop\":\"Wheat\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "4ebd85a71bcd2c6eebfbfa3be1e9ea8a2420cb10a0d24d18053d9aca9673a52f",
+        "truth": "wheat_healthy",
+        "prediction": "wheat_healthy",
+        "raw": "{\"crop\":\"Wheat\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "9ac414c044438fdc8c8ffa22db597fc4b60ac6c5db6c7d34695934e7da962ca1",
+        "truth": "wheat_healthy",
+        "prediction": "wheat_healthy",
+        "raw": "{\"crop\":\"Wheat\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "fe11418328b194009ff96b9ce2e23b072dcbcabac2d1115a7468cec8b88e2b16",
+        "truth": "wheat_healthy",
+        "prediction": "wheat_healthy",
+        "raw": "{\"crop\":\"Wheat\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "95b67747f6e54c473f2d407c8cd68ee88251b35d9815e19561e62e335a3ab9ce",
+        "truth": "wheat_healthy",
+        "prediction": "wheat_healthy",
+        "raw": "{\"crop\":\"Wheat\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "9f01ff3873c7ae12de452e92c0f2e80b240881a458a67903afc11704c8ec4c11",
+        "truth": "wheat_healthy",
+        "prediction": "wheat_healthy",
+        "raw": "{\"crop\":\"Wheat\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "9d3e2e9b3db280f65b396f36421586eb410628c26d98a45c8d3dc865ac9f3d06",
+        "truth": "wheat_healthy",
+        "prediction": "wheat_healthy",
+        "raw": "{\"crop\":\"Wheat\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "db0c5c9f34b5056db5968a1b341ae2e533ca81601830a4a97e6ada0e1e2d8133",
+        "truth": "wheat_powdery_mildew",
+        "prediction": "wheat_powdery_mildew",
+        "raw": "{\"crop\":\"Wheat\",\"condition\":\"powdery_mildew\"}"
+      },
+      {
+        "sha256": "0cfeaa3093285401c2c65442dd3baccbe1d4b5bfce073d02f87c834e1b7c1b08",
+        "truth": "wheat_powdery_mildew",
+        "prediction": "wheat_powdery_mildew",
+        "raw": "{\"crop\":\"Wheat\",\"condition\":\"powdery_mildew\"}"
+      },
+      {
+        "sha256": "b07b2d9b551e9709e2297d9d4c5f19fd7ab3efbe39c1d2d93e9e110328ec1cd8",
+        "truth": "wheat_powdery_mildew",
+        "prediction": "wheat_powdery_mildew",
+        "raw": "{\"crop\":\"Wheat\",\"condition\":\"powdery_mildew\"}"
+      },
+      {
+        "sha256": "bf859aa453e86484d93413695e2c205b472dd33232c2e57f3cdfea24c205ad10",
+        "truth": "wheat_powdery_mildew",
+        "prediction": "wheat_powdery_mildew",
+        "raw": "{\"crop\":\"Wheat\",\"condition\":\"powdery_mildew\"}"
+      },
+      {
+        "sha256": "77cfced5bfa80b4c37393d939d5848969f506e7dedeb50a429c0ec85d5eccef9",
+        "truth": "wheat_powdery_mildew",
+        "prediction": "wheat_powdery_mildew",
+        "raw": "{\"crop\":\"Wheat\",\"condition\":\"powdery_mildew\"}"
+      },
+      {
+        "sha256": "4b6fce9a77f3f25b90a2fc2604ddfb24f876514e60dfd5adebbaffb6f6b1157c",
+        "truth": "wheat_powdery_mildew",
+        "prediction": "wheat_powdery_mildew",
+        "raw": "{\"crop\":\"Wheat\",\"condition\":\"powdery_mildew\"}"
+      },
+      {
+        "sha256": "ec6d9ea6f86e14d0dd59fa47c505e16219068906f8991ece763386cb648ace2f",
+        "truth": "wheat_powdery_mildew",
+        "prediction": "wheat_powdery_mildew",
+        "raw": "{\"crop\":\"Wheat\",\"condition\":\"powdery_mildew\"}"
+      },
+      {
+        "sha256": "3cb1059a806dad0f8fd2557d47de754406bbe7990b806423b9a58414a602b34f",
+        "truth": "wheat_powdery_mildew",
+        "prediction": "wheat_powdery_mildew",
+        "raw": "{\"crop\":\"Wheat\",\"condition\":\"powdery_mildew\"}"
+      },
+      {
+        "sha256": "0c60bd0ddfbe1ec67b6e4de06c09706ac9af241f861152052613d168aee2b5bb",
+        "truth": "wheat_powdery_mildew",
+        "prediction": "wheat_powdery_mildew",
+        "raw": "{\"crop\":\"Wheat\",\"condition\":\"powdery_mildew\"}"
+      },
+      {
+        "sha256": "057a74af403a74c576167a12dcdd5b4fb6159ba2ed7957faadbfa2deb470e552",
+        "truth": "wheat_powdery_mildew",
+        "prediction": "wheat_powdery_mildew",
+        "raw": "{\"crop\":\"Wheat\",\"condition\":\"powdery_mildew\"}"
+      },
+      {
+        "sha256": "9c9cf588153a50dacd28d003281e014c331b7e9835471caf770cfdf2a0e7556d",
+        "truth": "wheat_powdery_mildew",
+        "prediction": "wheat_powdery_mildew",
+        "raw": "{\"crop\":\"Wheat\",\"condition\":\"powdery_mildew\"}"
+      },
+      {
+        "sha256": "a9a59f1dfa38eaca9779c7057dd551f532d9726e7ef58c49c023f8dcafd9a05e",
+        "truth": "wheat_powdery_mildew",
+        "prediction": "wheat_powdery_mildew",
+        "raw": "{\"crop\":\"Wheat\",\"condition\":\"powdery_mildew\"}"
+      },
+      {
+        "sha256": "2a0bd3375f1543e4cc004c73b5d388222f560b10b29d09a5b8d0e67da91810c6",
+        "truth": "wheat_powdery_mildew",
+        "prediction": "wheat_healthy",
+        "raw": "{\"crop\":\"Wheat\",\"condition\":\"healthy\"}"
+      },
+      {
+        "sha256": "3b9259f9fcea9951595ad0f2adaf11e4e4ac931f75c8b2e0e7eff31245d33a28",
+        "truth": "wheat_powdery_mildew",
+        "prediction": "wheat_powdery_mildew",
+        "raw": "{\"crop\":\"Wheat\",\"condition\":\"powdery_mildew\"}"
+      },
+      {
+        "sha256": "9b421f8735d08e1b56d59f9c7d3d88cdbfb804d58abd1b562b45bb9a6de20961",
+        "truth": "wheat_powdery_mildew",
+        "prediction": "wheat_powdery_mildew",
+        "raw": "{\"crop\":\"Wheat\",\"condition\":\"powdery_mildew\"}"
+      },
+      {
+        "sha256": "5c81c3506de9558adf8ef32827d35e8b40f97ef0381e024a541e87ea9db14b8a",
+        "truth": "wheat_powdery_mildew",
+        "prediction": "wheat_powdery_mildew",
+        "raw": "{\"crop\":\"Wheat\",\"condition\":\"powdery_mildew\"}"
+      },
+      {
+        "sha256": "827260f169d519d8bd8a36d16c8d8fee49a64dcc209bea5bb341dc85e3c61dc1",
+        "truth": "wheat_powdery_mildew",
+        "prediction": "wheat_powdery_mildew",
+        "raw": "{\"crop\":\"Wheat\",\"condition\":\"powdery_mildew\"}"
+      },
+      {
+        "sha256": "fdc3c9ce38ad70192a0d820c4815df25ca92c552c2383e9c89fd20ca6a7ad0f3",
+        "truth": "wheat_powdery_mildew",
+        "prediction": "wheat_powdery_mildew",
+        "raw": "{\"crop\":\"Wheat\",\"condition\":\"powdery_mildew\"}"
+      },
+      {
+        "sha256": "6265ad0179b1ad3703b5ba1cff23eac993deefb7020cd9ea8ad87408641b4afb",
+        "truth": "wheat_powdery_mildew",
+        "prediction": "wheat_powdery_mildew",
+        "raw": "{\"crop\":\"Wheat\",\"condition\":\"powdery_mildew\"}"
+      },
+      {
+        "sha256": "572500b9f6caa8693a97011debf6c6999939bda1508c13ab02af2cf32b8265f3",
+        "truth": "wheat_powdery_mildew",
+        "prediction": "wheat_powdery_mildew",
+        "raw": "{\"crop\":\"Wheat\",\"condition\":\"powdery_mildew\"}"
+      }
+    ]
+  },
+  "peak_allocated_gib": 3.387
+}

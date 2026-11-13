@@ -25,6 +25,11 @@ unsloth_compiled_cache/
 /checkpoints/
 /models/
 /runs/
+/mlruns/
+/mlartifacts/
+*.db
+*.db-shm
+*.db-wal
 *.safetensors
 *.gguf
 *.pt
