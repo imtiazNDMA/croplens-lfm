@@ -1,0 +1,308 @@
+{
+  "per_class": {
+    "cotton_american_bollworm": {
+      "pool": 37,
+      "removed": {
+        "augmentation_named": 0,
+        "near_val_or_test": 0
+      },
+      "train_kept": 37
+    },
+    "cotton_anthracnose": {
+      "pool": 20,
+      "removed": {
+        "augmentation_named": 0,
+        "near_val_or_test": 0
+      },
+      "train_kept": 20
+    },
+    "cotton_aphid": {
+      "pool": 55,
+      "removed": {
+        "augmentation_named": 90,
+        "near_val_or_test": 1
+      },
+      "train_kept": 146
+    },
+    "cotton_bacterial_blight": {
+      "pool": 230,
+      "removed": {
+        "augmentation_named": 69,
+        "near_val_or_test": 11
+      },
+      "train_kept": 310
+    },
+    "cotton_healthy": {
+      "pool": 166,
+      "removed": {
+        "augmentation_named": 56,
+        "near_val_or_test": 5
+      },
+      "train_kept": 227
+    },
+    "cotton_mealybug": {
+      "pool": 58,
+      "removed": {
+        "augmentation_named": 0,
+        "near_val_or_test": 0
+      },
+      "train_kept": 58
+    },
+    "cotton_red_cotton_bug": {
+      "pool": 46,
+      "removed": {
+        "augmentation_named": 0,
+        "near_val_or_test": 0
+      },
+      "train_kept": 46
+    },
+    "cotton_thrips": {
+      "pool": 25,
+      "removed": {
+        "augmentation_named": 0,
+        "near_val_or_test": 0
+      },
+      "train_kept": 25
+    },
+    "cotton_whitefly": {
+      "pool": 32,
+      "removed": {
+        "augmentation_named": 0,
+        "near_val_or_test": 0
+      },
+      "train_kept": 32
+    },
+    "cotton_wilt": {
+      "pool": 190,
+      "removed": {
+        "augmentation_named": 0,
+        "near_val_or_test": 1
+      },
+      "train_kept": 191
+    },
+    "maize_armyworm": {
+      "pool": 75,
+      "removed": {
+        "augmentation_named": 89,
+        "near_val_or_test": 8
+      },
+      "train_kept": 172
+    },
+    "maize_common_rust": {
+      "pool": 922,
+      "removed": {
+        "augmentation_named": 0,
+        "near_val_or_test": 0
+      },
+      "train_kept": 922
+    },
+    "maize_ear_rot": {
+      "pool": 82,
+      "removed": {
+        "augmentation_named": 0,
+        "near_val_or_test": 0
+      },
+      "train_kept": 82
+    },
+    "maize_fall_armyworm": {
+      "pool": 73,
+      "removed": {
+        "augmentation_named": 0,
+        "near_val_or_test": 0
+      },
+      "train_kept": 73
+    },
+    "maize_gray_leaf_spot": {
+      "pool": 402,
+      "removed": {
+        "augmentation_named": 0,
+        "near_val_or_test": 0
+      },
+      "train_kept": 402
+    },
+    "maize_healthy": {
+      "pool": 822,
+      "removed": {
+        "augmentation_named": 0,
+        "near_val_or_test": 3
+      },
+      "train_kept": 825
+    },
+    "maize_stem_borer": {
+      "pool": 66,
+      "removed": {
+        "augmentation_named": 0,
+        "near_val_or_test": 1
+      },
+      "train_kept": 67
+    },
+    "rice_bacterial_blight": {
+      "pool": 375,
+      "removed": {
+        "augmentation_named": 0,
+        "near_val_or_test": 0
+      },
+      "train_kept": 375
+    },
+    "rice_blast": {
+      "pool": 337,
+      "removed": {
+        "augmentation_named": 0,
+        "near_val_or_test": 5
+      },
+      "train_kept": 342
+    },
+    "rice_brown_spot": {
+      "pool": 455,
+      "removed": {
+        "augmentation_named": 0,
+        "near_val_or_test": 9
+      },
+      "train_kept": 464
+    },
+    "rice_tungro": {
+      "pool": 487,
+      "removed": {
+        "augmentation_named": 0,
+        "near_val_or_test": 177
+      },
+      "train_kept": 664
+    },
+    "sugarcane_healthy": {
+      "pool": 338,
+      "removed": {
+        "augmentation_named": 0,
+        "near_val_or_test": 0
+      },
+      "train_kept": 338
+    },
+    "sugarcane_mosaic": {
+      "pool": 273,
+      "removed": {
+        "augmentation_named": 0,
+        "near_val_or_test": 0
+      },
+      "train_kept": 273
+    },
+    "sugarcane_red_rot": {
+      "pool": 393,
+      "removed": {
+        "augmentation_named": 0,
+        "near_val_or_test": 7
+      },
+      "train_kept": 400
+    },
+    "sugarcane_red_rust": {
+      "pool": 23,
+      "removed": {
+        "augmentation_named": 0,
+        "near_val_or_test": 6
+      },
+      "train_kept": 29
+    },
+    "sugarcane_yellow_rust": {
+      "pool": 345,
+      "removed": {
+        "augmentation_named": 0,
+        "near_val_or_test": 1
+      },
+      "train_kept": 346
+    },
+    "wheat_aphid": {
+      "pool": 133,
+      "removed": {
+        "augmentation_named": 0,
+        "near_val_or_test": 0
+      },
+      "train_kept": 133
+    },
+    "wheat_black_rust": {
+      "pool": 108,
+      "removed": {
+        "augmentation_named": 0,
+        "near_val_or_test": 0
+      },
+      "train_kept": 108
+    },
+    "wheat_brown_rust": {
+      "pool": 73,
+      "removed": {
+        "augmentation_named": 0,
+        "near_val_or_test": 0
+      },
+      "train_kept": 73
+    },
+    "wheat_flag_smut": {
+      "pool": 57,
+      "removed": {
+        "augmentation_named": 0,
+        "near_val_or_test": 1
+      },
+      "train_kept": 58
+    },
+    "wheat_healthy": {
+      "pool": 145,
+      "removed": {
+        "augmentation_named": 0,
+        "near_val_or_test": 1
+      },
+      "train_kept": 146
+    },
+    "wheat_leaf_blight": {
+      "pool": 121,
+      "removed": {
+        "augmentation_named": 0,
+        "near_val_or_test": 0
+      },
+      "train_kept": 121
+    },
+    "wheat_mite": {
+      "pool": 127,
+      "removed": {
+        "augmentation_named": 0,
+        "near_val_or_test": 1
+      },
+      "train_kept": 128
+    },
+    "wheat_powdery_mildew": {
+      "pool": 138,
+      "removed": {
+        "augmentation_named": 0,
+        "near_val_or_test": 1
+      },
+      "train_kept": 139
+    },
+    "wheat_scab": {
+      "pool": 72,
+      "removed": {
+        "augmentation_named": 0,
+        "near_val_or_test": 0
+      },
+      "train_kept": 72
+    },
+    "wheat_stem_fly": {
+      "pool": 104,
+      "removed": {
+        "augmentation_named": 0,
+        "near_val_or_test": 1
+      },
+      "train_kept": 105
+    },
+    "wheat_yellow_rust": {
+      "pool": 64,
+      "removed": {
+        "augmentation_named": 0,
+        "near_val_or_test": 0
+      },
+      "train_kept": 64
+    }
+  },
+  "pool": 7469,
+  "removed": 544,
+  "removed_by_reason": {
+    "augmentation_named": 304,
+    "near_val_or_test": 240
+  },
+  "threshold_bits": 32,
+  "train_kept": 8013
+}

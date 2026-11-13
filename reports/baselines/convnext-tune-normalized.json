@@ -1,0 +1,4013 @@
+{
+ "package": "five-crop-001",
+ "part": "tune",
+ "photos": 500,
+ "crop_identification_inferred": 0.98,
+ "class_accuracy_crop_given": 0.968,
+ "class_accuracy_crop_inferred": 0.96,
+ "class_macro_f1_crop_given": 0.9494823316349553,
+ "class_macro_f1_crop_inferred": 0.9311755199345665,
+ "note": "Cannot refuse: other plants, non-plants and poor photos are not scored for it.",
+ "rows": [
+  {
+   "id": "00a26f38ae2dc3945f50edbac2bd0fb55ad32d9d9c35917104387e9589645476",
+   "truth": "cotton_bacterial_blight",
+   "crop": "Cotton",
+   "inferred_class": "cotton_bacterial_blight",
+   "inferred_crop": "Cotton",
+   "given_class": "cotton_bacterial_blight"
+  },
+  {
+   "id": "019e5c88d8d1ade4e00c1e13374be7cad0fe1dd831dffc874a9b6d9cb5b02e53",
+   "truth": "cotton_wilt",
+   "crop": "Cotton",
+   "inferred_class": "cotton_wilt",
+   "inferred_crop": "Cotton",
+   "given_class": "cotton_wilt"
+  },
+  {
+   "id": "02a360283844578e3068bb879a01bc6bffed03c29fe50d264e6416e4e3a981b3",
+   "truth": "cotton_whitefly",
+   "crop": "Cotton",
+   "inferred_class": "cotton_whitefly",
+   "inferred_crop": "Cotton",
+   "given_class": "cotton_whitefly"
+  },
+  {
+   "id": "02f85b29914b65b9190b598bdf078085bdeea4b7b4dd77cae17cb4ec71e0febe",
+   "truth": "cotton_bacterial_blight",
+   "crop": "Cotton",
+   "inferred_class": "cotton_bacterial_blight",
+   "inferred_crop": "Cotton",
+   "given_class": "cotton_bacterial_blight"
+  },
+  {
+   "id": "05dd084f17b80ba888b8c62338e060dd3f94c290e6aad8d1e02a9d3d6d8f27e3",
+   "truth": "cotton_bacterial_blight",
+   "crop": "Cotton",
+   "inferred_class": "cotton_bacterial_blight",
+   "inferred_crop": "Cotton",
+   "given_class": "cotton_bacterial_blight"
+  },
+  {
+   "id": "0b300a26b80b75ad685909a067b54315e3d948eef2232cb7117bf5b217f1e3d8",
+   "truth": "cotton_bacterial_blight",
+   "crop": "Cotton",
+   "inferred_class": "cotton_bacterial_blight",
+   "inferred_crop": "Cotton",
+   "given_class": "cotton_bacterial_blight"
+  },
+  {
+   "id": "0c773713bd2ca6bd60864b039d93805aa1939dcb8fbf69715a0adc636b83b979",
+   "truth": "cotton_bacterial_blight",
+   "crop": "Cotton",
+   "inferred_class": "cotton_bacterial_blight",
+   "inferred_crop": "Cotton",
+   "given_class": "cotton_bacterial_blight"
+  },
+  {
+   "id": "0d620ddf122b58238f84392982ec3970174a2e423874d8cdcdf9d8c11649b06b",
+   "truth": "cotton_aphid",
+   "crop": "Cotton",
+   "inferred_class": "cotton_aphid",
+   "inferred_crop": "Cotton",
+   "given_class": "cotton_aphid"
+  },
+  {
+   "id": "0e5dbe0cc61c803eab6baf5954d66b84237bb97d3b6d12caf2e56b9487214cb0",
+   "truth": "cotton_bacterial_blight",
+   "crop": "Cotton",
+   "inferred_class": "cotton_bacterial_blight",
+   "inferred_crop": "Cotton",
+   "given_class": "cotton_bacterial_blight"
+  },
+  {
+   "id": "14c3b620a8b89c209cdce61d38f96b6b6298122805f46cacc26ef624e241ec92",
+   "truth": "cotton_bacterial_blight",
+   "crop": "Cotton",
+   "inferred_class": "cotton_bacterial_blight",
+   "inferred_crop": "Cotton",
+   "given_class": "cotton_bacterial_blight"
+  },
+  {
+   "id": "217bce49a42aa69d6e6c879f3d0880263804e71fb74b36a379fa43ae37cc8232",
+   "truth": "cotton_mealybug",
+   "crop": "Cotton",
+   "inferred_class": "cotton_mealybug",
+   "inferred_crop": "Cotton",
+   "given_class": "cotton_mealybug"
+  },
+  {
+   "id": "24029f14b0ca1580698e87701e3a52a4ce171e55359740b7c9cdb4a1cc569d5f",
+   "truth": "cotton_healthy",
+   "crop": "Cotton",
+   "inferred_class": "cotton_healthy",
+   "inferred_crop": "Cotton",
+   "given_class": "cotton_healthy"
+  },
+  {
+   "id": "258e7cfb3b2ac378e7b05d91c2600b4743d12aecbec902f35830f50fbb1cc0e4",
+   "truth": "cotton_healthy",
+   "crop": "Cotton",
+   "inferred_class": "cotton_healthy",
+   "inferred_crop": "Cotton",
+   "given_class": "cotton_healthy"
+  },
+  {
+   "id": "25d91e2bd33db6b5ce8c2b4c267474b4d47f1dda4cb9e2f6d39c891174a50f2d",
+   "truth": "cotton_american_bollworm",
+   "crop": "Cotton",
+   "inferred_class": "cotton_american_bollworm",
+   "inferred_crop": "Cotton",
+   "given_class": "cotton_american_bollworm"
+  },
+  {
+   "id": "2633ee4224e4fd90031797b886b832b8945be3ff081a53fbd011a92eca5402ce",
+   "truth": "cotton_bacterial_blight",
+   "crop": "Cotton",
+   "inferred_class": "cotton_bacterial_blight",
+   "inferred_crop": "Cotton",
+   "given_class": "cotton_bacterial_blight"
+  },
+  {
+   "id": "2854499121b223a18bdeae85be591f227c6904e697042153405021bc4263af36",
+   "truth": "cotton_aphid",
+   "crop": "Cotton",
+   "inferred_class": "cotton_aphid",
+   "inferred_crop": "Cotton",
+   "given_class": "cotton_aphid"
+  },
+  {
+   "id": "2909e45e8e7b661ff50567e25be62ffa4e8bcfdda6b0729d2e1b85d5f00891ab",
+   "truth": "cotton_healthy",
+   "crop": "Cotton",
+   "inferred_class": "cotton_healthy",
+   "inferred_crop": "Cotton",
+   "given_class": "cotton_healthy"
+  },
+  {
+   "id": "2a1a055ccf8cce47a72afad0ea7d0e24ee7d5e5c038cd937e818a6e31ffe3101",
+   "truth": "cotton_wilt",
+   "crop": "Cotton",
+   "inferred_class": "cotton_wilt",
+   "inferred_crop": "Cotton",
+   "given_class": "cotton_wilt"
+  },
+  {
+   "id": "2d058cf0aff2cfe7790fa22be9c00c92c7e6c1661d212303a230a223e0e849ed",
+   "truth": "cotton_bacterial_blight",
+   "crop": "Cotton",
+   "inferred_class": "cotton_bacterial_blight",
+   "inferred_crop": "Cotton",
+   "given_class": "cotton_bacterial_blight"
+  },
+  {
+   "id": "2e871250b352279a7537f483d2d4bc9a3f26be78d6850ba24d3374facdace8d4",
+   "truth": "cotton_bacterial_blight",
+   "crop": "Cotton",
+   "inferred_class": "cotton_bacterial_blight",
+   "inferred_crop": "Cotton",
+   "given_class": "cotton_bacterial_blight"
+  },
+  {
+   "id": "2ef457cd0feec2eb478317d38d49a7c32ebe8ce971aa80c1ae160c07d9c2970f",
+   "truth": "cotton_wilt",
+   "crop": "Cotton",
+   "inferred_class": "cotton_wilt",
+   "inferred_crop": "Cotton",
+   "given_class": "cotton_wilt"
+  },
+  {
+   "id": "319bce70ac80aa6eda2dee9e955dedfb0bc83e4fc74afaa5245c5935d506a778",
+   "truth": "cotton_red_cotton_bug",
+   "crop": "Cotton",
+   "inferred_class": "cotton_red_cotton_bug",
+   "inferred_crop": "Cotton",
+   "given_class": "cotton_red_cotton_bug"
+  },
+  {
+   "id": "398799d39ef4072b3c9832285c618ece9120923d8ebe227f281621c69480a645",
+   "truth": "cotton_mealybug",
+   "crop": "Cotton",
+   "inferred_class": "cotton_mealybug",
+   "inferred_crop": "Cotton",
+   "given_class": "cotton_mealybug"
+  },
+  {
+   "id": "3ca19037e22fc3b8646b254f3f427ad09e9a72b9f172f53be9b73c34d049bdf2",
+   "truth": "cotton_healthy",
+   "crop": "Cotton",
+   "inferred_class": "cotton_healthy",
+   "inferred_crop": "Cotton",
+   "given_class": "cotton_healthy"
+  },
+  {
+   "id": "3ee4f66661318e80e96c60aee042b4995549cccd7c3caee667682a099a2b9715",
+   "truth": "cotton_bacterial_blight",
+   "crop": "Cotton",
+   "inferred_class": "cotton_bacterial_blight",
+   "inferred_crop": "Cotton",
+   "given_class": "cotton_bacterial_blight"
+  },
+  {
+   "id": "400dee52a841b2559ec36573a32d613606c0dfbd1e852b174843a9d50351eca2",
+   "truth": "cotton_healthy",
+   "crop": "Cotton",
+   "inferred_class": "cotton_healthy",
+   "inferred_crop": "Cotton",
+   "given_class": "cotton_healthy"
+  },
+  {
+   "id": "438bfff063a5bc286327ef91f7411b0bb43868a482b4d5e1ca5f9108f9f24322",
+   "truth": "cotton_bacterial_blight",
+   "crop": "Cotton",
+   "inferred_class": "cotton_bacterial_blight",
+   "inferred_crop": "Cotton",
+   "given_class": "cotton_bacterial_blight"
+  },
+  {
+   "id": "49f3899ef4737e22b57c813022395fbdebc79f13296328961658ceae8e38de90",
+   "truth": "cotton_aphid",
+   "crop": "Cotton",
+   "inferred_class": "cotton_aphid",
+   "inferred_crop": "Cotton",
+   "given_class": "cotton_aphid"
+  },
+  {
+   "id": "4b16290ecdfb88bc26bcea24ccadd754926d250768750e79d6e15ae72f9471a6",
+   "truth": "cotton_wilt",
+   "crop": "Cotton",
+   "inferred_class": "cotton_wilt",
+   "inferred_crop": "Cotton",
+   "given_class": "cotton_wilt"
+  },
+  {
+   "id": "4cb5ca53f4522d5bf3aedd1b765cd2f6a5ab97dc2fcf43a92e6c7984605d2924",
+   "truth": "cotton_bacterial_blight",
+   "crop": "Cotton",
+   "inferred_class": "cotton_bacterial_blight",
+   "inferred_crop": "Cotton",
+   "given_class": "cotton_bacterial_blight"
+  },
+  {
+   "id": "4d17a752a335223241e21a14637c43219eadf3f9590ccb17b846c946e52f8f2e",
+   "truth": "cotton_bacterial_blight",
+   "crop": "Cotton",
+   "inferred_class": "cotton_bacterial_blight",
+   "inferred_crop": "Cotton",
+   "given_class": "cotton_bacterial_blight"
+  },
+  {
+   "id": "4f77309fde2c0aa2861771c81fd6e7390c68b617b411abd6342462b04b3c16d5",
+   "truth": "cotton_bacterial_blight",
+   "crop": "Cotton",
+   "inferred_class": "cotton_bacterial_blight",
+   "inferred_crop": "Cotton",
+   "given_class": "cotton_bacterial_blight"
+  },
+  {
+   "id": "5155353d04104d02651dba4550e7f2ee92ff7b10be758f5a95ba2a185edee481",
+   "truth": "cotton_wilt",
+   "crop": "Cotton",
+   "inferred_class": "cotton_wilt",
+   "inferred_crop": "Cotton",
+   "given_class": "cotton_wilt"
+  },
+  {
+   "id": "542fd0513e2a664e16db4539cd226f2c40f7fc53d02b802ebad08cb5fdb756ce",
+   "truth": "cotton_bacterial_blight",
+   "crop": "Cotton",
+   "inferred_class": "cotton_bacterial_blight",
+   "inferred_crop": "Cotton",
+   "given_class": "cotton_bacterial_blight"
+  },
+  {
+   "id": "5498e6ab837c82b7fb865552f468218b7c8b4712008573e6a0657421b16d6df4",
+   "truth": "cotton_healthy",
+   "crop": "Cotton",
+   "inferred_class": "cotton_healthy",
+   "inferred_crop": "Cotton",
+   "given_class": "cotton_healthy"
+  },
+  {
+   "id": "55df2b30bfba032e3d90a575494577e01b582307857fd284449827784d1a5960",
+   "truth": "cotton_bacterial_blight",
+   "crop": "Cotton",
+   "inferred_class": "cotton_bacterial_blight",
+   "inferred_crop": "Cotton",
+   "given_class": "cotton_bacterial_blight"
+  },
+  {
+   "id": "56ab970bc0e0c5be5eed630da5d0cf28f70bda8c0fa5dd897e0d60ef4a6a2423",
+   "truth": "cotton_bacterial_blight",
+   "crop": "Cotton",
+   "inferred_class": "cotton_bacterial_blight",
+   "inferred_crop": "Cotton",
+   "given_class": "cotton_bacterial_blight"
+  },
+  {
+   "id": "5764e11292d52c18954e936e1e34b2fa9c834e081aae19c3d9d0438135753ca2",
+   "truth": "cotton_healthy",
+   "crop": "Cotton",
+   "inferred_class": "cotton_healthy",
+   "inferred_crop": "Cotton",
+   "given_class": "cotton_healthy"
+  },
+  {
+   "id": "5ea766dd8c5133a857467bf5085142a0b6a4ec222fd6cbfe1843368e316afc93",
+   "truth": "cotton_bacterial_blight",
+   "crop": "Cotton",
+   "inferred_class": "cotton_bacterial_blight",
+   "inferred_crop": "Cotton",
+   "given_class": "cotton_bacterial_blight"
+  },
+  {
+   "id": "62f2fcbc33399c0e15630a2a0a3bd3dc3c9984fbc2c1689d8aa2a5987a02fa70",
+   "truth": "cotton_aphid",
+   "crop": "Cotton",
+   "inferred_class": "cotton_aphid",
+   "inferred_crop": "Cotton",
+   "given_class": "cotton_aphid"
+  },
+  {
+   "id": "6331a7ffb3207ffaa4d24168113bd018a8815279e30af7c860d3ee06c47f67bb",
+   "truth": "cotton_healthy",
+   "crop": "Cotton",
+   "inferred_class": "cotton_healthy",
+   "inferred_crop": "Cotton",
+   "given_class": "cotton_healthy"
+  },
+  {
+   "id": "6343c3e11db54f51b65a3dc21f69013414d8361e0a355e51573f0553358ab4f5",
+   "truth": "cotton_healthy",
+   "crop": "Cotton",
+   "inferred_class": "cotton_healthy",
+   "inferred_crop": "Cotton",
+   "given_class": "cotton_healthy"
+  },
+  {
+   "id": "63da6ba3bf0d3fa7a7de76a1eee06e3d3281d6e4e767b07d2886676efd7c4bd6",
+   "truth": "cotton_aphid",
+   "crop": "Cotton",
+   "inferred_class": "cotton_aphid",
+   "inferred_crop": "Cotton",
+   "given_class": "cotton_aphid"
+  },
+  {
+   "id": "673bf0fe14c08fbb7c182257551c4f5091878f00fa948beecd4854f0baad4846",
+   "truth": "cotton_healthy",
+   "crop": "Cotton",
+   "inferred_class": "cotton_healthy",
+   "inferred_crop": "Cotton",
+   "given_class": "cotton_healthy"
+  },
+  {
+   "id": "67f58d71517aea3a524627b0ea7a6ac125b8c1c00a828aa96be0a7fd60d9de4b",
+   "truth": "cotton_aphid",
+   "crop": "Cotton",
+   "inferred_class": "cotton_aphid",
+   "inferred_crop": "Cotton",
+   "given_class": "cotton_aphid"
+  },
+  {
+   "id": "684d2229a49ca00f234d374200a240b579d2f9ad866051d204efca5828630259",
+   "truth": "cotton_wilt",
+   "crop": "Cotton",
+   "inferred_class": "cotton_wilt",
+   "inferred_crop": "Cotton",
+   "given_class": "cotton_wilt"
+  },
+  {
+   "id": "6ebfe516cad512d6655546a93e37f64f47d7f73048d47d8d56fbf38c67d2b720",
+   "truth": "cotton_mealybug",
+   "crop": "Cotton",
+   "inferred_class": "cotton_mealybug",
+   "inferred_crop": "Cotton",
+   "given_class": "cotton_mealybug"
+  },
+  {
+   "id": "701ae391d4530281535a75a07fed4bc56f7c8be176ee473afbe21b7291edf4d8",
+   "truth": "cotton_bacterial_blight",
+   "crop": "Cotton",
+   "inferred_class": "cotton_bacterial_blight",
+   "inferred_crop": "Cotton",
+   "given_class": "cotton_bacterial_blight"
+  },
+  {
+   "id": "71910eb23bce7c9e0c8070573324ddcaafc18bc272776ee9ebe1cb119b743ff7",
+   "truth": "cotton_whitefly",
+   "crop": "Cotton",
+   "inferred_class": "cotton_whitefly",
+   "inferred_crop": "Cotton",
+   "given_class": "cotton_whitefly"
+  },
+  {
+   "id": "762126214538ddbc007eafe1844fe624d964f295468e32ad5e2017ea85532ba6",
+   "truth": "cotton_healthy",
+   "crop": "Cotton",
+   "inferred_class": "cotton_healthy",
+   "inferred_crop": "Cotton",
+   "given_class": "cotton_healthy"
+  },
+  {
+   "id": "78eefd512d4a0838261112ee8406f4e46da3efb37e34f5e96bb7294edd154497",
+   "truth": "cotton_bacterial_blight",
+   "crop": "Cotton",
+   "inferred_class": "cotton_bacterial_blight",
+   "inferred_crop": "Cotton",
+   "given_class": "cotton_bacterial_blight"
+  },
+  {
+   "id": "7c70a55203ce0a7babc30d7c144fc5da129cc239272d4ed2b413862a46917808",
+   "truth": "cotton_bacterial_blight",
+   "crop": "Cotton",
+   "inferred_class": "cotton_bacterial_blight",
+   "inferred_crop": "Cotton",
+   "given_class": "cotton_bacterial_blight"
+  },
+  {
+   "id": "7c7c4ab6cb60bbaa9e4cc00d5967cfb91fed812ffaaede9636c9b3d001a6cb89",
+   "truth": "cotton_bacterial_blight",
+   "crop": "Cotton",
+   "inferred_class": "cotton_bacterial_blight",
+   "inferred_crop": "Cotton",
+   "given_class": "cotton_bacterial_blight"
+  },
+  {
+   "id": "82831ef91a86050f1945fe7386b73c96ead70d9899ade154e0a87be3c03cbcf7",
+   "truth": "cotton_wilt",
+   "crop": "Cotton",
+   "inferred_class": "cotton_wilt",
+   "inferred_crop": "Cotton",
+   "given_class": "cotton_wilt"
+  },
+  {
+   "id": "84056123f750c10b2d27a1fbe39b7b60d7c8550785836621108cf79ce9674931",
+   "truth": "cotton_bacterial_blight",
+   "crop": "Cotton",
+   "inferred_class": "cotton_bacterial_blight",
+   "inferred_crop": "Cotton",
+   "given_class": "cotton_bacterial_blight"
+  },
+  {
+   "id": "8a8d832eebfe200d0db81d5af898abbe77b87db7debbde08db6f343876513ca8",
+   "truth": "cotton_wilt",
+   "crop": "Cotton",
+   "inferred_class": "cotton_wilt",
+   "inferred_crop": "Cotton",
+   "given_class": "cotton_wilt"
+  },
+  {
+   "id": "9405c96fc21d79a5ede718a894fe90763af15eac0ed0b5a8650a562fbcab2ef1",
+   "truth": "cotton_bacterial_blight",
+   "crop": "Cotton",
+   "inferred_class": "cotton_bacterial_blight",
+   "inferred_crop": "Cotton",
+   "given_class": "cotton_bacterial_blight"
+  },
+  {
+   "id": "9487c852995ec270d05a0f8a7343bd74841bfcd3b7fe70d4c869298fa7135bb1",
+   "truth": "cotton_wilt",
+   "crop": "Cotton",
+   "inferred_class": "cotton_wilt",
+   "inferred_crop": "Cotton",
+   "given_class": "cotton_wilt"
+  },
+  {
+   "id": "97b9a40032ca17b30c9bfb1abd6b6ca170fdc1e1188382ee78590e52346de7f1",
+   "truth": "cotton_bacterial_blight",
+   "crop": "Cotton",
+   "inferred_class": "cotton_bacterial_blight",
+   "inferred_crop": "Cotton",
+   "given_class": "cotton_bacterial_blight"
+  },
+  {
+   "id": "97fc6be85c4e51c4224b294d85d3d02fb2778d2a37bf6d5d6bda28fc29cb0f73",
+   "truth": "cotton_wilt",
+   "crop": "Cotton",
+   "inferred_class": "cotton_wilt",
+   "inferred_crop": "Cotton",
+   "given_class": "cotton_wilt"
+  },
+  {
+   "id": "9949599e1c78fd47cab10fedf03783c8d03bb4497ad613e5ee1599acf7505b1a",
+   "truth": "cotton_aphid",
+   "crop": "Cotton",
+   "inferred_class": "cotton_aphid",
+   "inferred_crop": "Cotton",
+   "given_class": "cotton_aphid"
+  },
+  {
+   "id": "998d0c262bab975d34cb7109ca4e3ca75f0750e6825c3e5f7d626a6ec5af0333",
+   "truth": "cotton_bacterial_blight",
+   "crop": "Cotton",
+   "inferred_class": "cotton_bacterial_blight",
+   "inferred_crop": "Cotton",
+   "given_class": "cotton_bacterial_blight"
+  },
+  {
+   "id": "9b701232f705c5438c5be86879da9b0fe2f02c9c07726bb089434e9d6b19e146",
+   "truth": "cotton_wilt",
+   "crop": "Cotton",
+   "inferred_class": "cotton_wilt",
+   "inferred_crop": "Cotton",
+   "given_class": "cotton_wilt"
+  },
+  {
+   "id": "a00bc7e0d15b62c959b4462c1924b725443530782f31c36332907d8acaf415e8",
+   "truth": "cotton_bacterial_blight",
+   "crop": "Cotton",
+   "inferred_class": "cotton_bacterial_blight",
+   "inferred_crop": "Cotton",
+   "given_class": "cotton_bacterial_blight"
+  },
+  {
+   "id": "a4393cf6fad19707072b47b600cae2030332bd1ac33dcd99614f2650b4da4234",
+   "truth": "cotton_aphid",
+   "crop": "Cotton",
+   "inferred_class": "cotton_aphid",
+   "inferred_crop": "Cotton",
+   "given_class": "cotton_aphid"
+  },
+  {
+   "id": "a8939efff396592a9f8a51425b548229d89ac3a8d7e7873fa97eed9410d927db",
+   "truth": "cotton_wilt",
+   "crop": "Cotton",
+   "inferred_class": "cotton_wilt",
+   "inferred_crop": "Cotton",
+   "given_class": "cotton_wilt"
+  },
+  {
+   "id": "a98d76f9e3e8ba437a4bcbf246e4873b370c1513d18b5353a9aa2b610707e6db",
+   "truth": "cotton_bacterial_blight",
+   "crop": "Cotton",
+   "inferred_class": "cotton_bacterial_blight",
+   "inferred_crop": "Cotton",
+   "given_class": "cotton_bacterial_blight"
+  },
+  {
+   "id": "ac9d59cd9497a502fbb48534c5ffc1219ae4285a6dcca8e6e730318369da323f",
+   "truth": "cotton_healthy",
+   "crop": "Cotton",
+   "inferred_class": "cotton_healthy",
+   "inferred_crop": "Cotton",
+   "given_class": "cotton_healthy"
+  },
+  {
+   "id": "ae9e5d0e374d497623fb4875aa250d9d99e4a70b9ea9d6359c6ca047f367cac3",
+   "truth": "cotton_wilt",
+   "crop": "Cotton",
+   "inferred_class": "cotton_wilt",
+   "inferred_crop": "Cotton",
+   "given_class": "cotton_wilt"
+  },
+  {
+   "id": "b197486edf54d146594920d1ee8bc7f9a10fe0db61f9dc556732fd9a4607a935",
+   "truth": "cotton_aphid",
+   "crop": "Cotton",
+   "inferred_class": "cotton_aphid",
+   "inferred_crop": "Cotton",
+   "given_class": "cotton_aphid"
+  },
+  {
+   "id": "b1fa8c618ad50847350f99a1cc0cc07a1c93a27f5619b3fcae2e46853091d8a8",
+   "truth": "cotton_bacterial_blight",
+   "crop": "Cotton",
+   "inferred_class": "cotton_bacterial_blight",
+   "inferred_crop": "Cotton",
+   "given_class": "cotton_bacterial_blight"
+  },
+  {
+   "id": "b2eada9f96290f803ae229a7f5bd3814ce2b6554c5533fd0c181d904b5ad4482",
+   "truth": "cotton_red_cotton_bug",
+   "crop": "Cotton",
+   "inferred_class": "cotton_red_cotton_bug",
+   "inferred_crop": "Cotton",
+   "given_class": "cotton_red_cotton_bug"
+  },
+  {
+   "id": "b95716b58c6b9f637d972c175ebb6c63c36691688ffd731551171b5badd99edc",
+   "truth": "cotton_bacterial_blight",
+   "crop": "Cotton",
+   "inferred_class": "cotton_bacterial_blight",
+   "inferred_crop": "Cotton",
+   "given_class": "cotton_bacterial_blight"
+  },
+  {
+   "id": "b9b20302d5ec692a06cefeb61f724b30a627e4e950f198f36b500b32b48cf32e",
+   "truth": "cotton_aphid",
+   "crop": "Cotton",
+   "inferred_class": "cotton_aphid",
+   "inferred_crop": "Cotton",
+   "given_class": "cotton_aphid"
+  },
+  {
+   "id": "ba7f1ac68b9a9b945f0c6494e1d00373d2f560263c1e5197d772d5837e01d97c",
+   "truth": "cotton_wilt",
+   "crop": "Cotton",
+   "inferred_class": "cotton_wilt",
+   "inferred_crop": "Cotton",
+   "given_class": "cotton_wilt"
+  },
+  {
+   "id": "c282123080b516a051537a8a458505ae0fe7512fd06904267d4f84d988084503",
+   "truth": "cotton_wilt",
+   "crop": "Cotton",
+   "inferred_class": "cotton_wilt",
+   "inferred_crop": "Cotton",
+   "given_class": "cotton_wilt"
+  },
+  {
+   "id": "c4d035dedc6606d402d4783650204a6c6cc7762d44d221bbc688f7ecf1ceb334",
+   "truth": "cotton_american_bollworm",
+   "crop": "Cotton",
+   "inferred_class": "cotton_american_bollworm",
+   "inferred_crop": "Cotton",
+   "given_class": "cotton_american_bollworm"
+  },
+  {
+   "id": "c5151513a7a46caf8e27e0272e3bac04aef39da747fb9d5143eafc0fb294414a",
+   "truth": "cotton_healthy",
+   "crop": "Cotton",
+   "inferred_class": "cotton_healthy",
+   "inferred_crop": "Cotton",
+   "given_class": "cotton_healthy"
+  },
+  {
+   "id": "c8f12b5732d8d67b310595329b736c038ffbd6589432c9c1e281c9621ae6b050",
+   "truth": "cotton_aphid",
+   "crop": "Cotton",
+   "inferred_class": "cotton_aphid",
+   "inferred_crop": "Cotton",
+   "given_class": "cotton_aphid"
+  },
+  {
+   "id": "c91f7f8e7a36a6438bcf317282761215296c37339478b0361010e94274b81824",
+   "truth": "cotton_healthy",
+   "crop": "Cotton",
+   "inferred_class": "cotton_healthy",
+   "inferred_crop": "Cotton",
+   "given_class": "cotton_healthy"
+  },
+  {
+   "id": "c9f77c08b4ad84c101ba55eaaf521e06ce1f16e67438f9933100158d39495b34",
+   "truth": "cotton_bacterial_blight",
+   "crop": "Cotton",
+   "inferred_class": "cotton_bacterial_blight",
+   "inferred_crop": "Cotton",
+   "given_class": "cotton_bacterial_blight"
+  },
+  {
+   "id": "cb01f2a6dc2e1ed729c962979486ffaa65c56ef8418b22ef655a3bcfba29987a",
+   "truth": "cotton_whitefly",
+   "crop": "Cotton",
+   "inferred_class": "cotton_whitefly",
+   "inferred_crop": "Cotton",
+   "given_class": "cotton_whitefly"
+  },
+  {
+   "id": "d1017f6093758c02133db3300258bbdf3367c69a1636608fcfc9974816b2ef05",
+   "truth": "cotton_aphid",
+   "crop": "Cotton",
+   "inferred_class": "cotton_aphid",
+   "inferred_crop": "Cotton",
+   "given_class": "cotton_aphid"
+  },
+  {
+   "id": "d55e411bc88697cfa9794eafefe0af14cf76bf2461db7c67dae20321849326ec",
+   "truth": "cotton_red_cotton_bug",
+   "crop": "Cotton",
+   "inferred_class": "cotton_red_cotton_bug",
+   "inferred_crop": "Cotton",
+   "given_class": "cotton_red_cotton_bug"
+  },
+  {
+   "id": "d70286168cbfe678ca2fb1ec1132b6d70b0045054034c529b2bcd99b13c5fa9d",
+   "truth": "cotton_healthy",
+   "crop": "Cotton",
+   "inferred_class": "cotton_healthy",
+   "inferred_crop": "Cotton",
+   "given_class": "cotton_healthy"
+  },
+  {
+   "id": "d905589c53e60b160ab4654adc6f332c2ebfa30bd6416a9da9acf5e31309789f",
+   "truth": "cotton_healthy",
+   "crop": "Cotton",
+   "inferred_class": "cotton_healthy",
+   "inferred_crop": "Cotton",
+   "given_class": "cotton_healthy"
+  },
+  {
+   "id": "dac4ac32fea33f7ff9972310ebdd891350c988f50ad0f999948ff0d2431df48b",
+   "truth": "cotton_red_cotton_bug",
+   "crop": "Cotton",
+   "inferred_class": "cotton_red_cotton_bug",
+   "inferred_crop": "Cotton",
+   "given_class": "cotton_red_cotton_bug"
+  },
+  {
+   "id": "db5dc9178cf7d83af82a49fe574258ea7f9625c967908bd49acb65f80f9ead21",
+   "truth": "cotton_bacterial_blight",
+   "crop": "Cotton",
+   "inferred_class": "cotton_bacterial_blight",
+   "inferred_crop": "Cotton",
+   "given_class": "cotton_bacterial_blight"
+  },
+  {
+   "id": "dbb1c772857612259f4bcbc357a00b3ef534050108177d610056b57932f70b92",
+   "truth": "cotton_healthy",
+   "crop": "Cotton",
+   "inferred_class": "cotton_healthy",
+   "inferred_crop": "Cotton",
+   "given_class": "cotton_healthy"
+  },
+  {
+   "id": "dc7d3bce47ccb1a0441ed23439cac246e3c05abb9ba93f245b861d706282e49b",
+   "truth": "cotton_healthy",
+   "crop": "Cotton",
+   "inferred_class": "cotton_healthy",
+   "inferred_crop": "Cotton",
+   "given_class": "cotton_healthy"
+  },
+  {
+   "id": "de4385c4b2480eb3b1cd8712f280bed1afe0d53e51cb5f7d21fbf50202103ec5",
+   "truth": "cotton_wilt",
+   "crop": "Cotton",
+   "inferred_class": "cotton_wilt",
+   "inferred_crop": "Cotton",
+   "given_class": "cotton_wilt"
+  },
+  {
+   "id": "e390bee52fe808d678b74395b833aa7a8f58e0033ac2f74bf481982a87e41984",
+   "truth": "cotton_wilt",
+   "crop": "Cotton",
+   "inferred_class": "cotton_wilt",
+   "inferred_crop": "Cotton",
+   "given_class": "cotton_wilt"
+  },
+  {
+   "id": "eb22ec614c961da25df5f7ce258b76ac06a9bd625a0573d4f4a9b37d94c6dd9d",
+   "truth": "cotton_aphid",
+   "crop": "Cotton",
+   "inferred_class": "cotton_aphid",
+   "inferred_crop": "Cotton",
+   "given_class": "cotton_aphid"
+  },
+  {
+   "id": "ecc9583bf5b0dc9455bac5b6e10b1c5cb4252b01da41d193e0c5222a991e74d8",
+   "truth": "cotton_bacterial_blight",
+   "crop": "Cotton",
+   "inferred_class": "cotton_bacterial_blight",
+   "inferred_crop": "Cotton",
+   "given_class": "cotton_bacterial_blight"
+  },
+  {
+   "id": "f11bd48065e005712a53ed09dbd9d0d4bad55244f0856a970ae37eaa9719bc84",
+   "truth": "cotton_bacterial_blight",
+   "crop": "Cotton",
+   "inferred_class": "cotton_bacterial_blight",
+   "inferred_crop": "Cotton",
+   "given_class": "cotton_bacterial_blight"
+  },
+  {
+   "id": "f16cf6a1b7ec60db0a464bd25f5b5f80e86256b5cc490c27e581a1fb3bde523a",
+   "truth": "cotton_wilt",
+   "crop": "Cotton",
+   "inferred_class": "cotton_wilt",
+   "inferred_crop": "Cotton",
+   "given_class": "cotton_wilt"
+  },
+  {
+   "id": "f30c6f81878b8c47712b2ff399e03ef4956a0e4a9d3f29c6148d18ca0a287528",
+   "truth": "cotton_aphid",
+   "crop": "Cotton",
+   "inferred_class": "cotton_aphid",
+   "inferred_crop": "Cotton",
+   "given_class": "cotton_aphid"
+  },
+  {
+   "id": "f870fd05173b16057e7fc56f4d8df7ee16934f57475865d336c423f32dd2acc8",
+   "truth": "cotton_healthy",
+   "crop": "Cotton",
+   "inferred_class": "cotton_healthy",
+   "inferred_crop": "Cotton",
+   "given_class": "cotton_healthy"
+  },
+  {
+   "id": "fa9e15801f900684bec4a4744ac2742837f71afe2bb045b2555e57448e14ae43",
+   "truth": "cotton_bacterial_blight",
+   "crop": "Cotton",
+   "inferred_class": "cotton_bacterial_blight",
+   "inferred_crop": "Cotton",
+   "given_class": "cotton_bacterial_blight"
+  },
+  {
+   "id": "fb4e80f3f41e3a88d41ece744ff1565413a05e989dd9a6712e74640339e8aeab",
+   "truth": "cotton_mealybug",
+   "crop": "Cotton",
+   "inferred_class": "cotton_mealybug",
+   "inferred_crop": "Cotton",
+   "given_class": "cotton_mealybug"
+  },
+  {
+   "id": "00b9be713d9db53a34ecc1bf7bf02e735b44bd6d7e8bb64aae3642d99883267a",
+   "truth": "maize_common_rust",
+   "crop": "Maize",
+   "inferred_class": "maize_common_rust",
+   "inferred_crop": "Maize",
+   "given_class": "maize_common_rust"
+  },
+  {
+   "id": "015f72acc2a7bda92b9f8766c39eda765d23681e7e1b35d81caca819213e5b32",
+   "truth": "maize_armyworm",
+   "crop": "Maize",
+   "inferred_class": "maize_armyworm",
+   "inferred_crop": "Maize",
+   "given_class": "maize_armyworm"
+  },
+  {
+   "id": "02cc14d92075b555ca8b2919a5188178c54a4cd34aa51176d9c5545c260321e1",
+   "truth": "maize_healthy",
+   "crop": "Maize",
+   "inferred_class": "maize_healthy",
+   "inferred_crop": "Maize",
+   "given_class": "maize_healthy"
+  },
+  {
+   "id": "04f3e69761fb547f6e73f870aac3e92198887752f50bb0f440a8dc350ba5c4b8",
+   "truth": "maize_common_rust",
+   "crop": "Maize",
+   "inferred_class": "maize_common_rust",
+   "inferred_crop": "Maize",
+   "given_class": "maize_common_rust"
+  },
+  {
+   "id": "05a7760afa8cd130ea2623ea9a7465a0db0293a624a314e9a10fe8f274194b9c",
+   "truth": "maize_ear_rot",
+   "crop": "Maize",
+   "inferred_class": "maize_ear_rot",
+   "inferred_crop": "Maize",
+   "given_class": "maize_ear_rot"
+  },
+  {
+   "id": "0f5f9317a499b7d963c17fdd04249df485a5876965895f7720227e48697d6761",
+   "truth": "maize_healthy",
+   "crop": "Maize",
+   "inferred_class": "maize_healthy",
+   "inferred_crop": "Maize",
+   "given_class": "maize_healthy"
+  },
+  {
+   "id": "10f2632a66093a909d4458370a91cdf93d21e62b20594c7a3240e9cf66b00aee",
+   "truth": "maize_armyworm",
+   "crop": "Maize",
+   "inferred_class": "maize_armyworm",
+   "inferred_crop": "Maize",
+   "given_class": "maize_armyworm"
+  },
+  {
+   "id": "116c791ae49064d76c439d963918c319b5260166c7b38ac59487396dc2281a27",
+   "truth": "maize_armyworm",
+   "crop": "Maize",
+   "inferred_class": "maize_armyworm",
+   "inferred_crop": "Maize",
+   "given_class": "maize_armyworm"
+  },
+  {
+   "id": "16536ae13d4fe02cb7ac92c04e4ffa00517f76a1bb1d26578049937623997139",
+   "truth": "maize_healthy",
+   "crop": "Maize",
+   "inferred_class": "maize_healthy",
+   "inferred_crop": "Maize",
+   "given_class": "maize_healthy"
+  },
+  {
+   "id": "1a9c92cbf4b6a9b6fa4aac48d08c6651704bc231226a23ec5e7d28202ce07377",
+   "truth": "maize_healthy",
+   "crop": "Maize",
+   "inferred_class": "maize_healthy",
+   "inferred_crop": "Maize",
+   "given_class": "maize_healthy"
+  },
+  {
+   "id": "210297690226f071cf6f008c12784aad7675c7f92bc71164f44685f17f660583",
+   "truth": "maize_common_rust",
+   "crop": "Maize",
+   "inferred_class": "maize_common_rust",
+   "inferred_crop": "Maize",
+   "given_class": "maize_common_rust"
+  },
+  {
+   "id": "21614a355921cf1fd9f6e22450e29c5fa625de98bf789dae938d88638b925544",
+   "truth": "maize_armyworm",
+   "crop": "Maize",
+   "inferred_class": "maize_armyworm",
+   "inferred_crop": "Maize",
+   "given_class": "maize_armyworm"
+  },
+  {
+   "id": "25d2d8f5d85358e2bd2b524c7db94c987e0178fb63364514a35279677d8bfc6f",
+   "truth": "maize_armyworm",
+   "crop": "Maize",
+   "inferred_class": "maize_armyworm",
+   "inferred_crop": "Maize",
+   "given_class": "maize_armyworm"
+  },
+  {
+   "id": "29a9fa10fa1ac25eac046a182c8143d6bfded72b3720c9154f73cfa7fd8468d7",
+   "truth": "maize_stem_borer",
+   "crop": "Maize",
+   "inferred_class": "maize_stem_borer",
+   "inferred_crop": "Maize",
+   "given_class": "maize_stem_borer"
+  },
+  {
+   "id": "2b78185f6bfcb33da31d2577dab34cc52000b972dbb2b800b43b755eb4845a0d",
+   "truth": "maize_common_rust",
+   "crop": "Maize",
+   "inferred_class": "maize_common_rust",
+   "inferred_crop": "Maize",
+   "given_class": "maize_common_rust"
+  },
+  {
+   "id": "33c36199920f752893b1ee3693c4a9e85450667fb0e944803d0c778787683875",
+   "truth": "maize_healthy",
+   "crop": "Maize",
+   "inferred_class": "maize_healthy",
+   "inferred_crop": "Maize",
+   "given_class": "maize_healthy"
+  },
+  {
+   "id": "3cca76dab96acccd5f9f9b5f602930f99de1bfba55e0ed565b559abb19d87b59",
+   "truth": "maize_gray_leaf_spot",
+   "crop": "Maize",
+   "inferred_class": "maize_gray_leaf_spot",
+   "inferred_crop": "Maize",
+   "given_class": "maize_gray_leaf_spot"
+  },
+  {
+   "id": "3ee9b7cb7fc3b4774a24f18c4dbb289736cd09a9a3244ea984d380da8b604870",
+   "truth": "maize_healthy",
+   "crop": "Maize",
+   "inferred_class": "maize_healthy",
+   "inferred_crop": "Maize",
+   "given_class": "maize_healthy"
+  },
+  {
+   "id": "42541690168b81452fef347c034615363219417bd0c7f770d08b46ceb89db657",
+   "truth": "maize_stem_borer",
+   "crop": "Maize",
+   "inferred_class": "maize_stem_borer",
+   "inferred_crop": "Maize",
+   "given_class": "maize_stem_borer"
+  },
+  {
+   "id": "4c5e49fd3f7800aaaa02f4fec7c094f25685346179d60158169a0f03da53d0e6",
+   "truth": "maize_common_rust",
+   "crop": "Maize",
+   "inferred_class": "maize_common_rust",
+   "inferred_crop": "Maize",
+   "given_class": "maize_common_rust"
+  },
+  {
+   "id": "4fd69e8bb70a5a8242ecbf33cfe0a5ed30aedb074c6299a3dbd496aa83ce48fd",
+   "truth": "maize_armyworm",
+   "crop": "Maize",
+   "inferred_class": "maize_armyworm",
+   "inferred_crop": "Maize",
+   "given_class": "maize_armyworm"
+  },
+  {
+   "id": "5002260c8a13eb90aa598bd8878c4e66fce575f70392cb0fa89d5776a5560884",
+   "truth": "maize_healthy",
+   "crop": "Maize",
+   "inferred_class": "maize_healthy",
+   "inferred_crop": "Maize",
+   "given_class": "maize_healthy"
+  },
+  {
+   "id": "5074b3aba925408d9ff7fab6634fa450cd0d5b0ac25ab4b9070de1343940f206",
+   "truth": "maize_common_rust",
+   "crop": "Maize",
+   "inferred_class": "maize_common_rust",
+   "inferred_crop": "Maize",
+   "given_class": "maize_common_rust"
+  },
+  {
+   "id": "5096ee742bac6402e49a186ae84cb48354be4e089a9bd30364727bf952c2e8a0",
+   "truth": "maize_common_rust",
+   "crop": "Maize",
+   "inferred_class": "maize_common_rust",
+   "inferred_crop": "Maize",
+   "given_class": "maize_common_rust"
+  },
+  {
+   "id": "50ab29a441d0fe89f7202ed87ce4350f50ad3804b8dd8b4a363b9f7eec7ff2da",
+   "truth": "maize_healthy",
+   "crop": "Maize",
+   "inferred_class": "maize_healthy",
+   "inferred_crop": "Maize",
+   "given_class": "maize_healthy"
+  },
+  {
+   "id": "55b1fb738c29c9e1e006d111c656ebcc3b5d88821bee1f76f269da6c249c3815",
+   "truth": "maize_healthy",
+   "crop": "Maize",
+   "inferred_class": "maize_healthy",
+   "inferred_crop": "Maize",
+   "given_class": "maize_healthy"
+  },
+  {
+   "id": "5a8b772990f16f482d8bb534b22547144795521f7f8d6d527a99e205f4c75d9e",
+   "truth": "maize_armyworm",
+   "crop": "Maize",
+   "inferred_class": "maize_armyworm",
+   "inferred_crop": "Maize",
+   "given_class": "maize_armyworm"
+  },
+  {
+   "id": "5bb5b71febff555cd71b70f176e1db7d5d9cb70efca5f55342a6b528573122bf",
+   "truth": "maize_common_rust",
+   "crop": "Maize",
+   "inferred_class": "maize_common_rust",
+   "inferred_crop": "Maize",
+   "given_class": "maize_common_rust"
+  },
+  {
+   "id": "5db638a1849e42f66f3c62fcba700ad6d1fc62da1a2f735bf2b398110b8c2982",
+   "truth": "maize_common_rust",
+   "crop": "Maize",
+   "inferred_class": "maize_common_rust",
+   "inferred_crop": "Maize",
+   "given_class": "maize_common_rust"
+  },
+  {
+   "id": "5dde95e3a7ccd5b5678a0cb504b87fe07c17fcc4193b4ce14db87c3d158c56f5",
+   "truth": "maize_healthy",
+   "crop": "Maize",
+   "inferred_class": "wheat_healthy",
+   "inferred_crop": "Wheat",
+   "given_class": "maize_fall_armyworm"
+  },
+  {
+   "id": "6121540d65ea0426e8599c7ccb59d9350e51ff0d7c07c64ee39cca5db9d598b1",
+   "truth": "maize_healthy",
+   "crop": "Maize",
+   "inferred_class": "maize_healthy",
+   "inferred_crop": "Maize",
+   "given_class": "maize_healthy"
+  },
+  {
+   "id": "6337f1a703a06fc7e8567bc080b87dafc3bc176fb8fc3a646968e6e87a30b4fa",
+   "truth": "maize_common_rust",
+   "crop": "Maize",
+   "inferred_class": "maize_common_rust",
+   "inferred_crop": "Maize",
+   "given_class": "maize_common_rust"
+  },
+  {
+   "id": "639af85f1984d8fc39fafc85a5dac8736238ce32ccdc227282f99a6a7afcadc7",
+   "truth": "maize_healthy",
+   "crop": "Maize",
+   "inferred_class": "maize_healthy",
+   "inferred_crop": "Maize",
+   "given_class": "maize_healthy"
+  },
+  {
+   "id": "64e512369bded26d360aff2b311088838dcb4f354bd4b0b818b5c3cacb5463ba",
+   "truth": "maize_common_rust",
+   "crop": "Maize",
+   "inferred_class": "maize_common_rust",
+   "inferred_crop": "Maize",
+   "given_class": "maize_common_rust"
+  },
+  {
+   "id": "6643504bd1ce2269734c1bdfa6088b068e5066233afeb2fd8bfbaafef61bdbb1",
+   "truth": "maize_gray_leaf_spot",
+   "crop": "Maize",
+   "inferred_class": "maize_gray_leaf_spot",
+   "inferred_crop": "Maize",
+   "given_class": "maize_gray_leaf_spot"
+  },
+  {
+   "id": "671f340ea349e8a4ea83f6c78cc13f2965e6e33c69255b847f1cf11ff21faba1",
+   "truth": "maize_gray_leaf_spot",
+   "crop": "Maize",
+   "inferred_class": "maize_gray_leaf_spot",
+   "inferred_crop": "Maize",
+   "given_class": "maize_gray_leaf_spot"
+  },
+  {
+   "id": "67c6ea8e29d8dd602374af013406ab66868078b1535a0b39bd7eef844d771f76",
+   "truth": "maize_healthy",
+   "crop": "Maize",
+   "inferred_class": "maize_healthy",
+   "inferred_crop": "Maize",
+   "given_class": "maize_healthy"
+  },
+  {
+   "id": "6d1192d4c21691de09afedad3a956e4a848723fbd7d9e131482f6dae39d4d0bf",
+   "truth": "maize_armyworm",
+   "crop": "Maize",
+   "inferred_class": "maize_armyworm",
+   "inferred_crop": "Maize",
+   "given_class": "maize_armyworm"
+  },
+  {
+   "id": "6e1b008ed81200d8192c786e006bb57063bfbfa79b46e79d6b8a741472e4e5b9",
+   "truth": "maize_healthy",
+   "crop": "Maize",
+   "inferred_class": "maize_healthy",
+   "inferred_crop": "Maize",
+   "given_class": "maize_healthy"
+  },
+  {
+   "id": "728d107a0e3ccc4e103db9c7f53805bf6d8b4a893d0709c1cbd0ce0e4b255869",
+   "truth": "maize_gray_leaf_spot",
+   "crop": "Maize",
+   "inferred_class": "maize_gray_leaf_spot",
+   "inferred_crop": "Maize",
+   "given_class": "maize_gray_leaf_spot"
+  },
+  {
+   "id": "75e694633c6ef1f6297d4af3482d7ea559ed4a5ec6b7c030a1a25d31d0209994",
+   "truth": "maize_gray_leaf_spot",
+   "crop": "Maize",
+   "inferred_class": "maize_gray_leaf_spot",
+   "inferred_crop": "Maize",
+   "given_class": "maize_gray_leaf_spot"
+  },
+  {
+   "id": "7640c2d1fe4264e6da416a7cfb5e6a482cf8927d1167f941a190168dd8799026",
+   "truth": "maize_common_rust",
+   "crop": "Maize",
+   "inferred_class": "maize_common_rust",
+   "inferred_crop": "Maize",
+   "given_class": "maize_common_rust"
+  },
+  {
+   "id": "79d438b9349515aa58e7080cde4737b2feff8413d9ad9f89d3985025bdfe8ebb",
+   "truth": "maize_common_rust",
+   "crop": "Maize",
+   "inferred_class": "maize_common_rust",
+   "inferred_crop": "Maize",
+   "given_class": "maize_common_rust"
+  },
+  {
+   "id": "7b628360869aa77dd1b4faeb0b65302e174ef5ce205a39a4c546234e3e9af354",
+   "truth": "maize_healthy",
+   "crop": "Maize",
+   "inferred_class": "maize_healthy",
+   "inferred_crop": "Maize",
+   "given_class": "maize_healthy"
+  },
+  {
+   "id": "7faea506d48c61d9ffc35292025b6c16702eb08adbe92ac466c12e9cf2f3b169",
+   "truth": "maize_healthy",
+   "crop": "Maize",
+   "inferred_class": "maize_healthy",
+   "inferred_crop": "Maize",
+   "given_class": "maize_healthy"
+  },
+  {
+   "id": "7fb666becacf84c55e0b491aa7765876747d8283e20e7f9788edb4ac7a0298b4",
+   "truth": "maize_healthy",
+   "crop": "Maize",
+   "inferred_class": "maize_healthy",
+   "inferred_crop": "Maize",
+   "given_class": "maize_healthy"
+  },
+  {
+   "id": "822b096a9f7fc1b1863bdd945a2b7c20470543e83ca535b638726a377e48d28d",
+   "truth": "maize_common_rust",
+   "crop": "Maize",
+   "inferred_class": "maize_common_rust",
+   "inferred_crop": "Maize",
+   "given_class": "maize_common_rust"
+  },
+  {
+   "id": "851a36400cb92ccb0c6e03426b268f3b06ab4522542566041085092217c69c65",
+   "truth": "maize_healthy",
+   "crop": "Maize",
+   "inferred_class": "maize_healthy",
+   "inferred_crop": "Maize",
+   "given_class": "maize_healthy"
+  },
+  {
+   "id": "8706b6807157a2694af26fcf58252ff1c720abf0876c3d98ef644306782cfe24",
+   "truth": "maize_fall_armyworm",
+   "crop": "Maize",
+   "inferred_class": "wheat_stem_fly",
+   "inferred_crop": "Wheat",
+   "given_class": "maize_stem_borer"
+  },
+  {
+   "id": "88c19f668f4e0e79c9e245dcae75c6d0f2043257e7a3b83d25e0e83113e6a9a4",
+   "truth": "maize_gray_leaf_spot",
+   "crop": "Maize",
+   "inferred_class": "maize_gray_leaf_spot",
+   "inferred_crop": "Maize",
+   "given_class": "maize_gray_leaf_spot"
+  },
+  {
+   "id": "8b81c9c27f92ea5145c4deccee62fee6d34abd506c253f2c8bf1d5b584ff9314",
+   "truth": "maize_fall_armyworm",
+   "crop": "Maize",
+   "inferred_class": "maize_fall_armyworm",
+   "inferred_crop": "Maize",
+   "given_class": "maize_fall_armyworm"
+  },
+  {
+   "id": "8c79b63afb6842492cb345139f3c922c616330cc3b882e5195d0f43a5cb97e95",
+   "truth": "maize_gray_leaf_spot",
+   "crop": "Maize",
+   "inferred_class": "maize_gray_leaf_spot",
+   "inferred_crop": "Maize",
+   "given_class": "maize_gray_leaf_spot"
+  },
+  {
+   "id": "927faa66e05b164fe195e2030a49e615cc3684e65778d753ce56552c5888759e",
+   "truth": "maize_common_rust",
+   "crop": "Maize",
+   "inferred_class": "maize_common_rust",
+   "inferred_crop": "Maize",
+   "given_class": "maize_common_rust"
+  },
+  {
+   "id": "956e0203becc659b024d040483a07481db812a2cfa1e7a433a974c548fc0d4ba",
+   "truth": "maize_common_rust",
+   "crop": "Maize",
+   "inferred_class": "maize_common_rust",
+   "inferred_crop": "Maize",
+   "given_class": "maize_common_rust"
+  },
+  {
+   "id": "9619b91293d02315fe4f8617934ba6a3c4bb443bcda8d788e402a1734bcb6db0",
+   "truth": "maize_healthy",
+   "crop": "Maize",
+   "inferred_class": "maize_healthy",
+   "inferred_crop": "Maize",
+   "given_class": "maize_healthy"
+  },
+  {
+   "id": "9681f7ef2aeaff062201015d67fdd6494d36fb65e79d1301fde28e7aa0098f6b",
+   "truth": "maize_armyworm",
+   "crop": "Maize",
+   "inferred_class": "maize_armyworm",
+   "inferred_crop": "Maize",
+   "given_class": "maize_armyworm"
+  },
+  {
+   "id": "9685463cb4424c3e48196ac21e8f4ed3032aa8b79ed97e4dbd180eb9684140a0",
+   "truth": "maize_gray_leaf_spot",
+   "crop": "Maize",
+   "inferred_class": "maize_gray_leaf_spot",
+   "inferred_crop": "Maize",
+   "given_class": "maize_gray_leaf_spot"
+  },
+  {
+   "id": "9704029b724429fd9f8218019c8fcaf4655157fc50ad587352617db41bb936bc",
+   "truth": "maize_healthy",
+   "crop": "Maize",
+   "inferred_class": "maize_healthy",
+   "inferred_crop": "Maize",
+   "given_class": "maize_healthy"
+  },
+  {
+   "id": "98b9e5c0fbfa1f81292926a50b63c13e95cd0df781d71913991d4a37646d638a",
+   "truth": "maize_fall_armyworm",
+   "crop": "Maize",
+   "inferred_class": "cotton_american_bollworm",
+   "inferred_crop": "Cotton",
+   "given_class": "maize_fall_armyworm"
+  },
+  {
+   "id": "9ece7bcdc7716a120fda809b97384c23102f4c651063a0c402c641cc3001c48d",
+   "truth": "maize_common_rust",
+   "crop": "Maize",
+   "inferred_class": "maize_common_rust",
+   "inferred_crop": "Maize",
+   "given_class": "maize_common_rust"
+  },
+  {
+   "id": "a575488abfcb17f3bdb3d8be17bf103f31a12e467f90eae4ced1515ee748c326",
+   "truth": "maize_healthy",
+   "crop": "Maize",
+   "inferred_class": "maize_healthy",
+   "inferred_crop": "Maize",
+   "given_class": "maize_healthy"
+  },
+  {
+   "id": "a827608cf235af8d3e0e9e61f7feed505cf154e509245b7ac881c628ac9f8c36",
+   "truth": "maize_healthy",
+   "crop": "Maize",
+   "inferred_class": "maize_healthy",
+   "inferred_crop": "Maize",
+   "given_class": "maize_healthy"
+  },
+  {
+   "id": "a8ea8fa402650df445143b8d57a844d517eb688bcbd9f3a66cc6d85e551f18c1",
+   "truth": "maize_common_rust",
+   "crop": "Maize",
+   "inferred_class": "maize_common_rust",
+   "inferred_crop": "Maize",
+   "given_class": "maize_common_rust"
+  },
+  {
+   "id": "aa3bcc3fb8dc2255ace88ca9980f194d6fdc748413358cc843b7e17503fd4554",
+   "truth": "maize_fall_armyworm",
+   "crop": "Maize",
+   "inferred_class": "maize_fall_armyworm",
+   "inferred_crop": "Maize",
+   "given_class": "maize_fall_armyworm"
+  },
+  {
+   "id": "ac24bd9f2a0016fa0d67abbd90f217bf6b0424d0dd25a92000704090a1b7692b",
+   "truth": "maize_fall_armyworm",
+   "crop": "Maize",
+   "inferred_class": "maize_fall_armyworm",
+   "inferred_crop": "Maize",
+   "given_class": "maize_fall_armyworm"
+  },
+  {
+   "id": "ac498ea4bae209fd2df4df29247f5ea125e4cb30ea3f6d55a468de6e09d75a8b",
+   "truth": "maize_healthy",
+   "crop": "Maize",
+   "inferred_class": "maize_healthy",
+   "inferred_crop": "Maize",
+   "given_class": "maize_healthy"
+  },
+  {
+   "id": "b25c11a487ed152d6add25de8124351a8c5b51f37a72db2dc7323ec61aa51cf4",
+   "truth": "maize_healthy",
+   "crop": "Maize",
+   "inferred_class": "maize_healthy",
+   "inferred_crop": "Maize",
+   "given_class": "maize_healthy"
+  },
+  {
+   "id": "b432485075d69aea63a1032384db0ea883f091759a02bef957cc3e1090f405dc",
+   "truth": "maize_common_rust",
+   "crop": "Maize",
+   "inferred_class": "maize_common_rust",
+   "inferred_crop": "Maize",
+   "given_class": "maize_common_rust"
+  },
+  {
+   "id": "b576de1b88373335c8017947989680c883d06612843c2a8aa4cbca9b65f99e6c",
+   "truth": "maize_common_rust",
+   "crop": "Maize",
+   "inferred_class": "maize_common_rust",
+   "inferred_crop": "Maize",
+   "given_class": "maize_common_rust"
+  },
+  {
+   "id": "b67ffa5adab1272c4097fb9183cae2efedc543916561cc760bf4c96677b9b183",
+   "truth": "maize_healthy",
+   "crop": "Maize",
+   "inferred_class": "maize_healthy",
+   "inferred_crop": "Maize",
+   "given_class": "maize_healthy"
+  },
+  {
+   "id": "b99f2c1aab482916aeee7d0aa27d3504870ed395b99e3927c628ba05c91a920d",
+   "truth": "maize_healthy",
+   "crop": "Maize",
+   "inferred_class": "maize_healthy",
+   "inferred_crop": "Maize",
+   "given_class": "maize_healthy"
+  },
+  {
+   "id": "ba46374e17ee5c97430e20a84644da7d70ef1ae9119598458b4a4fc566d46357",
+   "truth": "maize_common_rust",
+   "crop": "Maize",
+   "inferred_class": "maize_common_rust",
+   "inferred_crop": "Maize",
+   "given_class": "maize_common_rust"
+  },
+  {
+   "id": "bb2fa551f65d83ea5053f2e5d2e2873fa20d46c93b7cc073041bd48286bf5b1d",
+   "truth": "maize_common_rust",
+   "crop": "Maize",
+   "inferred_class": "maize_common_rust",
+   "inferred_crop": "Maize",
+   "given_class": "maize_common_rust"
+  },
+  {
+   "id": "bba95a0ca780cad406f504fac23e3ce6f74b74ee43afe854ba209e361fc2556c",
+   "truth": "maize_gray_leaf_spot",
+   "crop": "Maize",
+   "inferred_class": "maize_gray_leaf_spot",
+   "inferred_crop": "Maize",
+   "given_class": "maize_gray_leaf_spot"
+  },
+  {
+   "id": "bd02b19e1f3ef0ef0a0869b9a01dfda3c8c2e8796decd1960c96c6a48ebaa221",
+   "truth": "maize_common_rust",
+   "crop": "Maize",
+   "inferred_class": "maize_common_rust",
+   "inferred_crop": "Maize",
+   "given_class": "maize_common_rust"
+  },
+  {
+   "id": "bf2420d2c3a9629d82ec29375a6f97f96ca71ef0a90a27a891165b1dd4354985",
+   "truth": "maize_healthy",
+   "crop": "Maize",
+   "inferred_class": "maize_healthy",
+   "inferred_crop": "Maize",
+   "given_class": "maize_healthy"
+  },
+  {
+   "id": "c0c6e20c0c961f3695a758dcfde1b22c04e1d15cce6f9142fd3af5597540f80f",
+   "truth": "maize_healthy",
+   "crop": "Maize",
+   "inferred_class": "maize_healthy",
+   "inferred_crop": "Maize",
+   "given_class": "maize_healthy"
+  },
+  {
+   "id": "c3529c4de2081bb2bff48f5b7b92e89f11c5bfb1fcda38bc509f02c9a553f1d3",
+   "truth": "maize_gray_leaf_spot",
+   "crop": "Maize",
+   "inferred_class": "maize_gray_leaf_spot",
+   "inferred_crop": "Maize",
+   "given_class": "maize_gray_leaf_spot"
+  },
+  {
+   "id": "c369af11c55c29047c4e6124d83d59febf9fb9e8e78ee4b81252070564652da2",
+   "truth": "maize_gray_leaf_spot",
+   "crop": "Maize",
+   "inferred_class": "maize_gray_leaf_spot",
+   "inferred_crop": "Maize",
+   "given_class": "maize_gray_leaf_spot"
+  },
+  {
+   "id": "c393f833ce99b3ed0e103a8433448c848953ec88d7f9e0045f69b16bb70ab827",
+   "truth": "maize_healthy",
+   "crop": "Maize",
+   "inferred_class": "maize_healthy",
+   "inferred_crop": "Maize",
+   "given_class": "maize_healthy"
+  },
+  {
+   "id": "c429ebaae06ad18d72237b0000403244464d00347dc50c37a6cd3ff4064fe599",
+   "truth": "maize_ear_rot",
+   "crop": "Maize",
+   "inferred_class": "maize_ear_rot",
+   "inferred_crop": "Maize",
+   "given_class": "maize_ear_rot"
+  },
+  {
+   "id": "c7d2e915f6338dccf2103664cd97c2dd0193431ecb060b6fe67768b16a8af02e",
+   "truth": "maize_common_rust",
+   "crop": "Maize",
+   "inferred_class": "maize_common_rust",
+   "inferred_crop": "Maize",
+   "given_class": "maize_common_rust"
+  },
+  {
+   "id": "d5046156419bed89d6bc486e12e0d7d95b77224d3be8fad7844c39a3204067de",
+   "truth": "maize_common_rust",
+   "crop": "Maize",
+   "inferred_class": "maize_common_rust",
+   "inferred_crop": "Maize",
+   "given_class": "maize_common_rust"
+  },
+  {
+   "id": "d6186021ab407c2d2666700b0705e3c4babf80d13f366e20ed15cea3358ccedd",
+   "truth": "maize_healthy",
+   "crop": "Maize",
+   "inferred_class": "maize_healthy",
+   "inferred_crop": "Maize",
+   "given_class": "maize_healthy"
+  },
+  {
+   "id": "d7eb6f90c168a93e182d06a8b6a3c55ce455e269d1f4e94c554ddf791cd9af90",
+   "truth": "maize_healthy",
+   "crop": "Maize",
+   "inferred_class": "maize_healthy",
+   "inferred_crop": "Maize",
+   "given_class": "maize_healthy"
+  },
+  {
+   "id": "d97b115df0f44dcd634a1edf6f6bc5eaa9ad78eecb495909924670c8d25df9e2",
+   "truth": "maize_gray_leaf_spot",
+   "crop": "Maize",
+   "inferred_class": "maize_gray_leaf_spot",
+   "inferred_crop": "Maize",
+   "given_class": "maize_gray_leaf_spot"
+  },
+  {
+   "id": "d9eeac9b545864004b03c36348ccf8c0f5859e0159e861258e955f24480591a0",
+   "truth": "maize_common_rust",
+   "crop": "Maize",
+   "inferred_class": "maize_common_rust",
+   "inferred_crop": "Maize",
+   "given_class": "maize_common_rust"
+  },
+  {
+   "id": "da044215b531bed4c36c3063957237164584b14008e68762413dcd23d4588531",
+   "truth": "maize_armyworm",
+   "crop": "Maize",
+   "inferred_class": "maize_armyworm",
+   "inferred_crop": "Maize",
+   "given_class": "maize_armyworm"
+  },
+  {
+   "id": "dcafeba81466d6eec2984fc30a93aaeef348b4106de730b98e09a240da83f800",
+   "truth": "maize_fall_armyworm",
+   "crop": "Maize",
+   "inferred_class": "wheat_scab",
+   "inferred_crop": "Wheat",
+   "given_class": "maize_gray_leaf_spot"
+  },
+  {
+   "id": "de70c69d3d5508faf087c9642e2bc5cbf50f339fef357aa1d4416717dc76b145",
+   "truth": "maize_stem_borer",
+   "crop": "Maize",
+   "inferred_class": "maize_ear_rot",
+   "inferred_crop": "Maize",
+   "given_class": "maize_ear_rot"
+  },
+  {
+   "id": "decbf2959236e028f43d6620a56568ba627b072d2885f9a45d0fcdcb627df458",
+   "truth": "maize_healthy",
+   "crop": "Maize",
+   "inferred_class": "maize_healthy",
+   "inferred_crop": "Maize",
+   "given_class": "maize_healthy"
+  },
+  {
+   "id": "e149bc2dd717fd47677f43b63ab35865cebbd6b91bbb19a680bc342155f391a6",
+   "truth": "maize_gray_leaf_spot",
+   "crop": "Maize",
+   "inferred_class": "maize_gray_leaf_spot",
+   "inferred_crop": "Maize",
+   "given_class": "maize_gray_leaf_spot"
+  },
+  {
+   "id": "e1e143ad02ae64f6314f0e15b35f5706424299437247706ff91aa0da9526f2e9",
+   "truth": "maize_healthy",
+   "crop": "Maize",
+   "inferred_class": "maize_healthy",
+   "inferred_crop": "Maize",
+   "given_class": "maize_healthy"
+  },
+  {
+   "id": "e437a33e72b52c8e13e8211e9b972e890966ca3277ea2293f104adffea3559a6",
+   "truth": "maize_healthy",
+   "crop": "Maize",
+   "inferred_class": "maize_healthy",
+   "inferred_crop": "Maize",
+   "given_class": "maize_healthy"
+  },
+  {
+   "id": "f10f0c664480e418dc4cc74902f5bac4be61d611c512c70fd5abe2c8a0f4619c",
+   "truth": "maize_common_rust",
+   "crop": "Maize",
+   "inferred_class": "maize_common_rust",
+   "inferred_crop": "Maize",
+   "given_class": "maize_common_rust"
+  },
+  {
+   "id": "f16c8decd2b631e949cbad9e58aa4804ec411aa2af8431ed7752e0278bed10a3",
+   "truth": "maize_common_rust",
+   "crop": "Maize",
+   "inferred_class": "maize_common_rust",
+   "inferred_crop": "Maize",
+   "given_class": "maize_common_rust"
+  },
+  {
+   "id": "f21fd2202a033b90c07b131b6ba47a5d688aea638b5c8773ef0070904fef7550",
+   "truth": "maize_common_rust",
+   "crop": "Maize",
+   "inferred_class": "maize_common_rust",
+   "inferred_crop": "Maize",
+   "given_class": "maize_common_rust"
+  },
+  {
+   "id": "f3cc7c64d69d246adee53f76de21f29737984860b13a3170a3c1af04d60fb61d",
+   "truth": "maize_ear_rot",
+   "crop": "Maize",
+   "inferred_class": "maize_ear_rot",
+   "inferred_crop": "Maize",
+   "given_class": "maize_ear_rot"
+  },
+  {
+   "id": "f69bfd06979b7ebc6743639d39fb443c34e39ce94a6c16e699523b5b73aa9ce6",
+   "truth": "maize_ear_rot",
+   "crop": "Maize",
+   "inferred_class": "maize_ear_rot",
+   "inferred_crop": "Maize",
+   "given_class": "maize_ear_rot"
+  },
+  {
+   "id": "fd65788aa6aaa6b0c5cd75f7d8aec6edac056ab7cd273600d32cc157e21b948f",
+   "truth": "maize_common_rust",
+   "crop": "Maize",
+   "inferred_class": "maize_common_rust",
+   "inferred_crop": "Maize",
+   "given_class": "maize_common_rust"
+  },
+  {
+   "id": "06db4ece3ff4048d4a37ab09d37c33111b9dfd98186d14db969b0e811d0ee93b",
+   "truth": "rice_tungro",
+   "crop": "Rice",
+   "inferred_class": "rice_tungro",
+   "inferred_crop": "Rice",
+   "given_class": "rice_tungro"
+  },
+  {
+   "id": "086fe233518186b68b74ffb07178ea4eb9ffbd7f61f8b6cbc0443d49e2038ed7",
+   "truth": "rice_tungro",
+   "crop": "Rice",
+   "inferred_class": "rice_tungro",
+   "inferred_crop": "Rice",
+   "given_class": "rice_tungro"
+  },
+  {
+   "id": "08d8ee591009b053e35c91f836804d87bd86b8c6560bd74f42efe1ce4482ba9a",
+   "truth": "rice_blast",
+   "crop": "Rice",
+   "inferred_class": "rice_blast",
+   "inferred_crop": "Rice",
+   "given_class": "rice_blast"
+  },
+  {
+   "id": "0a1d6a2ab192c3f741bbb007531046ff009001db7970c117772deb7a939a46c5",
+   "truth": "rice_blast",
+   "crop": "Rice",
+   "inferred_class": "rice_blast",
+   "inferred_crop": "Rice",
+   "given_class": "rice_blast"
+  },
+  {
+   "id": "0fbb5c7bc4a3bafaa170750de04d1edae5aa2ddce188f11389f8299c2f09f160",
+   "truth": "rice_brown_spot",
+   "crop": "Rice",
+   "inferred_class": "rice_brown_spot",
+   "inferred_crop": "Rice",
+   "given_class": "rice_brown_spot"
+  },
+  {
+   "id": "1826cb1476a3ba44ec38d01ba5e10659b60af852643d6b4b2ec5775ce06c48ff",
+   "truth": "rice_brown_spot",
+   "crop": "Rice",
+   "inferred_class": "rice_brown_spot",
+   "inferred_crop": "Rice",
+   "given_class": "rice_brown_spot"
+  },
+  {
+   "id": "1b2066ad0568e222592304e6fc4b4bedb92b061a87a53ad7a8f2dc7532a5ab90",
+   "truth": "rice_tungro",
+   "crop": "Rice",
+   "inferred_class": "rice_tungro",
+   "inferred_crop": "Rice",
+   "given_class": "rice_tungro"
+  },
+  {
+   "id": "1d5282ae6fcc94c878d6d191de2820315dabaa8a9fc99cfa701060ae2836a067",
+   "truth": "rice_tungro",
+   "crop": "Rice",
+   "inferred_class": "rice_tungro",
+   "inferred_crop": "Rice",
+   "given_class": "rice_tungro"
+  },
+  {
+   "id": "1f5fdbafff43b116a1365c28a4bcee0df1660df5b62a5a987d9370d49cf77cce",
+   "truth": "rice_tungro",
+   "crop": "Rice",
+   "inferred_class": "rice_tungro",
+   "inferred_crop": "Rice",
+   "given_class": "rice_tungro"
+  },
+  {
+   "id": "1fc30b5f845d1aced6ea3144ba07585b34df703f4e9660de8082cf6b450c0abf",
+   "truth": "rice_bacterial_blight",
+   "crop": "Rice",
+   "inferred_class": "rice_bacterial_blight",
+   "inferred_crop": "Rice",
+   "given_class": "rice_bacterial_blight"
+  },
+  {
+   "id": "217808f23cbbd386cf37eb147f53d5bc5d27f8a48c6e785a59f06540632f42ed",
+   "truth": "rice_tungro",
+   "crop": "Rice",
+   "inferred_class": "rice_tungro",
+   "inferred_crop": "Rice",
+   "given_class": "rice_tungro"
+  },
+  {
+   "id": "22a9f7c4b462a36f3604fb95ec8f384666733574e88ab147cebfc1b778eded0e",
+   "truth": "rice_bacterial_blight",
+   "crop": "Rice",
+   "inferred_class": "rice_bacterial_blight",
+   "inferred_crop": "Rice",
+   "given_class": "rice_bacterial_blight"
+  },
+  {
+   "id": "23c45ac0abc119534e8d2ec520622307b175091362e0910c34298848f97d2e28",
+   "truth": "rice_tungro",
+   "crop": "Rice",
+   "inferred_class": "rice_tungro",
+   "inferred_crop": "Rice",
+   "given_class": "rice_tungro"
+  },
+  {
+   "id": "240d1dedb6f85fb738cc94efe4fcead67d570464bbab50733f01dadb16431da1",
+   "truth": "rice_bacterial_blight",
+   "crop": "Rice",
+   "inferred_class": "rice_bacterial_blight",
+   "inferred_crop": "Rice",
+   "given_class": "rice_bacterial_blight"
+  },
+  {
+   "id": "260eb21afe3a0789174b3220fa7210b571b00a6e658aa9975c227236f5154fa5",
+   "truth": "rice_tungro",
+   "crop": "Rice",
+   "inferred_class": "rice_tungro",
+   "inferred_crop": "Rice",
+   "given_class": "rice_tungro"
+  },
+  {
+   "id": "28d72e057f754be656822cf3f6bd6d3d2207a58089154651935f36b44e6326a0",
+   "truth": "rice_brown_spot",
+   "crop": "Rice",
+   "inferred_class": "rice_brown_spot",
+   "inferred_crop": "Rice",
+   "given_class": "rice_brown_spot"
+  },
+  {
+   "id": "2952b8d3a3fc864b12564338f6ad0ddef85f8dbcd494027f5c54173e67ee5150",
+   "truth": "rice_brown_spot",
+   "crop": "Rice",
+   "inferred_class": "rice_brown_spot",
+   "inferred_crop": "Rice",
+   "given_class": "rice_brown_spot"
+  },
+  {
+   "id": "312db0e54abf9bdcf147d69236b32ea5e88d6837001575f80680c60c8d5fd38a",
+   "truth": "rice_tungro",
+   "crop": "Rice",
+   "inferred_class": "rice_tungro",
+   "inferred_crop": "Rice",
+   "given_class": "rice_tungro"
+  },
+  {
+   "id": "356f9ea465da49196d0afb9bf5ddf3ab4fcc0c1e0869c2caf17f66b6d206b253",
+   "truth": "rice_tungro",
+   "crop": "Rice",
+   "inferred_class": "rice_tungro",
+   "inferred_crop": "Rice",
+   "given_class": "rice_tungro"
+  },
+  {
+   "id": "398a8feb2c3cea4f0cc7e5d7601549d549c55e186ece7e4df7c2c65d1840d819",
+   "truth": "rice_bacterial_blight",
+   "crop": "Rice",
+   "inferred_class": "rice_bacterial_blight",
+   "inferred_crop": "Rice",
+   "given_class": "rice_bacterial_blight"
+  },
+  {
+   "id": "3adef8b457e0026f11135a756cd6dd88d8b0e62f60ef8266c2830bba763ed353",
+   "truth": "rice_brown_spot",
+   "crop": "Rice",
+   "inferred_class": "rice_brown_spot",
+   "inferred_crop": "Rice",
+   "given_class": "rice_brown_spot"
+  },
+  {
+   "id": "3ecd7f0a0e11727526ffdd5b0cf7017a6397ad1367b72877956472d5ad65f708",
+   "truth": "rice_bacterial_blight",
+   "crop": "Rice",
+   "inferred_class": "rice_bacterial_blight",
+   "inferred_crop": "Rice",
+   "given_class": "rice_bacterial_blight"
+  },
+  {
+   "id": "40748d4c99f7a67c2eef5f75fdaebe0040961d2c85c88c4a012f612060c96940",
+   "truth": "rice_tungro",
+   "crop": "Rice",
+   "inferred_class": "rice_tungro",
+   "inferred_crop": "Rice",
+   "given_class": "rice_tungro"
+  },
+  {
+   "id": "419beb908e8824fd5cbb46af416a743e350435426070921459bf4a4a39455017",
+   "truth": "rice_bacterial_blight",
+   "crop": "Rice",
+   "inferred_class": "rice_bacterial_blight",
+   "inferred_crop": "Rice",
+   "given_class": "rice_bacterial_blight"
+  },
+  {
+   "id": "44235d86e9f03c42b27014d5905ee535632d7e45b814a7bc37452aa3af7990a5",
+   "truth": "rice_tungro",
+   "crop": "Rice",
+   "inferred_class": "rice_tungro",
+   "inferred_crop": "Rice",
+   "given_class": "rice_tungro"
+  },
+  {
+   "id": "453f94cf68ea93c9de1c9175d1431cf401103e13630f55b4d1b88d0d41aa2fef",
+   "truth": "rice_tungro",
+   "crop": "Rice",
+   "inferred_class": "rice_tungro",
+   "inferred_crop": "Rice",
+   "given_class": "rice_tungro"
+  },
+  {
+   "id": "4673ae7c2c1dbe4e20a60d7da52defe950541419552119717105eac0f5a281e8",
+   "truth": "rice_bacterial_blight",
+   "crop": "Rice",
+   "inferred_class": "rice_bacterial_blight",
+   "inferred_crop": "Rice",
+   "given_class": "rice_bacterial_blight"
+  },
+  {
+   "id": "4687fd7968e307fb5c5b6517bc7b5be90b14d778af9f94be2a284161faccd500",
+   "truth": "rice_blast",
+   "crop": "Rice",
+   "inferred_class": "rice_blast",
+   "inferred_crop": "Rice",
+   "given_class": "rice_blast"
+  },
+  {
+   "id": "46c618e09f4ad31fbed8c3bc176c9f869a45b7ee93b32c0f22e73d7d66f1bd65",
+   "truth": "rice_bacterial_blight",
+   "crop": "Rice",
+   "inferred_class": "rice_bacterial_blight",
+   "inferred_crop": "Rice",
+   "given_class": "rice_bacterial_blight"
+  },
+  {
+   "id": "48488f1b81c7df2ff39b1f8898c79418a0225860d8927ab7adb2daf3a7908c65",
+   "truth": "rice_brown_spot",
+   "crop": "Rice",
+   "inferred_class": "rice_brown_spot",
+   "inferred_crop": "Rice",
+   "given_class": "rice_brown_spot"
+  },
+  {
+   "id": "48d8494b94068f8abc2f6347b1fe56c6c452b18b9dd890fa748e3fa5cf06391e",
+   "truth": "rice_brown_spot",
+   "crop": "Rice",
+   "inferred_class": "rice_brown_spot",
+   "inferred_crop": "Rice",
+   "given_class": "rice_brown_spot"
+  },
+  {
+   "id": "499ae37a73cd37d9ae04773af7987da2694b04a5406f7e02fa20ecf9d3fde772",
+   "truth": "rice_blast",
+   "crop": "Rice",
+   "inferred_class": "rice_blast",
+   "inferred_crop": "Rice",
+   "given_class": "rice_blast"
+  },
+  {
+   "id": "49b54a7d48fa2064256789884d3e7291afc7aaa5babece9446b4760246ad62a9",
+   "truth": "rice_tungro",
+   "crop": "Rice",
+   "inferred_class": "rice_tungro",
+   "inferred_crop": "Rice",
+   "given_class": "rice_tungro"
+  },
+  {
+   "id": "4b24a7497cb0c428ef872cd5f39842ca17434a6fe69376a985af3513e805154a",
+   "truth": "rice_bacterial_blight",
+   "crop": "Rice",
+   "inferred_class": "rice_bacterial_blight",
+   "inferred_crop": "Rice",
+   "given_class": "rice_bacterial_blight"
+  },
+  {
+   "id": "4d2623e116a1b4977188d3481041a93795e933f7b6e72d72301f651a748e4b9d",
+   "truth": "rice_brown_spot",
+   "crop": "Rice",
+   "inferred_class": "rice_brown_spot",
+   "inferred_crop": "Rice",
+   "given_class": "rice_brown_spot"
+  },
+  {
+   "id": "5376cbe24d325174d036f1e53e3485bf7b04039de07f9f0a8cc6211d7eb7c59e",
+   "truth": "rice_blast",
+   "crop": "Rice",
+   "inferred_class": "rice_blast",
+   "inferred_crop": "Rice",
+   "given_class": "rice_blast"
+  },
+  {
+   "id": "54ea566e7844c7ab1880b220e631f85c868adee2ebb2571df2efc7438bb3f19c",
+   "truth": "rice_brown_spot",
+   "crop": "Rice",
+   "inferred_class": "rice_brown_spot",
+   "inferred_crop": "Rice",
+   "given_class": "rice_brown_spot"
+  },
+  {
+   "id": "5ab1791f6c9a8caa28a9e4af52cc20648a20feb25d59b47bc473dcee44db7337",
+   "truth": "rice_tungro",
+   "crop": "Rice",
+   "inferred_class": "rice_tungro",
+   "inferred_crop": "Rice",
+   "given_class": "rice_tungro"
+  },
+  {
+   "id": "61899db2af0d734b5bc2991efc02059c6e7ddaeb4fd19fe34482cfc571d02976",
+   "truth": "rice_tungro",
+   "crop": "Rice",
+   "inferred_class": "rice_tungro",
+   "inferred_crop": "Rice",
+   "given_class": "rice_tungro"
+  },
+  {
+   "id": "64db943ebde274a5e9c3632441ee0cfe6bfed9c59cf1e1a4c889672cd203c7e7",
+   "truth": "rice_brown_spot",
+   "crop": "Rice",
+   "inferred_class": "rice_brown_spot",
+   "inferred_crop": "Rice",
+   "given_class": "rice_brown_spot"
+  },
+  {
+   "id": "66dc50d27e98bc9e7eb70ffd54588eb6083577973c3e9d823f5138fca78d4ff0",
+   "truth": "rice_brown_spot",
+   "crop": "Rice",
+   "inferred_class": "rice_brown_spot",
+   "inferred_crop": "Rice",
+   "given_class": "rice_brown_spot"
+  },
+  {
+   "id": "67c4a59f0901f1aa9e79f70eaec0c8adf2d8fb918a39f93499db35e38f6ba5b1",
+   "truth": "rice_tungro",
+   "crop": "Rice",
+   "inferred_class": "rice_tungro",
+   "inferred_crop": "Rice",
+   "given_class": "rice_tungro"
+  },
+  {
+   "id": "68e05c94950164843385ce600cce9f4f78bd8fefd6d6b351a8ff0793fdd0c17f",
+   "truth": "rice_bacterial_blight",
+   "crop": "Rice",
+   "inferred_class": "rice_bacterial_blight",
+   "inferred_crop": "Rice",
+   "given_class": "rice_bacterial_blight"
+  },
+  {
+   "id": "6a0c0e8d77387a5675c047b4bbf792f60602ec86a6b01e6a0164f62a2ba1623e",
+   "truth": "rice_bacterial_blight",
+   "crop": "Rice",
+   "inferred_class": "rice_bacterial_blight",
+   "inferred_crop": "Rice",
+   "given_class": "rice_bacterial_blight"
+  },
+  {
+   "id": "6a0c2c7b43070203c6074a3ce50143a246eb9d14f2036514e883da1dac4f2d53",
+   "truth": "rice_bacterial_blight",
+   "crop": "Rice",
+   "inferred_class": "rice_bacterial_blight",
+   "inferred_crop": "Rice",
+   "given_class": "rice_bacterial_blight"
+  },
+  {
+   "id": "6f36b84c9e10206b4eeafc2e5a062480ff2fcc4ae6aec7f49758b187419f4e7f",
+   "truth": "rice_bacterial_blight",
+   "crop": "Rice",
+   "inferred_class": "rice_bacterial_blight",
+   "inferred_crop": "Rice",
+   "given_class": "rice_bacterial_blight"
+  },
+  {
+   "id": "706f0dd190a5af476a13936795d4e29774411f5b733f583445edca02da3240c5",
+   "truth": "rice_blast",
+   "crop": "Rice",
+   "inferred_class": "rice_blast",
+   "inferred_crop": "Rice",
+   "given_class": "rice_blast"
+  },
+  {
+   "id": "72102099e5a4995b0dea7cddb7b3b69b5994c5b5ccfe68a81f8b809311594580",
+   "truth": "rice_brown_spot",
+   "crop": "Rice",
+   "inferred_class": "rice_brown_spot",
+   "inferred_crop": "Rice",
+   "given_class": "rice_brown_spot"
+  },
+  {
+   "id": "72c1e8fed6b3923ffce07542a7a51b8641aaedcf917d672bfa43756574ca9d30",
+   "truth": "rice_brown_spot",
+   "crop": "Rice",
+   "inferred_class": "rice_brown_spot",
+   "inferred_crop": "Rice",
+   "given_class": "rice_brown_spot"
+  },
+  {
+   "id": "74d6e95fca79e52ec7af287bad57993dff8e33262927d07c73247f77e1a3b264",
+   "truth": "rice_bacterial_blight",
+   "crop": "Rice",
+   "inferred_class": "rice_bacterial_blight",
+   "inferred_crop": "Rice",
+   "given_class": "rice_bacterial_blight"
+  },
+  {
+   "id": "74ff191d2678a19337dbe9ad947af3228af2813227717014cb6ad838f5bf2af3",
+   "truth": "rice_tungro",
+   "crop": "Rice",
+   "inferred_class": "rice_tungro",
+   "inferred_crop": "Rice",
+   "given_class": "rice_tungro"
+  },
+  {
+   "id": "7a0575c5e492b0b01e9bbba14e245c7d1d1262aad88b102e36d47217b44dd9ab",
+   "truth": "rice_bacterial_blight",
+   "crop": "Rice",
+   "inferred_class": "rice_bacterial_blight",
+   "inferred_crop": "Rice",
+   "given_class": "rice_bacterial_blight"
+  },
+  {
+   "id": "7a10e2e4d0b78fc7cc0396056fdee715f0db0a64c7f51e84ebd9285677720339",
+   "truth": "rice_tungro",
+   "crop": "Rice",
+   "inferred_class": "rice_tungro",
+   "inferred_crop": "Rice",
+   "given_class": "rice_tungro"
+  },
+  {
+   "id": "7a173238e40159cf7c643868aa425dd8dd2471a13e2c3c5ae5e2d6c94d4018a0",
+   "truth": "rice_blast",
+   "crop": "Rice",
+   "inferred_class": "rice_blast",
+   "inferred_crop": "Rice",
+   "given_class": "rice_blast"
+  },
+  {
+   "id": "83749941e17247840ac02d7f94c96ae08387298e567850b51d167a87d509ad0e",
+   "truth": "rice_blast",
+   "crop": "Rice",
+   "inferred_class": "rice_blast",
+   "inferred_crop": "Rice",
+   "given_class": "rice_blast"
+  },
+  {
+   "id": "8664ac3e73377fe0d62dc18d62df9e24ce702d9145ec564dd137cc187b33144b",
+   "truth": "rice_blast",
+   "crop": "Rice",
+   "inferred_class": "rice_blast",
+   "inferred_crop": "Rice",
+   "given_class": "rice_blast"
+  },
+  {
+   "id": "87d68e23a2dfc1aa0051a0ea1acbe9a0e6ded687351653e6cea3574e592d8daa",
+   "truth": "rice_tungro",
+   "crop": "Rice",
+   "inferred_class": "rice_tungro",
+   "inferred_crop": "Rice",
+   "given_class": "rice_tungro"
+  },
+  {
+   "id": "89fcf9b2eb1ec49e47d2a9f9ec79722313dc28ed20f3b3a970092a20fef1f192",
+   "truth": "rice_bacterial_blight",
+   "crop": "Rice",
+   "inferred_class": "rice_bacterial_blight",
+   "inferred_crop": "Rice",
+   "given_class": "rice_bacterial_blight"
+  },
+  {
+   "id": "8a3920ebe5555d96b91820e2cf1c3c939be5fc25d4236d72025832d8a64631da",
+   "truth": "rice_blast",
+   "crop": "Rice",
+   "inferred_class": "rice_blast",
+   "inferred_crop": "Rice",
+   "given_class": "rice_blast"
+  },
+  {
+   "id": "9509c347a9779aebad95af267b96276dcf4efde0c2b86c19ea2f641944da8a8a",
+   "truth": "rice_tungro",
+   "crop": "Rice",
+   "inferred_class": "rice_tungro",
+   "inferred_crop": "Rice",
+   "given_class": "rice_tungro"
+  },
+  {
+   "id": "989ca599e83a7e703be76c474dc90ee10abc4292901a4238962d85e2eca52385",
+   "truth": "rice_bacterial_blight",
+   "crop": "Rice",
+   "inferred_class": "rice_bacterial_blight",
+   "inferred_crop": "Rice",
+   "given_class": "rice_bacterial_blight"
+  },
+  {
+   "id": "9ba9a4e9a879167b866f5eabb31f3912f4901b646b0f743a0e7d44a807906c32",
+   "truth": "rice_blast",
+   "crop": "Rice",
+   "inferred_class": "rice_blast",
+   "inferred_crop": "Rice",
+   "given_class": "rice_blast"
+  },
+  {
+   "id": "9e654c39ffdbe79d5ca9c8c3094bc16bf676533be45a2f98885378aaa0d60350",
+   "truth": "rice_tungro",
+   "crop": "Rice",
+   "inferred_class": "rice_tungro",
+   "inferred_crop": "Rice",
+   "given_class": "rice_tungro"
+  },
+  {
+   "id": "9e85b2227fe132d81b8a87ab1c4d849969a2e603c873f5421fb80079df86b591",
+   "truth": "rice_tungro",
+   "crop": "Rice",
+   "inferred_class": "rice_tungro",
+   "inferred_crop": "Rice",
+   "given_class": "rice_tungro"
+  },
+  {
+   "id": "a14f7abc52bc33c15ce7a0d93897a3cbfbe883b2aff0d6bc25b8f557f3a0e944",
+   "truth": "rice_tungro",
+   "crop": "Rice",
+   "inferred_class": "rice_tungro",
+   "inferred_crop": "Rice",
+   "given_class": "rice_tungro"
+  },
+  {
+   "id": "a1ae1d957a3762290b5313d48f3b55d2e30eaabc88f57f0240b14529b967b9c4",
+   "truth": "rice_brown_spot",
+   "crop": "Rice",
+   "inferred_class": "rice_brown_spot",
+   "inferred_crop": "Rice",
+   "given_class": "rice_brown_spot"
+  },
+  {
+   "id": "a2cfa0fbdf6095ab285e4843f8a5ec1dd86f0f319757c7fee58522b01016349a",
+   "truth": "rice_tungro",
+   "crop": "Rice",
+   "inferred_class": "rice_tungro",
+   "inferred_crop": "Rice",
+   "given_class": "rice_tungro"
+  },
+  {
+   "id": "a388eab9df987f914d6a83ece8ad674fd031dfc323feeda2c8d12664b0d28d9c",
+   "truth": "rice_brown_spot",
+   "crop": "Rice",
+   "inferred_class": "rice_brown_spot",
+   "inferred_crop": "Rice",
+   "given_class": "rice_brown_spot"
+  },
+  {
+   "id": "a5934c17d7c68710a68bdb72172761142420192ab7fcbaf901a431c95af6841b",
+   "truth": "rice_brown_spot",
+   "crop": "Rice",
+   "inferred_class": "rice_brown_spot",
+   "inferred_crop": "Rice",
+   "given_class": "rice_brown_spot"
+  },
+  {
+   "id": "a6825bbe8cd3b14550013fe1d75cd3326b8d189fadc400469acf9e78b8edcb6e",
+   "truth": "rice_brown_spot",
+   "crop": "Rice",
+   "inferred_class": "rice_brown_spot",
+   "inferred_crop": "Rice",
+   "given_class": "rice_brown_spot"
+  },
+  {
+   "id": "abd005d107fbb2731e9a6cc4412c49c17dd5f28ab6ad63590ff7bd0a3480813d",
+   "truth": "rice_brown_spot",
+   "crop": "Rice",
+   "inferred_class": "rice_brown_spot",
+   "inferred_crop": "Rice",
+   "given_class": "rice_brown_spot"
+  },
+  {
+   "id": "ace3747225fe9669dc0946759135bd16744ae8ea512078423435ac29939ffba3",
+   "truth": "rice_tungro",
+   "crop": "Rice",
+   "inferred_class": "rice_tungro",
+   "inferred_crop": "Rice",
+   "given_class": "rice_tungro"
+  },
+  {
+   "id": "b07e0157206b3a4d0b661fd194e54f9269d60777c52496555a9ea3e039b94506",
+   "truth": "rice_tungro",
+   "crop": "Rice",
+   "inferred_class": "rice_tungro",
+   "inferred_crop": "Rice",
+   "given_class": "rice_tungro"
+  },
+  {
+   "id": "b10c21d8b5d7ff1abea883f54161557f2df9c615741d96045309ac2c061d0220",
+   "truth": "rice_tungro",
+   "crop": "Rice",
+   "inferred_class": "rice_tungro",
+   "inferred_crop": "Rice",
+   "given_class": "rice_tungro"
+  },
+  {
+   "id": "b55c28a763c387c2fd64834cc5fddfc7b904d3a4151026f6f377ef301b7577ab",
+   "truth": "rice_tungro",
+   "crop": "Rice",
+   "inferred_class": "rice_tungro",
+   "inferred_crop": "Rice",
+   "given_class": "rice_tungro"
+  },
+  {
+   "id": "b90e3745ce613b3c4dbbd226791d5c29043218be591a2a8651b3814851fe3216",
+   "truth": "rice_brown_spot",
+   "crop": "Rice",
+   "inferred_class": "rice_brown_spot",
+   "inferred_crop": "Rice",
+   "given_class": "rice_brown_spot"
+  },
+  {
+   "id": "bb67a63ae316fff8ae4aefe79912896addec36613c9bf7a4a320d32398e5c453",
+   "truth": "rice_brown_spot",
+   "crop": "Rice",
+   "inferred_class": "rice_brown_spot",
+   "inferred_crop": "Rice",
+   "given_class": "rice_brown_spot"
+  },
+  {
+   "id": "bbd24f5a41bc3c23c831689f395fb25444b8844efc265e3517251fa05a833ab3",
+   "truth": "rice_tungro",
+   "crop": "Rice",
+   "inferred_class": "rice_tungro",
+   "inferred_crop": "Rice",
+   "given_class": "rice_tungro"
+  },
+  {
+   "id": "be7011b185d3d7ed7567e10e2984c7ee3bb5b96330eca150f53b3e742f294448",
+   "truth": "rice_blast",
+   "crop": "Rice",
+   "inferred_class": "rice_blast",
+   "inferred_crop": "Rice",
+   "given_class": "rice_blast"
+  },
+  {
+   "id": "be8a66612b2d69823e67b68570721d232d7be805e776d4457e77d61cb66156da",
+   "truth": "rice_tungro",
+   "crop": "Rice",
+   "inferred_class": "rice_tungro",
+   "inferred_crop": "Rice",
+   "given_class": "rice_tungro"
+  },
+  {
+   "id": "c18661e49ca7e31671e9719ff883f48a6b2e0427fd6f55d34bc039bc22388dbd",
+   "truth": "rice_blast",
+   "crop": "Rice",
+   "inferred_class": "rice_blast",
+   "inferred_crop": "Rice",
+   "given_class": "rice_blast"
+  },
+  {
+   "id": "c21e9b2ac549d8b6f7b12616014dc8dbeea53f2a7e9d13191c81064de2110644",
+   "truth": "rice_tungro",
+   "crop": "Rice",
+   "inferred_class": "rice_tungro",
+   "inferred_crop": "Rice",
+   "given_class": "rice_tungro"
+  },
+  {
+   "id": "c585ea1c027e732439e1ac5f5dab6d9503a39f81472625a8bed922184eaa3213",
+   "truth": "rice_bacterial_blight",
+   "crop": "Rice",
+   "inferred_class": "rice_bacterial_blight",
+   "inferred_crop": "Rice",
+   "given_class": "rice_bacterial_blight"
+  },
+  {
+   "id": "cd91888878f33d83f7c24c3f3c4a0010adbb483c4dbf5df7a5f26afe1a1558b1",
+   "truth": "rice_tungro",
+   "crop": "Rice",
+   "inferred_class": "rice_tungro",
+   "inferred_crop": "Rice",
+   "given_class": "rice_tungro"
+  },
+  {
+   "id": "d071d4bc8cf0a1a272f9599e338c85f118d986f9c795d5a2cd75ee2f97848edb",
+   "truth": "rice_brown_spot",
+   "crop": "Rice",
+   "inferred_class": "rice_brown_spot",
+   "inferred_crop": "Rice",
+   "given_class": "rice_brown_spot"
+  },
+  {
+   "id": "d33b31b037d04d7a38c6bb3501c1585bfec03d8e0847a0fa117795c060ba643d",
+   "truth": "rice_blast",
+   "crop": "Rice",
+   "inferred_class": "wheat_leaf_blight",
+   "inferred_crop": "Wheat",
+   "given_class": "rice_blast"
+  },
+  {
+   "id": "d3e82742621c6476df9feaffcc8a7dcd51d625e256c1ffa2655de773121dcd42",
+   "truth": "rice_tungro",
+   "crop": "Rice",
+   "inferred_class": "rice_tungro",
+   "inferred_crop": "Rice",
+   "given_class": "rice_tungro"
+  },
+  {
+   "id": "d4a953ee7cd87e2730457dce82541d4e62cc935df1397c9281ffb161271d7fc2",
+   "truth": "rice_bacterial_blight",
+   "crop": "Rice",
+   "inferred_class": "rice_bacterial_blight",
+   "inferred_crop": "Rice",
+   "given_class": "rice_bacterial_blight"
+  },
+  {
+   "id": "d82b46a60fb6c642802e8423e76f058e730bdaf62a0dd4df09f91a00062471eb",
+   "truth": "rice_tungro",
+   "crop": "Rice",
+   "inferred_class": "rice_tungro",
+   "inferred_crop": "Rice",
+   "given_class": "rice_tungro"
+  },
+  {
+   "id": "d8cc8f54bc0dabb0786e7d82a780276426be1950b0f9b345706eeb1f95048c2f",
+   "truth": "rice_bacterial_blight",
+   "crop": "Rice",
+   "inferred_class": "rice_bacterial_blight",
+   "inferred_crop": "Rice",
+   "given_class": "rice_bacterial_blight"
+  },
+  {
+   "id": "d99693972b4df704fe63664209aa082c3ec193a024c92bbd5f6c1ea02b87014c",
+   "truth": "rice_tungro",
+   "crop": "Rice",
+   "inferred_class": "rice_tungro",
+   "inferred_crop": "Rice",
+   "given_class": "rice_tungro"
+  },
+  {
+   "id": "dfb5b32830e1c0a37cac429b919e284bd29298cc2798b0b2a6762b2c0d7a277f",
+   "truth": "rice_bacterial_blight",
+   "crop": "Rice",
+   "inferred_class": "rice_bacterial_blight",
+   "inferred_crop": "Rice",
+   "given_class": "rice_bacterial_blight"
+  },
+  {
+   "id": "e4a7f87b16d5a4690f6ae88f929e09faf708ac8bd5f2fc9200659e5bfd93f261",
+   "truth": "rice_tungro",
+   "crop": "Rice",
+   "inferred_class": "rice_tungro",
+   "inferred_crop": "Rice",
+   "given_class": "rice_tungro"
+  },
+  {
+   "id": "e9b58bb072b06fb839494f963becdab3708b32449ced1800f4d46134a0464d8d",
+   "truth": "rice_bacterial_blight",
+   "crop": "Rice",
+   "inferred_class": "rice_bacterial_blight",
+   "inferred_crop": "Rice",
+   "given_class": "rice_bacterial_blight"
+  },
+  {
+   "id": "ea03a2ed00b6921265f0f30ddbc0b8b63b757213e6b49b63f0b6a803133b0303",
+   "truth": "rice_bacterial_blight",
+   "crop": "Rice",
+   "inferred_class": "rice_bacterial_blight",
+   "inferred_crop": "Rice",
+   "given_class": "rice_bacterial_blight"
+  },
+  {
+   "id": "eaca23c828068946f465542a4cd330f63d78b232de0980b8a0d61d95f45192db",
+   "truth": "rice_brown_spot",
+   "crop": "Rice",
+   "inferred_class": "rice_brown_spot",
+   "inferred_crop": "Rice",
+   "given_class": "rice_brown_spot"
+  },
+  {
+   "id": "ee868539d3773825ce7ba75d330140504f25905604b1b9514dc1e2c0d064dfa2",
+   "truth": "rice_blast",
+   "crop": "Rice",
+   "inferred_class": "rice_blast",
+   "inferred_crop": "Rice",
+   "given_class": "rice_blast"
+  },
+  {
+   "id": "f379a3841346178c63e8f7399145772161be01d1be80f083aa1f145a3a41a178",
+   "truth": "rice_blast",
+   "crop": "Rice",
+   "inferred_class": "rice_blast",
+   "inferred_crop": "Rice",
+   "given_class": "rice_blast"
+  },
+  {
+   "id": "f448bb26eeb8839f60afa21ceb7d5e4f3922fcd56a60b52ccd81bb2f7820fece",
+   "truth": "rice_tungro",
+   "crop": "Rice",
+   "inferred_class": "rice_tungro",
+   "inferred_crop": "Rice",
+   "given_class": "rice_tungro"
+  },
+  {
+   "id": "f8fb95d3fbd8f70c4e797838370b247632fc4ecaaeffe48bad3873dcb3324acf",
+   "truth": "rice_tungro",
+   "crop": "Rice",
+   "inferred_class": "rice_tungro",
+   "inferred_crop": "Rice",
+   "given_class": "rice_tungro"
+  },
+  {
+   "id": "076738a0f8c093d1bd2ea92dee70384aec87dcebdf952d43006af76d19a5693a",
+   "truth": "sugarcane_yellow_rust",
+   "crop": "Sugarcane",
+   "inferred_class": "sugarcane_yellow_rust",
+   "inferred_crop": "Sugarcane",
+   "given_class": "sugarcane_yellow_rust"
+  },
+  {
+   "id": "143a53d9d4322b2d4cebb4db282828ab1054a565aebc00a262cefadaaf427fd5",
+   "truth": "sugarcane_red_rot",
+   "crop": "Sugarcane",
+   "inferred_class": "sugarcane_red_rot",
+   "inferred_crop": "Sugarcane",
+   "given_class": "sugarcane_red_rot"
+  },
+  {
+   "id": "173a84a6d43d7763042997a0ddaa59151e6e8c7e52be57e0f5da1414dc5f4a7b",
+   "truth": "sugarcane_red_rot",
+   "crop": "Sugarcane",
+   "inferred_class": "sugarcane_red_rot",
+   "inferred_crop": "Sugarcane",
+   "given_class": "sugarcane_red_rot"
+  },
+  {
+   "id": "1b13e6fb69467cccbb51706af78141f5ff25ea578b8f0b681a401bca0bd7e44b",
+   "truth": "sugarcane_yellow_rust",
+   "crop": "Sugarcane",
+   "inferred_class": "sugarcane_yellow_rust",
+   "inferred_crop": "Sugarcane",
+   "given_class": "sugarcane_yellow_rust"
+  },
+  {
+   "id": "1c2f7c6db92c3dfa389196f6845ccfc768e413a23e5e8d43087132343c00078e",
+   "truth": "sugarcane_red_rot",
+   "crop": "Sugarcane",
+   "inferred_class": "sugarcane_red_rot",
+   "inferred_crop": "Sugarcane",
+   "given_class": "sugarcane_red_rot"
+  },
+  {
+   "id": "1d2a46d38d54e98fd139b4bd2781043d251c527b52c59f7a6528e09468194fe9",
+   "truth": "sugarcane_mosaic",
+   "crop": "Sugarcane",
+   "inferred_class": "sugarcane_mosaic",
+   "inferred_crop": "Sugarcane",
+   "given_class": "sugarcane_mosaic"
+  },
+  {
+   "id": "1f8590566eb7fbb170ca513f97e19db714f7c03678acdf1c471088a5e8412a9b",
+   "truth": "sugarcane_yellow_rust",
+   "crop": "Sugarcane",
+   "inferred_class": "sugarcane_mosaic",
+   "inferred_crop": "Sugarcane",
+   "given_class": "sugarcane_mosaic"
+  },
+  {
+   "id": "26f8fc14c1f6f5a28804aeab405db3fe36df617a3547c6452e92a994e13e5a1c",
+   "truth": "sugarcane_yellow_rust",
+   "crop": "Sugarcane",
+   "inferred_class": "sugarcane_yellow_rust",
+   "inferred_crop": "Sugarcane",
+   "given_class": "sugarcane_yellow_rust"
+  },
+  {
+   "id": "29dcc0ebfed2f7cd13b66d8795bdb3ff73bc01457fd86a24fef8c8381fa6df67",
+   "truth": "sugarcane_red_rot",
+   "crop": "Sugarcane",
+   "inferred_class": "sugarcane_red_rot",
+   "inferred_crop": "Sugarcane",
+   "given_class": "sugarcane_red_rot"
+  },
+  {
+   "id": "29e1e8b02cae5851fd8f966a51d2fccceb498a36d7fcbf4473bb4d9b2668600b",
+   "truth": "sugarcane_yellow_rust",
+   "crop": "Sugarcane",
+   "inferred_class": "sugarcane_yellow_rust",
+   "inferred_crop": "Sugarcane",
+   "given_class": "sugarcane_yellow_rust"
+  },
+  {
+   "id": "2c81ae994b1d443fd4b454bb9711a0a506ae611a714e0add6c037643ca97978f",
+   "truth": "sugarcane_healthy",
+   "crop": "Sugarcane",
+   "inferred_class": "sugarcane_healthy",
+   "inferred_crop": "Sugarcane",
+   "given_class": "sugarcane_healthy"
+  },
+  {
+   "id": "30d9e7ceac5911edbc035e2297008e7d2b8be0e9514ae4be96273eae07091bc9",
+   "truth": "sugarcane_red_rot",
+   "crop": "Sugarcane",
+   "inferred_class": "sugarcane_red_rot",
+   "inferred_crop": "Sugarcane",
+   "given_class": "sugarcane_red_rot"
+  },
+  {
+   "id": "32e450f3677c62f7152509a74c29b52d3cc9fe4442f57773009fb3ccdeef8053",
+   "truth": "sugarcane_healthy",
+   "crop": "Sugarcane",
+   "inferred_class": "sugarcane_healthy",
+   "inferred_crop": "Sugarcane",
+   "given_class": "sugarcane_healthy"
+  },
+  {
+   "id": "34b5e13383e2fabea6267a8bbbc6ca2a63338bcbc3ccfc66e9578ad3a47468f6",
+   "truth": "sugarcane_yellow_rust",
+   "crop": "Sugarcane",
+   "inferred_class": "sugarcane_yellow_rust",
+   "inferred_crop": "Sugarcane",
+   "given_class": "sugarcane_yellow_rust"
+  },
+  {
+   "id": "34e7656fadbb57f55063b57f7a57d7d67c1bc8a9c17cf7cfb257308dbab8905f",
+   "truth": "sugarcane_red_rot",
+   "crop": "Sugarcane",
+   "inferred_class": "sugarcane_red_rot",
+   "inferred_crop": "Sugarcane",
+   "given_class": "sugarcane_red_rot"
+  },
+  {
+   "id": "3684b2402fbe264c618877dcf67c704e4358fee1c7b0ebe2e758f518b7e2952d",
+   "truth": "sugarcane_red_rot",
+   "crop": "Sugarcane",
+   "inferred_class": "sugarcane_red_rot",
+   "inferred_crop": "Sugarcane",
+   "given_class": "sugarcane_red_rot"
+  },
+  {
+   "id": "3ab8202104de72d3a7859e282c2c8513e84f4eea81a95c8086eda06214f865fe",
+   "truth": "sugarcane_healthy",
+   "crop": "Sugarcane",
+   "inferred_class": "sugarcane_healthy",
+   "inferred_crop": "Sugarcane",
+   "given_class": "sugarcane_healthy"
+  },
+  {
+   "id": "3b5dc8d15dc5d6a8d3695a4e53778ef527eaafd892357f429190f2e00c1f7492",
+   "truth": "sugarcane_healthy",
+   "crop": "Sugarcane",
+   "inferred_class": "sugarcane_healthy",
+   "inferred_crop": "Sugarcane",
+   "given_class": "sugarcane_healthy"
+  },
+  {
+   "id": "478a9fe089fb2037e15f1891f8817f05ee680c10eb091834268e2eb1957fe6d6",
+   "truth": "sugarcane_mosaic",
+   "crop": "Sugarcane",
+   "inferred_class": "sugarcane_mosaic",
+   "inferred_crop": "Sugarcane",
+   "given_class": "sugarcane_mosaic"
+  },
+  {
+   "id": "4a4eca810344ced61288e1498c97703262ee4275bb282903d9643c71e3bb3bca",
+   "truth": "sugarcane_yellow_rust",
+   "crop": "Sugarcane",
+   "inferred_class": "sugarcane_yellow_rust",
+   "inferred_crop": "Sugarcane",
+   "given_class": "sugarcane_yellow_rust"
+  },
+  {
+   "id": "50da6aae8ad5c772c8aacf755820ced8ac29013f5fdcc0e88d71369892eb38ed",
+   "truth": "sugarcane_healthy",
+   "crop": "Sugarcane",
+   "inferred_class": "sugarcane_healthy",
+   "inferred_crop": "Sugarcane",
+   "given_class": "sugarcane_healthy"
+  },
+  {
+   "id": "520bfab95922e22a7f84e7a6ba0cef828e2af0a8ec48a98ab9809a9be90a5ad8",
+   "truth": "sugarcane_red_rot",
+   "crop": "Sugarcane",
+   "inferred_class": "sugarcane_yellow_rust",
+   "inferred_crop": "Sugarcane",
+   "given_class": "sugarcane_yellow_rust"
+  },
+  {
+   "id": "526db96bd4c8713e224f184237dd62e669ef8458088937c616327f31adf88a89",
+   "truth": "sugarcane_yellow_rust",
+   "crop": "Sugarcane",
+   "inferred_class": "sugarcane_yellow_rust",
+   "inferred_crop": "Sugarcane",
+   "given_class": "sugarcane_yellow_rust"
+  },
+  {
+   "id": "52d837ac463fb7332607626290225667af410f19d56a46d799c65dce4b2f273b",
+   "truth": "sugarcane_healthy",
+   "crop": "Sugarcane",
+   "inferred_class": "sugarcane_mosaic",
+   "inferred_crop": "Sugarcane",
+   "given_class": "sugarcane_mosaic"
+  },
+  {
+   "id": "53c1fc053ec72a2def4ff8b580b546fdb85bb43c055f483d5b1fb1500a4833ff",
+   "truth": "sugarcane_red_rot",
+   "crop": "Sugarcane",
+   "inferred_class": "sugarcane_red_rot",
+   "inferred_crop": "Sugarcane",
+   "given_class": "sugarcane_red_rot"
+  },
+  {
+   "id": "543c8e58bdecb996724a643c36df3fbb7d1804e08c2afab66eaa7268ac889d01",
+   "truth": "sugarcane_healthy",
+   "crop": "Sugarcane",
+   "inferred_class": "sugarcane_healthy",
+   "inferred_crop": "Sugarcane",
+   "given_class": "sugarcane_healthy"
+  },
+  {
+   "id": "585ec9893eea12277c40aa47210105d29da604d9a24c81cd26d265362d25fed7",
+   "truth": "sugarcane_healthy",
+   "crop": "Sugarcane",
+   "inferred_class": "sugarcane_healthy",
+   "inferred_crop": "Sugarcane",
+   "given_class": "sugarcane_healthy"
+  },
+  {
+   "id": "590b02c9c5aa3c2d79d3f070060760c5fbfb89bcd35ff0601db4eede84f81b58",
+   "truth": "sugarcane_red_rot",
+   "crop": "Sugarcane",
+   "inferred_class": "sugarcane_red_rot",
+   "inferred_crop": "Sugarcane",
+   "given_class": "sugarcane_red_rot"
+  },
+  {
+   "id": "5964600a4cadf130b3f2f0c2d83267fbb38cb3f0f5175299f10c3189679646cc",
+   "truth": "sugarcane_mosaic",
+   "crop": "Sugarcane",
+   "inferred_class": "sugarcane_mosaic",
+   "inferred_crop": "Sugarcane",
+   "given_class": "sugarcane_mosaic"
+  },
+  {
+   "id": "5e5f674c32a73fc8eaaf0145d9eae87abf5719eb8636ea743cde7d5a97886564",
+   "truth": "sugarcane_healthy",
+   "crop": "Sugarcane",
+   "inferred_class": "sugarcane_healthy",
+   "inferred_crop": "Sugarcane",
+   "given_class": "sugarcane_healthy"
+  },
+  {
+   "id": "5e6219a53c3b03f3fc22c7fe64753ec1618ad0437f3dcbeeb883f4e3bc70e26d",
+   "truth": "sugarcane_mosaic",
+   "crop": "Sugarcane",
+   "inferred_class": "sugarcane_mosaic",
+   "inferred_crop": "Sugarcane",
+   "given_class": "sugarcane_mosaic"
+  },
+  {
+   "id": "61a963e63f25271eb0ca5cd5f6bc72ef29b80f7442a1f8b35b2f38bff54677a1",
+   "truth": "sugarcane_yellow_rust",
+   "crop": "Sugarcane",
+   "inferred_class": "sugarcane_yellow_rust",
+   "inferred_crop": "Sugarcane",
+   "given_class": "sugarcane_yellow_rust"
+  },
+  {
+   "id": "63cd2b9ffb30d78f8b209c4ff44fdf56791e05670d020becd0311ff94b504cd3",
+   "truth": "sugarcane_healthy",
+   "crop": "Sugarcane",
+   "inferred_class": "sugarcane_healthy",
+   "inferred_crop": "Sugarcane",
+   "given_class": "sugarcane_healthy"
+  },
+  {
+   "id": "65327ff419c3d438b90aa361900c64ccc6a43a6119565e1ef0d82b6f7c5e56dc",
+   "truth": "sugarcane_mosaic",
+   "crop": "Sugarcane",
+   "inferred_class": "sugarcane_mosaic",
+   "inferred_crop": "Sugarcane",
+   "given_class": "sugarcane_mosaic"
+  },
+  {
+   "id": "6596c505d343cb57e80781c489fcae43f3514c7110137edd5abf93aaff948d0c",
+   "truth": "sugarcane_yellow_rust",
+   "crop": "Sugarcane",
+   "inferred_class": "sugarcane_yellow_rust",
+   "inferred_crop": "Sugarcane",
+   "given_class": "sugarcane_yellow_rust"
+  },
+  {
+   "id": "681fd10ff235a9405de133871679537ad2ab0089da5601956b7644e280f4d8fe",
+   "truth": "sugarcane_red_rot",
+   "crop": "Sugarcane",
+   "inferred_class": "sugarcane_red_rot",
+   "inferred_crop": "Sugarcane",
+   "given_class": "sugarcane_red_rot"
+  },
+  {
+   "id": "75bc41eecad0d22d665fe109f8848fd07d44b7bd8fdea3e87d9668c4f98a2080",
+   "truth": "sugarcane_yellow_rust",
+   "crop": "Sugarcane",
+   "inferred_class": "sugarcane_yellow_rust",
+   "inferred_crop": "Sugarcane",
+   "given_class": "sugarcane_yellow_rust"
+  },
+  {
+   "id": "78c0fa796892bd2e39b5bb7de0b03a3e35d94d68569f17e1e9e43f70e6a1d2d8",
+   "truth": "sugarcane_yellow_rust",
+   "crop": "Sugarcane",
+   "inferred_class": "sugarcane_yellow_rust",
+   "inferred_crop": "Sugarcane",
+   "given_class": "sugarcane_yellow_rust"
+  },
+  {
+   "id": "7956b050fc88b9358b9e7083cb7208628307933f57062eb3ce3d7f3da01ce82a",
+   "truth": "sugarcane_healthy",
+   "crop": "Sugarcane",
+   "inferred_class": "sugarcane_healthy",
+   "inferred_crop": "Sugarcane",
+   "given_class": "sugarcane_healthy"
+  },
+  {
+   "id": "7a6293a773666bf7fdaf1d2e38e6a3c77a39f6f0d3ab87f4a7f61bc3e80e5b13",
+   "truth": "sugarcane_mosaic",
+   "crop": "Sugarcane",
+   "inferred_class": "sugarcane_mosaic",
+   "inferred_crop": "Sugarcane",
+   "given_class": "sugarcane_mosaic"
+  },
+  {
+   "id": "7aaf5caa1d2b26574c3c4fccf94d2595e57b6e401fb9713bef4f8439080a814b",
+   "truth": "sugarcane_red_rot",
+   "crop": "Sugarcane",
+   "inferred_class": "sugarcane_red_rot",
+   "inferred_crop": "Sugarcane",
+   "given_class": "sugarcane_red_rot"
+  },
+  {
+   "id": "7bb955db1c77685de4a3ff44c5420c32797a36f50c4e338db7a9a8b375e7b76a",
+   "truth": "sugarcane_red_rot",
+   "crop": "Sugarcane",
+   "inferred_class": "sugarcane_red_rot",
+   "inferred_crop": "Sugarcane",
+   "given_class": "sugarcane_red_rot"
+  },
+  {
+   "id": "7d008ad336cada129ae9444b7b601ed4a7597522bf5b4f029cdb1a48c71882f6",
+   "truth": "sugarcane_red_rot",
+   "crop": "Sugarcane",
+   "inferred_class": "sugarcane_red_rot",
+   "inferred_crop": "Sugarcane",
+   "given_class": "sugarcane_red_rot"
+  },
+  {
+   "id": "7f187a54bc6a9cc5173d11ac28d9b94b5ddc253dde630b24d5252ed891e6b177",
+   "truth": "sugarcane_red_rot",
+   "crop": "Sugarcane",
+   "inferred_class": "sugarcane_red_rot",
+   "inferred_crop": "Sugarcane",
+   "given_class": "sugarcane_red_rot"
+  },
+  {
+   "id": "7f27cfc664dc575c3b0b7bc5ac55deda55c3750884321696d92c38a2da866110",
+   "truth": "sugarcane_yellow_rust",
+   "crop": "Sugarcane",
+   "inferred_class": "sugarcane_yellow_rust",
+   "inferred_crop": "Sugarcane",
+   "given_class": "sugarcane_yellow_rust"
+  },
+  {
+   "id": "80068007748cebbdf17b19e9a3da4619395d86326fe9b8b12d9eaccac2d74e6f",
+   "truth": "sugarcane_yellow_rust",
+   "crop": "Sugarcane",
+   "inferred_class": "sugarcane_yellow_rust",
+   "inferred_crop": "Sugarcane",
+   "given_class": "sugarcane_yellow_rust"
+  },
+  {
+   "id": "869b37be87e8923b891c1fa4c212558ca7208e66004a4ff763434b2ca38a1d0d",
+   "truth": "sugarcane_mosaic",
+   "crop": "Sugarcane",
+   "inferred_class": "sugarcane_mosaic",
+   "inferred_crop": "Sugarcane",
+   "given_class": "sugarcane_mosaic"
+  },
+  {
+   "id": "86ff0f287d659ee7458a179984a6ebf60046d3c1e42b723fe48b7a5299be87c9",
+   "truth": "sugarcane_red_rust",
+   "crop": "Sugarcane",
+   "inferred_class": "sugarcane_red_rust",
+   "inferred_crop": "Sugarcane",
+   "given_class": "sugarcane_red_rust"
+  },
+  {
+   "id": "88283df2cf2ef5e7e1be8777073cb7427538b1be8001ef775370c5d8f8aeded6",
+   "truth": "sugarcane_healthy",
+   "crop": "Sugarcane",
+   "inferred_class": "sugarcane_healthy",
+   "inferred_crop": "Sugarcane",
+   "given_class": "sugarcane_healthy"
+  },
+  {
+   "id": "899dc0531f8f7e1ffa2547b4a08a9721c758781d275ea8b7b3ddaccb89581b0d",
+   "truth": "sugarcane_healthy",
+   "crop": "Sugarcane",
+   "inferred_class": "sugarcane_healthy",
+   "inferred_crop": "Sugarcane",
+   "given_class": "sugarcane_healthy"
+  },
+  {
+   "id": "8c436981eae25b35eaae940c1f3b2214dc07b7531b8c9adf3f90e2dbbbcac45e",
+   "truth": "sugarcane_red_rot",
+   "crop": "Sugarcane",
+   "inferred_class": "sugarcane_red_rot",
+   "inferred_crop": "Sugarcane",
+   "given_class": "sugarcane_red_rot"
+  },
+  {
+   "id": "8c5012d1679f448a8082c73758d9497bb0422edebe6cd4c7cb7159fd1fbe7f6a",
+   "truth": "sugarcane_healthy",
+   "crop": "Sugarcane",
+   "inferred_class": "sugarcane_healthy",
+   "inferred_crop": "Sugarcane",
+   "given_class": "sugarcane_healthy"
+  },
+  {
+   "id": "8c770d6d68576c14f3087b0512d20bcf373e851898dd85344a9f5f0d88ccf7a5",
+   "truth": "sugarcane_mosaic",
+   "crop": "Sugarcane",
+   "inferred_class": "sugarcane_mosaic",
+   "inferred_crop": "Sugarcane",
+   "given_class": "sugarcane_mosaic"
+  },
+  {
+   "id": "8ceb36ea98263034578e1182080d03474979bb3c86b197fb2643583e69e39175",
+   "truth": "sugarcane_yellow_rust",
+   "crop": "Sugarcane",
+   "inferred_class": "sugarcane_yellow_rust",
+   "inferred_crop": "Sugarcane",
+   "given_class": "sugarcane_yellow_rust"
+  },
+  {
+   "id": "8efbc009d06575c7cffb76868dec45a6299a80eaf1e8afaa47911cf80c54ada2",
+   "truth": "sugarcane_yellow_rust",
+   "crop": "Sugarcane",
+   "inferred_class": "sugarcane_yellow_rust",
+   "inferred_crop": "Sugarcane",
+   "given_class": "sugarcane_yellow_rust"
+  },
+  {
+   "id": "939d1b31a33c9c4fe72dbc0488d9db6c725c2818ef424acf7805b7f42a342af7",
+   "truth": "sugarcane_mosaic",
+   "crop": "Sugarcane",
+   "inferred_class": "sugarcane_mosaic",
+   "inferred_crop": "Sugarcane",
+   "given_class": "sugarcane_mosaic"
+  },
+  {
+   "id": "97322660225b1d8ca6816837b73fab4e26e83a91feb25e572baa7448c19efe24",
+   "truth": "sugarcane_healthy",
+   "crop": "Sugarcane",
+   "inferred_class": "sugarcane_healthy",
+   "inferred_crop": "Sugarcane",
+   "given_class": "sugarcane_healthy"
+  },
+  {
+   "id": "9985ec277f421bdf7b96813c892accc58ef97a803a0d1dfbeb95a9b97b2f1843",
+   "truth": "sugarcane_mosaic",
+   "crop": "Sugarcane",
+   "inferred_class": "sugarcane_mosaic",
+   "inferred_crop": "Sugarcane",
+   "given_class": "sugarcane_mosaic"
+  },
+  {
+   "id": "9e05cbb6e0af6501ef0a195cf66512125755f21a01131817c57326cce53fd7a4",
+   "truth": "sugarcane_red_rot",
+   "crop": "Sugarcane",
+   "inferred_class": "sugarcane_red_rot",
+   "inferred_crop": "Sugarcane",
+   "given_class": "sugarcane_red_rot"
+  },
+  {
+   "id": "9e91586504ea54884483894a040782f4c48dc2367c65d1c892cda501f3e005ed",
+   "truth": "sugarcane_yellow_rust",
+   "crop": "Sugarcane",
+   "inferred_class": "sugarcane_yellow_rust",
+   "inferred_crop": "Sugarcane",
+   "given_class": "sugarcane_yellow_rust"
+  },
+  {
+   "id": "9e97895a2f51c5e3c512d9fb8d4abd29b0a263f11c7de8f6aaf1d803e827f735",
+   "truth": "sugarcane_mosaic",
+   "crop": "Sugarcane",
+   "inferred_class": "sugarcane_mosaic",
+   "inferred_crop": "Sugarcane",
+   "given_class": "sugarcane_mosaic"
+  },
+  {
+   "id": "9f0f52a88a8d105619ba71886051860a267d99cdb26016b3763e979529e3edb2",
+   "truth": "sugarcane_mosaic",
+   "crop": "Sugarcane",
+   "inferred_class": "sugarcane_mosaic",
+   "inferred_crop": "Sugarcane",
+   "given_class": "sugarcane_mosaic"
+  },
+  {
+   "id": "a4fbabb4e350b5c5d2a0cdca1b9e15c5a65d03a458d0ddf5b537e5340c0d6213",
+   "truth": "sugarcane_red_rot",
+   "crop": "Sugarcane",
+   "inferred_class": "sugarcane_red_rot",
+   "inferred_crop": "Sugarcane",
+   "given_class": "sugarcane_red_rot"
+  },
+  {
+   "id": "a54e77111177631060a1d9b8767c6804390d04fec86a93402f8a934d052d3bb6",
+   "truth": "sugarcane_red_rot",
+   "crop": "Sugarcane",
+   "inferred_class": "sugarcane_red_rot",
+   "inferred_crop": "Sugarcane",
+   "given_class": "sugarcane_red_rot"
+  },
+  {
+   "id": "ac026e7ce8ee961f107163fdea80431bb82448f01b59ffaf27c608360b5c8512",
+   "truth": "sugarcane_red_rot",
+   "crop": "Sugarcane",
+   "inferred_class": "sugarcane_red_rot",
+   "inferred_crop": "Sugarcane",
+   "given_class": "sugarcane_red_rot"
+  },
+  {
+   "id": "ae6062c65f586b68420049a19529ea3a1d7d18ac6ffe51295b51eb417db0fcd1",
+   "truth": "sugarcane_mosaic",
+   "crop": "Sugarcane",
+   "inferred_class": "sugarcane_mosaic",
+   "inferred_crop": "Sugarcane",
+   "given_class": "sugarcane_mosaic"
+  },
+  {
+   "id": "af0a42e9827528ffd21ec8eef8371a395e5041145165e389f73a995adf8b296f",
+   "truth": "sugarcane_red_rot",
+   "crop": "Sugarcane",
+   "inferred_class": "sugarcane_red_rot",
+   "inferred_crop": "Sugarcane",
+   "given_class": "sugarcane_red_rot"
+  },
+  {
+   "id": "b0831e2b51ceedc566757e8646326e47405884c04025fa6dee5cfe8ccafcedff",
+   "truth": "sugarcane_mosaic",
+   "crop": "Sugarcane",
+   "inferred_class": "sugarcane_mosaic",
+   "inferred_crop": "Sugarcane",
+   "given_class": "sugarcane_mosaic"
+  },
+  {
+   "id": "b5095f228e884f09d71e2363546e80d81317f85a9c373c5b6029aa398d04e31d",
+   "truth": "sugarcane_mosaic",
+   "crop": "Sugarcane",
+   "inferred_class": "sugarcane_mosaic",
+   "inferred_crop": "Sugarcane",
+   "given_class": "sugarcane_mosaic"
+  },
+  {
+   "id": "b6ecdf1b20bfeb5f86284872f64c47e8757e1b3214f70f3db8eb458bcdff6b06",
+   "truth": "sugarcane_healthy",
+   "crop": "Sugarcane",
+   "inferred_class": "sugarcane_healthy",
+   "inferred_crop": "Sugarcane",
+   "given_class": "sugarcane_healthy"
+  },
+  {
+   "id": "c20fb602d9ed34f8a876e7844c2613e2bf860afdd214eb9f83373f8280c37691",
+   "truth": "sugarcane_mosaic",
+   "crop": "Sugarcane",
+   "inferred_class": "sugarcane_mosaic",
+   "inferred_crop": "Sugarcane",
+   "given_class": "sugarcane_mosaic"
+  },
+  {
+   "id": "c5b0d370c50c12d4b558d8695bf4bb44a639c5b9d2d5b0aa4649672e2a5402fd",
+   "truth": "sugarcane_yellow_rust",
+   "crop": "Sugarcane",
+   "inferred_class": "sugarcane_yellow_rust",
+   "inferred_crop": "Sugarcane",
+   "given_class": "sugarcane_yellow_rust"
+  },
+  {
+   "id": "c78f01acfb3ba1d89d99ab740e561b70ce8b802a136a5eb277ab0ab6abd2f7fc",
+   "truth": "sugarcane_red_rot",
+   "crop": "Sugarcane",
+   "inferred_class": "sugarcane_red_rot",
+   "inferred_crop": "Sugarcane",
+   "given_class": "sugarcane_red_rot"
+  },
+  {
+   "id": "cdb27dce6e210c995bfeba049a57a1c6f956d63f657687d60d89271193ebc507",
+   "truth": "sugarcane_healthy",
+   "crop": "Sugarcane",
+   "inferred_class": "sugarcane_healthy",
+   "inferred_crop": "Sugarcane",
+   "given_class": "sugarcane_healthy"
+  },
+  {
+   "id": "ce1598c44d80fa90d5ad32926a78265be8929f3dbaf0a0cb69faf279f9093b43",
+   "truth": "sugarcane_healthy",
+   "crop": "Sugarcane",
+   "inferred_class": "sugarcane_healthy",
+   "inferred_crop": "Sugarcane",
+   "given_class": "sugarcane_healthy"
+  },
+  {
+   "id": "d254511f9af32dc77f2451be5a39514e2d6340ea8bb35d8eab6a7e6d0beb97bd",
+   "truth": "sugarcane_red_rot",
+   "crop": "Sugarcane",
+   "inferred_class": "sugarcane_red_rot",
+   "inferred_crop": "Sugarcane",
+   "given_class": "sugarcane_red_rot"
+  },
+  {
+   "id": "d27324e2f708df5724395affe7854b89048e3c362244621655b28c3b27a86abf",
+   "truth": "sugarcane_yellow_rust",
+   "crop": "Sugarcane",
+   "inferred_class": "sugarcane_red_rot",
+   "inferred_crop": "Sugarcane",
+   "given_class": "sugarcane_red_rot"
+  },
+  {
+   "id": "d62d314ca39626738b2e3b5940e79283f3c80f53f7f89b600dfb9ba5d1c692a7",
+   "truth": "sugarcane_healthy",
+   "crop": "Sugarcane",
+   "inferred_class": "sugarcane_healthy",
+   "inferred_crop": "Sugarcane",
+   "given_class": "sugarcane_healthy"
+  },
+  {
+   "id": "d781dbca519386dde58d3d0db736dcce6b08da1734c153ac817ec6be6b46b9a1",
+   "truth": "sugarcane_mosaic",
+   "crop": "Sugarcane",
+   "inferred_class": "sugarcane_mosaic",
+   "inferred_crop": "Sugarcane",
+   "given_class": "sugarcane_mosaic"
+  },
+  {
+   "id": "d7e4f6aaca13fc5a9d86047454a9f931d57e9804bc9543c10fa016d6f8a7d08b",
+   "truth": "sugarcane_yellow_rust",
+   "crop": "Sugarcane",
+   "inferred_class": "sugarcane_yellow_rust",
+   "inferred_crop": "Sugarcane",
+   "given_class": "sugarcane_yellow_rust"
+  },
+  {
+   "id": "d820853b7ca3b6a00a40802e7161f94a2374b8f49c24503e5beb4f0506e9d0a4",
+   "truth": "sugarcane_healthy",
+   "crop": "Sugarcane",
+   "inferred_class": "sugarcane_healthy",
+   "inferred_crop": "Sugarcane",
+   "given_class": "sugarcane_healthy"
+  },
+  {
+   "id": "daa4279c56af291743332bb2cf78a56cb6466cae77c1384c1f7ccd0fa1f39128",
+   "truth": "sugarcane_healthy",
+   "crop": "Sugarcane",
+   "inferred_class": "sugarcane_healthy",
+   "inferred_crop": "Sugarcane",
+   "given_class": "sugarcane_healthy"
+  },
+  {
+   "id": "dc36c3f52a7cf3f1c74dbdef81a2b00c761aeb52f09d960cf8c1ec8de25361c5",
+   "truth": "sugarcane_mosaic",
+   "crop": "Sugarcane",
+   "inferred_class": "sugarcane_mosaic",
+   "inferred_crop": "Sugarcane",
+   "given_class": "sugarcane_mosaic"
+  },
+  {
+   "id": "dc60615201cd5f5e6f8a63ff2d35a6599656e83d068816c8a1732a4ce63ae3c2",
+   "truth": "sugarcane_mosaic",
+   "crop": "Sugarcane",
+   "inferred_class": "sugarcane_mosaic",
+   "inferred_crop": "Sugarcane",
+   "given_class": "sugarcane_mosaic"
+  },
+  {
+   "id": "ddd61ee3f2a4869296abfda7a40476d3adc0a62ae1898d0b6da37f7b64189da3",
+   "truth": "sugarcane_yellow_rust",
+   "crop": "Sugarcane",
+   "inferred_class": "sugarcane_yellow_rust",
+   "inferred_crop": "Sugarcane",
+   "given_class": "sugarcane_yellow_rust"
+  },
+  {
+   "id": "df6bb3454064bd7d6d7fe4eaebe00cb52a47536ed4fdd681170b7f991fb44e5c",
+   "truth": "sugarcane_healthy",
+   "crop": "Sugarcane",
+   "inferred_class": "sugarcane_healthy",
+   "inferred_crop": "Sugarcane",
+   "given_class": "sugarcane_healthy"
+  },
+  {
+   "id": "e54981eac24d9b2d0c72645674b78f9e6225441ad3ee538e4fcadbb7090e245c",
+   "truth": "sugarcane_mosaic",
+   "crop": "Sugarcane",
+   "inferred_class": "sugarcane_mosaic",
+   "inferred_crop": "Sugarcane",
+   "given_class": "sugarcane_mosaic"
+  },
+  {
+   "id": "e6475f128bcff73b92d728f9754cb0f0a041c4a7679d74432df9471589d508b7",
+   "truth": "sugarcane_red_rot",
+   "crop": "Sugarcane",
+   "inferred_class": "sugarcane_red_rot",
+   "inferred_crop": "Sugarcane",
+   "given_class": "sugarcane_red_rot"
+  },
+  {
+   "id": "e76bb2404dc12c5d7f5576735be97bcc9a911031a1cff78a92036ee015dbbcd2",
+   "truth": "sugarcane_healthy",
+   "crop": "Sugarcane",
+   "inferred_class": "sugarcane_healthy",
+   "inferred_crop": "Sugarcane",
+   "given_class": "sugarcane_healthy"
+  },
+  {
+   "id": "e78db6463287d93dac630d661726abf98f29a848e2d9eaf9f6f7e33fc0a11132",
+   "truth": "sugarcane_mosaic",
+   "crop": "Sugarcane",
+   "inferred_class": "sugarcane_mosaic",
+   "inferred_crop": "Sugarcane",
+   "given_class": "sugarcane_mosaic"
+  },
+  {
+   "id": "e97b446359067f87122a83f99500ea09894fea067b9b46ca13fe25cc4fe62b9e",
+   "truth": "sugarcane_mosaic",
+   "crop": "Sugarcane",
+   "inferred_class": "sugarcane_mosaic",
+   "inferred_crop": "Sugarcane",
+   "given_class": "sugarcane_mosaic"
+  },
+  {
+   "id": "eb9a3c352cac4fead534b467237c4fb85aed838b2bba49e3f5f05b471e2b0eb7",
+   "truth": "sugarcane_yellow_rust",
+   "crop": "Sugarcane",
+   "inferred_class": "sugarcane_yellow_rust",
+   "inferred_crop": "Sugarcane",
+   "given_class": "sugarcane_yellow_rust"
+  },
+  {
+   "id": "f55fd02d2a09a171ac5a0b225235661079845ba5fcb4ec2fe58e711d9a9af427",
+   "truth": "sugarcane_mosaic",
+   "crop": "Sugarcane",
+   "inferred_class": "sugarcane_mosaic",
+   "inferred_crop": "Sugarcane",
+   "given_class": "sugarcane_mosaic"
+  },
+  {
+   "id": "f664538b690c42ff8ab3d97ab0950650665d9d36ccf2fe06c80a42265e340a22",
+   "truth": "sugarcane_yellow_rust",
+   "crop": "Sugarcane",
+   "inferred_class": "sugarcane_yellow_rust",
+   "inferred_crop": "Sugarcane",
+   "given_class": "sugarcane_yellow_rust"
+  },
+  {
+   "id": "f6a06202c79d5b88974057c9a0d9435d260309d6e4ac7ea54a0dd1cc5e2120dd",
+   "truth": "sugarcane_healthy",
+   "crop": "Sugarcane",
+   "inferred_class": "sugarcane_healthy",
+   "inferred_crop": "Sugarcane",
+   "given_class": "sugarcane_healthy"
+  },
+  {
+   "id": "f7897f7b539a09a3a9414f357a91bba26f7d83d84f5e6676d0ff83dba6cf9f9a",
+   "truth": "sugarcane_yellow_rust",
+   "crop": "Sugarcane",
+   "inferred_class": "sugarcane_yellow_rust",
+   "inferred_crop": "Sugarcane",
+   "given_class": "sugarcane_yellow_rust"
+  },
+  {
+   "id": "f8dc7f659bce00a3a886d8f73102bd1956813049c50d4c36eb1c3cd63d3c8656",
+   "truth": "sugarcane_yellow_rust",
+   "crop": "Sugarcane",
+   "inferred_class": "sugarcane_yellow_rust",
+   "inferred_crop": "Sugarcane",
+   "given_class": "sugarcane_yellow_rust"
+  },
+  {
+   "id": "fb5cd2549438c8aacc364c996bef600b9a8547e711e3c5577f44539785cbee76",
+   "truth": "sugarcane_yellow_rust",
+   "crop": "Sugarcane",
+   "inferred_class": "sugarcane_yellow_rust",
+   "inferred_crop": "Sugarcane",
+   "given_class": "sugarcane_yellow_rust"
+  },
+  {
+   "id": "fb7105c72a48ab2c5ab173e3144942be0ab39dfc54fe3cea3eb02c2bd7c29a36",
+   "truth": "sugarcane_red_rot",
+   "crop": "Sugarcane",
+   "inferred_class": "sugarcane_red_rot",
+   "inferred_crop": "Sugarcane",
+   "given_class": "sugarcane_red_rot"
+  },
+  {
+   "id": "ffee9a3efadd80249161a47152622c8691c35b6979c4804837ad6bf745a3f5c9",
+   "truth": "sugarcane_yellow_rust",
+   "crop": "Sugarcane",
+   "inferred_class": "sugarcane_yellow_rust",
+   "inferred_crop": "Sugarcane",
+   "given_class": "sugarcane_yellow_rust"
+  },
+  {
+   "id": "02d8aea8a985c5bc5dc837b56c6bb7fef7074d127678f48d1ef60ebe7a3cfc28",
+   "truth": "wheat_leaf_blight",
+   "crop": "Wheat",
+   "inferred_class": "wheat_leaf_blight",
+   "inferred_crop": "Wheat",
+   "given_class": "wheat_leaf_blight"
+  },
+  {
+   "id": "03b35ef1248642220a0448381dda60eae433aa32e46ca2a989845e3f25342040",
+   "truth": "wheat_aphid",
+   "crop": "Wheat",
+   "inferred_class": "wheat_aphid",
+   "inferred_crop": "Wheat",
+   "given_class": "wheat_aphid"
+  },
+  {
+   "id": "0b6bd7e3ea2ebc5ee2322bdc8f3e3cffbdd932aafc8c05128ab75aedf3474123",
+   "truth": "wheat_mite",
+   "crop": "Wheat",
+   "inferred_class": "wheat_stem_fly",
+   "inferred_crop": "Wheat",
+   "given_class": "wheat_stem_fly"
+  },
+  {
+   "id": "0da4c84d677da3136b4bed833530182825387c30fc679835efd5a97ad2779393",
+   "truth": "wheat_stem_fly",
+   "crop": "Wheat",
+   "inferred_class": "wheat_stem_fly",
+   "inferred_crop": "Wheat",
+   "given_class": "wheat_stem_fly"
+  },
+  {
+   "id": "0dd688e1c2b0d410c8411de9cd781d4f83e55c7ef5d10dafff8e845235ea3c4a",
+   "truth": "wheat_mite",
+   "crop": "Wheat",
+   "inferred_class": "wheat_mite",
+   "inferred_crop": "Wheat",
+   "given_class": "wheat_mite"
+  },
+  {
+   "id": "0ea18edbb8a306bd3c4460d734514383dd29307cd12d7638f5d03207375b0900",
+   "truth": "wheat_stem_fly",
+   "crop": "Wheat",
+   "inferred_class": "wheat_stem_fly",
+   "inferred_crop": "Wheat",
+   "given_class": "wheat_stem_fly"
+  },
+  {
+   "id": "162b2fcbcc94ece1d1ec680222577fdf18e657b8b7ebf5e8fe27f1db973ec16e",
+   "truth": "wheat_stem_fly",
+   "crop": "Wheat",
+   "inferred_class": "wheat_stem_fly",
+   "inferred_crop": "Wheat",
+   "given_class": "wheat_stem_fly"
+  },
+  {
+   "id": "173d92c4faf49118569c554d0a001df0ced5b9a3579a254912050a8d35d64ab4",
+   "truth": "wheat_leaf_blight",
+   "crop": "Wheat",
+   "inferred_class": "rice_brown_spot",
+   "inferred_crop": "Rice",
+   "given_class": "wheat_leaf_blight"
+  },
+  {
+   "id": "2201ba2af86046d4321c968c4d8a6027795a288d0da98d7c5deaf10dc4c4aacd",
+   "truth": "wheat_leaf_blight",
+   "crop": "Wheat",
+   "inferred_class": "wheat_leaf_blight",
+   "inferred_crop": "Wheat",
+   "given_class": "wheat_leaf_blight"
+  },
+  {
+   "id": "23fd79275611bdd04a7d27f907ccbc06018163119ef7789b8fbf11e27f22f36f",
+   "truth": "wheat_black_rust",
+   "crop": "Wheat",
+   "inferred_class": "wheat_black_rust",
+   "inferred_crop": "Wheat",
+   "given_class": "wheat_black_rust"
+  },
+  {
+   "id": "2413277ada9116d8bec7fdf2ded72da5f96b1c3476c06d1f3e8c72ebd919bea9",
+   "truth": "wheat_flag_smut",
+   "crop": "Wheat",
+   "inferred_class": "wheat_flag_smut",
+   "inferred_crop": "Wheat",
+   "given_class": "wheat_flag_smut"
+  },
+  {
+   "id": "287fa2138336eecb1d1da651c90eb9f002fda8709d4cd4e0c9dd455c2d97a681",
+   "truth": "wheat_healthy",
+   "crop": "Wheat",
+   "inferred_class": "sugarcane_healthy",
+   "inferred_crop": "Sugarcane",
+   "given_class": "wheat_powdery_mildew"
+  },
+  {
+   "id": "2a55cd2cdc3da81bb9974f79bf29c5e86cb1a14188dc3fd5343301a48cbf0b46",
+   "truth": "wheat_yellow_rust",
+   "crop": "Wheat",
+   "inferred_class": "wheat_yellow_rust",
+   "inferred_crop": "Wheat",
+   "given_class": "wheat_yellow_rust"
+  },
+  {
+   "id": "2cc48a2c4e820736cfecdb95eb779a3b095c2dff87697cf7228c1bd301be7508",
+   "truth": "wheat_flag_smut",
+   "crop": "Wheat",
+   "inferred_class": "wheat_flag_smut",
+   "inferred_crop": "Wheat",
+   "given_class": "wheat_flag_smut"
+  },
+  {
+   "id": "340fcb13ced052b3ade5a2c2b411caa34783a4d020384ff86bc664ae03601819",
+   "truth": "wheat_healthy",
+   "crop": "Wheat",
+   "inferred_class": "wheat_healthy",
+   "inferred_crop": "Wheat",
+   "given_class": "wheat_healthy"
+  },
+  {
+   "id": "3a22c805878e3c0fa4f35b13b3d59b4ee5c151deab9739ed9e3c1ebd5b545a79",
+   "truth": "wheat_aphid",
+   "crop": "Wheat",
+   "inferred_class": "wheat_aphid",
+   "inferred_crop": "Wheat",
+   "given_class": "wheat_aphid"
+  },
+  {
+   "id": "3cb1059a806dad0f8fd2557d47de754406bbe7990b806423b9a58414a602b34f",
+   "truth": "wheat_powdery_mildew",
+   "crop": "Wheat",
+   "inferred_class": "wheat_powdery_mildew",
+   "inferred_crop": "Wheat",
+   "given_class": "wheat_powdery_mildew"
+  },
+  {
+   "id": "3fe2f2b181e9edc14bb03490674eafd37d39b74ae07b6e489462480e1080ae10",
+   "truth": "wheat_healthy",
+   "crop": "Wheat",
+   "inferred_class": "wheat_healthy",
+   "inferred_crop": "Wheat",
+   "given_class": "wheat_healthy"
+  },
+  {
+   "id": "435cfa59ffbbab0592edc909bb3b3277558f5394985190a53477a3147e6040a4",
+   "truth": "wheat_yellow_rust",
+   "crop": "Wheat",
+   "inferred_class": "wheat_yellow_rust",
+   "inferred_crop": "Wheat",
+   "given_class": "wheat_yellow_rust"
+  },
+  {
+   "id": "466bd43450731b8aa4074c4d9944e4fef3b5c1fb93d1d4e9c76e23d952d6284b",
+   "truth": "wheat_mite",
+   "crop": "Wheat",
+   "inferred_class": "wheat_mite",
+   "inferred_crop": "Wheat",
+   "given_class": "wheat_mite"
+  },
+  {
+   "id": "4a36d46adc03e901de0bfa726e76d18e40ee679f2ac3167b44b04f89bfcc5a1d",
+   "truth": "wheat_brown_rust",
+   "crop": "Wheat",
+   "inferred_class": "wheat_brown_rust",
+   "inferred_crop": "Wheat",
+   "given_class": "wheat_brown_rust"
+  },
+  {
+   "id": "4bcc065fbfb449ef21cf5a3476b11fc3b634c6e30310587aaa92be088abebaf5",
+   "truth": "wheat_mite",
+   "crop": "Wheat",
+   "inferred_class": "wheat_mite",
+   "inferred_crop": "Wheat",
+   "given_class": "wheat_mite"
+  },
+  {
+   "id": "4f99fe8de51bd2df9193f9fbade40674696766aaaa73b3521a69c5fe821063d5",
+   "truth": "wheat_healthy",
+   "crop": "Wheat",
+   "inferred_class": "wheat_healthy",
+   "inferred_crop": "Wheat",
+   "given_class": "wheat_healthy"
+  },
+  {
+   "id": "5229e2c277025bfc62db50e0224c5131c925b93802904a70f614fd056c186d00",
+   "truth": "wheat_healthy",
+   "crop": "Wheat",
+   "inferred_class": "wheat_healthy",
+   "inferred_crop": "Wheat",
+   "given_class": "wheat_healthy"
+  },
+  {
+   "id": "529fb4e6061a564adc62baabf72d94f27e1de50843ec7daf017a1487c5af376a",
+   "truth": "wheat_aphid",
+   "crop": "Wheat",
+   "inferred_class": "wheat_aphid",
+   "inferred_crop": "Wheat",
+   "given_class": "wheat_aphid"
+  },
+  {
+   "id": "5586de8a152fbbdcd7476447ba3a7bca009b4656c7430d54fcf80a604688d49d",
+   "truth": "wheat_scab",
+   "crop": "Wheat",
+   "inferred_class": "wheat_scab",
+   "inferred_crop": "Wheat",
+   "given_class": "wheat_scab"
+  },
+  {
+   "id": "572500b9f6caa8693a97011debf6c6999939bda1508c13ab02af2cf32b8265f3",
+   "truth": "wheat_powdery_mildew",
+   "crop": "Wheat",
+   "inferred_class": "wheat_powdery_mildew",
+   "inferred_crop": "Wheat",
+   "given_class": "wheat_powdery_mildew"
+  },
+  {
+   "id": "57ad657cc12fa4411e2da1f0abdccfd8918cb31311a1103485201ed432861860",
+   "truth": "wheat_leaf_blight",
+   "crop": "Wheat",
+   "inferred_class": "wheat_leaf_blight",
+   "inferred_crop": "Wheat",
+   "given_class": "wheat_leaf_blight"
+  },
+  {
+   "id": "5c1e0643d66754188d700f0151e5e20c241c35d24de86fd608f1d8eea8f80e00",
+   "truth": "wheat_aphid",
+   "crop": "Wheat",
+   "inferred_class": "wheat_aphid",
+   "inferred_crop": "Wheat",
+   "given_class": "wheat_aphid"
+  },
+  {
+   "id": "5e32c6ca18afba2ecf6fa2fec26e85c2cd304b59f8c1e40a19dff8786b64f905",
+   "truth": "wheat_mite",
+   "crop": "Wheat",
+   "inferred_class": "wheat_mite",
+   "inferred_crop": "Wheat",
+   "given_class": "wheat_mite"
+  },
+  {
+   "id": "5ee1f1870fd35c45ebea7c3ed4c2bb52839a9321eeb2bb3323793ac60954a70b",
+   "truth": "wheat_yellow_rust",
+   "crop": "Wheat",
+   "inferred_class": "wheat_yellow_rust",
+   "inferred_crop": "Wheat",
+   "given_class": "wheat_yellow_rust"
+  },
+  {
+   "id": "5fe7f883d408a554e33cf3d62eef4a80a06ab87b19b250ffdba57debc6b1e204",
+   "truth": "wheat_leaf_blight",
+   "crop": "Wheat",
+   "inferred_class": "wheat_leaf_blight",
+   "inferred_crop": "Wheat",
+   "given_class": "wheat_leaf_blight"
+  },
+  {
+   "id": "6265ad0179b1ad3703b5ba1cff23eac993deefb7020cd9ea8ad87408641b4afb",
+   "truth": "wheat_powdery_mildew",
+   "crop": "Wheat",
+   "inferred_class": "wheat_powdery_mildew",
+   "inferred_crop": "Wheat",
+   "given_class": "wheat_powdery_mildew"
+  },
+  {
+   "id": "68a750687506a3f39778a9c50fdd42677441135f2e199a59255a1ac1409e74e7",
+   "truth": "wheat_healthy",
+   "crop": "Wheat",
+   "inferred_class": "wheat_healthy",
+   "inferred_crop": "Wheat",
+   "given_class": "wheat_healthy"
+  },
+  {
+   "id": "69c5fccbe33d95674783cf3ac5293d2289cdaec82f2d5f75cb6d71f3c3e52b0d",
+   "truth": "wheat_scab",
+   "crop": "Wheat",
+   "inferred_class": "wheat_scab",
+   "inferred_crop": "Wheat",
+   "given_class": "wheat_scab"
+  },
+  {
+   "id": "6d9d12b8843262a4071078a38f092aaba4e3b09a4753ce4fcffb478f8e52b27e",
+   "truth": "wheat_leaf_blight",
+   "crop": "Wheat",
+   "inferred_class": "wheat_leaf_blight",
+   "inferred_crop": "Wheat",
+   "given_class": "wheat_leaf_blight"
+  },
+  {
+   "id": "6e2cdb7c90521dc5b26c83a46bb24f3182b5a1829b8b609a062b5be079dc1dc9",
+   "truth": "wheat_stem_fly",
+   "crop": "Wheat",
+   "inferred_class": "wheat_stem_fly",
+   "inferred_crop": "Wheat",
+   "given_class": "wheat_stem_fly"
+  },
+  {
+   "id": "6f141eae27599fbcc53f8e522487ea537df59949f4b60df82c0fd01d5d133a38",
+   "truth": "wheat_healthy",
+   "crop": "Wheat",
+   "inferred_class": "wheat_healthy",
+   "inferred_crop": "Wheat",
+   "given_class": "wheat_healthy"
+  },
+  {
+   "id": "75dd2d2726eff70ba2ad96c250e0499867030aa285c500cc91f53326156ae095",
+   "truth": "wheat_healthy",
+   "crop": "Wheat",
+   "inferred_class": "wheat_healthy",
+   "inferred_crop": "Wheat",
+   "given_class": "wheat_healthy"
+  },
+  {
+   "id": "766b4a11fcfc5a719918ff08036792a904f104d58cc39aab8e189258ce995b57",
+   "truth": "wheat_yellow_rust",
+   "crop": "Wheat",
+   "inferred_class": "wheat_yellow_rust",
+   "inferred_crop": "Wheat",
+   "given_class": "wheat_yellow_rust"
+  },
+  {
+   "id": "766be0be59841c49f2901b7491a829ad8f1cac30d322661ec89d5d4f54edae2b",
+   "truth": "wheat_healthy",
+   "crop": "Wheat",
+   "inferred_class": "wheat_healthy",
+   "inferred_crop": "Wheat",
+   "given_class": "wheat_healthy"
+  },
+  {
+   "id": "782fd6ffacf0d10a8904a99813f9bfeab6ddace4075f3a80998a5ddeddfbb42f",
+   "truth": "wheat_leaf_blight",
+   "crop": "Wheat",
+   "inferred_class": "wheat_leaf_blight",
+   "inferred_crop": "Wheat",
+   "given_class": "wheat_leaf_blight"
+  },
+  {
+   "id": "7945e4aafcdb3c1e66e1427769eeb27aab18d9226f21e9dacb90ffb3cfc6217e",
+   "truth": "wheat_stem_fly",
+   "crop": "Wheat",
+   "inferred_class": "wheat_healthy",
+   "inferred_crop": "Wheat",
+   "given_class": "wheat_healthy"
+  },
+  {
+   "id": "7ae81dfd50af875c79ab631964f88fa29962d8372345e23f577eae6c41d8d600",
+   "truth": "wheat_flag_smut",
+   "crop": "Wheat",
+   "inferred_class": "wheat_flag_smut",
+   "inferred_crop": "Wheat",
+   "given_class": "wheat_flag_smut"
+  },
+  {
+   "id": "81f58389d67477f6851eccd4ac70032ec9bdbf8ceb076ba36c886763210fc6f0",
+   "truth": "wheat_aphid",
+   "crop": "Wheat",
+   "inferred_class": "maize_stem_borer",
+   "inferred_crop": "Maize",
+   "given_class": "wheat_mite"
+  },
+  {
+   "id": "827260f169d519d8bd8a36d16c8d8fee49a64dcc209bea5bb341dc85e3c61dc1",
+   "truth": "wheat_powdery_mildew",
+   "crop": "Wheat",
+   "inferred_class": "wheat_powdery_mildew",
+   "inferred_crop": "Wheat",
+   "given_class": "wheat_powdery_mildew"
+  },
+  {
+   "id": "86e27366f02d0d0ae15b39a3b898ab485e0a990b8af2cf1138934a2518bf34d4",
+   "truth": "wheat_flag_smut",
+   "crop": "Wheat",
+   "inferred_class": "wheat_flag_smut",
+   "inferred_crop": "Wheat",
+   "given_class": "wheat_flag_smut"
+  },
+  {
+   "id": "878f7fb586784f989c7c590b91dfff8f1911657a78d7daa8f63f7d09d61bdb63",
+   "truth": "wheat_mite",
+   "crop": "Wheat",
+   "inferred_class": "wheat_mite",
+   "inferred_crop": "Wheat",
+   "given_class": "wheat_mite"
+  },
+  {
+   "id": "88e2251afd4f71b360ec91aa0a9c298eda98a0346d4e0c7eb53d71c9b5d38697",
+   "truth": "wheat_stem_fly",
+   "crop": "Wheat",
+   "inferred_class": "wheat_stem_fly",
+   "inferred_crop": "Wheat",
+   "given_class": "wheat_stem_fly"
+  },
+  {
+   "id": "8d216653ead7089b7374dd080c5631c264878b09ccab2c70da29ba19a991dcbb",
+   "truth": "wheat_stem_fly",
+   "crop": "Wheat",
+   "inferred_class": "wheat_stem_fly",
+   "inferred_crop": "Wheat",
+   "given_class": "wheat_stem_fly"
+  },
+  {
+   "id": "8f2f10566666a856f01025595d7cc12a9f5c9983e5f972221390548adee55582",
+   "truth": "wheat_brown_rust",
+   "crop": "Wheat",
+   "inferred_class": "wheat_brown_rust",
+   "inferred_crop": "Wheat",
+   "given_class": "wheat_brown_rust"
+  },
+  {
+   "id": "9b421f8735d08e1b56d59f9c7d3d88cdbfb804d58abd1b562b45bb9a6de20961",
+   "truth": "wheat_powdery_mildew",
+   "crop": "Wheat",
+   "inferred_class": "wheat_powdery_mildew",
+   "inferred_crop": "Wheat",
+   "given_class": "wheat_powdery_mildew"
+  },
+  {
+   "id": "9f01ff3873c7ae12de452e92c0f2e80b240881a458a67903afc11704c8ec4c11",
+   "truth": "wheat_healthy",
+   "crop": "Wheat",
+   "inferred_class": "wheat_healthy",
+   "inferred_crop": "Wheat",
+   "given_class": "wheat_healthy"
+  },
+  {
+   "id": "a18fb1740835f1a2ac353edd71f57856e7370fc2031be4326d7284cff860f33f",
+   "truth": "wheat_stem_fly",
+   "crop": "Wheat",
+   "inferred_class": "wheat_stem_fly",
+   "inferred_crop": "Wheat",
+   "given_class": "wheat_stem_fly"
+  },
+  {
+   "id": "a2cd5da1b27b9494416e4a686f0f5b52437985c4ac4f09a282439aee8d436fa3",
+   "truth": "wheat_powdery_mildew",
+   "crop": "Wheat",
+   "inferred_class": "wheat_powdery_mildew",
+   "inferred_crop": "Wheat",
+   "given_class": "wheat_powdery_mildew"
+  },
+  {
+   "id": "a302aae7f7e122988ff67f494323dfc6ce7aafb945be0bd1bdf7dca928f4e8ad",
+   "truth": "wheat_flag_smut",
+   "crop": "Wheat",
+   "inferred_class": "wheat_flag_smut",
+   "inferred_crop": "Wheat",
+   "given_class": "wheat_flag_smut"
+  },
+  {
+   "id": "a4407c4a5c916ca730e7e6853d483ca2f6933f3b52c3e77ec4cb21fca8f00914",
+   "truth": "wheat_leaf_blight",
+   "crop": "Wheat",
+   "inferred_class": "wheat_leaf_blight",
+   "inferred_crop": "Wheat",
+   "given_class": "wheat_leaf_blight"
+  },
+  {
+   "id": "a69fb032cdfbb92b56ac4c7264150e316f428ebdcf7d049c58acf1cfd3bb8b9d",
+   "truth": "wheat_aphid",
+   "crop": "Wheat",
+   "inferred_class": "wheat_aphid",
+   "inferred_crop": "Wheat",
+   "given_class": "wheat_aphid"
+  },
+  {
+   "id": "a78a3c880261ad65775db4ea5f9db1d07f6e6279b7e9c8ad43408bb8d8377a24",
+   "truth": "wheat_brown_rust",
+   "crop": "Wheat",
+   "inferred_class": "wheat_black_rust",
+   "inferred_crop": "Wheat",
+   "given_class": "wheat_black_rust"
+  },
+  {
+   "id": "a865633f926dc4ebdd52c8f2b88addac14e642d1607d9adc4679b036faff3c4e",
+   "truth": "wheat_stem_fly",
+   "crop": "Wheat",
+   "inferred_class": "wheat_stem_fly",
+   "inferred_crop": "Wheat",
+   "given_class": "wheat_stem_fly"
+  },
+  {
+   "id": "add43a44c3e9b157b2d4d69671dc532e9918e00e9ec71cfdaf636f97aa9ee84e",
+   "truth": "wheat_mite",
+   "crop": "Wheat",
+   "inferred_class": "wheat_mite",
+   "inferred_crop": "Wheat",
+   "given_class": "wheat_mite"
+  },
+  {
+   "id": "afcf43e21894e2c5061b2ecad7d886658c8b7dd6ff020730ad07347ae8723b91",
+   "truth": "wheat_leaf_blight",
+   "crop": "Wheat",
+   "inferred_class": "wheat_leaf_blight",
+   "inferred_crop": "Wheat",
+   "given_class": "wheat_leaf_blight"
+  },
+  {
+   "id": "b07b2d9b551e9709e2297d9d4c5f19fd7ab3efbe39c1d2d93e9e110328ec1cd8",
+   "truth": "wheat_powdery_mildew",
+   "crop": "Wheat",
+   "inferred_class": "wheat_powdery_mildew",
+   "inferred_crop": "Wheat",
+   "given_class": "wheat_powdery_mildew"
+  },
+  {
+   "id": "b1a63f58f047bab150b409e20697dfa334284740d0ab775a0ff1d73628e17fef",
+   "truth": "wheat_healthy",
+   "crop": "Wheat",
+   "inferred_class": "wheat_healthy",
+   "inferred_crop": "Wheat",
+   "given_class": "wheat_healthy"
+  },
+  {
+   "id": "b1aac458e205c63ffced660d7dc144f402f2da855702872a7cf0d37ff69ec82f",
+   "truth": "wheat_black_rust",
+   "crop": "Wheat",
+   "inferred_class": "wheat_black_rust",
+   "inferred_crop": "Wheat",
+   "given_class": "wheat_black_rust"
+  },
+  {
+   "id": "b5c22ded1a94493d7cc303ccc1856ace5b3d66449ad97b031f0bc55aba400617",
+   "truth": "wheat_healthy",
+   "crop": "Wheat",
+   "inferred_class": "wheat_healthy",
+   "inferred_crop": "Wheat",
+   "given_class": "wheat_healthy"
+  },
+  {
+   "id": "bac6ab17982fa7a040decabd9ac17ea169c3f07b44b7456aac4e9f159afd9163",
+   "truth": "wheat_mite",
+   "crop": "Wheat",
+   "inferred_class": "wheat_mite",
+   "inferred_crop": "Wheat",
+   "given_class": "wheat_mite"
+  },
+  {
+   "id": "bda9897a10b6e28ee72d19adbb2dad739aca77f4d872b3cf5a3c34787a865cce",
+   "truth": "wheat_leaf_blight",
+   "crop": "Wheat",
+   "inferred_class": "wheat_leaf_blight",
+   "inferred_crop": "Wheat",
+   "given_class": "wheat_leaf_blight"
+  },
+  {
+   "id": "bee42270454551cb67d0f31a45a7057b1cdff48b367ff5644aa1732b9be29b8c",
+   "truth": "wheat_mite",
+   "crop": "Wheat",
+   "inferred_class": "wheat_mite",
+   "inferred_crop": "Wheat",
+   "given_class": "wheat_mite"
+  },
+  {
+   "id": "bf859aa453e86484d93413695e2c205b472dd33232c2e57f3cdfea24c205ad10",
+   "truth": "wheat_powdery_mildew",
+   "crop": "Wheat",
+   "inferred_class": "wheat_powdery_mildew",
+   "inferred_crop": "Wheat",
+   "given_class": "wheat_powdery_mildew"
+  },
+  {
+   "id": "c0845e4437278d39240587837c0395af53e573c1825d1afb333089f9fb6bd563",
+   "truth": "wheat_mite",
+   "crop": "Wheat",
+   "inferred_class": "wheat_mite",
+   "inferred_crop": "Wheat",
+   "given_class": "wheat_mite"
+  },
+  {
+   "id": "c0981e9d3204009d06caea45e0982e99b1862ae4e1d891f40bf421f02930697f",
+   "truth": "wheat_scab",
+   "crop": "Wheat",
+   "inferred_class": "wheat_scab",
+   "inferred_crop": "Wheat",
+   "given_class": "wheat_scab"
+  },
+  {
+   "id": "c3cb819b67af53229d2933d65780ddc1ba9e5c0bafc984645bbcc73a86a06ec5",
+   "truth": "wheat_aphid",
+   "crop": "Wheat",
+   "inferred_class": "wheat_stem_fly",
+   "inferred_crop": "Wheat",
+   "given_class": "wheat_stem_fly"
+  },
+  {
+   "id": "c56030670e71024ac46af472d92b3e7ebf2558bf25b6a33f25d29c34bfac272b",
+   "truth": "wheat_yellow_rust",
+   "crop": "Wheat",
+   "inferred_class": "wheat_yellow_rust",
+   "inferred_crop": "Wheat",
+   "given_class": "wheat_yellow_rust"
+  },
+  {
+   "id": "c6d5405950b30c3af8d09017731f094765eb14c64323ac32f5a5db9263ef69d4",
+   "truth": "wheat_brown_rust",
+   "crop": "Wheat",
+   "inferred_class": "wheat_brown_rust",
+   "inferred_crop": "Wheat",
+   "given_class": "wheat_brown_rust"
+  },
+  {
+   "id": "c7de203e32422a76722dc8a4fb18b17da0783a306e859a15f6b29519ef89118b",
+   "truth": "wheat_powdery_mildew",
+   "crop": "Wheat",
+   "inferred_class": "wheat_powdery_mildew",
+   "inferred_crop": "Wheat",
+   "given_class": "wheat_powdery_mildew"
+  },
+  {
+   "id": "cb578b0dd10fc1a6edc21373133c585e83012e051e6a55b024b20f5536756ed1",
+   "truth": "wheat_black_rust",
+   "crop": "Wheat",
+   "inferred_class": "wheat_black_rust",
+   "inferred_crop": "Wheat",
+   "given_class": "wheat_black_rust"
+  },
+  {
+   "id": "ce1115465134874ceed9508629cfa1852d7a8fd0ea355f1ec7bd0fc58036fb52",
+   "truth": "wheat_stem_fly",
+   "crop": "Wheat",
+   "inferred_class": "cotton_red_cotton_bug",
+   "inferred_crop": "Cotton",
+   "given_class": "wheat_stem_fly"
+  },
+  {
+   "id": "d339efe169f4574bf4d251c3ee41f73f9d59c96af37b6285be2c8ac13211180b",
+   "truth": "wheat_brown_rust",
+   "crop": "Wheat",
+   "inferred_class": "wheat_brown_rust",
+   "inferred_crop": "Wheat",
+   "given_class": "wheat_brown_rust"
+  },
+  {
+   "id": "daabc620ebcdd6cc8913d78ac15495a7da2d4ec36a7d33bef7a438ee01381e18",
+   "truth": "wheat_brown_rust",
+   "crop": "Wheat",
+   "inferred_class": "wheat_black_rust",
+   "inferred_crop": "Wheat",
+   "given_class": "wheat_black_rust"
+  },
+  {
+   "id": "dcacf48886c1574154fceea3263e5df9f72a16ea27552157bfc60adc4150c525",
+   "truth": "wheat_flag_smut",
+   "crop": "Wheat",
+   "inferred_class": "wheat_flag_smut",
+   "inferred_crop": "Wheat",
+   "given_class": "wheat_flag_smut"
+  },
+  {
+   "id": "df126c5c00ea0887af01ef5b267473c6c187e1ff17ee59895e51e6aecaf78a73",
+   "truth": "wheat_mite",
+   "crop": "Wheat",
+   "inferred_class": "wheat_mite",
+   "inferred_crop": "Wheat",
+   "given_class": "wheat_mite"
+  },
+  {
+   "id": "e0590b6e15311b9624a331d3babee76d1d2179cdd2697e25769ad4ca9951b0de",
+   "truth": "wheat_aphid",
+   "crop": "Wheat",
+   "inferred_class": "wheat_aphid",
+   "inferred_crop": "Wheat",
+   "given_class": "wheat_aphid"
+  },
+  {
+   "id": "e17c95e70eac2ebeb761043ada022a335840186031a234ceb851138e7b143140",
+   "truth": "wheat_healthy",
+   "crop": "Wheat",
+   "inferred_class": "wheat_healthy",
+   "inferred_crop": "Wheat",
+   "given_class": "wheat_healthy"
+  },
+  {
+   "id": "e316c1a11027d7b716c2b170f1e948422fb4894096f05c282cc6b89bb8f38d75",
+   "truth": "wheat_healthy",
+   "crop": "Wheat",
+   "inferred_class": "wheat_healthy",
+   "inferred_crop": "Wheat",
+   "given_class": "wheat_healthy"
+  },
+  {
+   "id": "e3b2aef05796e1239d595608e0a92d1e00af2b3f8998e4f397b8b4c947c3a0c6",
+   "truth": "wheat_yellow_rust",
+   "crop": "Wheat",
+   "inferred_class": "wheat_yellow_rust",
+   "inferred_crop": "Wheat",
+   "given_class": "wheat_yellow_rust"
+  },
+  {
+   "id": "e41b700cd069577dc8cdba2da79544455e7db59735301815c5ae47074cc1cc1d",
+   "truth": "wheat_stem_fly",
+   "crop": "Wheat",
+   "inferred_class": "wheat_stem_fly",
+   "inferred_crop": "Wheat",
+   "given_class": "wheat_stem_fly"
+  },
+  {
+   "id": "e6d1e08a62a761ba5272e722053fde5f437194726c1522772a76059689a5b938",
+   "truth": "wheat_aphid",
+   "crop": "Wheat",
+   "inferred_class": "wheat_aphid",
+   "inferred_crop": "Wheat",
+   "given_class": "wheat_aphid"
+  },
+  {
+   "id": "ef81f9cd95f3d2edb0b3e831b10f0c9358a38095d29895868068bc6a6c726d3e",
+   "truth": "wheat_aphid",
+   "crop": "Wheat",
+   "inferred_class": "wheat_aphid",
+   "inferred_crop": "Wheat",
+   "given_class": "wheat_aphid"
+  },
+  {
+   "id": "f1be97faa0f405d4d2d8435d17fb1b62191787c1a72baabcd466814d265a9346",
+   "truth": "wheat_powdery_mildew",
+   "crop": "Wheat",
+   "inferred_class": "wheat_powdery_mildew",
+   "inferred_crop": "Wheat",
+   "given_class": "wheat_powdery_mildew"
+  },
+  {
+   "id": "f201b8f36f0645a817a34887752b337203a30ecec0311eb9ca6e6e7700415ab8",
+   "truth": "wheat_aphid",
+   "crop": "Wheat",
+   "inferred_class": "wheat_aphid",
+   "inferred_crop": "Wheat",
+   "given_class": "wheat_aphid"
+  },
+  {
+   "id": "f5fa90709b6412b5f1c65188d1540a1e079934f5d1abfff2a73fb849cefc1d19",
+   "truth": "wheat_aphid",
+   "crop": "Wheat",
+   "inferred_class": "wheat_aphid",
+   "inferred_crop": "Wheat",
+   "given_class": "wheat_aphid"
+  },
+  {
+   "id": "f63c5427a1347107f23c5957d73b06663d176b1c71164b7c56555a920c7b0ca2",
+   "truth": "wheat_black_rust",
+   "crop": "Wheat",
+   "inferred_class": "wheat_black_rust",
+   "inferred_crop": "Wheat",
+   "given_class": "wheat_black_rust"
+  },
+  {
+   "id": "f757d660710242b6912537c936dd5d6286d0fa7ebc9519a1bbd20f2dd7c98062",
+   "truth": "wheat_leaf_blight",
+   "crop": "Wheat",
+   "inferred_class": "wheat_leaf_blight",
+   "inferred_crop": "Wheat",
+   "given_class": "wheat_leaf_blight"
+  },
+  {
+   "id": "f8119448d0fd510990c84166cda29ada3dc3bbc8bb72b0cb3e1a50d9809440ff",
+   "truth": "wheat_leaf_blight",
+   "crop": "Wheat",
+   "inferred_class": "wheat_leaf_blight",
+   "inferred_crop": "Wheat",
+   "given_class": "wheat_leaf_blight"
+  },
+  {
+   "id": "fadffaca6f1a141103970e75b33052657122def1ff013745dbf1c3c3d2ed9368",
+   "truth": "wheat_black_rust",
+   "crop": "Wheat",
+   "inferred_class": "wheat_black_rust",
+   "inferred_crop": "Wheat",
+   "given_class": "wheat_black_rust"
+  },
+  {
+   "id": "fcc92b1586b4d70edc1706a52a670b875aa68ef53f15c11f7870dbaeb0bc261a",
+   "truth": "wheat_aphid",
+   "crop": "Wheat",
+   "inferred_class": "wheat_aphid",
+   "inferred_crop": "Wheat",
+   "given_class": "wheat_aphid"
+  },
+  {
+   "id": "fda28b6addda3a61abe904114c4db95fc3e591fdee701edbff22d33acf9bf4da",
+   "truth": "wheat_black_rust",
+   "crop": "Wheat",
+   "inferred_class": "wheat_black_rust",
+   "inferred_crop": "Wheat",
+   "given_class": "wheat_black_rust"
+  },
+  {
+   "id": "fdc3c9ce38ad70192a0d820c4815df25ca92c552c2383e9c89fd20ca6a7ad0f3",
+   "truth": "wheat_powdery_mildew",
+   "crop": "Wheat",
+   "inferred_class": "sugarcane_mosaic",
+   "inferred_crop": "Sugarcane",
+   "given_class": "wheat_leaf_blight"
+  },
+  {
+   "id": "fdcfb7f924af4ac0f26328581fd59f187590595be1063f9f243201e78862f6f0",
+   "truth": "wheat_stem_fly",
+   "crop": "Wheat",
+   "inferred_class": "wheat_stem_fly",
+   "inferred_crop": "Wheat",
+   "given_class": "wheat_stem_fly"
+  }
+ ]
+}

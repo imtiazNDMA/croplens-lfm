@@ -2,31 +2,30 @@
 
 ## Current status
 
-On 2026-11-11, the GPU was available and visible inside Ubuntu WSL2. A dedicated virtual environment was created at `$HOME/croplens-venv` with Python 3.12.3, pip 26.3, and uv 0.13.7.
+**Installation, basic CUDA checks, and a bounded synthetic-image LoRA smoke test passed on 2026-11-11.** The isolated environment is `$HOME/croplens-venv`, using Python 3.12.3, pip 26.3, and uv 0.13.7. The [machine-readable report](../reports/smoke-002.json) records the actual result.
 
-**The training dependency installation is incomplete.** Two time-bounded installation attempts downloaded many wheels into uv's cache but did not finish. The environment still contains only pip and uv. No model or dataset has been downloaded, and no forward/backward or save/reload test has run.
+This proves the tested Unsloth model/processor/collator, assistant-only labels, direct PyTorch AdamW updates, and adapter/processor save/reload path. It does **not** prove crop accuracy, agricultural data preparation, an SFTTrainer integration, QLoRA, quantized export, or deployment performance.
 
-The blocker is dependency download progress, not an observed CUDA/model failure. One bootstrap download also reported temporary DNS resolution failure. Do not treat the candidate versions below as a verified training environment or dependency lock.
-
-## Hardware observations
+## Hardware and environment
 
 | Check | Observation |
 | --- | --- |
 | GPU | NVIDIA RTX 6000 Ada Generation |
 | Total VRAM | 49,140 MiB |
-| Free VRAM at start of this session | 46,493 MiB |
-| Free VRAM at final check | 46,596 MiB |
+| Free VRAM at start of successful setup session | 46,511 MiB |
 | Driver | 610.88 |
-| OS environment | Ubuntu WSL2 |
+| OS | Ubuntu WSL2 |
 | Python | 3.12.3 |
+| torch / CUDA runtime | 2.9.1+cu128 / 12.8 |
+| Unsloth / unsloth-zoo | 2026.11.3 / 2026.11.4 |
+| Transformers / TRL | 5.17.0 / 1.15.0 |
+| PEFT / Accelerate | 0.21.2 / 1.15.0 |
 
-Memory availability is a snapshot, not a reservation. No unrelated workloads were stopped. No paid compute was provisioned.
+Memory availability is a snapshot, not a reservation. No unrelated workloads were stopped and no paid compute was provisioned. The synthetic test peaked at 3.224 GiB allocated and 3.299 GiB reserved **by PyTorch**; these are not total system GPU usage or estimates for real crop batches.
 
-## Continue the installation
+## Install in an isolated environment
 
-Run these commands **in Ubuntu WSL2 Bash**, not Windows PowerShell. They use an isolated environment and do not replace system Python packages.
-
-For a new machine, create the environment and bootstrap the installer:
+Run the following in **Ubuntu WSL2 Bash**, not Windows PowerShell. Clone/open this repository first and run from its root.
 
 ```bash
 python3 -m venv "$HOME/croplens-venv"
@@ -35,60 +34,60 @@ timeout --signal=TERM --kill-after=10s 300s \
   --timeout 30 --retries 1
 ```
 
-The environment and installer already exist on the project machine. Continue there with:
+The exact observed package versions are in [requirements-wsl-cu128.txt](../requirements-wsl-cu128.txt). Install them with CUDA 12.8 wheel selection:
 
 ```bash
 timeout --signal=TERM --kill-after=10s 900s \
   env UV_HTTP_TIMEOUT=30 UV_HTTP_RETRIES=1 UV_CONCURRENT_DOWNLOADS=4 \
   "$HOME/croplens-venv/bin/uv" pip install \
   --python "$HOME/croplens-venv/bin/python" \
-  "unsloth[huggingface]" bitsandbytes pillow \
-  "torch==2.9.1" "torchvision==0.24.1" \
-  --torch-backend=cu128
+  -r requirements-wsl-cu128.txt --torch-backend=cu128
 ```
 
-This is the candidate installation command, not yet a successfully reproduced training recipe. It reuses cached downloads. A normal successful exit must precede the checks below. `timeout` exit status 124 means the command exceeded its budget; a partial cache is not a completed installation. Do not automatically restart the command or schedule it overnight.
+The version snapshot is not a hash-verified or cross-platform lockfile. The initial environment was installed with `"unsloth[huggingface]" bitsandbytes pillow "torch==2.9.1" "torchvision==0.24.1" --torch-backend=cu128`, then frozen after the successful smoke run. A fresh-machine reinstall from the snapshot has not yet been tested.
 
-The dry run resolved 108 packages, including:
+Slow downloads previously exceeded bounded attempts; a subsequent cached attempt completed in about 6 minutes 33 seconds of package preparation plus resolution/installation. Resume manually if needed; do not set up infinite retries or overnight jobs. `timeout` status 124 means the command exceeded its budget, not that installation succeeded.
 
-| Component | Candidate resolved version, not training-verified |
-| --- | --- |
-| torch | 2.9.1+cu128 |
-| torchvision | 0.24.1+cu128 |
-| unsloth | 2026.11.3 |
-| unsloth-zoo | 2026.11.4 |
-| transformers | 5.17.0 |
-| trl | 1.15.0 |
-| peft | 0.21.2 |
-| accelerate | 1.15.0 |
-| bitsandbytes | 0.50.2 |
-
-These are observations from resolution, not pins for all transitive packages. The official vision notebook uses older APIs and pins; verify the installed APIs rather than copying its trainer call unchanged. Save the full working environment only after the smoke run passes.
-
-## Checks after installation succeeds
-
-These are the **next checks**, not checks completed during bootstrap:
+## Verify dependencies and basic CUDA
 
 ```bash
 "$HOME/croplens-venv/bin/python" -m pip check
 timeout --signal=TERM --kill-after=10s 120s \
   "$HOME/croplens-venv/bin/python" -c \
-  'from unsloth import FastVisionModel; import torch; assert torch.cuda.is_available(), "CUDA unavailable"; assert torch.cuda.is_bf16_supported(), "BF16 unavailable"; x = torch.ones(16, device="cuda"); assert x.sum().item() == 16; print(torch.__version__, torch.version.cuda, torch.cuda.get_device_name(0))'
+  'from unsloth import FastVisionModel; import torch; assert torch.cuda.is_available(); assert torch.cuda.is_bf16_supported(); x = torch.ones(16, device=0); assert x.sum().item() == 16; print(torch.__version__, torch.version.cuda, torch.cuda.get_device_name(0))'
 ```
 
-Import Unsloth before PyTorch/Transformers so its patches can apply. Passing this check establishes import and basic CUDA execution, not VLM training correctness.
+Both checks passed. Import Unsloth first so its patches can apply. One initial inline PowerShell command lost a quoted `cuda` string across the PowerShell/WSL boundary; using `device=0` avoided that shell-quoting issue. It was not a CUDA failure.
 
-Then implement and execute a bounded image-conditioned smoke test using the selected model and its processor. Before agricultural training it must establish:
+## Run the multimodal smoke test
 
-1. Correct image–conversation pairing and image tokens.
-2. Intended assistant-label masking.
-3. Finite forward/backward loss and actual adapter updates.
-4. Frozen vision parameters staying frozen.
-5. Image-dependent behavior and a tiny-batch sanity check.
-6. Adapter/processor save/reload and repeatable inference.
+Authenticate locally if needed using Hugging Face's interactive `hf auth login` in WSL. The model is public, but authentication may improve download limits. Never paste a token into this repository, examples, logs, or screenshots.
 
-Use synthetic or explicitly shareable images for that engineering test. It must not be reported as a crop benchmark. Record the actual model revision, complete package environment, commands, loss, timing, memory, and outcomes in the [evidence journal](article/evidence-journal.md).
+```bash
+timeout --signal=TERM --kill-after=10s 900s \
+  env HF_HUB_DISABLE_XET=1 HF_HUB_DOWNLOAD_TIMEOUT=30 HF_HUB_ETAG_TIMEOUT=30 \
+  "$HOME/croplens-venv/bin/python" -u smoke_test.py \
+  --output outputs/my-smoke-run
+```
 
-## Why not a lockfile yet?
+Use a new output directory for every run; the script refuses to overwrite one. `outputs/` and Unsloth's generated compile cache are ignored by Git. Run normally, not with Python `-O`, because the assertions are the engineering checks. The external timeout is mandatory: the SIGTERM handler records a timeout where Python can handle it, and the supervisor force-kills an unresponsive process after the grace period.
 
-A dependency resolver proves compatible version constraints, not working CUDA kernels, multimodal labels, or trained-adapter reload. A lockfile and executable training instructions should describe a reproduced working stack. Until then, the candidate command and its failures remain explicitly documented here.
+The script pins model revision `919fde3d022e3f90a4716006f993938ee8c2eb97`. It creates two synthetic 224×224 red/blue images and verifies:
+
+1. Only language-side LoRA parameters are trainable; the vision encoder is excluded.
+2. The collator supplies image tensors and supervises only the expected assistant answer.
+3. Identical text tokens with different images produce different next-token logits.
+4. Twenty direct AdamW updates yield finite losses/gradients, changed adapters, and lower tiny-batch loss.
+5. Saving/reloading the adapter and processor preserves greedy generation for the tested prompt.
+
+Actual run `smoke-002`: 4,571,136 trainable parameters, loss 3.749977 → 0.000315, training loop 23.451 seconds, full run 487.244 seconds, and `red` generated before/after reload. The full duration includes downloading/loading and reload, not just training. This is a pipeline check on two artificial examples, not a generalization benchmark or a replicated multi-seed result.
+
+The first unauthenticated download attempt stalled and was interrupted before training. The successful attempt used transient authentication and disabled Xet. Those changes happened together, so we cannot attribute the improvement to the token alone. No token was written to the project or report.
+
+## Known limits and next gate
+
+- The runtime used a correct but slower reference convolution because `causal_conv1d` was absent. Do not add an optimized kernel until throughput profiling justifies and verifies it.
+- The test uses a direct AdamW loop, not TRL's SFTTrainer. The agricultural training entry point still needs its own integration checks.
+- Match crop-image preprocessing, target schema, batch sizes, grouped splits, and evaluation behavior before real training.
+- Save/reload equivalence was checked on one greedy prompt; broader regression tests remain future work.
+- Freeze the crop taxonomy and data specification, audit sources and duplicates, and establish baselines before autoresearch.

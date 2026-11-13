@@ -1,0 +1,1593 @@
+{
+  "status": "complete",
+  "model": "LiquidAI/LFM2.5-VL-1.6B",
+  "revision": "919fde3d022e3f90a4716006f993938ee8c2eb97",
+  "seed": 3407,
+  "task": "five-crop identification; in-corpus validation pilot, not disease/field evaluation",
+  "question": "Identify the crop in this image. Answer with exactly one of: Cotton, Maize, Rice, Sugarcane, Wheat.",
+  "steps": 200,
+  "batch_size": 4,
+  "learning_rate": 0.0002,
+  "rank": 8,
+  "alpha": 8,
+  "max_image_side": 384,
+  "versions": {
+    "torch": "2.9.1+cu128",
+    "unsloth": "2026.11.3",
+    "transformers": "5.17.0",
+    "peft": "0.21.2"
+  },
+  "manifest_sha256": "f3e404e075ea9289545afb080b84a54e25f5016f0407560c5ffe869a750ec6ed",
+  "counts": {
+    "train": {
+      "Cotton": 100,
+      "Maize": 100,
+      "Rice": 100,
+      "Sugarcane": 100,
+      "Wheat": 100
+    },
+    "val": {
+      "Cotton": 20,
+      "Maize": 20,
+      "Rice": 20,
+      "Sugarcane": 20,
+      "Wheat": 20
+    }
+  },
+  "selected_images_verified": 600,
+  "elapsed_seconds": 147.283,
+  "gpu": "NVIDIA RTX 6000 Ada Generation",
+  "untuned": {
+    "accuracy": 0.53,
+    "macro_f1": 0.5244550785831573,
+    "per_crop_recall": {
+      "Cotton": 0.55,
+      "Maize": 0.6,
+      "Rice": 0.75,
+      "Sugarcane": 0.55,
+      "Wheat": 0.2
+    },
+    "invalid_answers": 0,
+    "confusion_labels": [
+      "Cotton",
+      "Maize",
+      "Rice",
+      "Sugarcane",
+      "Wheat",
+      "INVALID"
+    ],
+    "confusion_matrix": [
+      [
+        11,
+        0,
+        7,
+        1,
+        1,
+        0
+      ],
+      [
+        1,
+        12,
+        5,
+        2,
+        0,
+        0
+      ],
+      [
+        0,
+        4,
+        15,
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        6,
+        3,
+        11,
+        0,
+        0
+      ],
+      [
+        1,
+        7,
+        8,
+        0,
+        4,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "seconds": 16.713,
+    "answers": [
+      {
+        "sha256": "747a4db343aea7f13a7ec328b69027656dc1bfce654e02505c6659f045f2b390",
+        "truth": "Cotton",
+        "prediction": "Rice",
+        "raw": "Rice"
+      },
+      {
+        "sha256": "ecc9583bf5b0dc9455bac5b6e10b1c5cb4252b01da41d193e0c5222a991e74d8",
+        "truth": "Cotton",
+        "prediction": "Cotton",
+        "raw": "Cotton"
+      },
+      {
+        "sha256": "5f483a88138053585185ce43cc4f61e514dcd6be7e5baad0c51695512335d32f",
+        "truth": "Cotton",
+        "prediction": "Cotton",
+        "raw": "Cotton."
+      },
+      {
+        "sha256": "0d6238ad66950a0df9cbefc59f0ac7ced8af1ac8b43e23f872c1ed690860984c",
+        "truth": "Cotton",
+        "prediction": "Cotton",
+        "raw": "Cotton."
+      },
+      {
+        "sha256": "098084231a1a5a7eeaafe062c75ea1c7f008ef4c399e7bba93303016aa6270c8",
+        "truth": "Cotton",
+        "prediction": "Rice",
+        "raw": "Rice"
+      },
+      {
+        "sha256": "4cb5ca53f4522d5bf3aedd1b765cd2f6a5ab97dc2fcf43a92e6c7984605d2924",
+        "truth": "Cotton",
+        "prediction": "Cotton",
+        "raw": "Cotton."
+      },
+      {
+        "sha256": "acb7bd8fba2aa294142285f701b546a72e6bfe81c2031e69b78fe2de4d774b03",
+        "truth": "Cotton",
+        "prediction": "Cotton",
+        "raw": "Cotton"
+      },
+      {
+        "sha256": "25d91e2bd33db6b5ce8c2b4c267474b4d47f1dda4cb9e2f6d39c891174a50f2d",
+        "truth": "Cotton",
+        "prediction": "Wheat",
+        "raw": "Wheat."
+      },
+      {
+        "sha256": "97375a6053af880f9f6cc5b9fd0dd0c5a39ccdfb806578eede6cf588fc9de374",
+        "truth": "Cotton",
+        "prediction": "Rice",
+        "raw": "Rice"
+      },
+      {
+        "sha256": "7c70a55203ce0a7babc30d7c144fc5da129cc239272d4ed2b413862a46917808",
+        "truth": "Cotton",
+        "prediction": "Rice",
+        "raw": "Rice"
+      },
+      {
+        "sha256": "50b10cd8a9b8f86e072e74b58addddade664b0598ef0ab2879a735389fd569ed",
+        "truth": "Cotton",
+        "prediction": "Rice",
+        "raw": "Rice"
+      },
+      {
+        "sha256": "9cb9e358b239ee1e86b3ddd5dd28d3f8093bf8e83010ff6226ea94d6fc8b84e2",
+        "truth": "Cotton",
+        "prediction": "Cotton",
+        "raw": "Cotton"
+      },
+      {
+        "sha256": "fa9e15801f900684bec4a4744ac2742837f71afe2bb045b2555e57448e14ae43",
+        "truth": "Cotton",
+        "prediction": "Cotton",
+        "raw": "Cotton"
+      },
+      {
+        "sha256": "f2368591947f8e62fe2c21141a2ca900505ddfafd7fcc064ab9b168d7300b445",
+        "truth": "Cotton",
+        "prediction": "Cotton",
+        "raw": "Cotton."
+      },
+      {
+        "sha256": "62b060ae1634de31db5ccc54c173a1b90a0df295848d0973ea7421073fae8219",
+        "truth": "Cotton",
+        "prediction": "Rice",
+        "raw": "Rice"
+      },
+      {
+        "sha256": "71910eb23bce7c9e0c8070573324ddcaafc18bc272776ee9ebe1cb119b743ff7",
+        "truth": "Cotton",
+        "prediction": "Rice",
+        "raw": "Rice"
+      },
+      {
+        "sha256": "127db29271c89aba1a03685851c16c93cfaa8ce258704db0c303745d3de2d95e",
+        "truth": "Cotton",
+        "prediction": "Cotton",
+        "raw": "Cotton."
+      },
+      {
+        "sha256": "c282123080b516a051537a8a458505ae0fe7512fd06904267d4f84d988084503",
+        "truth": "Cotton",
+        "prediction": "Sugarcane",
+        "raw": "Sugarcane."
+      },
+      {
+        "sha256": "a4393cf6fad19707072b47b600cae2030332bd1ac33dcd99614f2650b4da4234",
+        "truth": "Cotton",
+        "prediction": "Cotton",
+        "raw": "Cotton"
+      },
+      {
+        "sha256": "3150b400a4dbfe1befe6614216fcd317673b4f091e80a6d40ed2d949dbd62a5c",
+        "truth": "Cotton",
+        "prediction": "Cotton",
+        "raw": "Cotton"
+      },
+      {
+        "sha256": "22171965406b1cd6284bd922f39c35c294ee78f8e92b2977bf907328bc13c735",
+        "truth": "Maize",
+        "prediction": "Maize",
+        "raw": "Maize"
+      },
+      {
+        "sha256": "296c1a91c361fb5f4bce497a8627ab52c701b737867fc6c1f58ff17de8046565",
+        "truth": "Maize",
+        "prediction": "Rice",
+        "raw": "Rice"
+      },
+      {
+        "sha256": "a827608cf235af8d3e0e9e61f7feed505cf154e509245b7ac881c628ac9f8c36",
+        "truth": "Maize",
+        "prediction": "Maize",
+        "raw": "Maize"
+      },
+      {
+        "sha256": "38af349370de33f5a620993b846a966d024a867ce34748f0c5dcd32587d39acd",
+        "truth": "Maize",
+        "prediction": "Maize",
+        "raw": "Maize"
+      },
+      {
+        "sha256": "abdcd017dfa98ffea6ef9e95ecd8b45d03ea700d582f2b7a00302d515ea74588",
+        "truth": "Maize",
+        "prediction": "Maize",
+        "raw": "Maize"
+      },
+      {
+        "sha256": "81e0af73bda53c24dbf7bead1516c41f414deaebcc3617ab907d8bcac7561940",
+        "truth": "Maize",
+        "prediction": "Sugarcane",
+        "raw": "Sugarcane."
+      },
+      {
+        "sha256": "a0489d49504672fabe3dd456a26b61c9f92a5a3e6d09a9fb8756e6f94830b1df",
+        "truth": "Maize",
+        "prediction": "Maize",
+        "raw": "Maize"
+      },
+      {
+        "sha256": "a6dc29e76bd1f03425f71720a20061eb77db9a2971c758ef4d9331a8ccb68a01",
+        "truth": "Maize",
+        "prediction": "Maize",
+        "raw": "Maize"
+      },
+      {
+        "sha256": "b7152b797284bd593a0a1f35becae9ad4c150eb9c00cd19698911d23b9b9bc6d",
+        "truth": "Maize",
+        "prediction": "Rice",
+        "raw": "Rice"
+      },
+      {
+        "sha256": "b3885959075c8e4d73042eadac2f33dd65398cecb143632f52617be878fdb832",
+        "truth": "Maize",
+        "prediction": "Rice",
+        "raw": "Rice"
+      },
+      {
+        "sha256": "29b54803326b9a7bc2d9112e953e6ce1da0b638b1a42fa1e8320919b180df9e5",
+        "truth": "Maize",
+        "prediction": "Rice",
+        "raw": "Rice."
+      },
+      {
+        "sha256": "67f271291f4d91f4cb81004ae83ff18f56c326741fda835a1d9a1a7a88aa03fe",
+        "truth": "Maize",
+        "prediction": "Maize",
+        "raw": "Maize"
+      },
+      {
+        "sha256": "00e37b88d799a367b4fe76956ec8ced446c6aa35c0d8caf4c35f7458bc120d61",
+        "truth": "Maize",
+        "prediction": "Maize",
+        "raw": "Maize"
+      },
+      {
+        "sha256": "339e4325561e5b26ecd7f2285d7b46cea283785b137f11c9792f00df2601537d",
+        "truth": "Maize",
+        "prediction": "Sugarcane",
+        "raw": "Sugarcane."
+      },
+      {
+        "sha256": "737c3786b29388c79f985ab083a07db4dd89d28b90909e83eff4ec7c197c6c29",
+        "truth": "Maize",
+        "prediction": "Maize",
+        "raw": "Maize"
+      },
+      {
+        "sha256": "f1d92616b302a79c9325194a66df62bf324425a3136068e164832ff7f055da6e",
+        "truth": "Maize",
+        "prediction": "Maize",
+        "raw": "Maize"
+      },
+      {
+        "sha256": "465368519d45b5e6717d1e6d81a2c927f72e30b8ec25b51bfd753cd8b4a50e8c",
+        "truth": "Maize",
+        "prediction": "Rice",
+        "raw": "Rice"
+      },
+      {
+        "sha256": "c2ab4bc1e2363122b97a578b125224f41bdfdf17ba7a0e60a21e3dd2bc7231f0",
+        "truth": "Maize",
+        "prediction": "Maize",
+        "raw": "Maize"
+      },
+      {
+        "sha256": "53eae602861cd645b46a0cc20ee5cd722186ea42d2af2ee1a7dca113e35ec63e",
+        "truth": "Maize",
+        "prediction": "Maize",
+        "raw": "Maize"
+      },
+      {
+        "sha256": "89f84a549974eb7f37eb35a40a79d932f00cae784e0fe8f50a5161d58d2746af",
+        "truth": "Maize",
+        "prediction": "Cotton",
+        "raw": "Cotton."
+      },
+      {
+        "sha256": "83749941e17247840ac02d7f94c96ae08387298e567850b51d167a87d509ad0e",
+        "truth": "Rice",
+        "prediction": "Sugarcane",
+        "raw": "Sugarcane"
+      },
+      {
+        "sha256": "eb968cb9a1b1656dd94fd83b6826a9e5d48bef06e15f56ce2a51776e5ec1c1b2",
+        "truth": "Rice",
+        "prediction": "Rice",
+        "raw": "Rice"
+      },
+      {
+        "sha256": "3dfe7dd93d8da3a9f6d571493a2ab057d235a2d67f5968c27cec537f5f7229e5",
+        "truth": "Rice",
+        "prediction": "Maize",
+        "raw": "Maize"
+      },
+      {
+        "sha256": "12331ddc484266a9a0ed81654f8c39d6e800f338c73e43eee3da968089acc165",
+        "truth": "Rice",
+        "prediction": "Rice",
+        "raw": "Rice"
+      },
+      {
+        "sha256": "6d9cc3d9eccc924e7cccb9e98c5a6b7b94eaeda662b8f76726918f68a043a083",
+        "truth": "Rice",
+        "prediction": "Rice",
+        "raw": "Rice"
+      },
+      {
+        "sha256": "7a173238e40159cf7c643868aa425dd8dd2471a13e2c3c5ae5e2d6c94d4018a0",
+        "truth": "Rice",
+        "prediction": "Rice",
+        "raw": "Rice"
+      },
+      {
+        "sha256": "85a16fc6a7007eafab606a1cabce2f258cff5827b8d550d699a0a25fd0adc988",
+        "truth": "Rice",
+        "prediction": "Rice",
+        "raw": "Rice"
+      },
+      {
+        "sha256": "163f60720fb9eb5625002a4775b178c35bf439d6c43b282d9ffce2923436bbe3",
+        "truth": "Rice",
+        "prediction": "Maize",
+        "raw": "Maize"
+      },
+      {
+        "sha256": "9509c347a9779aebad95af267b96276dcf4efde0c2b86c19ea2f641944da8a8a",
+        "truth": "Rice",
+        "prediction": "Rice",
+        "raw": "Rice"
+      },
+      {
+        "sha256": "b989a01ab48e42a717e00d358a126760961e1900ca0d983c0cd367b991cb8216",
+        "truth": "Rice",
+        "prediction": "Rice",
+        "raw": "Rice"
+      },
+      {
+        "sha256": "4c907dc37eda4cfb210dc3a2ac5ddb3acf8616c9eb44c9e2d0a4627336a6ea26",
+        "truth": "Rice",
+        "prediction": "Maize",
+        "raw": "Maize"
+      },
+      {
+        "sha256": "c4d7c0ecd3a2a9675a149626e2f2c7f66dc68c960214cde10ffaffc9f242fb77",
+        "truth": "Rice",
+        "prediction": "Rice",
+        "raw": "Rice"
+      },
+      {
+        "sha256": "f845e019fbf169645dbd5218372e07a371d0bbf2743636697533d345b32d62ca",
+        "truth": "Rice",
+        "prediction": "Maize",
+        "raw": "Maize"
+      },
+      {
+        "sha256": "cb9b9984a27c7470772eb1e23d79634c74033b185d67214357e926515add9502",
+        "truth": "Rice",
+        "prediction": "Rice",
+        "raw": "Rice"
+      },
+      {
+        "sha256": "260eb21afe3a0789174b3220fa7210b571b00a6e658aa9975c227236f5154fa5",
+        "truth": "Rice",
+        "prediction": "Rice",
+        "raw": "Rice"
+      },
+      {
+        "sha256": "0186d606af7da80372616660eb5688d6adf73f9b1aa318d9a9bcce7262f86627",
+        "truth": "Rice",
+        "prediction": "Rice",
+        "raw": "Rice"
+      },
+      {
+        "sha256": "823d1132a0adfb3e72a079c961b9e90bd5fd5fd43552ad9daeca357e99a93e71",
+        "truth": "Rice",
+        "prediction": "Rice",
+        "raw": "Rice"
+      },
+      {
+        "sha256": "2e0598410ade21df5d6255f3d488f0826cc80fe3eda480f920e0e5afd2e75203",
+        "truth": "Rice",
+        "prediction": "Rice",
+        "raw": "Rice"
+      },
+      {
+        "sha256": "9ca47ce7539f5ee9293002cb93b526b6ed8cd9655fca21ff9d1ebdc020cb95a7",
+        "truth": "Rice",
+        "prediction": "Rice",
+        "raw": "Rice"
+      },
+      {
+        "sha256": "c48a6e445d8d6ef9bb44b1a6f2f50c276df4d684ead16cc223d1f7f8bea000ae",
+        "truth": "Rice",
+        "prediction": "Rice",
+        "raw": "Rice"
+      },
+      {
+        "sha256": "af0a42e9827528ffd21ec8eef8371a395e5041145165e389f73a995adf8b296f",
+        "truth": "Sugarcane",
+        "prediction": "Sugarcane",
+        "raw": "Sugarcane."
+      },
+      {
+        "sha256": "a974c31f22be59c94f631b58e584dc16dbca82a74eef043bd60ba472461ebacc",
+        "truth": "Sugarcane",
+        "prediction": "Rice",
+        "raw": "Rice"
+      },
+      {
+        "sha256": "e6318d2b27002293c87407ad78ab534994998f735dcbacd50a19501bffa6f216",
+        "truth": "Sugarcane",
+        "prediction": "Maize",
+        "raw": "Maize"
+      },
+      {
+        "sha256": "e0e204ddd26ac42de15afacf1302d6ef0aad59248fb95b5bd17c6ce547a63d69",
+        "truth": "Sugarcane",
+        "prediction": "Sugarcane",
+        "raw": "Sugarcane"
+      },
+      {
+        "sha256": "9bec8b667213e97909678b823b8a17aac37f22f55b4fc5a91564f287cb714e8d",
+        "truth": "Sugarcane",
+        "prediction": "Sugarcane",
+        "raw": "Sugarcane."
+      },
+      {
+        "sha256": "4b8a49b04a01a21acdd5f8c0833e8b76cf302cf279692b20bf78151c95d4f6f8",
+        "truth": "Sugarcane",
+        "prediction": "Maize",
+        "raw": "Maize"
+      },
+      {
+        "sha256": "1f13be357472daa815d4e9f21cd2921ccc49f8602383c9d784fc90e7c1d28da7",
+        "truth": "Sugarcane",
+        "prediction": "Maize",
+        "raw": "Maize"
+      },
+      {
+        "sha256": "f55fd02d2a09a171ac5a0b225235661079845ba5fcb4ec2fe58e711d9a9af427",
+        "truth": "Sugarcane",
+        "prediction": "Rice",
+        "raw": "Rice"
+      },
+      {
+        "sha256": "2df2f607adf95a2552d2255838cf1b8ac3001bc59f7a27b0204e2be3a0bfb51f",
+        "truth": "Sugarcane",
+        "prediction": "Rice",
+        "raw": "Rice"
+      },
+      {
+        "sha256": "1f8590566eb7fbb170ca513f97e19db714f7c03678acdf1c471088a5e8412a9b",
+        "truth": "Sugarcane",
+        "prediction": "Maize",
+        "raw": "Maize"
+      },
+      {
+        "sha256": "5cd4c2844c1ba09eb758479af2af9a145ae5c1aab82fc2b667459a8be08e9d09",
+        "truth": "Sugarcane",
+        "prediction": "Sugarcane",
+        "raw": "Sugarcane."
+      },
+      {
+        "sha256": "9f0f52a88a8d105619ba71886051860a267d99cdb26016b3763e979529e3edb2",
+        "truth": "Sugarcane",
+        "prediction": "Maize",
+        "raw": "Maize"
+      },
+      {
+        "sha256": "232058998f6c2e02c323f1206914133a364ab82d71d030b9d0da4dff27ef3cb0",
+        "truth": "Sugarcane",
+        "prediction": "Sugarcane",
+        "raw": "Sugarcane."
+      },
+      {
+        "sha256": "ddd61ee3f2a4869296abfda7a40476d3adc0a62ae1898d0b6da37f7b64189da3",
+        "truth": "Sugarcane",
+        "prediction": "Sugarcane",
+        "raw": "Sugarcane."
+      },
+      {
+        "sha256": "2797156b824eb38ebbeb19dc5349fa162b5ac035cce2861468c1c29cde717361",
+        "truth": "Sugarcane",
+        "prediction": "Sugarcane",
+        "raw": "Sugarcane."
+      },
+      {
+        "sha256": "48448dc85a9216110d52faf95c550f6335d4ddff4221c99ba9735356a8a3ef76",
+        "truth": "Sugarcane",
+        "prediction": "Maize",
+        "raw": "Maize"
+      },
+      {
+        "sha256": "78c0fa796892bd2e39b5bb7de0b03a3e35d94d68569f17e1e9e43f70e6a1d2d8",
+        "truth": "Sugarcane",
+        "prediction": "Sugarcane",
+        "raw": "Sugarcane"
+      },
+      {
+        "sha256": "20c5a6a17cb5d4d4265ee1de7e5bf873142855ba7dd02926d1b0e57705601e34",
+        "truth": "Sugarcane",
+        "prediction": "Sugarcane",
+        "raw": "Sugarcane."
+      },
+      {
+        "sha256": "34e7656fadbb57f55063b57f7a57d7d67c1bc8a9c17cf7cfb257308dbab8905f",
+        "truth": "Sugarcane",
+        "prediction": "Sugarcane",
+        "raw": "Sugarcane."
+      },
+      {
+        "sha256": "d8a97f4ed1577cfd85f3bc81f33bf166c4b2e3913add5ef21ebda1e1211add03",
+        "truth": "Sugarcane",
+        "prediction": "Sugarcane",
+        "raw": "Sugarcane."
+      },
+      {
+        "sha256": "22d17f08bf62de5cc2193c8df29ecb726cb92e32f6278de955ef630b6c8e7484",
+        "truth": "Wheat",
+        "prediction": "Rice",
+        "raw": "Rice"
+      },
+      {
+        "sha256": "f62cf93cdd7dd2daccc615fcbd62d1809425436dc1f8c27262388fce61556f3c",
+        "truth": "Wheat",
+        "prediction": "Maize",
+        "raw": "Maize"
+      },
+      {
+        "sha256": "878f7fb586784f989c7c590b91dfff8f1911657a78d7daa8f63f7d09d61bdb63",
+        "truth": "Wheat",
+        "prediction": "Rice",
+        "raw": "Rice."
+      },
+      {
+        "sha256": "c56030670e71024ac46af472d92b3e7ebf2558bf25b6a33f25d29c34bfac272b",
+        "truth": "Wheat",
+        "prediction": "Rice",
+        "raw": "Rice"
+      },
+      {
+        "sha256": "1f48c7931b124ac19be42be7c078a7140073dc762797a7ab4a4b68d7ec4ee0ce",
+        "truth": "Wheat",
+        "prediction": "Wheat",
+        "raw": "Wheat."
+      },
+      {
+        "sha256": "ec6d9ea6f86e14d0dd59fa47c505e16219068906f8991ece763386cb648ace2f",
+        "truth": "Wheat",
+        "prediction": "Rice",
+        "raw": "Rice."
+      },
+      {
+        "sha256": "162b2fcbcc94ece1d1ec680222577fdf18e657b8b7ebf5e8fe27f1db973ec16e",
+        "truth": "Wheat",
+        "prediction": "Rice",
+        "raw": "Rice"
+      },
+      {
+        "sha256": "e3b2aef05796e1239d595608e0a92d1e00af2b3f8998e4f397b8b4c947c3a0c6",
+        "truth": "Wheat",
+        "prediction": "Maize",
+        "raw": "Maize"
+      },
+      {
+        "sha256": "782fd6ffacf0d10a8904a99813f9bfeab6ddace4075f3a80998a5ddeddfbb42f",
+        "truth": "Wheat",
+        "prediction": "Maize",
+        "raw": "Maize"
+      },
+      {
+        "sha256": "8abfb29b210cf2a08965ff234624756240465c9dd734f73f39ff38a2bf87c5b2",
+        "truth": "Wheat",
+        "prediction": "Maize",
+        "raw": "Maize"
+      },
+      {
+        "sha256": "21add1a797244a4e17cb00b19b7dfe89d3599605642d3ad1d2bcb6e7d8280187",
+        "truth": "Wheat",
+        "prediction": "Rice",
+        "raw": "Rice"
+      },
+      {
+        "sha256": "a4407c4a5c916ca730e7e6853d483ca2f6933f3b52c3e77ec4cb21fca8f00914",
+        "truth": "Wheat",
+        "prediction": "Maize",
+        "raw": "Maize"
+      },
+      {
+        "sha256": "2413277ada9116d8bec7fdf2ded72da5f96b1c3476c06d1f3e8c72ebd919bea9",
+        "truth": "Wheat",
+        "prediction": "Wheat",
+        "raw": "Wheat."
+      },
+      {
+        "sha256": "e5d19e58694fb194cfcda5777acf3c5193f45460e959abdc1cbcddb93c89e7ac",
+        "truth": "Wheat",
+        "prediction": "Wheat",
+        "raw": "Wheat."
+      },
+      {
+        "sha256": "5c81c3506de9558adf8ef32827d35e8b40f97ef0381e024a541e87ea9db14b8a",
+        "truth": "Wheat",
+        "prediction": "Maize",
+        "raw": "Maize"
+      },
+      {
+        "sha256": "7ffda3683837254a1d9919ce2be6262aa258944ffda3f0206fca412d0acf2868",
+        "truth": "Wheat",
+        "prediction": "Rice",
+        "raw": "Rice."
+      },
+      {
+        "sha256": "db5fa255e66bbc477b6f009aa97a974b5d5ac37aa52d9927009f683655b9b397",
+        "truth": "Wheat",
+        "prediction": "Wheat",
+        "raw": "Wheat"
+      },
+      {
+        "sha256": "b04071a0f25133357903cdfe576206b6c2229c41cbf5a3bf2f12e473ec9a004d",
+        "truth": "Wheat",
+        "prediction": "Rice",
+        "raw": "Rice"
+      },
+      {
+        "sha256": "7daecea395155adc5cd7e1c23dd55e6578fdc99330ee9ed807c9bdeb08e8a3d0",
+        "truth": "Wheat",
+        "prediction": "Maize",
+        "raw": "Maize"
+      },
+      {
+        "sha256": "9ecad7e0c38d6cba806445a86c2df3166f3b80f1098f7c554bdcd6902c5c9793",
+        "truth": "Wheat",
+        "prediction": "Cotton",
+        "raw": "Cotton"
+      }
+    ]
+  },
+  "trainable_parameters": 4571136,
+  "completed_steps": 200,
+  "losses": [
+    0.5730583071708679,
+    0.3912489712238312,
+    0.27959656715393066,
+    0.32378241419792175,
+    0.12242612987756729,
+    0.14308539032936096,
+    0.20268495380878448,
+    0.20722022652626038,
+    0.09759760648012161,
+    0.5633324384689331,
+    0.33987894654273987,
+    0.3694874346256256,
+    0.09167905896902084,
+    0.34931299090385437,
+    0.2689451277256012,
+    0.42843496799468994,
+    0.12824217975139618,
+    0.05585202947258949,
+    0.41576340794563293,
+    0.2794075906276703,
+    0.2153366655111313,
+    0.04487752914428711,
+    0.4859282970428467,
+    0.14095959067344666,
+    0.02171907387673855,
+    0.6517274975776672,
+    0.18196554481983185,
+    0.16622550785541534,
+    0.4175232946872711,
+    0.275665819644928,
+    0.1857176274061203,
+    0.1358257234096527,
+    0.24287457764148712,
+    0.12867459654808044,
+    0.14282242953777313,
+    0.0641186386346817,
+    0.007677300833165646,
+    0.07598152756690979,
+    0.09611912816762924,
+    0.5252053141593933,
+    0.0728987380862236,
+    0.5861456990242004,
+    0.005330224521458149,
+    0.17312277853488922,
+    0.05604322999715805,
+    0.8579009175300598,
+    0.025383658707141876,
+    0.042350079864263535,
+    0.045689038932323456,
+    0.004066028166562319,
+    0.021054133772850037,
+    0.021979892626404762,
+    0.03217238932847977,
+    0.0076990677043795586,
+    0.09854767471551895,
+    0.002144966507330537,
+    0.7425491213798523,
+    0.16391167044639587,
+    0.005532626993954182,
+    0.34522274136543274,
+    0.001667731092311442,
+    0.008332740515470505,
+    0.38423120975494385,
+    0.28709012269973755,
+    0.007029044907540083,
+    0.029761580750346184,
+    0.14507807791233063,
+    0.017944492399692535,
+    0.01940029114484787,
+    0.0889354720711708,
+    0.015800192952156067,
+    0.07731335610151291,
+    0.15435339510440826,
+    0.03750837221741676,
+    0.06775081157684326,
+    0.043953899294137955,
+    0.0877235159277916,
+    0.0011833681492134929,
+    0.00023566950403619558,
+    0.004208223428577185,
+    0.43923765420913696,
+    0.5416204929351807,
+    0.00963636115193367,
+    0.22681860625743866,
+    0.15580585598945618,
+    0.7769315242767334,
+    0.005418059416115284,
+    0.0032802692148834467,
+    1.8002501726150513,
+    0.007085614372044802,
+    0.7551965713500977,
+    0.10404672473669052,
+    0.09308072179555893,
+    0.0049069467931985855,
+    0.32206544280052185,
+    0.22408314049243927,
+    0.3687918782234192,
+    0.00918987113982439,
+    0.015779757872223854,
+    0.020304610952734947,
+    0.03472530469298363,
+    0.03957958519458771,
+    0.0313480868935585,
+    0.03504408523440361,
+    0.0006077709840610623,
+    0.13412465155124664,
+    0.0006021069129928946,
+    0.007969493046402931,
+    0.29639410972595215,
+    0.01278296485543251,
+    0.08627539873123169,
+    0.22845707833766937,
+    0.24202238023281097,
+    0.016815751791000366,
+    0.00033165133208967745,
+    0.03174980357289314,
+    0.6121772527694702,
+    0.23900200426578522,
+    0.08741332590579987,
+    0.04440169408917427,
+    0.013843397609889507,
+    0.1905139684677124,
+    0.0022483624052256346,
+    0.002021684078499675,
+    0.2556452751159668,
+    0.38804781436920166,
+    0.026012450456619263,
+    0.0697721615433693,
+    0.0015185538213700056,
+    0.24242812395095825,
+    0.011808568611741066,
+    0.050097785890102386,
+    0.014378590509295464,
+    0.02186443842947483,
+    0.00039202699554152787,
+    0.005628162529319525,
+    0.1738484501838684,
+    0.04166673123836517,
+    0.1313435286283493,
+    0.0016981448279693723,
+    0.00042210688116028905,
+    0.03376277908682823,
+    0.0002412770118098706,
+    0.0012456683907657862,
+    0.03524564579129219,
+    0.00036037832614965737,
+    0.0019869303796440363,
+    0.5885366201400757,
+    0.5428788065910339,
+    0.6191458702087402,
+    0.004873004276305437,
+    0.3374835252761841,
+    0.0008802047232165933,
+    0.012778179720044136,
+    0.004132089205086231,
+    0.0008334011654369533,
+    0.2254124879837036,
+    0.00018968329823110253,
+    0.0015938776778057218,
+    0.003969901241362095,
+    0.0004021483182441443,
+    0.01910904422402382,
+    0.011189423501491547,
+    0.0005507033783942461,
+    0.6010680794715881,
+    0.31203070282936096,
+    0.02116348408162594,
+    0.17627976834774017,
+    0.0019080863567069173,
+    0.10267505794763565,
+    0.005196239333599806,
+    0.0737602710723877,
+    0.00971593614667654,
+    0.007157266605645418,
+    0.04164637625217438,
+    0.018745243549346924,
+    0.1640903204679489,
+    0.0015219596680253744,
+    0.02929103747010231,
+    0.18082134425640106,
+    0.0020760318730026484,
+    0.023050567135214806,
+    0.0004164293932262808,
+    0.0039281416684389114,
+    0.7484114170074463,
+    0.0010497096227481961,
+    0.3970341086387634,
+    0.0011063143610954285,
+    0.0014058040687814355,
+    0.16025705635547638,
+    0.0002530784404370934,
+    0.0009149180841632187,
+    0.0021494259126484394,
+    0.2606617212295532,
+    0.06018909439444542,
+    0.19918133318424225,
+    0.10515012592077255,
+    0.0007803647313266993,
+    0.057754646986722946,
+    0.002636356744915247
+  ],
+  "training_seconds": 86.736,
+  "adapter_saved": true,
+  "finetuned": {
+    "accuracy": 0.86,
+    "macro_f1": 0.8611051693404633,
+    "per_crop_recall": {
+      "Cotton": 0.95,
+      "Maize": 0.95,
+      "Rice": 1.0,
+      "Sugarcane": 0.65,
+      "Wheat": 0.75
+    },
+    "invalid_answers": 0,
+    "confusion_labels": [
+      "Cotton",
+      "Maize",
+      "Rice",
+      "Sugarcane",
+      "Wheat",
+      "INVALID"
+    ],
+    "confusion_matrix": [
+      [
+        19,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        19,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        20,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        6,
+        13,
+        0,
+        0
+      ],
+      [
+        1,
+        0,
+        4,
+        0,
+        15,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "seconds": 15.188,
+    "answers": [
+      {
+        "sha256": "747a4db343aea7f13a7ec328b69027656dc1bfce654e02505c6659f045f2b390",
+        "truth": "Cotton",
+        "prediction": "Cotton",
+        "raw": "Cotton"
+      },
+      {
+        "sha256": "ecc9583bf5b0dc9455bac5b6e10b1c5cb4252b01da41d193e0c5222a991e74d8",
+        "truth": "Cotton",
+        "prediction": "Cotton",
+        "raw": "Cotton"
+      },
+      {
+        "sha256": "5f483a88138053585185ce43cc4f61e514dcd6be7e5baad0c51695512335d32f",
+        "truth": "Cotton",
+        "prediction": "Cotton",
+        "raw": "Cotton"
+      },
+      {
+        "sha256": "0d6238ad66950a0df9cbefc59f0ac7ced8af1ac8b43e23f872c1ed690860984c",
+        "truth": "Cotton",
+        "prediction": "Cotton",
+        "raw": "Cotton"
+      },
+      {
+        "sha256": "098084231a1a5a7eeaafe062c75ea1c7f008ef4c399e7bba93303016aa6270c8",
+        "truth": "Cotton",
+        "prediction": "Cotton",
+        "raw": "Cotton"
+      },
+      {
+        "sha256": "4cb5ca53f4522d5bf3aedd1b765cd2f6a5ab97dc2fcf43a92e6c7984605d2924",
+        "truth": "Cotton",
+        "prediction": "Cotton",
+        "raw": "Cotton"
+      },
+      {
+        "sha256": "acb7bd8fba2aa294142285f701b546a72e6bfe81c2031e69b78fe2de4d774b03",
+        "truth": "Cotton",
+        "prediction": "Cotton",
+        "raw": "Cotton"
+      },
+      {
+        "sha256": "25d91e2bd33db6b5ce8c2b4c267474b4d47f1dda4cb9e2f6d39c891174a50f2d",
+        "truth": "Cotton",
+        "prediction": "Wheat",
+        "raw": "Wheat"
+      },
+      {
+        "sha256": "97375a6053af880f9f6cc5b9fd0dd0c5a39ccdfb806578eede6cf588fc9de374",
+        "truth": "Cotton",
+        "prediction": "Cotton",
+        "raw": "Cotton"
+      },
+      {
+        "sha256": "7c70a55203ce0a7babc30d7c144fc5da129cc239272d4ed2b413862a46917808",
+        "truth": "Cotton",
+        "prediction": "Cotton",
+        "raw": "Cotton"
+      },
+      {
+        "sha256": "50b10cd8a9b8f86e072e74b58addddade664b0598ef0ab2879a735389fd569ed",
+        "truth": "Cotton",
+        "prediction": "Cotton",
+        "raw": "Cotton"
+      },
+      {
+        "sha256": "9cb9e358b239ee1e86b3ddd5dd28d3f8093bf8e83010ff6226ea94d6fc8b84e2",
+        "truth": "Cotton",
+        "prediction": "Cotton",
+        "raw": "Cotton"
+      },
+      {
+        "sha256": "fa9e15801f900684bec4a4744ac2742837f71afe2bb045b2555e57448e14ae43",
+        "truth": "Cotton",
+        "prediction": "Cotton",
+        "raw": "Cotton"
+      },
+      {
+        "sha256": "f2368591947f8e62fe2c21141a2ca900505ddfafd7fcc064ab9b168d7300b445",
+        "truth": "Cotton",
+        "prediction": "Cotton",
+        "raw": "Cotton"
+      },
+      {
+        "sha256": "62b060ae1634de31db5ccc54c173a1b90a0df295848d0973ea7421073fae8219",
+        "truth": "Cotton",
+        "prediction": "Cotton",
+        "raw": "Cotton"
+      },
+      {
+        "sha256": "71910eb23bce7c9e0c8070573324ddcaafc18bc272776ee9ebe1cb119b743ff7",
+        "truth": "Cotton",
+        "prediction": "Cotton",
+        "raw": "Cotton"
+      },
+      {
+        "sha256": "127db29271c89aba1a03685851c16c93cfaa8ce258704db0c303745d3de2d95e",
+        "truth": "Cotton",
+        "prediction": "Cotton",
+        "raw": "Cotton"
+      },
+      {
+        "sha256": "c282123080b516a051537a8a458505ae0fe7512fd06904267d4f84d988084503",
+        "truth": "Cotton",
+        "prediction": "Cotton",
+        "raw": "Cotton"
+      },
+      {
+        "sha256": "a4393cf6fad19707072b47b600cae2030332bd1ac33dcd99614f2650b4da4234",
+        "truth": "Cotton",
+        "prediction": "Cotton",
+        "raw": "Cotton"
+      },
+      {
+        "sha256": "3150b400a4dbfe1befe6614216fcd317673b4f091e80a6d40ed2d949dbd62a5c",
+        "truth": "Cotton",
+        "prediction": "Cotton",
+        "raw": "Cotton"
+      },
+      {
+        "sha256": "22171965406b1cd6284bd922f39c35c294ee78f8e92b2977bf907328bc13c735",
+        "truth": "Maize",
+        "prediction": "Maize",
+        "raw": "Maize"
+      },
+      {
+        "sha256": "296c1a91c361fb5f4bce497a8627ab52c701b737867fc6c1f58ff17de8046565",
+        "truth": "Maize",
+        "prediction": "Maize",
+        "raw": "Maize"
+      },
+      {
+        "sha256": "a827608cf235af8d3e0e9e61f7feed505cf154e509245b7ac881c628ac9f8c36",
+        "truth": "Maize",
+        "prediction": "Maize",
+        "raw": "Maize"
+      },
+      {
+        "sha256": "38af349370de33f5a620993b846a966d024a867ce34748f0c5dcd32587d39acd",
+        "truth": "Maize",
+        "prediction": "Maize",
+        "raw": "Maize"
+      },
+      {
+        "sha256": "abdcd017dfa98ffea6ef9e95ecd8b45d03ea700d582f2b7a00302d515ea74588",
+        "truth": "Maize",
+        "prediction": "Maize",
+        "raw": "Maize"
+      },
+      {
+        "sha256": "81e0af73bda53c24dbf7bead1516c41f414deaebcc3617ab907d8bcac7561940",
+        "truth": "Maize",
+        "prediction": "Maize",
+        "raw": "Maize"
+      },
+      {
+        "sha256": "a0489d49504672fabe3dd456a26b61c9f92a5a3e6d09a9fb8756e6f94830b1df",
+        "truth": "Maize",
+        "prediction": "Maize",
+        "raw": "Maize"
+      },
+      {
+        "sha256": "a6dc29e76bd1f03425f71720a20061eb77db9a2971c758ef4d9331a8ccb68a01",
+        "truth": "Maize",
+        "prediction": "Maize",
+        "raw": "Maize"
+      },
+      {
+        "sha256": "b7152b797284bd593a0a1f35becae9ad4c150eb9c00cd19698911d23b9b9bc6d",
+        "truth": "Maize",
+        "prediction": "Maize",
+        "raw": "Maize"
+      },
+      {
+        "sha256": "b3885959075c8e4d73042eadac2f33dd65398cecb143632f52617be878fdb832",
+        "truth": "Maize",
+        "prediction": "Maize",
+        "raw": "Maize"
+      },
+      {
+        "sha256": "29b54803326b9a7bc2d9112e953e6ce1da0b638b1a42fa1e8320919b180df9e5",
+        "truth": "Maize",
+        "prediction": "Rice",
+        "raw": "Rice"
+      },
+      {
+        "sha256": "67f271291f4d91f4cb81004ae83ff18f56c326741fda835a1d9a1a7a88aa03fe",
+        "truth": "Maize",
+        "prediction": "Maize",
+        "raw": "Maize"
+      },
+      {
+        "sha256": "00e37b88d799a367b4fe76956ec8ced446c6aa35c0d8caf4c35f7458bc120d61",
+        "truth": "Maize",
+        "prediction": "Maize",
+        "raw": "Maize"
+      },
+      {
+        "sha256": "339e4325561e5b26ecd7f2285d7b46cea283785b137f11c9792f00df2601537d",
+        "truth": "Maize",
+        "prediction": "Maize",
+        "raw": "Maize"
+      },
+      {
+        "sha256": "737c3786b29388c79f985ab083a07db4dd89d28b90909e83eff4ec7c197c6c29",
+        "truth": "Maize",
+        "prediction": "Maize",
+        "raw": "Maize"
+      },
+      {
+        "sha256": "f1d92616b302a79c9325194a66df62bf324425a3136068e164832ff7f055da6e",
+        "truth": "Maize",
+        "prediction": "Maize",
+        "raw": "Maize"
+      },
+      {
+        "sha256": "465368519d45b5e6717d1e6d81a2c927f72e30b8ec25b51bfd753cd8b4a50e8c",
+        "truth": "Maize",
+        "prediction": "Maize",
+        "raw": "Maize"
+      },
+      {
+        "sha256": "c2ab4bc1e2363122b97a578b125224f41bdfdf17ba7a0e60a21e3dd2bc7231f0",
+        "truth": "Maize",
+        "prediction": "Maize",
+        "raw": "Maize"
+      },
+      {
+        "sha256": "53eae602861cd645b46a0cc20ee5cd722186ea42d2af2ee1a7dca113e35ec63e",
+        "truth": "Maize",
+        "prediction": "Maize",
+        "raw": "Maize"
+      },
+      {
+        "sha256": "89f84a549974eb7f37eb35a40a79d932f00cae784e0fe8f50a5161d58d2746af",
+        "truth": "Maize",
+        "prediction": "Maize",
+        "raw": "Maize"
+      },
+      {
+        "sha256": "83749941e17247840ac02d7f94c96ae08387298e567850b51d167a87d509ad0e",
+        "truth": "Rice",
+        "prediction": "Rice",
+        "raw": "Rice"
+      },
+      {
+        "sha256": "eb968cb9a1b1656dd94fd83b6826a9e5d48bef06e15f56ce2a51776e5ec1c1b2",
+        "truth": "Rice",
+        "prediction": "Rice",
+        "raw": "Rice"
+      },
+      {
+        "sha256": "3dfe7dd93d8da3a9f6d571493a2ab057d235a2d67f5968c27cec537f5f7229e5",
+        "truth": "Rice",
+        "prediction": "Rice",
+        "raw": "Rice"
+      },
+      {
+        "sha256": "12331ddc484266a9a0ed81654f8c39d6e800f338c73e43eee3da968089acc165",
+        "truth": "Rice",
+        "prediction": "Rice",
+        "raw": "Rice"
+      },
+      {
+        "sha256": "6d9cc3d9eccc924e7cccb9e98c5a6b7b94eaeda662b8f76726918f68a043a083",
+        "truth": "Rice",
+        "prediction": "Rice",
+        "raw": "Rice"
+      },
+      {
+        "sha256": "7a173238e40159cf7c643868aa425dd8dd2471a13e2c3c5ae5e2d6c94d4018a0",
+        "truth": "Rice",
+        "prediction": "Rice",
+        "raw": "Rice"
+      },
+      {
+        "sha256": "85a16fc6a7007eafab606a1cabce2f258cff5827b8d550d699a0a25fd0adc988",
+        "truth": "Rice",
+        "prediction": "Rice",
+        "raw": "Rice"
+      },
+      {
+        "sha256": "163f60720fb9eb5625002a4775b178c35bf439d6c43b282d9ffce2923436bbe3",
+        "truth": "Rice",
+        "prediction": "Rice",
+        "raw": "Rice"
+      },
+      {
+        "sha256": "9509c347a9779aebad95af267b96276dcf4efde0c2b86c19ea2f641944da8a8a",
+        "truth": "Rice",
+        "prediction": "Rice",
+        "raw": "Rice"
+      },
+      {
+        "sha256": "b989a01ab48e42a717e00d358a126760961e1900ca0d983c0cd367b991cb8216",
+        "truth": "Rice",
+        "prediction": "Rice",
+        "raw": "Rice"
+      },
+      {
+        "sha256": "4c907dc37eda4cfb210dc3a2ac5ddb3acf8616c9eb44c9e2d0a4627336a6ea26",
+        "truth": "Rice",
+        "prediction": "Rice",
+        "raw": "Rice"
+      },
+      {
+        "sha256": "c4d7c0ecd3a2a9675a149626e2f2c7f66dc68c960214cde10ffaffc9f242fb77",
+        "truth": "Rice",
+        "prediction": "Rice",
+        "raw": "Rice"
+      },
+      {
+        "sha256": "f845e019fbf169645dbd5218372e07a371d0bbf2743636697533d345b32d62ca",
+        "truth": "Rice",
+        "prediction": "Rice",
+        "raw": "Rice"
+      },
+      {
+        "sha256": "cb9b9984a27c7470772eb1e23d79634c74033b185d67214357e926515add9502",
+        "truth": "Rice",
+        "prediction": "Rice",
+        "raw": "Rice"
+      },
+      {
+        "sha256": "260eb21afe3a0789174b3220fa7210b571b00a6e658aa9975c227236f5154fa5",
+        "truth": "Rice",
+        "prediction": "Rice",
+        "raw": "Rice"
+      },
+      {
+        "sha256": "0186d606af7da80372616660eb5688d6adf73f9b1aa318d9a9bcce7262f86627",
+        "truth": "Rice",
+        "prediction": "Rice",
+        "raw": "Rice"
+      },
+      {
+        "sha256": "823d1132a0adfb3e72a079c961b9e90bd5fd5fd43552ad9daeca357e99a93e71",
+        "truth": "Rice",
+        "prediction": "Rice",
+        "raw": "Rice"
+      },
+      {
+        "sha256": "2e0598410ade21df5d6255f3d488f0826cc80fe3eda480f920e0e5afd2e75203",
+        "truth": "Rice",
+        "prediction": "Rice",
+        "raw": "Rice"
+      },
+      {
+        "sha256": "9ca47ce7539f5ee9293002cb93b526b6ed8cd9655fca21ff9d1ebdc020cb95a7",
+        "truth": "Rice",
+        "prediction": "Rice",
+        "raw": "Rice"
+      },
+      {
+        "sha256": "c48a6e445d8d6ef9bb44b1a6f2f50c276df4d684ead16cc223d1f7f8bea000ae",
+        "truth": "Rice",
+        "prediction": "Rice",
+        "raw": "Rice"
+      },
+      {
+        "sha256": "af0a42e9827528ffd21ec8eef8371a395e5041145165e389f73a995adf8b296f",
+        "truth": "Sugarcane",
+        "prediction": "Sugarcane",
+        "raw": "Sugarcane"
+      },
+      {
+        "sha256": "a974c31f22be59c94f631b58e584dc16dbca82a74eef043bd60ba472461ebacc",
+        "truth": "Sugarcane",
+        "prediction": "Rice",
+        "raw": "Rice"
+      },
+      {
+        "sha256": "e6318d2b27002293c87407ad78ab534994998f735dcbacd50a19501bffa6f216",
+        "truth": "Sugarcane",
+        "prediction": "Sugarcane",
+        "raw": "Sugarcane"
+      },
+      {
+        "sha256": "e0e204ddd26ac42de15afacf1302d6ef0aad59248fb95b5bd17c6ce547a63d69",
+        "truth": "Sugarcane",
+        "prediction": "Sugarcane",
+        "raw": "Sugarcane"
+      },
+      {
+        "sha256": "9bec8b667213e97909678b823b8a17aac37f22f55b4fc5a91564f287cb714e8d",
+        "truth": "Sugarcane",
+        "prediction": "Sugarcane",
+        "raw": "Sugarcane"
+      },
+      {
+        "sha256": "4b8a49b04a01a21acdd5f8c0833e8b76cf302cf279692b20bf78151c95d4f6f8",
+        "truth": "Sugarcane",
+        "prediction": "Sugarcane",
+        "raw": "Sugarcane"
+      },
+      {
+        "sha256": "1f13be357472daa815d4e9f21cd2921ccc49f8602383c9d784fc90e7c1d28da7",
+        "truth": "Sugarcane",
+        "prediction": "Rice",
+        "raw": "Rice"
+      },
+      {
+        "sha256": "f55fd02d2a09a171ac5a0b225235661079845ba5fcb4ec2fe58e711d9a9af427",
+        "truth": "Sugarcane",
+        "prediction": "Rice",
+        "raw": "Rice"
+      },
+      {
+        "sha256": "2df2f607adf95a2552d2255838cf1b8ac3001bc59f7a27b0204e2be3a0bfb51f",
+        "truth": "Sugarcane",
+        "prediction": "Rice",
+        "raw": "Rice"
+      },
+      {
+        "sha256": "1f8590566eb7fbb170ca513f97e19db714f7c03678acdf1c471088a5e8412a9b",
+        "truth": "Sugarcane",
+        "prediction": "Rice",
+        "raw": "Rice"
+      },
+      {
+        "sha256": "5cd4c2844c1ba09eb758479af2af9a145ae5c1aab82fc2b667459a8be08e9d09",
+        "truth": "Sugarcane",
+        "prediction": "Sugarcane",
+        "raw": "Sugarcane"
+      },
+      {
+        "sha256": "9f0f52a88a8d105619ba71886051860a267d99cdb26016b3763e979529e3edb2",
+        "truth": "Sugarcane",
+        "prediction": "Maize",
+        "raw": "Maize"
+      },
+      {
+        "sha256": "232058998f6c2e02c323f1206914133a364ab82d71d030b9d0da4dff27ef3cb0",
+        "truth": "Sugarcane",
+        "prediction": "Sugarcane",
+        "raw": "Sugarcane"
+      },
+      {
+        "sha256": "ddd61ee3f2a4869296abfda7a40476d3adc0a62ae1898d0b6da37f7b64189da3",
+        "truth": "Sugarcane",
+        "prediction": "Sugarcane",
+        "raw": "Sugarcane"
+      },
+      {
+        "sha256": "2797156b824eb38ebbeb19dc5349fa162b5ac035cce2861468c1c29cde717361",
+        "truth": "Sugarcane",
+        "prediction": "Sugarcane",
+        "raw": "Sugarcane"
+      },
+      {
+        "sha256": "48448dc85a9216110d52faf95c550f6335d4ddff4221c99ba9735356a8a3ef76",
+        "truth": "Sugarcane",
+        "prediction": "Rice",
+        "raw": "Rice"
+      },
+      {
+        "sha256": "78c0fa796892bd2e39b5bb7de0b03a3e35d94d68569f17e1e9e43f70e6a1d2d8",
+        "truth": "Sugarcane",
+        "prediction": "Sugarcane",
+        "raw": "Sugarcane"
+      },
+      {
+        "sha256": "20c5a6a17cb5d4d4265ee1de7e5bf873142855ba7dd02926d1b0e57705601e34",
+        "truth": "Sugarcane",
+        "prediction": "Sugarcane",
+        "raw": "Sugarcane"
+      },
+      {
+        "sha256": "34e7656fadbb57f55063b57f7a57d7d67c1bc8a9c17cf7cfb257308dbab8905f",
+        "truth": "Sugarcane",
+        "prediction": "Sugarcane",
+        "raw": "Sugarcane"
+      },
+      {
+        "sha256": "d8a97f4ed1577cfd85f3bc81f33bf166c4b2e3913add5ef21ebda1e1211add03",
+        "truth": "Sugarcane",
+        "prediction": "Sugarcane",
+        "raw": "Sugarcane"
+      },
+      {
+        "sha256": "22d17f08bf62de5cc2193c8df29ecb726cb92e32f6278de955ef630b6c8e7484",
+        "truth": "Wheat",
+        "prediction": "Wheat",
+        "raw": "Wheat"
+      },
+      {
+        "sha256": "f62cf93cdd7dd2daccc615fcbd62d1809425436dc1f8c27262388fce61556f3c",
+        "truth": "Wheat",
+        "prediction": "Wheat",
+        "raw": "Wheat"
+      },
+      {
+        "sha256": "878f7fb586784f989c7c590b91dfff8f1911657a78d7daa8f63f7d09d61bdb63",
+        "truth": "Wheat",
+        "prediction": "Wheat",
+        "raw": "Wheat"
+      },
+      {
+        "sha256": "c56030670e71024ac46af472d92b3e7ebf2558bf25b6a33f25d29c34bfac272b",
+        "truth": "Wheat",
+        "prediction": "Rice",
+        "raw": "Rice"
+      },
+      {
+        "sha256": "1f48c7931b124ac19be42be7c078a7140073dc762797a7ab4a4b68d7ec4ee0ce",
+        "truth": "Wheat",
+        "prediction": "Wheat",
+        "raw": "Wheat"
+      },
+      {
+        "sha256": "ec6d9ea6f86e14d0dd59fa47c505e16219068906f8991ece763386cb648ace2f",
+        "truth": "Wheat",
+        "prediction": "Wheat",
+        "raw": "Wheat"
+      },
+      {
+        "sha256": "162b2fcbcc94ece1d1ec680222577fdf18e657b8b7ebf5e8fe27f1db973ec16e",
+        "truth": "Wheat",
+        "prediction": "Wheat",
+        "raw": "Wheat"
+      },
+      {
+        "sha256": "e3b2aef05796e1239d595608e0a92d1e00af2b3f8998e4f397b8b4c947c3a0c6",
+        "truth": "Wheat",
+        "prediction": "Rice",
+        "raw": "Rice"
+      },
+      {
+        "sha256": "782fd6ffacf0d10a8904a99813f9bfeab6ddace4075f3a80998a5ddeddfbb42f",
+        "truth": "Wheat",
+        "prediction": "Wheat",
+        "raw": "Wheat"
+      },
+      {
+        "sha256": "8abfb29b210cf2a08965ff234624756240465c9dd734f73f39ff38a2bf87c5b2",
+        "truth": "Wheat",
+        "prediction": "Wheat",
+        "raw": "Wheat"
+      },
+      {
+        "sha256": "21add1a797244a4e17cb00b19b7dfe89d3599605642d3ad1d2bcb6e7d8280187",
+        "truth": "Wheat",
+        "prediction": "Rice",
+        "raw": "Rice"
+      },
+      {
+        "sha256": "a4407c4a5c916ca730e7e6853d483ca2f6933f3b52c3e77ec4cb21fca8f00914",
+        "truth": "Wheat",
+        "prediction": "Wheat",
+        "raw": "Wheat"
+      },
+      {
+        "sha256": "2413277ada9116d8bec7fdf2ded72da5f96b1c3476c06d1f3e8c72ebd919bea9",
+        "truth": "Wheat",
+        "prediction": "Wheat",
+        "raw": "Wheat"
+      },
+      {
+        "sha256": "e5d19e58694fb194cfcda5777acf3c5193f45460e959abdc1cbcddb93c89e7ac",
+        "truth": "Wheat",
+        "prediction": "Wheat",
+        "raw": "Wheat"
+      },
+      {
+        "sha256": "5c81c3506de9558adf8ef32827d35e8b40f97ef0381e024a541e87ea9db14b8a",
+        "truth": "Wheat",
+        "prediction": "Wheat",
+        "raw": "Wheat"
+      },
+      {
+        "sha256": "7ffda3683837254a1d9919ce2be6262aa258944ffda3f0206fca412d0acf2868",
+        "truth": "Wheat",
+        "prediction": "Wheat",
+        "raw": "Wheat"
+      },
+      {
+        "sha256": "db5fa255e66bbc477b6f009aa97a974b5d5ac37aa52d9927009f683655b9b397",
+        "truth": "Wheat",
+        "prediction": "Wheat",
+        "raw": "Wheat"
+      },
+      {
+        "sha256": "b04071a0f25133357903cdfe576206b6c2229c41cbf5a3bf2f12e473ec9a004d",
+        "truth": "Wheat",
+        "prediction": "Wheat",
+        "raw": "Wheat"
+      },
+      {
+        "sha256": "7daecea395155adc5cd7e1c23dd55e6578fdc99330ee9ed807c9bdeb08e8a3d0",
+        "truth": "Wheat",
+        "prediction": "Rice",
+        "raw": "Rice"
+      },
+      {
+        "sha256": "9ecad7e0c38d6cba806445a86c2df3166f3b80f1098f7c554bdcd6902c5c9793",
+        "truth": "Wheat",
+        "prediction": "Cotton",
+        "raw": "Cotton"
+      }
+    ]
+  },
+  "peak_allocated_gib": 3.315
+}

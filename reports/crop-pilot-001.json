@@ -1,0 +1,39 @@
+{
+  "status": "failed",
+  "model": "LiquidAI/LFM2.5-VL-1.6B",
+  "revision": "919fde3d022e3f90a4716006f993938ee8c2eb97",
+  "seed": 3407,
+  "task": "five-crop identification; in-corpus validation pilot, not disease/field evaluation",
+  "question": "Identify the crop in this image. Answer with exactly one of: Cotton, Maize, Rice, Sugarcane, Wheat.",
+  "steps": 200,
+  "batch_size": 4,
+  "learning_rate": 0.0002,
+  "rank": 8,
+  "alpha": 8,
+  "max_image_side": 384,
+  "versions": {
+    "torch": "2.9.1+cu128",
+    "unsloth": "2026.11.3",
+    "transformers": "5.17.0",
+    "peft": "0.21.2"
+  },
+  "manifest_sha256": "f3e404e075ea9289545afb080b84a54e25f5016f0407560c5ffe869a750ec6ed",
+  "counts": {
+    "train": {
+      "Cotton": 100,
+      "Maize": 100,
+      "Rice": 100,
+      "Sugarcane": 100,
+      "Wheat": 100
+    },
+    "val": {
+      "Cotton": 20,
+      "Maize": 20,
+      "Rice": 20,
+      "Sugarcane": 20,
+      "Wheat": 20
+    }
+  },
+  "error": "TypeError: bad operand type for abs(): 'str'",
+  "elapsed_seconds": 3.665
+}

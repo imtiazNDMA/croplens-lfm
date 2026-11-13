@@ -1,0 +1,58 @@
+{
+ "part": "tune",
+ "size_ambiguous_photos": 179,
+ "systems": {
+  "LFM ref-001": {
+   "as_is": {
+    "all": {
+     "n": 500,
+     "right": 443,
+     "accuracy": 0.886
+    },
+    "size_ambiguous": {
+     "n": 179,
+     "right": 162,
+     "accuracy": 0.9050279329608939
+    }
+   },
+   "size_normalised": {
+    "all": {
+     "n": 500,
+     "right": 415,
+     "accuracy": 0.83
+    },
+    "size_ambiguous": {
+     "n": 179,
+     "right": 140,
+     "accuracy": 0.7821229050279329
+    }
+   }
+  },
+  "ConvNeXt": {
+   "as_is": {
+    "all": {
+     "n": 500,
+     "right": 492,
+     "accuracy": 0.984
+    },
+    "size_ambiguous": {
+     "n": 179,
+     "right": 177,
+     "accuracy": 0.9888268156424581
+    }
+   },
+   "size_normalised": {
+    "all": {
+     "n": 500,
+     "right": 490,
+     "accuracy": 0.98
+    },
+    "size_ambiguous": {
+     "n": 179,
+     "right": 177,
+     "accuracy": 0.9888268156424581
+    }
+   }
+  }
+ }
+}

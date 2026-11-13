@@ -4,7 +4,7 @@
 
 CropLens investigates whether [Liquid AI's LFM2.5-VL-1.6B](https://huggingface.co/LiquidAI/LFM2.5-VL-1.6B), adapted with [Unsloth](https://unsloth.ai/docs/models/tutorials/lfm2.5.md) and LoRA, can identify supported crops, reject unsuitable photos, and screen a limited set of crop conditions efficiently.
 
-> **Status: setup in progress.** An isolated WSL environment exists, but large training-dependency downloads did not finish within the bounded attempts. No CropLens model has been trained, no evaluation results are available, and no demo has been deployed. This repository currently contains documentation, not an executable training pipeline.
+> **Tracked autoresearch session completed:** the selected crop–condition adapter reaches **90.0% exact accuracy / 0.8998 joint macro F1** on the same 280-image validation set, up from the fine-tuned reference's **87.86% / 0.8785** (untuned base: 27.5% / 0.2311). Three trials are recorded in local MLflow at **http://localhost:5000**. These are development results, not field accuracy. See [autoresearch + MLflow](docs/autoresearch-mlflow.md).
 
 ## The question
 
@@ -33,7 +33,7 @@ The proposed crop scope is cotton, maize, rice, sugarcane, and wheat, subject to
 | Evaluation | Macro F1, per-class recall, rejection behavior, output validity, latency, memory, and cost |
 | Data controls | Provenance review, grouped splits, deduplication, and locked final tests |
 | Experiment controls | Fixed training work; at most six trials and two hours per manually started session |
-| Compute | Local Ubuntu WSL2 and RTX 6000 Ada discovered; training compatibility not yet reproduced |
+| Compute | Local Ubuntu WSL2 and RTX 6000 Ada; actual crop LoRA training completed |
 
 The original autoresearch code trains a GPT model, not this VLM. CropLens adapts its experiment/measure/keep-or-discard idea; it does not claim an unchanged upstream training integration.
 
@@ -50,12 +50,17 @@ Every reported number will link to a run, data revision, evaluator, and hardware
 ## Start here
 
 - [Living project plan](fine-tuning.md): scope, phases, decision log, and current checklist.
+- [Autoresearch + MLflow](docs/autoresearch-mlflow.md): measured search results, selected adapter, experiment tracking, and UI instructions.
+- [Crop-and-condition fine-tune](docs/condition-pilot.md): latest matched evaluation, per-class results, saved adapter, and inference command.
+- [Crop-only fine-tune and inference](docs/crop-pilot.md): measured before/after results, saved adapter, and limitations.
 - [Feasibility research](docs/research/lfm-vision-feasibility.md): primary sources, support evidence, and uncertainties.
-- [Local WSL setup](docs/setup-wsl.md): actual environment state, candidate dependencies, bounded resume command, and remaining smoke-test checks.
+- [Local WSL setup](docs/setup-wsl.md): verified setup, bounded smoke-test commands, and remaining agricultural training checks.
+- [Smoke-test report](reports/smoke-002.json): actual losses, timing, memory, versions, and verification outcomes.
+- [Environment snapshot](requirements-wsl-cu128.txt): exact observed Linux/Python 3.12/CUDA 12.8 package versions.
 - [Substack article outline](docs/article/substack-outline.md): the complete teaching narrative we intend to write.
 - [Evidence journal](docs/article/evidence-journal.md): actual setup observations and the record used to support that narrative.
 
-The next implementation step is to complete the candidate dependency installation and reproduce an image-conditioned training/save/reload smoke test in the isolated GPU environment. The setup guide explicitly distinguishes commands already run from checks still pending. Freeze the initial task/data specification before agricultural training.
+Run the crop-and-condition trainer with `finetune_conditions.py`, the agent-guided supervisor with `condition_search.py` following `program.md`, and saved-adapter inference with `predict_condition.py`. MLflow dependencies are in `requirements-mlflow.txt`. The 14 classes cover cotton, maize, sugarcane, and wheat with healthy examples; rice remains deferred. Next is confirmation across seeds and final evaluation after selection, not an overnight search.
 
 ## Learning in public
 
@@ -67,4 +72,4 @@ It will use actual experiments—including negative results—not invented bench
 
 The model remains subject to the [selected Liquid checkpoint's license](https://huggingface.co/LiquidAI/LFM2.5-VL-1.6B/blob/main/LICENSE). Unsloth and autoresearch retain their own licenses and attribution requirements. Dataset rights are source-specific; acquisition instructions and manifests do not grant image redistribution rights.
 
-A license for original CropLens code has not yet been selected. No model weights, datasets, or private agriculture-portal assets are included in this bootstrap.
+A license for original CropLens code has not yet been selected. No model weights, datasets, or private agriculture-portal assets are tracked; smoke-test adapters and generated caches remain local.

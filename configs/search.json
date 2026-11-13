@@ -1,0 +1,15 @@
+{
+  "reference": {"id": "ref-001", "steps": 150, "batch": 4, "accum": 4, "lr": 2e-4, "rank": 16, "balance": false, "seed": 3407,
+                "normalized_crop_identification": 0.83, "note": "scored before the search runner existed, with the same scorer on the same 500 normalised crop photos"},
+  "selection_metric": "crop identification on the 500 size-normalised crop photos of the tune part (val-derived), strict reading",
+  "improvement_margin": 0.01,
+  "limits": {"max_trials_per_session": 6, "train_seconds": 600, "eval_seconds": 900, "trial_seconds": 1500,
+             "session_seconds": 7200, "stop_after_consecutive_failures": 2},
+  "trials": [
+    {"id": "lr-low", "hypothesis": "A lower learning rate trains more steadily and generalises better than 2e-4", "change": {"lr": 1e-4}},
+    {"id": "lr-high", "hypothesis": "150 steps is short, so a higher learning rate fits the crop more fully", "change": {"lr": 4e-4}},
+    {"id": "rank-low", "hypothesis": "A smaller adapter (rank 8) overfits the source cues less", "change": {"rank": 8}},
+    {"id": "rank-high", "hypothesis": "A larger adapter (rank 32) has room for the harder wheat and rice cases", "change": {"rank": 32}},
+    {"id": "balanced", "hypothesis": "Drawing each crop equally often lifts wheat and rice, which are the weakest", "change": {"balance": true}}
+  ]
+}

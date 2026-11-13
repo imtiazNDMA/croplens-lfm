@@ -99,6 +99,143 @@ Stop downloads at the bounded setup limit; leave no installer running unattended
 
 Teaching point: dependency resolution, installation, CUDA visibility, and a working multimodal backward pass are four different milestones. A green resolver output is not a successful fine-tune.
 
+## 2026-11-11 — Installation complete and synthetic LoRA smoke test passed
+
+### Setup outcome
+
+A manually resumed 900-second dependency installation completed with exit status 0. Package preparation took approximately 6 minutes 33 seconds and installation of 108 packages took 556 ms, excluding initial resolution. `pip check` reported no broken requirements. Unsloth imported successfully, and CUDA tensor execution plus BF16 support passed on the RTX 6000 Ada.
+
+The starting GPU query reported 46,511 MiB free. A first inline CUDA check lost quotation marks across PowerShell/WSL and raised a `NameError`; using `device=0` resolved that shell-quoting mistake. Do not present it as a CUDA failure.
+
+### Model download and authentication
+
+The first model download stalled before training and was interrupted. No process remained afterward; its local report was marked interrupted rather than left as running. A second bounded attempt used transient authentication and `HF_HUB_DISABLE_XET=1` and completed. Because those changes occurred together, the download improvement cannot be attributed to authentication alone. Credentials are not part of source, reports, examples, or this journal.
+
+### Actual engineering test
+
+`smoke_test.py` used two synthetic 224×224 solid-color images, a single identical user question, and the assistant targets `red` and `blue`. It used Unsloth's model/processor and vision collator with explicit assistant-only masking. A direct PyTorch AdamW loop performed 20 updates at learning rate 2e-4 with rank/alpha 8, seed 3407, native BF16 weights, and frozen non-adapter parameters.
+
+| Measurement/check | Actual result |
+| --- | --- |
+| Model revision | `919fde3d022e3f90a4716006f993938ee8c2eb97` |
+| Trainable parameters | 4,571,136; language-side LoRA only |
+| Assistant-only label check | Passed on both expected answers |
+| Image conditioning | Identical input text tokens, different pixels; max next-token logit difference 10.125 |
+| Loss | 3.7499771118164062 → 0.00031462765764445066 |
+| Gradients and actual adapter updates | Finite gradients and changed adapter weights verified |
+| Training loop | 23.451 seconds |
+| Whole successful run | 487.244 seconds, including download/loading/reload |
+| PyTorch peak allocated / reserved | 3.224 / 3.299 GiB |
+| Greedy red-image answer | `red` |
+| Adapter and processor save/reload | Identical greedy generated token IDs for the tested prompt |
+| Process exit | 0 |
+
+The [retained JSON report](../../reports/smoke-002.json) contains the observed versions and every training loss. The [setup guide](../setup-wsl.md) includes the bounded reproduction command; the [environment snapshot](../../requirements-wsl-cu128.txt) captures exact package versions. Adapters and generated compile caches are ignored local artifacts. The model revision is pinned in the script for subsequent runs.
+
+Follow-up verification: Python compilation and the smoke-test CLI help passed. A reinstall **dry run** from the version snapshot resolved the same 109 installed packages, including uv; it did not reinstall them. A source scan found no Hugging Face token patterns outside ignored outputs/caches. These checks do not substitute for a fresh-machine reinstall.
+
+### Limits and next step
+
+This is a tiny-batch pipeline check, not crop/disease evaluation. We did not verify SFTTrainer, measure field performance, compare baselines, or run multi-seed experiments. The runtime warned that it used a reference convolution because `causal_conv1d` was absent; it was correct and fast enough for this check, so no new optimized kernel was installed.
+
+Next: freeze the crop/photo-check contract, audit the existing/public data for labels, provenance and split leakage, then build and verify agricultural training/evaluation before any autoresearch search. A fresh reinstall from the version snapshot remains untested.
+
+## 2026-11-11 — Dataset discovery and interrupted full audit
+
+Located the existing crop manifest/taxonomy and raw `dataset_filtered` corpus in the agriculture portal workspace. Source documents report 17,952 entries and 11,453 retained images, but those counts have not yet been independently confirmed by a completed CropLens audit. The source report lists no healthy-rice class. Sample filenames include augmentation-like names; missing parent-photo provenance is a leakage risk to investigate, not proven cross-split leakage.
+
+Also located the existing photo-check evaluation manifest and builder. Its crop images originate from the crop manifest's validation/test splits; degraded images explicitly reference validation parents. Treat these as existing evaluation assets, not new training images. Inspect actual lineage/overlap before any reuse.
+
+Implemented a read-only `audit_dataset.py` plus five focused unittest checks for path traversal, exact split leakage, near-hash thresholds, missing/corrupt/hash-mismatched files, and a full tiny-fixture audit without rewriting its input manifest. All five tests passed in 0.126 seconds.
+
+The real-data audit was executed under `timeout --signal=TERM --kill-after=10s 600s`. It emitted Pillow warnings about palette transparency and corrupt EXIF metadata, then exited with status 124. Those warnings alone do not establish undecodable images. The script writes its aggregate report only after completing, so **no `reports/dataset-audit-001.json` exists**. No audit process remained at the follow-up check. No source images, manifests, or splits were rewritten.
+
+Session paused at the user's request for a Claude handoff. Next: profile the audit's image-I/O and hash-comparison stages, add bounded progress/checkpointing or split metadata and image verification into resumable passes, then rerun. Do not claim audit counts, clean splits, or a proposed screening taxonomy have been validated yet. Dataset report, proposed taxonomy, and source-rights review are still pending.
+
+## 2026-11-11 — Audit completed, and what it found
+
+**Question:** is the existing corpus safe to train and score on?
+
+**The timeout, diagnosed.** The 600-second audit had not hung: the second attempt, with stage timings added, completed in 594 s. Timing the stages separately showed the per-image work (hash, decode, dHash) takes 73 s for all 17,952 images with eight threads, and the near-hash comparison under a second. The cost was manifest validation (426 s) and the photo-check pass (55 s), both calling `image_path()`, which resolved the full path against the Windows-mounted drive three times per image. Resolving each directory once gave 160 s with a report identical to the first. Two new tests pin the cause (resolve count) and the safety property (symlinks cannot escape the image root). Lesson for the article: measure the stages before raising a timeout.
+
+**Confirmed:** 17,952 manifest rows, 11,453 kept (8,013 train, 1,720 val, 1,720 test), 37 retained classes, 0 missing, undecodable or hash-mismatched files, 0 exact or manifest-group overlap across splits, 0 near-duplicates at the original 12-bit threshold. No healthy rice class.
+
+**Found, and not visible in the headline numbers:**
+
+| Finding | Evidence |
+| --- | --- |
+| Near-duplicates cross the splits beyond 12 bits | 40 / 28 / 6 train-val / train-test / val-test pairs at 16 bits; 105 / 87 / 22 at 24 bits; closest pair is 13 bits. All 192 pairs within 24 bits share a label; 151 are rice tungro. Two inspected pairs were the same photograph |
+| Augmented photos have unrecorded parents | 430 kept augmentation-named images (307 train, 69 test, 54 val), all in four classes; dHash cannot match flips or rotations |
+| Image size gives the crop away | Size alone names the crop for 81.7% of test photos (majority baseline 31.7%); 1,609 of 1,610 photos at 300x300 are rice |
+| Provenance is not recorded | None of the six provenance fields exist; at least one image is watermarked "PhilRice" |
+
+Full tables and the proposal: [dataset audit](../dataset-audit.md). Reports: `reports/dataset-audit-001.json`, `-002.json`, `dataset-shortcuts-001.json`.
+
+**Not established:** how many of the near pairs are true duplicates (two inspected), whether augmented parents leak, label correctness, and rights to any source. Nothing was trained; no model metric exists yet.
+
+**Next:** the user decides the split proposal; then rebuild the training pool, re-audit it, and run the baselines with the three-way scoring (existing test, shared-size subset, size-normalised copies).
+
 ## What to record in future sessions
 
 For each substantive session, record the date and question; actual commands; code, model, data, and environment revisions; observed output; errors and fixes; decision and rationale; run/artifact links; timing and cost; and unresolved questions. Caption figures with dataset/split, units, run IDs, and the limitation they illustrate. Use only shareable images and sanitized logs.
+
+## 2026-11-11 — Cleaned training pool
+
+Decisions: accepted the audit's split proposal (existing val/test untouched; report full, no-shared-size and size-normalised scores) and the 18-class screening start set.
+
+Built `prepare.py` (3 tests; 15 pass in total). It removes train images within 32 bits of any val/test image and train images with augmentation-style names. Result: 8,013 → 7,469 train images (240 near copies, 304 augmentation-named; the audit counted 307 augmentation-named, but 3 of those were already near copies). Re-check on the output: 0 pairs within 32 bits of val or test. Heaviest losses: `rice_tungro` 177 near copies (664 → 487), and the four augmentation-heavy classes, e.g. `cotton_aphid` 146 → 55 and `maize_armyworm` 172 → 75. Output: `data/pool-001/training_pool.csv` and `training_pool_report.json` (per-class removals). Lesson for the article: removing leakage costs the small classes most, so the thinnest classes need a support caveat.
+
+Froze `configs/taxonomy.yaml` (taxonomy v1: the portal's 39 classes unchanged, plus the 18-class screening start set) and `contract.py` (photo-check contract v1: `is_plant`, `crop`, `other_plant`, four quality flags; strict parser with named failure reasons, e.g. a crop named for a non-plant is invalid). 5 new tests; 20 pass in total.
+
+## 2026-11-11 — Baselines and trainer
+
+Scored three systems on the 700 `tune` photos (details: `docs/baselines.md`). Untuned LFM2.5-VL-1.6B: crop identification 5.0%, 67.8% of crop photos wrongly stopped (it says "Other"), 23.3% invalid answers. Qwen (portal, tuned on these photos): 51.2%. ConvNeXt: 98.4% with the crop inferred, but the audit's size shortcut applies to it. First attempt to run the untuned model in the background silently died when the WSL launcher exited; the fix was to run the foreground command as a harness background task. First untuned prompt copied its placeholder text back, so the prompt now shows two worked example answers.
+Built `sft_data.py` (8,091 examples from the pool; 622 degraded copies, strength randomised) and `train.py`. Trainer integration bumps: TRL renamed `tokenizer` to `processing_class`, and TRL wants a `datasets.Dataset`, so images are decoded lazily through `set_transform`. 4-step smoke run: loss 2.78 to 1.98, 44 s, 3.25 GiB peak. No negatives (other plants, non-plants) in the training data yet; waiting on the source/licence decision.
+
+## 2026-11-11 — First fine-tuned reference run
+
+`ref-001` (150 steps x 16, rank 16, lr 2e-4): trained in 177 s, 3.35 GiB. On the 700 `tune` photos: crop identification 88.6% (untuned 5.0%, Qwen 51.2%, ConvNeXt 98.4%), 1.0% invalid answers, quality flags 98% on poor photos and 0.2% on clean ones. Stops no other plants or non-plants (no negatives in the data), so those bars are not yet testable. Wheat (77) and rice (84) are the weak crops. Not yet checked against the image-size shortcut. Training was about 10x faster than the first 4-step profile suggested (that profile shared the GPU with another run), which makes the planned 6-trial search cheap.
+
+## 2026-11-11 — Shortcut check on ref-001
+
+Normalised copies (square centre crop, 512 px, JPEG 85, no metadata) and a size-ambiguous subset (179 of 500 crop photos). ref-001: 88.6% as is, 83.0% normalised, 78.2% on the ambiguous subset normalised. ConvNeXt: 98.4% to 98.0%. So the fine-tuned model did lean on size, aspect or compression cues; ConvNeXt did not. Wheat is weakest (70). Worth telling in the article: the audit's warning was real, and the check changed the number by 5.6 points.
+
+## 2026-11-11 — Crop-only fine-tune completed after scope correction
+
+The user asked to stop excessive preparation and train immediately. Preserved the newer structured photo-check work and ran a separate crop-only experiment with one fixed prompt, balanced 500 training / 100 validation images from the original retained manifest, rank-8 language-side LoRA, 200 AdamW steps, batch 4, learning rate 2e-4, seed 3407, BF16, and 384 px image cap. All 600 selected images decoded and matched their SHA-256; selected training hashes/groups were disjoint from existing validation/test assignments. No test images were decoded or scored.
+
+First attempt failed during image preparation on malformed EXIF serialization. Applying only orientation then discarding metadata fixed it; four focused unit tests passed. The successful `crop-pilot-002` completed training in 86.736 seconds (147.283 seconds whole run). Accuracy improved **53% → 86%**, macro F1 **0.524455 → 0.861105**, with identical validation images/prompt/decoding. Peak PyTorch allocated memory was 3.315 GiB. Full answers, confusion matrices and losses: `reports/crop-pilot-002.json`.
+
+Adapter and processor saved under `outputs/crop-pilot-002/adapter`. A separate process loaded them through `predict_crop.py` and reproduced `Cotton` on the first validation image. No new model downloads/authentication were needed; the run used cached weights offline.
+
+This is closed-set crop classification, not disease screening or field accuracy. It used the original retained manifest rather than the later near-duplicate-cleaned pool, so augmented-parent/near-copy and source-shortcut caveats remain. The 100-image score is not directly comparable with the earlier 700-photo structured photo-check experiments. Details and inference command: [crop pilot](../crop-pilot.md). Next training should use the already prepared cleaned pool and extend supported crop–condition targets.
+
+## 2026-11-13 — Actual crop-and-condition pilot
+
+Completed `finetune_conditions.py` using the existing cleaned pool. Four supported crops (cotton, maize, sugarcane, wheat), 14 crop–condition classes including four healthy classes, 50 train and 20 validation images/class: 700 train / 280 validation. Rice was deliberately deferred because healthy-rice data is missing. The broader frozen taxonomy was not changed; the active set/config is `configs/condition-pilot.json`.
+
+All 980 selected images decoded and matched source SHA-256. Pool rows were verified against the original retained training manifest, and selected train hashes/groups were checked against all held-out metadata. No test images were decoded or scored. Base model, prompt, class list, image loader, and greedy settings were identical before/after. Strict JSON parsing rejects invalid pairs, extra keys, fences, and prose; invalid answers count as failures.
+
+From pinned LFM2.5-VL-1.6B, trained language-side rank-8 LoRA with frozen vision, BF16, assistant-only targets, seed 3407, AdamW 2e-4, batch 4, 400 steps (1,600 presentations). Training took 114.248 seconds; full run 347.323 seconds; PyTorch peak allocated memory 3.387 GiB. The process completed inside its 1,200-second external deadline, offline with cached weights.
+
+Measured before/after: crop accuracy **57.50% → 99.29%**; exact crop–condition accuracy **27.50% → 87.86%**; joint 14-class macro F1 **0.231070 → 0.878469**; condition-only 11-name macro F1 **0.254018 → 0.869507**; invalid output **1 → 0**. Full raw predictions, confusion matrices, losses, config and hashes: `reports/condition-pilot-001.json`. Sugarcane mosaic and yellow rust each reached only 60% recall; cotton aphid reached 70%, so the aggregate hides useful failure targets.
+
+Saved adapter/processor/config under `outputs/condition-pilot-001/adapter`. `predict_condition.py` reloaded it in a new process and reproduced `{"crop":"Cotton","condition":"aphid"}` on a selected validation photo. This checks persistence on one case, not independent accuracy. All 54 unit tests passed, including five new condition tests. See [condition pilot](../condition-pilot.md) for inference and exact definitions.
+
+No field, final-test, multi-seed, rejection, calibration, or treatment evaluation was performed. The cleaned pool reduces known duplicate risks but does not remove source/style shortcuts or establish expert label correctness. Next bounded tuning should select on joint macro F1; do not compare this four-crop/14-class metric directly with the earlier five-crop pilot.
+
+## 2026-11-13 — Bounded autoresearch and MLflow
+
+The user requested Karpathy-style autoresearch and MLflow, then asked to see experiments live. Read upstream `program.md` and adapted it into local `program.md`; the coding assistant authors hypotheses and a deterministic supervisor executes them. No stock GPT training, external background LLM service, indefinite overnight loop, automatic commits or Git resets were used.
+
+Installed MLflow 3.8.1. A real SQLite test caught its incompatibility with resolved SQLAlchemy 2.1.8 (`FallbackAsyncAdaptedQueuePool` import removed); pinning 2.0.46 fixed it. MLflow also resolved compatible older pandas/protobuf and related versions. Package freezes and original source snapshots are logged per run; the historical base snapshot is not presented as the post-MLflow environment.
+
+Ran three 400-step candidates from the same pinned base and data/seed/prompt/validation, changing one knob from the reference. LR 1e-4: joint F1 **0.893298**, accuracy **89.29%**, train **118.735 s** (keep). LR 4e-4: **0.899777**, **90.00%**, **112.250 s** (selected). Rank/alpha 16 at reference LR: **0.900639**, **90.00%**, **120.315 s** (discard for promotion, retained). Reference was 0.878469 and 87.86%. The larger adapter's 0.000862 extra F1 over lr-high is below the fixed 0.005 margin; crop accuracy also slipped slightly, within the declared guardrail. The selected model makes six more correct joint predictions out of 280 than the reference, not proof of significance or field improvement.
+
+The user interrupted the foreground supervisor while requesting the UI. The higher-LR worker completed and was logged; no duplicate GPU job was launched. Resume support reconciled its completed report/run, recomputed metrics against reference gold, preserved original input hashes/deadline, and continued rank-16. Actual session span was **1,324.713 s**, including the interruption, within the original 1,800-second limit. No training processes remained after completion.
+
+Started MLflow server on **127.0.0.1:5000**, accessible from Windows at **http://localhost:5000**; health returned HTTP 200. Its SQLite database/artifacts are under `/home/user/croplens-mlflow`, outside Git. Verified five finished records: session, historical reference, and three candidates. Metrics, 400-point loss histories, raw reports, adapters/processors, source snapshots, hashes, and environment freezes persisted. During this session loss curves were uploaded at completion; after completion the trainer was updated to stream parameters/loss during future runs without double-logging final history.
+
+Selected adapter reloaded in a separate process and returned `{"crop":"Cotton","condition":"aphid"}` on the checked validation image. Detailed definitions, run IDs and restart instructions: [autoresearch + MLflow](../autoresearch-mlflow.md). Summary: `reports/condition-search-001.json`. Next is seed confirmation or another explicitly bounded hypothesis session; no final-test/field/calibration/treatment evaluation has occurred.
+
+Final checks: all 60 unit tests passed after the resume/live-logging changes, including real SQLite artifact/metric persistence without duplicated loss history. `pip check` passed, whitespace checks passed, UI health stayed HTTP 200, and no supervisor/training worker remained. The requested local MLflow UI was left running; follow-up source/report changes remain uncommitted.

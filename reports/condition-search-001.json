@@ -1,0 +1,76 @@
+{
+  "status": "complete",
+  "tracking_uri": "sqlite:////home/user/croplens-mlflow/mlflow.db",
+  "reference_joint_macro_f1": 0.8784693925107729,
+  "limits": {
+    "trials": 3,
+    "trial_seconds": 600,
+    "training_seconds": 300,
+    "session_seconds": 1800
+  },
+  "protected_sha256": {
+    "/mnt/g/dr aamir/csa/ml/crop-disease/data/manifest.csv": "f3e404e075ea9289545afb080b84a54e25f5016f0407560c5ffe869a750ec6ed",
+    "data/pool-001/training_pool.csv": "d4e15ecad7641f63193c4a49ff1b375382586dea177ced8926a21765314169c4",
+    "/mnt/g/dr aamir/croplens-lfm/reports/condition-pilot-001.json": "dbbf75271638e13ca9d2c9ad6409446463006abf8a5a7909a74b53e1de1ceb77",
+    "/mnt/g/dr aamir/croplens-lfm/configs/condition-pilot.json": "266c21c80fc732ab0b01f40a26eb0aafeff425a4b66ed3f21e71365527c9b948",
+    "/mnt/g/dr aamir/croplens-lfm/finetune_conditions.py": "be7116f8a5ecb8b793e667ffb12cecd0f07cac4159d993e502e2e86ead758c37",
+    "/mnt/g/dr aamir/croplens-lfm/finetune_crops.py": "91a2c09bddf00de185bb37c2c9e717ea0e9974ec55e9f68197415b8a3e906681",
+    "/mnt/g/dr aamir/croplens-lfm/program.md": "7065469b8eb6f8a734aa3f2110acf5eb87023e246c466f5868a8227a4d97baf2"
+  },
+  "trials": [
+    {
+      "trial": "lr-low",
+      "hypothesis": "Lower LR may generalize better on weak condition classes",
+      "change": {
+        "learning_rate": 0.0001
+      },
+      "status": "complete",
+      "mlflow_run_id": "0a6fed8f931244c7b3446afff7911da0",
+      "decision": "keep",
+      "joint_macro_f1": 0.8932975717233582,
+      "joint_accuracy": 0.8928571428571429,
+      "crop_accuracy": 0.9892857142857143,
+      "training_seconds": 118.735,
+      "peak_allocated_gib": 3.387
+    },
+    {
+      "trial": "lr-high",
+      "hypothesis": "Higher LR may learn weak classes within the fixed 400 steps",
+      "change": {
+        "learning_rate": 0.0004
+      },
+      "status": "complete",
+      "mlflow_run_id": "bd122d1d690f4309ac4db6f01f8c05aa",
+      "reconciled_after_supervisor_interruption": true,
+      "decision": "keep",
+      "joint_macro_f1": 0.8997768454158123,
+      "joint_accuracy": 0.9,
+      "crop_accuracy": 0.9892857142857143,
+      "training_seconds": 112.25,
+      "peak_allocated_gib": 3.387
+    },
+    {
+      "trial": "rank-16",
+      "hypothesis": "Larger adapter may separate visually similar conditions",
+      "change": {
+        "rank": 16
+      },
+      "status": "complete",
+      "mlflow_run_id": "92709a70069d4989979934dfe7653eaa",
+      "decision": "discard",
+      "joint_macro_f1": 0.900638624388859,
+      "joint_accuracy": 0.9,
+      "crop_accuracy": 0.9857142857142858,
+      "training_seconds": 120.315,
+      "peak_allocated_gib": 3.416
+    }
+  ],
+  "best": {
+    "trial": "lr-high",
+    "joint_macro_f1": 0.8997768454158123,
+    "adapter": "outputs/condition-search-001/lr-high/training/adapter",
+    "mlflow_run_id": "bd122d1d690f4309ac4db6f01f8c05aa"
+  },
+  "session_run_id": "b8f7595623074c83ae16c0d64a25954d",
+  "elapsed_seconds": 1324.713
+}

@@ -7,6 +7,7 @@ __pycache__/
 .ruff_cache/
 .ipynb_checkpoints/
 .cache/
+unsloth_compiled_cache/
 
 # Local configuration and credentials
 .env
@@ -19,14 +20,21 @@ __pycache__/
 # Raw images, checkpoints, and transient run outputs
 /data/raw/
 /data/private/
+/data/normalized-tune/*.jpg
 /outputs/
 /checkpoints/
 /models/
 /runs/
+/mlruns/
+/mlartifacts/
+*.db
+*.db-shm
+*.db-wal
 *.safetensors
 *.gguf
 *.pt
 *.pth
+*.log
 
 # Editor and operating-system state
 .vscode/
